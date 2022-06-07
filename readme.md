@@ -36,11 +36,15 @@ python manage.py runserver
 
 > ### **API Endpoints**
 
-| Endpoint    | Method      | Description |
-| ----------- | ----------- | ----------- |
-| /users      | GET         | Get List of the users. |
-| /users      | POST        | Create User. |
-| /users/{id}   | GET         | Get a perticular User. |
+| Endpoint    | Method      | Description               |
+| ----------- | ----------- | ------------------------- |
+| /auth/token/login           | POST         | Login a user. Recieves Auth Token.    |
+| /auth/token/logout          | GET          | Logout a user.    |
+| /auth/users                 | GET          | List all Users.              |
+| /auth/users                 | POST         | Create User.              |
+| /auth/users/{id}            | GET          | Get a perticular User.    |
+| /auth/users/reset_password/ | POST         | Reset Password.    |
+| /auth/users/reset_password_confirm/ | POST         | POST UID and Token for Confirmation.    |
 
 
 

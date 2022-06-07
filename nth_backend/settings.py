@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'core',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,35 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom User Settings
 AUTH_USER_MODEL = 'core.User'
+
+
+# Rest Framework Settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
+
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+
+EMAIL_HOST_USER = 'ctd.networktreasurehunt@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'ngxsltrsicuwayjt'
+
+# DJOSER Settings
+DJOSER = {
+    'SEND_CONFIRMATION_EMAIL': True,
+    'PASSWORD_RESET_CONFIRM_URL': 'password-reset/{uid}/{token}',
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
+}
+
+# Templated Mail Settings
+DOMAIN = 'nth.pictieee.in' #Set this to frontend Domain Name
+SITE_NAME = 'Network Treasure Hunt'
