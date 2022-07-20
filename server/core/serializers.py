@@ -30,3 +30,8 @@ class UserSerializer(ModelSerializer):
         user.set_password(data['password'])
         user.save()
         return user
+
+class QuestionSerializer(ModelSerializer):
+    class Meta:
+        model = Question
+        fields = '__all__'
