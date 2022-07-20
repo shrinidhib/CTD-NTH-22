@@ -7,7 +7,7 @@
 #### Cloning Git Repository:
 ```
 git clone https://github.com/credenz/CTD-NTH-22.git
-cd CTD-NTH-22
+cd CTD-NTH-22\server
 ```
 
 #### Creating Virtual Enviornment:
