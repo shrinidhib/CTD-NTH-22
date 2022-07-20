@@ -45,7 +45,9 @@ python manage.py runserver
 | /auth/users/{id}            | GET          | Get a perticular User.    |
 | /auth/users/reset_password/ | POST         | Reset Password.    |
 | /auth/users/reset_password_confirm/ | POST         | POST UID and Token for Confirmation.    |
-| /auth/userquestion/{user_ans} | GET        | Get current user question and evalute the answer   |
+| /auth/userquestion/{user_ans} | GET        | Get current user question and evalute the answer, Make sure you include Auth Header   |
+
+
 
 
 
