@@ -7,7 +7,10 @@ class User(AbstractUser):
     current_level = models.PositiveIntegerField(default=1)
     hidden_on_leaderboard = models.BooleanField(default=False)
     phone = models.IntegerField(null = True)
-    #last_level_updated_time = models.DateTimeField()
+    last_level_updated_time = models.DateTimeField(auto_now=True)
+    college = models.CharField(max_length=500,null = True)
+
+    REQUIRED_FIELDS = ['phone', 'first_name', 'last_name', 'college']
 
     def __str__(self):
         return self.username
