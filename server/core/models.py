@@ -27,6 +27,7 @@ class Question(models.Model):
     gif = models.URLField(max_length=1023, null=True, default=None)
     vid = models.URLField(max_length=1023, null=True, default=None)
     answer = models.CharField(max_length=1023, default="")
+    keywords = models.TextField(default='[]',blank=True)
 
     def __str__(self):
         return self.title + ": " + str(self.level)
