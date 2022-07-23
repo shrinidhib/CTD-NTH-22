@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .serializers import *
 import json
+import random
 
 # DRF imports
 from rest_framework.views import APIView
@@ -23,8 +24,7 @@ class UserViewSet(viewsets.ViewSet):
 
     # List All Users -- get method
     def list(self, request):
-        users = User.objects.all().order_by('-current_level','last_level_updated_time').values()
-        print(users)
+        users = User.objects.filter(hidden_on_leaderboard=False).order_by('-current_level','last_level_updated_time')
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
@@ -49,14 +49,23 @@ class QuestionDetail(generics.RetrieveAPIView):
         if request.user.is_authenticated:
             user = request.user
             queryset = Question.objects.all()
-            print(user_ans)
             que = get_object_or_404(queryset, level = user.current_level)
+
+            # Evaluate The Answer
             if que.answer == user_ans:
                 user.current_level += 1
                 print(user.current_level,"level")
                 user.save()
-            que = get_object_or_404(queryset, level = user.current_level)
-            print(que)
+                que = get_object_or_404(queryset, level = user.current_level)
+            
+            # Keyword Check for prompts
+            elif user_ans in json.loads(que.keywords):
+                responses = ["You are close.", "On the rigth Track.", "Keep going, you are on rigth Path.", "Almost There!"]
+                serializer = QuestionSerializer(que)
+                print(serializer.data)
+                data = serializer.data
+                data["status"] = random.choice(responses)
+                return Response(data)
 
             serializer = QuestionSerializer(que)
             return Response(serializer.data)
@@ -65,4 +74,6 @@ class QuestionDetail(generics.RetrieveAPIView):
 
 class LeaderboardView(APIView):
     def get(self, request, *args, **kwargs):
-        queryset = User.objects.all().order_by('-current_level','last_level_updated_time')
+        users = User.objects.filter(hidden_on_leaderboard=False).order_by('-current_level','last_level_updated_time')
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data)
