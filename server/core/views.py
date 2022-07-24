@@ -66,14 +66,14 @@ class QuestionDetail(generics.RetrieveAPIView):
                 elif paidHintCost > user.currency:
                     print("Lifeline cannot be taken cuz of less number of keys.")
             
-                if user.current_level >= 8:
-                    if user.doublerTaken:
-                        keys_available = (user.current_level*2)
-                        now = datetime.now()
-                        user.doublerTakenTime = now.strftime("%H:%M:%S")
-                        t1 = perf_counter()
-                        print(user.doubleTakenTime)
-                        print(keys_available)
+                # if user.current_level >= 8:
+                #     if user.doublerTaken:
+                #         keys_available = (user.current_level*2)
+                #         now = datetime.now()
+                #         user.doublerTakenTime = now.strftime("%H:%M:%S")
+                #         t1 = perf_counter()
+                #         print(user.doubleTakenTime)
+                #         print(keys_available)
                         # while keys_available >= (user.current_level%2) and (que.answer != user_ans):
                         #     time1= datetime.now()
                         #     timer = time1.strftime("%H:%M:%S")

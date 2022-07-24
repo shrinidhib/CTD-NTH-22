@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from datetime import datetime
 # Create your models here.
 
 class User(AbstractUser):
@@ -14,7 +14,6 @@ class User(AbstractUser):
     currency = models.PositiveIntegerField(default=5)
     paidHintTaken = models.BooleanField(default=False)
     doublerTaken = models.BooleanField(default = False)
-    doublerTakenTime = models.DateTimeField()
 
     REQUIRED_FIELDS = ['phone', 'first_name', 'last_name', 'college']
 
