@@ -17,7 +17,9 @@ class UserSerializer(ModelSerializer):
             'last_name',
             'current_level',
             'hidden_on_leaderboard',
-            'id'
+            'id',
+            # For currency
+            'currency'
         ]
 
     def create(self,data):

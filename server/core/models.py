@@ -10,6 +10,12 @@ class User(AbstractUser):
     last_level_updated_time = models.DateTimeField(auto_now=True)
     college = models.CharField(max_length=500,null = True)
 
+    # For currency
+    currency = models.PositiveIntegerField(default=5)
+    paidHintTaken = models.BooleanField(default=False)
+    doublerTaken = models.BooleanField(default = False)
+    doublerTakenTime = models.DateTimeField()
+
     REQUIRED_FIELDS = ['phone', 'first_name', 'last_name', 'college']
 
     def __str__(self):
@@ -27,6 +33,9 @@ class Question(models.Model):
     gif = models.URLField(max_length=1023, null=True, default=None)
     vid = models.URLField(max_length=1023, null=True, default=None)
     answer = models.CharField(max_length=1023, default="")
+
+    # For currency -- 
+    paidHint = models.TextField(default = "Extra Hint")
 
     def __str__(self):
         return self.title + ": " + str(self.level)
