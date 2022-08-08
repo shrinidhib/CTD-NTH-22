@@ -15,7 +15,7 @@ class User(AbstractUser):
     keys = models.PositiveIntegerField(default = 0)
 
 
-    REQUIRED_FIELDS = ['phone', 'first_name', 'last_name', 'college']
+    REQUIRED_FIELDS = ['phone', 'first_name', 'last_name', 'college', 'keys', 'current_level', 'paidHintTaken']
 
 
 

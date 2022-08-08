@@ -17,7 +17,8 @@ class UserSerializer(ModelSerializer):
             'last_name',
             'current_level',
             'hidden_on_leaderboard',
-            'id'
+            'id',
+            'keys',
         ]
 
     def create(self,data):

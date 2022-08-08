@@ -53,7 +53,9 @@ class QuestionDetail(generics.RetrieveAPIView):
 
             # Evaluate The Answer
             if que.answer == user_ans:
+                user.keys += user.current_level
                 user.current_level += 1
+                user.paidHintTaken = False
                 print(user.current_level,"level")
                 user.save()
                 que = get_object_or_404(queryset, level = user.current_level)
@@ -77,3 +79,21 @@ class LeaderboardView(APIView):
         users = User.objects.filter(hidden_on_leaderboard=False).order_by('-current_level','last_level_updated_time')
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
+
+class ExtraHintView(APIView):
+    def post(self, request):
+        username = request.data["username"]
+        res_dict = {"status":"You Don't Have Enough Keys"}
+        user = get_object_or_404(User, username=username)
+        que = get_object_or_404(Question, level = user.current_level)
+        print(que.paidHint, "bhat")
+        if(user.paidHintTaken):
+            res_dict = {"status":"You have already taken a hint!"}
+            return Response(json.dumps(res_dict))
+        if user.keys >= user.current_level + 1:
+            user.keys -= (user.current_level + 1)
+            user.paidHintTaken = True
+            user.save()
+            res_dict = {"extraHint":que.paidHint}
+            return Response(json.dumps(res_dict))
+        return Response(json.dumps(res_dict))
