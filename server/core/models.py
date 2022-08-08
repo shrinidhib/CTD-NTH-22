@@ -10,7 +10,14 @@ class User(AbstractUser):
     last_level_updated_time = models.DateTimeField(auto_now=True)
     college = models.CharField(max_length=500,null = True)
 
+    # Currency
+    paidHintTaken = models.BooleanField(default=False)
+    keys = models.PositiveIntegerField(default = 0)
+
+
     REQUIRED_FIELDS = ['phone', 'first_name', 'last_name', 'college']
+
+
 
     def __str__(self):
         return self.username
@@ -28,6 +35,7 @@ class Question(models.Model):
     vid = models.URLField(max_length=1023, null=True, default=None)
     answer = models.CharField(max_length=1023, default="")
     keywords = models.TextField(default='[]',blank=True)
+    paidHint = models.TextField(default="<Extra hint>")
 
     def __str__(self):
         return self.title + ": " + str(self.level)
