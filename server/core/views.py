@@ -43,6 +43,13 @@ class UserViewSet(viewsets.ViewSet):
             return Response(serializer.data)
         return Response(serializer.errors)
     
+    # Scheduler 
+    def addKey():
+        queryset = User.objects.all()
+        for user in queryset:
+            user.keys += 1
+            user.save()
+    
 class QuestionDetail(generics.RetrieveAPIView):
     
     def get(self, request, user_ans = None):
@@ -97,3 +104,5 @@ class ExtraHintView(APIView):
             res_dict = {"extraHint":que.paidHint}
             return Response(json.dumps(res_dict))
         return Response(json.dumps(res_dict))
+
+
