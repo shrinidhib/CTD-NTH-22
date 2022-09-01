@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # CORS
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'nth_backend.urls'
@@ -161,3 +166,7 @@ DJOSER = {
 # Templated Mail Settings
 DOMAIN = 'nth.pictieee.in' #Set this to frontend Domain Name
 SITE_NAME = 'Network Treasure Hunt'
+
+
+# CORS Setting
+CORS_ORIGIN_ALLOW_ALL = True
