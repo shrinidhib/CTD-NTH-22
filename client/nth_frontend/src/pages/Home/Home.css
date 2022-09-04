@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(135, 145, 148);
+  }
+.nth-home {
+    margin: 3% 0 3%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    /* background-color: black; */
+}
+
+.nth-home h5{
+    margin: 0  0 2%;
+    
+}
+
+ .nth-home img {
+    display: block;
+    margin: auto;
+    width: 400px;
+}
+
+@media screen and (max-width: 420px) {
+    .nth-home img{
+        width: 90%;
+    }
+}
+
+
+/* .nth-home .hunt-button {
+    background: #E9B171;
+    border-radius: 10px;
+    border: none;
+    padding: 8px 20px;
+    color: white;
+    font-size: larger;
+  }
+  
+ .nth-home .hunt-button:hover,
+ .nth-home .hunt-button:focus {
+    box-shadow: 0 0.5em 1em -0.4em #E9B171;
+    transform: translateY(-0.25em);
+  }
+
+@media screen and (min-width : 992px) {
+    .nth-home .hunt-button-css{
+        display: none;
+    }
+} */

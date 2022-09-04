@@ -1,0 +1,141 @@
+.login-page {
+    width: 350px;
+    margin: 6% auto 2%;
+    padding: 2%;
+    background: #3c9b5134;
+    border-radius: 10px;
+
+}
+
+.login-page h2 {
+    text-align: center;
+    margin: 2% 0 6%;
+    color:#cbe971 ;
+
+}
+
+@media screen and (max-width :400px) {
+    .login-page {
+        width: 90%;
+    }
+}
+
+.login-page .field {
+    width: 100%;
+    position: relative;
+    font-size: 18px;
+    padding: 7px 30px;
+    white-space: no-wrap;
+    margin-bottom: 2%;
+}
+
+.login-page .field::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    height: 1px;
+    width: 85%;
+    padding-top: 5px;
+    border-top: 1px solid rgba(228, 228, 228, 0.87);
+}
+
+
+.login-page .field i {
+    font-size: 22px;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    text-align: left;
+    display: inline-block;
+}
+
+
+
+.login-page input {
+    border: 0;
+    background: transparent;
+    padding: 0 5px;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    height: 30px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.login-page input:focus {
+    outline: none;
+}
+
+
+
+.login-page .login-button {
+    text-align: center;
+    font-size: 140%;
+
+}
+
+.login-page button {
+    background-color: #292929;
+    border-style: none;
+    color: white;
+    margin-top: 5%;
+    width: 180px;
+    padding: 4px 0;
+    border-radius: 20px;
+    transition: 0.5s ease-in;
+}
+
+.login-page button:hover {
+    background-color: #e3e971;
+    color: #141414;
+}
+
+.login-page .register {
+    width: 100%;
+    margin-top: 10% !important;
+    margin-bottom: 3% !important;
+    font-size: 120%;
+    text-align: center;
+}
+
+.login-page .register a {
+    text-decoration: underline;
+    color: #cbe971;
+    /* text-decoration: solid; */
+}
+
+.login-page .register a:hover {
+    color: #b18758;
+}
+
+
+.instructions {
+    margin: 3% 10%;
+    color: #cbe971;
+}
+
+.answer-1 {
+    margin-top: 1rem;
+    color: #181818;
+    cursor: default;
+    text-align: center;
+}
+
+.instructions-content {
+    margin: 2% 7%;
+    font-size: 1.05rem;
+    color: white;
+}
+
+@media screen and (max-width : 480px) {
+    .instructions {
+        margin: 15% 4% 5%;
+    }
+
+    .instructions-content {
+        margin: 1% 0 1% 8%;
+    }
+}

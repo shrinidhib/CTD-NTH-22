@@ -1,0 +1,65 @@
+/* .app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  } */
+  .nav-bar {
+    background-color: rgb(20, 20, 20);
+  }
+  
+  .nav-bar .hunt-button {
+    background: #E9B171;
+    border-radius: 10px;
+    border: none;
+    padding: 8px 20px;
+      color: white;
+      font-size: larger;
+  }
+  
+  
+  .hunt-button:hover,
+  .hunt-button:focus {
+    box-shadow: 0 0.5em 1em -0.4em #E9B171;
+    transform: translateY(-0.25em);
+  }
+  
+  .nav-bar .na-link{
+    text-decoration: none;
+      position: relative;
+      color:white;
+      font-size: 125%;
+  }
+  
+  
+   .nav-bar .na-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E9B171;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  
+  }
+  
+  .nav-bar .na-link:hover::before {
+    visibility: visible;
+    width: 100%;
+    
+  
+  }
+  
+  .nav-bar .na-link:hover{
+    color: #E9B171;
+  } 
+  
+  
+  @media screen and (max-width:1000px) {
+    .nav-bar .pisb-logo{
+      display: none;
+    }
+  }
