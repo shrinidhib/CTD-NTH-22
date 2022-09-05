@@ -27,7 +27,7 @@ function App() {
       </Routes>
       <Footer />
       
-      <div class="animation-wrapper">
+      <div class="animation-wrapper" >
       <div class="particle particle-1"></div>
       <div class="particle particle-2"></div>
       <div class="particle particle-3"></div>

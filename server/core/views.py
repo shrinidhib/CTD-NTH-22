@@ -82,9 +82,11 @@ class LeaderboardView(APIView):
 
 class ExtraHintView(APIView):
     def post(self, request):
-        username = request.data["username"]
+        authentication_classes = [TokenAuthentication]
+        permission_classes = [IsAuthenticated]
+        # username = request.data["username"]
         res_dict = {"status":"You Don't Have Enough Keys"}
-        user = get_object_or_404(User, username=username)
+        user = request.user
         que = get_object_or_404(Question, level = user.current_level)
         print(que.paidHint, "bhat")
         if(user.paidHintTaken):
