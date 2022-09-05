@@ -20,18 +20,23 @@ const Footer = () => {
               </p>
             </Col>
             <Col lg={4} md={12} sm={12}>
+            <div >
               <a href="https://www.instagram.com/pisbcredenz/" target="_blank">
-                <i className="fab fa-instagram  instagram"></i>
+                {/* <i className="fab fa-instagram  instagram"></i> */}
+                <i class="nes-icon instagram is-medium"></i>
               </a>
               <a
                 href="https://www.linkedin.com/company/pisbieee/"
                 target="_blank"
               >
-                <i className="fab fa-linkedin-in  linkedin"></i>
+                {/* <i className="fab fa-linkedin-in  linkedin"></i> */}
+                <i class="nes-icon linkedin is-medium"></i>
               </a>
               <a href="https://www.facebook.com/pictieee/" target="_blank">
-                <i className="fab fa-facebook-f  facebook"></i>
+                {/* <i className="fab fa-facebook-f  facebook"></i> */}
+                <i class="nes-icon facebook is-medium"></i>
               </a>
+            </div>
             </Col>
           </Row>
         </Container>

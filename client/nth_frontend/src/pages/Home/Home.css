@@ -1,13 +1,14 @@
-body {
-    background-color: rgb(135, 145, 148);
-  }
 .nth-home {
     margin: 3% 0 3%;
     text-align: center;
     color: rgb(255, 255, 255);
     /* background-color: black; */
+    
 }
-
+/* .font-link {
+    font-family: 'Press+Start+2P';
+  } */
+  
 .nth-home h5{
     margin: 0  0 2%;
     
@@ -46,3 +47,4 @@ body {
         display: none;
     }
 } */
+

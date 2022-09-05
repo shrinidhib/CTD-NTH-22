@@ -2,28 +2,33 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import React from "react";
 const LoginForm = () => {
-    // const [username,setUsername]=useState("");
-    // const [password,setPassword]=useState("");
+    const [username,setUsername]=useState("");
+    const [password,setPassword]=useState("");
     const handleSubmit = (event) => {
-        // Prevent page reload
         event.preventDefault();
-        console.log(event.target.username.value);
-        console.log(event.target.password.value);
-        // fetch("http://localhost:8000/auth/token/login/")
+        console.log(username);
+        console.log(password);
+        const data={username,password};
         fetch("http://localhost:8000/auth/token/login/",{ 
         method: "POST",
-        body: JSON.stringify({
-            username: event.target.username.value,
-            password: event.target.password.value
-          })
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data)
         })
         .then(response => {
             console.log(response);
+            if(!response.ok){
+                console.log(response)
+                // setFetchError("Invalid Credentials!!!")
+                throw Error("Could not fetch the data.");
+            }
             return response.json()
             
         })
         .then(data => {
             console.log(data)
+            // localStorage.setItem("auth-token",data.auth_token)
+            // localStorage.setItem("username",username)
+            // navigate("/");
         })
     };
     return (
@@ -38,9 +43,11 @@ const LoginForm = () => {
                         id="username"
                         name="username"
                         className="login-form-input"
-                        // onChange={handleChange}
+                        value={username}
+                        onChange={(e)=>setUsername(e.target.value)}
                         type="text"
                         placeholder="type your username"
+                        
                     />
                 </div>
                 <div className="field">
@@ -50,20 +57,18 @@ const LoginForm = () => {
                         id="password"
                         name="password"
                         className="login-form-input"
-                        // onChange={handleChange}
+                        value={password}
+                        onChange={e=>setPassword(e.target.value)}
                         type="password"
                         placeholder="type your password"
                     />
                 </div>
 
                 <div className="login-button">
-                    {/* <Link to="/question"> */}
-                        <button
-                            // onClick={handleSubmit}
-                            type="submit">
-                            Login
-                        </button>
-                    {/* </Link> */}
+                    <button type="submit">
+                        Login
+                    </button>
+                    
                 </div>
                 <p className='register'>Or Register using
                     <br />
