@@ -14,11 +14,11 @@ const Home = () => {
               Start Hunting
             </button>
           </Link>
-          <div class="nes-container with-title">
+          {/* <div class="nes-container with-title">
             <span class="title">Text</span>
             <p>Hello world! this is a in nes.css</p>
             <button class="nes-btn is-primary">Button 1</button>
-          </div>
+          </div> */}
       </div>
 
   );

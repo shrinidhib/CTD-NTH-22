@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import React from "react";
 const LoginForm = () => {
     const [username,setUsername]=useState("");
     const [password,setPassword]=useState("");
+    const [error,setError]=useState("");
+    let navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(username);
@@ -26,9 +28,13 @@ const LoginForm = () => {
         })
         .then(data => {
             console.log(data)
-            // localStorage.setItem("auth-token",data.auth_token)
-            // localStorage.setItem("username",username)
-            // navigate("/");
+            localStorage.setItem("auth-token",data.auth_token)
+            localStorage.setItem("username",username)
+            navigate("/question/put_your_ans_here");
+        })
+        .catch(err=>{
+            console.log(err);
+            setError("Invalid Credentials");
         })
     };
     return (
@@ -36,22 +42,24 @@ const LoginForm = () => {
         
         <form onSubmit={handleSubmit}>
             <div className="login-page">
+            <div>
             <div className="nes-container is-dark with-title" >
             <span class="title">INPUT</span>
             <div class="nes-field">
                     <label for="name_field" class="col">Username</label>
-                    <input type="text" id="name_field" class="nes-input"/>
+                    <input type="text" id="name_field" class="nes-input" placeholder="type your username"/>
             </div>
             <div class="nes-field ">
-            {/* <label for="error_field">.input.is-error</label> */}
-            <label for="name_field" class="col">Password</label>
-            <input type="text" id="name_field" class="nes-input"/>
+            <label for="error_field">.input.is-error</label>
+                <label for="name_field" class="col">Password</label>
+                <input type="password" id="name_field" class="nes-input"/>
             </div>
         
             {/* <div style="background-color:#212529; padding: 1rem;" class="nes-field is-inline">
                 <label for="dark_field" style="color:#fff;">.input.is-dark</label>
                 <input type="text" id="dark_field" class="nes-input is-dark" placeholder="dark.css"/>
             </div> */}
+            </div>
         </div>
                 <h2>Login</h2>
                 <div className='field'>
@@ -89,6 +97,9 @@ const LoginForm = () => {
                     </button>
                     
                 </div>
+                {
+                    error===""?<></>:<p>{error}</p>
+                }
                 <p className='register'>Or Register using
                     <br />
                     <Link to='/register'>Register</Link>

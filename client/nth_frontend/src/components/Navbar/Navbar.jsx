@@ -2,12 +2,16 @@ import pisblogo from "../../assets/pisb-logo.png";
 // import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";  
 import { Link } from "react-router-dom";
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 const NavbarComp = () => {
   // const location = useLocation();
 
   // if (!location.pathname.match("/question")) {
     return (
+      <div>
       <nav class="nav-bar pt-2 pb-2 pl-4 pr-2 navbar navbar-expand-lg navbar-dark">
       <a href="https://pictieee.in/" class="navbar-brand">
       <img src={pisblogo} width="110px" alt="PISB-logo"></img>
@@ -35,7 +39,37 @@ const NavbarComp = () => {
       </a>
       </div>
       </nav>
-
+      
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+              Dank memes
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    </div>
     );
   // }
 }

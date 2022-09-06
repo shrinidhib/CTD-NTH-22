@@ -2,7 +2,7 @@
     color:#cbe971 ;
 }
 .login-page {
-    width: 350px;
+    width: 550px;
     margin: 6% auto 2%;
     padding: 2%;
     background: #3c9b5134;
@@ -118,6 +118,9 @@
 .instructions {
     margin: 3% 10%;
     color: #cbe971;
+    height: 800px;
+    display: block ;
+    overflow: auto;
 }
 
 .answer-1 {

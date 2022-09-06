@@ -26,7 +26,7 @@ const Question = (props) => {
         // console.log(localStorage.getItem("auth-token"));
         await fetch(`http://localhost:8000/userquestion/${ans}`,{ 
           method: "GET",
-          headers: { "content-type": "application/json", "Authorization":`Token 89ddf2a201f432dce078e7f3a7d4085f8ac013f3` },
+          headers: { "content-type": "application/json", "Authorization":`Token ${localStorage.getItem("auth-token")}` },
         })
           .then(response => {
             return response.json()
@@ -60,7 +60,8 @@ const Question = (props) => {
         redirectAns();
       }, []);
   return (
-    <div id="cover">
+    <div class="bootstrap-iso">
+      <div id="cover">
         {/* {console.log(data)} */}
         {console.log(id)}
         <a href="/leaderboard">
@@ -81,7 +82,7 @@ const Question = (props) => {
         <img src="https://imgur.com/eog5eFZ.gif"></img>
         <img src="https://imgur.com/nUJVBmO.jpg"></img>
         
-        
+      </div>
     </div>
   );
 };

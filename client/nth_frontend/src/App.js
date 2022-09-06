@@ -1,6 +1,6 @@
 import './App.css';
 // import axios from 'axios';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import Question from './pages/Question/Question';
 import NavbarComp from './components/Navbar/Navbar';
 import { Route, Routes } from "react-router-dom";
