@@ -33,12 +33,31 @@ const LoginForm = () => {
     };
     return (
         <div>
+        
         <form onSubmit={handleSubmit}>
             <div className="login-page">
+            <div className="nes-container is-dark with-title" >
+            <span class="title">INPUT</span>
+            <div class="nes-field">
+                    <label for="name_field" class="col">Username</label>
+                    <input type="text" id="name_field" class="nes-input"/>
+            </div>
+            <div class="nes-field ">
+            {/* <label for="error_field">.input.is-error</label> */}
+            <label for="name_field" class="col">Password</label>
+            <input type="text" id="name_field" class="nes-input"/>
+            </div>
+        
+            {/* <div style="background-color:#212529; padding: 1rem;" class="nes-field is-inline">
+                <label for="dark_field" style="color:#fff;">.input.is-dark</label>
+                <input type="text" id="dark_field" class="nes-input is-dark" placeholder="dark.css"/>
+            </div> */}
+        </div>
                 <h2>Login</h2>
                 <div className='field'>
                     <label>Username</label>
                     <br />
+                    
                     <input
                         id="username"
                         name="username"
