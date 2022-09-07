@@ -1,12 +1,11 @@
-import { Col, Row, Container } from "react-bootstrap";
+// import { Col, Row, Container } from "react-bootstrap";
 import "./Login.css";
-import Instructions from "./Instructions";
 import LoginForm from "./LoginForm";
 import React from "react";
 const Login = () => {
     return (
         <div>
-            <Container fluid>
+            {/* <Container fluid>
                 <Row>
                     <Col lg={6} sm={12}>
                         <LoginForm></LoginForm>
@@ -15,7 +14,8 @@ const Login = () => {
                         <Instructions></Instructions>
                     </Col>
                 </Row>
-            </Container>
+            </Container> */}
+            <LoginForm></LoginForm>
         </div>
     );
 };

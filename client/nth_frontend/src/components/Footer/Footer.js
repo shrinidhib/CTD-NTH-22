@@ -23,18 +23,18 @@ const Footer = () => {
             <div >
               <a href="https://www.instagram.com/pisbcredenz/" target="_blank">
                 {/* <i className="fab fa-instagram  instagram"></i> */}
-                <i class="nes-icon instagram is-medium"></i>
+                <i class="nes-icon instagram is-medium me-5"></i>
               </a>
               <a
                 href="https://www.linkedin.com/company/pisbieee/"
                 target="_blank"
               >
                 {/* <i className="fab fa-linkedin-in  linkedin"></i> */}
-                <i class="nes-icon linkedin is-medium"></i>
+                <i class="nes-icon linkedin is-medium me-5"></i>
               </a>
               <a href="https://www.facebook.com/pictieee/" target="_blank">
                 {/* <i className="fab fa-facebook-f  facebook"></i> */}
-                <i class="nes-icon facebook is-medium"></i>
+                <i class="nes-icon facebook is-medium me-5"></i>
               </a>
             </div>
             </Col>

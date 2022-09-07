@@ -36,7 +36,7 @@
   
    .nav-bar .na-link::before {
     content: "";
-    position: absolute;
+    position: relative;
     width: 0;
     height: 2px;
     bottom: 0;
@@ -55,7 +55,7 @@
   }
   
   .nav-bar .na-link:hover{
-    color: #E9B171;
+    color: #2d1e8e;
   } 
   
   

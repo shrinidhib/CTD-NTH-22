@@ -1,10 +1,43 @@
 /* body {
     background-color: lightblue;
   } */
+.question-page{
+    color: rgb(40, 145, 202);
+    text-align: left;
+    margin: 4.5% auto;
+    text-align:center;
+}
+.btn{
+  color: yellow;
+}
+.btnisunactive{
+  color: yellow;
+  background-color: transparent;
+  border-color: transparent;
+}
+.btnisactive{
+  color: rgb(0, 0, 255);
+  background-color: transparent;
+  border-color: transparent;
+  /* background-color: transparent; */
+  
+}
+.modal-90w{
+  /* background-color: transparent; */
+  width: auto;
+  /* max-width: none !important; */
+}
+.modal-90wh{
+  /* background-color: transparent; */
+  width: 100%;
+  /* max-width: none !important; */
+}
   #cover {
-    width: 800px;
-    height: 800px;
+    /* width: 500px;
+    height: 500px; */
     margin: 0 auto;
+    display: block;
+    /* overflow: auto; */
   }
   
   #cover > img {
@@ -13,3 +46,8 @@
     width: 45%;
     margin: 1.66%;
   }
+  @media screen and (max-width:430px) {
+    .question-page {
+        width:90%;
+    }
+}

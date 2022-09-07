@@ -91,11 +91,11 @@ class ExtraHintView(APIView):
         print(que.paidHint, "bhat")
         if(user.paidHintTaken):
             res_dict = {"status":"You have already taken a hint!"}
-            return Response(json.dumps(res_dict))
+            return Response(res_dict)
         if user.keys >= user.current_level + 1:
             user.keys -= (user.current_level + 1)
             user.paidHintTaken = True
             user.save()
             res_dict = {"extraHint":que.paidHint}
-            return Response(json.dumps(res_dict))
-        return Response(json.dumps(res_dict))
+            return Response(res_dict)
+        return Response(res_dict)

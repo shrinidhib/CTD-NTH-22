@@ -1,7 +1,7 @@
 .footer {
-    /* left: 0;
+    left: 0;
     bottom: 0;
-    position: fixed; */
+    position: relative;
    width: 100%;
     background-color: rgb(20, 20, 20);;
     color: white;
@@ -41,9 +41,15 @@
 
 
 
-.footer .nes-icon:hover {
+/* .footer .nes-icon:hover {
     transition: 0.3s;
     transform: rotateZ(360deg);
+} */
+
+.footer .nes-icon:hover {
+    /* transition: 0.3s;
+    transform: rotateZ(360deg); */
+    filter: brightness(2);
 }
 
 /* .footer .instagram {

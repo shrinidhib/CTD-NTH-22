@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Background from './components/Background/Background';
+import Instructions from './pages/Instructions/Instructions';
 function App() {
   return (
     <>
@@ -23,12 +24,13 @@ function App() {
       {/* <Route path="/team" component={Webteam} />
       <Route path="/contact" component={Contact} /> */}
       <Route path="/login" element={<Login/>} />
+      <Route path="/instructions" element={<Instructions/>} />
       <Route path="/question/:ans" element={<Question/>} /> 
       {/* <Route path='/leaderboard' component = {LeaderBoard} /> */}
       </Routes>
       </div>
       <Footer />
-      <Background/>
+      {/* <Background/> */}
     
       
       </>
