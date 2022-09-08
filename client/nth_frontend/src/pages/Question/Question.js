@@ -5,7 +5,10 @@ import ContactModal from "./Modals/ContactModal";
 import ProfileModal from "./Modals/ProfileModal";
 import HintModal from "./Modals/HintModal";
 import { Container, Row, Col } from "react-bootstrap";
-import key from '../../assets/keys.png'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
+// import key from '../../assets/keys.png'
 const Question = (props) => {
     // const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
@@ -83,16 +86,26 @@ const Question = (props) => {
           </div>
           </Col>
           <Col lg={1} sm={12}>
-          <div>
+          <div class="view-modal">
             {/* {console.log(data)} */}
             {console.log(id)}
               {/* <a href="/leaderboard">
               <i class="fas fa-trophy fa-2x side-icons"></i>
               </a> */}
-            <button onClick={()=>openModal(1)} class={id===1?"btnisactive mt-2":"btnisunactive mt-2"}><i  class="fas fa-address-card fa-2x side-icons"></i></button>
-            <button onClick={()=>openModal(2)} class={id===2?"btnisactive mt-2":"btnisunactive mt-2"}><i class="fas fa-user-alt fa-2x side-icons"></i></button>
-            <button onClick={()=>openModal(3)} class={id===3?"btnisactive mt-2":"btnisunactive mt-2"}><i class="fal fa-lightbulb-on fa-2x side-icons"></i></button>
-            <button onClick={()=>navigate('/instructions')} class={"btnisunactive mt-2"}><i class="fal fa-question fa-2x side-icons"></i></button>
+            <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Hints</strong></Tooltip> }>
+            <button onClick={()=>openModal(3)} class={id===3?"btnisactive mt-2":"btnisunactive mt-5 "} title="Hints"><i class="fas fa-lightbulb-on fa-2x side-icons"></i></button>
+            </OverlayTrigger>
+           
+            <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Profile</strong></Tooltip> }>
+            <button onClick={()=>openModal(2)} class={id===2?"btnisactive mt-2":"btnisunactive mt-5"} title="Profile"><i class="fas fa-user-alt fa-2x side-icons"></i></button>
+            </OverlayTrigger>
+            
+            <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Instructions</strong></Tooltip> }>
+            <button onClick={()=>navigate('/instructions')} class={"btnisunactive mt-5 "}  title="Instructions"><i class="fas fa-question fa-2x side-icons"></i></button>
+            </OverlayTrigger>
+            <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Contact</strong></Tooltip> }>
+            <button onClick={()=>openModal(1)} class={id===1?"btnisactive mt-2":"btnisunactive mt-5"} ><i  class="fas fa-address-card fa-2x side-icons"></i></button>
+            </OverlayTrigger>
             { 
               id===1?<ContactModal show={id===1?true:false} onHide={() => closeModal()} />
               :id===2?<ProfileModal show={id===2?true:false} onHide={()=>closeModal()} data={{username:data.username,phone:data.phone,current_level:data.current_level}} />

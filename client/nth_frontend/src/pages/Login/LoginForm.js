@@ -67,15 +67,16 @@ const LoginForm = () => {
                                     type="password"
                                     placeholder="type your password" />
                             </div>
-                        </div>
-                    {/* </div> */}
-
-                    <div className="login-button">
+                            <div className="login-button">
                         <button type="submit">
                             Login
                         </button>
 
                     </div>
+                        </div>
+                    {/* </div> */}
+
+                    
                     <p className='register'>
                         {
                             error === "" ? <></> : <p className='err'>{error}</p>

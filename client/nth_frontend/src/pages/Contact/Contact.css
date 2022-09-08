@@ -1,0 +1,60 @@
+.contact-page {
+    color: #fff;
+    margin: 3% auto 10%
+  }
+  
+  .contact-page .contactus-card {
+    text-align: center;
+    margin: 10% auto;
+    width: 270px;
+    padding: 3.5% 2% 2%;
+    background-color: #131313;
+    border-radius: 5px
+  }
+  
+  .contact-page .contactus-card:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+  
+  .contact-page .fa-linkedin {
+    margin: 5% 0 0
+  }
+  
+  @media screen and (max-width:450px) {
+    .contact-page .contactus-card {
+      width: 90%
+    }
+  }
+  
+  .contact-page .contactus-card .card-name {
+    padding: 5% 0
+  }
+  
+  .contact-page .fas {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25)
+  }
+  
+  .contact-page .fab {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5)
+  }
+  
+  .contact-page .contactus-card a {
+    text-decoration: none;
+    color: #fff
+  }
+  
+  .contact-page .contactus-card img {
+    border-radius: 100%;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+    padding: 5px;
+    border: 2px solid #e9b171
+  }
+  
+  .contact-page .contactus-card h4 {
+    margin: 3% 0
+  }
+  

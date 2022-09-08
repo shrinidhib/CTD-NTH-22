@@ -7,29 +7,45 @@
     margin: 4.5% auto;
     text-align:center;
 }
+.view-modal{
+  padding-right: 0px;
+  padding-top: 10%;
+}
 .btn{
   color: yellow;
 }
 .btnisunactive{
-  color: yellow;
-  background-color: transparent;
+  color: rgb(8, 8, 0);
+  background-color: yellowgreen;
   border-color: transparent;
+  /* padding-top: 10px; */
+  /* padding: 0px; */
+  width: 56px;
 }
 .btnisactive{
   color: rgb(0, 0, 255);
   background-color: transparent;
   border-color: transparent;
+  width: 56px;
+
   /* background-color: transparent; */
   
+}
+.modal-content{
+  /* background-color: transparent; */
+  background: rgb(0, 0, 0);
+  color: whitesmoke;
+  opacity: 0.75;
 }
 .modal-90w{
   /* background-color: transparent; */
   width: auto;
+  opacity: 1;
   /* max-width: none !important; */
 }
 .modal-90wh{
   /* background-color: transparent; */
-  width: 100%;
+  width: auto;
   /* max-width: none !important; */
 }
   #cover {
@@ -43,11 +59,18 @@
   #cover > img {
     float: left;
     border: 2px solid black;
-    width: 45%;
+    width: 40%;
     margin: 1.66%;
   }
   @media screen and (max-width:430px) {
     .question-page {
-        width:90%;
+        /* width:100%; */
+        width: fit-content;
     }
+}
+@media screen and (min-width:400px){
+  #cover{
+    width: fit-content;
+    /* height: 10%;   */
+  }
 }
