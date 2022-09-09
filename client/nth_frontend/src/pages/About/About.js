@@ -1,7 +1,7 @@
 import "./About.css";
 import { Container, Row, Col } from "react-bootstrap";
 import nthlogo from "../../assets/nth-logo.png";
-import StarWars from "./starwars/StarWars";
+import StarWars from "./starwars/StarWars.js";
 
 const About = () => {
   return (
