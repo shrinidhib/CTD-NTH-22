@@ -93,18 +93,18 @@ const Question = (props) => {
               <i class="fas fa-trophy fa-2x side-icons"></i>
               </a> */}
             <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Hints</strong></Tooltip> }>
-            <button onClick={()=>openModal(3)} class={id===3?"btnisactive mt-2":"btnisunactive mt-5 "} title="Hints"><i class="fas fa-lightbulb-on fa-2x side-icons"></i></button>
+            <button onClick={()=>openModal(3)} class={id===3?"btnisactive mt-2 ms-2":"btnisunactive mt-5 ms-2 "} ><i class="fas fa-lightbulb-on fa-2x side-icons"></i></button>
             </OverlayTrigger>
            
             <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Profile</strong></Tooltip> }>
-            <button onClick={()=>openModal(2)} class={id===2?"btnisactive mt-2":"btnisunactive mt-5"} title="Profile"><i class="fas fa-user-alt fa-2x side-icons"></i></button>
+            <button onClick={()=>openModal(2)} class={id===2?"btnisactive mt-2 ms-2":"btnisunactive mt-5 ms-2"} ><i class="fas fa-user-alt fa-2x side-icons"></i></button>
             </OverlayTrigger>
             
             <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Instructions</strong></Tooltip> }>
-            <button onClick={()=>navigate('/instructions')} class={"btnisunactive mt-5 "}  title="Instructions"><i class="fas fa-question fa-2x side-icons"></i></button>
+            <button onClick={()=>navigate('/instructions')} class={"btnisunactive mt-5 ms-2"}  ><i class="fas fa-question fa-2x side-icons"></i></button>
             </OverlayTrigger>
             <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Contact</strong></Tooltip> }>
-            <button onClick={()=>openModal(1)} class={id===1?"btnisactive mt-2":"btnisunactive mt-5"} ><i  class="fas fa-address-card fa-2x side-icons"></i></button>
+            <button onClick={()=>openModal(1)} class={id===1?"btnisactive mt-2 ms-2":"btnisunactive mt-5 ms-2"} ><i  class="fas fa-address-card fa-2x side-icons"></i></button>
             </OverlayTrigger>
             { 
               id===1?<ContactModal show={id===1?true:false} onHide={() => closeModal()} />
