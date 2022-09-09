@@ -1,0 +1,161 @@
+.leaderboard {
+    margin: 1% 0 5rem
+  }
+  
+  @media screen and (max-width:1140px) {
+    .leaderboard {
+      margin: 1% 0 7rem
+    }
+  }
+  
+  @media screen and (max-width:990px) {
+    .leaderboard {
+      margin: 1% 0 11rem
+    }
+  }
+  
+  .leaderboard .top #rank {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin: auto;
+    color: #e9b171;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    background-color: #000;
+    text-align: center
+  }
+  
+  .leaderboard .top #rank .rank-text {
+    padding-top: 35px
+  }
+  
+  @media screen and (max-width:576px) {
+    .leaderboard .top #rank {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      margin: auto;
+      color: #e9b171;
+      font-size: 2rem;
+      font-weight: bolder;
+      background-color: #000;
+      text-align: center
+    }
+  
+    .leaderboard .top #rank .rank-text {
+      padding-top: 25px
+    }
+  }
+  
+  @media screen and (max-width:390px) {
+    .leaderboard .top #rank {
+      width: 75px;
+      height: 75px;
+      border-radius: 100%;
+      margin: auto;
+      color: #e9b171;
+      font-size: 2rem;
+      font-weight: bolder;
+      background-color: #000;
+      text-align: center
+    }
+  
+    .leaderboard .top #rank .rank-text {
+      padding-top: 15.5px
+    }
+  }
+  
+  @media screen and (max-width:338px) {
+    .leaderboard .top #rank {
+      width: 65px;
+      height: 65px;
+      border-radius: 100%;
+      margin: auto;
+      color: #e9b171;
+      font-size: 2rem;
+      font-weight: bolder;
+      background-color: #000;
+      text-align: center
+    }
+  
+    .leaderboard .top #rank .rank-text {
+      padding-top: 13px
+    }
+  
+    .other-players .col {
+      padding: 0
+    }
+  }
+  
+  .leaderboard .leaderboard-table {
+    width: 95%;
+    border-collapse: separate;
+    border-spacing: 0 1.2rem;
+    border-radius: 2rem;
+    color: #fff;
+    text-align: center;
+    border: 0;
+    margin-top: 2%
+  }
+  
+  td:first-child {
+    border-left-style: solid;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px
+  }
+  
+  td:last-child,
+  th:last-child {
+    padding-left: 2%
+  }
+  
+  td:last-child {
+    border-right-style: solid;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 0 !important;
+    border-top: 0 !important;
+    font-size: 1.35rem
+  }
+  
+  .leaderboard .leaderboard-table td,
+  .leaderboard.leaderboard-table th {
+    border: 0;
+    font-size: 1.25rem;
+    border-bottom: 0;
+    border-top: 0
+  }
+  
+  .leaderboard .top .level {
+    color: #fff;
+    text-align: center;
+    font-size: 120%
+  }
+  
+  .leaderboard .top .name {
+    text-align: center;
+    color: #fff;
+    font-size: 140%;
+    margin-top: 1%;
+    font-weight: 700
+  }
+  
+  .leaderboard .player {
+    width: 80%;
+    margin: 3% auto 0;
+    color: #fff;
+    background-color: #1f1f1f;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 150%
+  }
+  
+  .leaderboard .table-of-ranks {
+    color: #fff
+  }
+  

@@ -1,6 +1,6 @@
 import './App.css';
 // import axios from 'axios';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import Question from './pages/Question/Question';
 import NavbarComp from './components/Navbar/Navbar';
 import { Route, Routes } from "react-router-dom";
@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Background from './components/Background/Background';
+import Instructions from './pages/Instructions/Instructions';
 function App() {
   return (
     <>
@@ -23,12 +24,13 @@ function App() {
       {/* <Route path="/team" component={Webteam} />
       <Route path="/contact" component={Contact} /> */}
       <Route path="/login" element={<Login/>} />
+      <Route path="/instructions" element={<Instructions/>} />
       <Route path="/question/:ans" element={<Question/>} /> 
       {/* <Route path='/leaderboard' component = {LeaderBoard} /> */}
       </Routes>
       </div>
       <Footer />
-      <Background/>
+      {/* <Background/> */}
     
       
       </>

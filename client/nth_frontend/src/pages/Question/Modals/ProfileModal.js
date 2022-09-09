@@ -8,6 +8,7 @@ function ProfileModal(props) {
         {...props}
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        dialogClassName="modal-90w"
       >
       
         <Modal.Header closeButton>

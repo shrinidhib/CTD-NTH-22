@@ -1,15 +1,76 @@
 /* body {
     background-color: lightblue;
   } */
+.question-page{
+    color: rgb(40, 145, 202);
+    text-align: left;
+    margin: 4.5% auto;
+    text-align:center;
+}
+.view-modal{
+  padding-right: 0px;
+  padding-top: 10%;
+}
+.btn{
+  color: yellow;
+}
+.btnisunactive{
+  color: rgb(8, 8, 0);
+  background-color: yellowgreen;
+  border-color: transparent;
+  /* padding-top: 10px; */
+  /* padding: 0px; */
+  width: 56px;
+}
+.btnisactive{
+  color: rgb(0, 0, 255);
+  background-color: transparent;
+  border-color: transparent;
+  width: 56px;
+
+  /* background-color: transparent; */
+  
+}
+.modal-content{
+  /* background-color: transparent; */
+  background: rgb(0, 0, 0);
+  color: whitesmoke;
+  opacity: 0.75;
+}
+.modal-90w{
+  /* background-color: transparent; */
+  width: auto;
+  opacity: 1;
+  /* max-width: none !important; */
+}
+.modal-90wh{
+  /* background-color: transparent; */
+  width: auto;
+  /* max-width: none !important; */
+}
   #cover {
-    width: 800px;
-    height: 800px;
+    /* width: 500px;
+    height: 500px; */
     margin: 0 auto;
+    display: block;
+    /* overflow: auto; */
   }
   
   #cover > img {
     float: left;
     border: 2px solid black;
-    width: 45%;
+    width: 40%;
     margin: 1.66%;
   }
+  @media screen and (max-width:430px) {
+    .question-page {
+        /* width:100%; */
+        width: fit-content;
+    }
+}
+@media screen and (min-width:400px){
+  #cover{
+    width: fit-content;
+    /* height: 10%;   */
+  }
+}

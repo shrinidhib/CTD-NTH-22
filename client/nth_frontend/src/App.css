@@ -1,4 +1,4 @@
-body{background-color: #090a0f;}
+/* body{background-color: #090a0f;} */
 /* .rcorners2 {
   border-radius: 25px;
   border: 2px solid #73AD21;
@@ -6,10 +6,14 @@ body{background-color: #090a0f;}
   width: auto;
   height: auto;
 } */
+* {font-size: 13px;}
 .margin-br{
   height: auto;
     margin: 20px;
     border-radius: 25px;
-  border: 2px solid #73AD21;
+  border: 2px solid #ffffff;
+  display: block;
+  overflow: auto;
     /* background-color: rgba(0, 0, 0, 0.551); */
+    /* background-color: #090a0f; */
 }
