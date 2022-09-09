@@ -14,7 +14,7 @@ const Instructions = () => {
                     {/* <!-- Balloon --> */}
                     
                     <div class="nes-balloon from-left " >
-                        <p>Welcome to NTH website</p>
+                        <p>Beep Bloop Blop Bleep Boop</p>
                     </div>
                 </section>
                 <img src={r2d2} className="r2d2"></img>
@@ -23,7 +23,7 @@ const Instructions = () => {
                     {/* <i class="nes-bcrikko"></i> */}
                     {/* <!-- Balloon --> */}
                     <div class="nes-balloon from-right " >
-                        <p >Instructions</p>
+                        <p >OH MY GOODNESS!! NTH IS HERE!</p>
                     </div>
                     <br/>
                 <img src={c3po} className="c3po"></img>
