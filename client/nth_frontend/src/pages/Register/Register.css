@@ -1,125 +1,189 @@
-.register {
-    width: 90%;
-    margin: auto
+.nes-container .nes-field .col{
+  color:#cbe971 ;
+}
+.nes-container {
+  /* color:#cbe971 ; */
+  width: 500px;
+  height: 300px;
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; 
+  position: relative; */
+}
+.login-page {
+  width: fit-content;
+  /* margin: 3% 2% 1%; */
+  /* padding: 20%; */
+  /* background: #3c9b5134; */
+  /* background: #d1191934; */
+  /* border-radius: 10px; */
+  /* margin: 3% 10%; */
+  /* color: #cbe971; */
+  /* height: 800px; */
+  /* display: block ;
+  overflow: auto; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 110px;
+  /* margin: 7.3% auto; */
+  /* width: 8em */
+}
+
+.login-page h2 {
+  text-align: center;
+  margin: 2% 0 6%;
+  color:#cbe971 ;
+
+}
+
+@media screen and (max-width :400px) {
+  .login-page {
+      width: 90%;
   }
-  
-  .register img {
-    opacity: .9;
-    display: block;
-    margin: 20% 5% 0 4%
+}
+
+.login-page .field {
+  width: 100%;
+  position: relative;
+  font-size: 18px;
+  padding: 7px 30px;
+  white-space: no-wrap;
+  margin-bottom: 2%;
+}
+
+.login-page .field::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  height: 1px;
+  width: 85%;
+  padding-top: 5px;
+  border-top: 1px solid rgba(228, 228, 228, 0.87);
+}
+
+
+.login-page .field i {
+  font-size: 22px;
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  text-align: left;
+  display: inline-block;
+}
+
+
+
+.login-page input {
+  border: 1;
+  background: transparent;
+  padding: 0 5px;
+  color: inherit;
+  /* font-family: inherit; */
+  font-size: inherit;
+  height: 50px;
+  width: 100%;
+  vertical-align: auto;
+}
+
+.login-page input:focus {
+  outline: none;
+}
+
+
+
+.login-page .login-button {
+  text-align: center;
+  font-size: 120%;
+  padding-top: 20px;
+}
+
+.login-page button {
+  background-color: #292929;
+  border-style: none;
+  color: #cbe971;;
+  margin-top: 5%;
+  width: 180px;
+  padding: 4px 0;
+  border-radius: 20px;
+  transition: 0.5s ease-in;
+}
+
+.login-page button:hover {
+  background-color: #e3e971;
+  color: #141414;
+}
+
+.login-page .register {
+  width: 100%;
+  margin-top: 5% !important;
+  /* margin-bottom: 3% !important; */
+  font-size: 100%;
+  color: white;
+  text-align: center;
+}
+.login-page .register .err{
+  width: 100%;
+  margin-top: 10% !important;
+  margin-bottom: 3% !important;
+  font-size: 120%;
+  color: rgb(234, 15, 15);
+  text-align: center;
+}
+.login-page .register a {
+  text-decoration: underline;
+  color: #cbe971;
+  /* text-decoration: solid; */
+}
+
+.login-page .register a:hover {
+  color: #b18758;
+}
+
+
+.instructions {
+  /* margin: 6% auto 2%; */
+  /* color: #cbe971; */
+  height: 800px;
+  display: block ;
+  overflow: auto;
+  /* overflow-x: hidden; */
+  width: 100%;
+}
+
+.answer-1 {
+  margin-top: 1rem;
+  color: #181818;
+  cursor: default;
+  text-align: center;
+}
+
+.instructions-content {
+  margin: 2% 7%;
+  font-size: 1.05rem;
+  color: white;
+}
+
+@media screen and (max-width : 200px) {
+  .instructions {
+      margin: 15% 4% 5%;
+      /* width: 90%; */
   }
-  
-  .register-page {
-    margin: 1rem auto 0;
-    width: 70%;
-    padding: .75% 2%;
-    background: rgba(44, 44, 44, .20392156862745098);
-    border-radius: 10px;
-    color: #fff
+  .nes-container{
+      width: 10px;
   }
+  /* .instructions .nes-balloonnes-balloon{
+      margin: 1% 0 1% 8%;
+  } */
+  /* .instructions-content {
+      
+  } */
+}
+@media screen and (max-width : 400px) {
   
-  @media screen and (max-width:991px) {
-    .register img {
-      display: none
-    }
+  .nes-container{
+      width: auto;
   }
-  
-  @media screen and (max-width:1200px) {
-    .register-page {
-      width: 80%
-    }
-  }
-  
-  @media screen and (max-width:991px) {
-    .register-page {
-      width: 60%;
-      margin: 2.5rem auto
-    }
-  }
-  
-  @media screen and (max-width:642px) {
-    .register-page {
-      width: 90%
-    }
-  }
-  
-  @media screen and (max-width:550px) {
-    .register-page {
-      width: 98%;
-      padding: .75% .5%
-    }
-  }
-  
-  .register-page h4 {
-    color: #e9b171;
-    text-align: center
-  }
-  
-  .register-page .field {
-    width: 100%;
-    position: relative;
-    font-size: 18px;
-    padding: 3px 30px;
-    white-space: no-wrap;
-    margin-bottom: 3%
-  }
-  
-  .register-page .field:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    top: 100%;
-    height: 1px;
-    width: 85%;
-    padding-top: 5px;
-    border-top: 1px solid hsla(0, 0%, 89.4%, .87)
-  }
-  
-  .register-page .field label {
-    margin-bottom: 0 !important;
-    font-size: 105%
-  }
-  
-  .register-page input {
-    border: 0;
-    background: transparent;
-    padding: 0 5px;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    height: 20px;
-    width: 100%;
-    vertical-align: middle
-  }
-  
-  .register-page input:focus {
-    outline: none
-  }
-  
-  .register-page button {
-    display: block;
-    background-color: #292929;
-    border-style: none;
-    color: #fff;
-    margin: 4% auto 2%;
-    width: 180px;
-    padding: 4px 0;
-    border-radius: 20px;
-    transition: .5s ease-in;
-    font-size: 130%
-  }
-  
-  .register-page button:hover {
-    background-color: #e9b171;
-    color: #141414
-  }
-  
-  .error-text {
-    color: #e9b171;
-    text-align: left;
-    margin-left: 0 !important;
-    margin-bottom: 0 !important
-  }
-  
+}

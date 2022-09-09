@@ -1,6 +1,7 @@
 import "./About.css";
 import { Container, Row, Col } from "react-bootstrap";
 import nthlogo from "../../assets/nth-logo.png";
+import StarWars from "./starwars/StarWars";
 
 const About = () => {
   return (
@@ -11,7 +12,7 @@ const About = () => {
             <img src={nthlogo} alt="" />
           </Col>
           <Col lg={6} sm={12}>
-            <div className="about-us">
+            {/* <div className="about-us">
               <h4>&lt;about&gt;</h4>
               <div className="content">
                 <em>
@@ -33,10 +34,12 @@ const About = () => {
                 </h4>
               </div>
               <h4>&lt;/about&gt;</h4>
-            </div>
+            </div> */}
+            <StarWars/>
           </Col>
         </Row>
       </Container>
+      {/* <StarWars/> */}
     </div>
   );
 };
