@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import "./Instructions.css";
 import r2d2 from "../../assets/r2d2.png";
 import c3po from "../../assets/c3po.png";
+import { connect } from "react-redux";
 
-const Instructions = () => {
+const Instructions = (props) => {
   let [r2d2_1, setR2D2_1] = useState(false);
   let [c3po_1, setC3PO_1] = useState(false);
   let [r2d2_2, setR2D2_2] = useState(false);
@@ -44,6 +45,7 @@ const Instructions = () => {
   }, [])
   return (
     // <section class="nes-container is-dark">
+    <div className="main-instructions">
     <div className="instructions">
         <audio id="r2d21">
             {/* <source src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2-SOUND.ogg" type="audio/ogg"/> */}
@@ -143,7 +145,7 @@ const Instructions = () => {
         </section>
         {/* <section class="message-right" > */}
         <div style={{ textAlign: "center" }}>
-          <Link to={"/question/put_your_ans_here"}>
+          <Link to={props.loginStatus===true?"/question/put_your_ans_here":"/login"}>
             <button type="button" class="nes-btn is-warning">
               Hunt
             </button>
@@ -152,6 +154,7 @@ const Instructions = () => {
         </div>}
         {/* </section> */}
       </section>
+    </div>
     </div>
     // </section>
     // <div class="nes-container is-rounded is-dark">
@@ -167,5 +170,9 @@ const Instructions = () => {
     // </div>
   );
 };
-
-export default Instructions;
+const mapStateToProps =(state)=>{
+  return {
+      loginStatus:state.loginStatus
+  }
+}
+export default connect (mapStateToProps)(Instructions);

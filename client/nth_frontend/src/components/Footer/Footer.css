@@ -13,7 +13,7 @@
 }
 
 .footer {
-    position: relative;
+    position: fixed;
     margin-top: 1.6rem;
     width: 100%;
     background-color: #141414;
@@ -25,21 +25,21 @@
   @media screen and (max-width:1400px) {
     .footer {
       margin-top: 3.5rem;
-      position: relative
+      position: fixed
     }
   }
   
   @media screen and (max-width:991px) {
     .footer {
       margin-top: 2.5rem;
-      position: relative
+      position: fixed
     }
   }
   
   @media screen and (max-width:600px) {
     .footer {
       margin-top: .5rem;
-      position: relative
+      position: fixed
     }
   }
   

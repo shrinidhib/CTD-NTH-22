@@ -26,6 +26,7 @@ function App() {
       <Route path="/login" element={<Login/>} />
       <Route path="/instructions" element={<Instructions/>} />
       <Route path="/question/:ans" element={<Question/>} /> 
+      <Route path="/question" element={<Question/>} /> 
       {/* <Route path='/leaderboard' component = {LeaderBoard} /> */}
       </Routes>
       </div>

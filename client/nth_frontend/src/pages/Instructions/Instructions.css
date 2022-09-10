@@ -9,12 +9,17 @@
     margin-right: auto; 
     position: relative; */
 /* } */
+.main-instructions{
+    height: 460px;
+    display: block ;
+    overflow: auto;
+}
 .instructions {
     margin: 2% 15%;
     /* color: #cbe971; */
     /* height: 100px; */
-    display: block ;
-    overflow: auto;
+    /* display: block ;
+    overflow: auto; */
     /* overflow-x: hidden; */
     width: auto;
 }
@@ -53,6 +58,7 @@
 @media screen and (max-width : 400px) {
     .instructions {
         margin: 5% 2% 2%;
+        height: auto;
         /* width: 90%; */
     }
     /* .instructions .nes-balloonnes-balloon{
