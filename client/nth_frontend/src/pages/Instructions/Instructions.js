@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Instructions.css";
 import r2d2 from "../../assets/r2d2.png";
 import c3po from "../../assets/c3po.png";
-import c3p01 from "../../assets/c3p01.wav";
 
 const Instructions = () => {
   let [r2d2_1, setR2D2_1] = useState(false);
