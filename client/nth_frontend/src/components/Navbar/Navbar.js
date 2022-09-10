@@ -6,8 +6,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Button, NavbarBrand, NavItem } from "react-bootstrap";
-// import Link
-const NavbarComp = () => {
+import { connect } from "react-redux";
+import {change_logout} from '../../actions/loginAction'
+const NavbarComp = (props) => {
   // const location = useLocation();
 
   // if (!location.pathname.match("/question")) {
@@ -100,7 +101,7 @@ const NavbarComp = () => {
       </Container>
     </Navbar>
   </div>
-
+  console.log(localStorage.getItem("auth-token"));
   // );
   // }
   return (
@@ -135,10 +136,18 @@ const NavbarComp = () => {
               </Nav.Item>
               
               <Nav.Item>
+              {console.log(props)}
+              { 
+                props.loginStatus===false ?
+                <Nav.Link exact activeClassName="active" eventKey="link-5" href="/login" as={Link} to="/login"  className="me-3 ms-3 mt-2 mb-2 na-link"> 
+                  <button  className="me-3 ms-2 mt-2 mb-2 hunt-button">Login</button></Nav.Link> 
+                :
               <Nav.Link exact
-                activeClassName="active" eventKey="link-5" href="/login" as={Link} to="/login"  className="me-3 ms-3 mt-2 mb-2 na-link"> 
-                  <button  className="me-3 ms-2 mt-2 mb-2 hunt-button">Login</button></Nav.Link>
+                activeClassName="active" eventKey="link-5" href="/" as={Link} to="/"  className="me-3 ms-3 mt-2 mb-2 na-link"> 
+                  <button  className="me-3 ms-2 mt-2 mb-2 hunt-button" onClick={()=>props.change_longinStatus()}>Logout</button></Nav.Link>
+              }
               </Nav.Item>
+              
             </Nav>
             {/* {true ? (
               <Link
@@ -159,7 +168,16 @@ const NavbarComp = () => {
       </div>
   )
 }
-
-export default NavbarComp;
+const mapStateToProps =(state)=>{
+  return {
+      loginStatus:state.loginStatus
+  }
+}
+const mapDispatchToProps=(dispatch)=>{
+  return{
+      change_longinStatus: ()=>{ dispatch(change_logout()) }
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(NavbarComp);
 
 

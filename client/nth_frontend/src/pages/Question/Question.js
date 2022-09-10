@@ -7,6 +7,9 @@ import HintModal from "./Modals/HintModal";
 import { Container, Row, Col } from "react-bootstrap";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+
 
 // import key from '../../assets/keys.png'
 const Question = (props) => {
@@ -65,6 +68,8 @@ const Question = (props) => {
         redirectAns();
       }, []);
   return (
+    <div>
+    {(props.loginStatus)===true ?
     <div className="question-page">
     <Container fluid>
         <Row className="info">
@@ -117,9 +122,19 @@ const Question = (props) => {
         </Row>
     </Container>
     </div>
+    :
+      
+      <h1 style={{textAlign:'center',color:'red'}}>LOGIN FIRST</h1>
+      
+    }
+    </div>
     
   );
 };
-
-export default Question;
+const mapStateToProps =(state)=>{
+  return {
+      loginStatus:state.loginStatus
+  }
+}
+export default connect(mapStateToProps)(Question);
     

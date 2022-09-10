@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import React from "react";
-const LoginForm = () => {
+import { connect } from "react-redux";
+import { change_login } from "../../actions/loginAction";
+const LoginForm = (props) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    console.log(props);
     let navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -30,6 +33,7 @@ const LoginForm = () => {
                 console.log(data)
                 localStorage.setItem("auth-token", data.auth_token)
                 localStorage.setItem("username", username)
+                props.change_longinStatus();
                 navigate("/instructions");
                 // navigate("/question/put_your_ans_here");
             })
@@ -39,8 +43,11 @@ const LoginForm = () => {
             })
     };
     return (
-        <div className="login-page">
-
+        <div>
+        {props.loginStatus===false
+        
+            ?
+            <div className="login-page">
             <form onSubmit={handleSubmit}>
                 <div >
                     {/* <div> */}
@@ -55,7 +62,8 @@ const LoginForm = () => {
                                     onChange={(e) => setUsername(e.target.value)}
                                     type="text"
                                     placeholder="type your username"
-                                    className="login-form-input"
+                                    className="login-form-input" 
+                                    required
                                 />
                             </div>
                             <div class="nes-field ">
@@ -65,7 +73,9 @@ const LoginForm = () => {
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
                                     type="password"
-                                    placeholder="type your password" />
+                                    placeholder="type your password" 
+                                    required
+                                    />
                             </div>
                             <div className="login-button">
                         <button type="submit">
@@ -87,8 +97,21 @@ const LoginForm = () => {
                     </p>
                 </div>
             </form>
+        </div>    
+            :
+            <Navigate to={'/instructions'}></Navigate>
+        }
         </div>
     );
 };
-
-export default LoginForm;
+const mapStateToProps =(state)=>{
+    return {
+        loginStatus:state.loginStatus
+    }
+}
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        change_longinStatus: ()=>{ dispatch(change_login()) }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(LoginForm);
