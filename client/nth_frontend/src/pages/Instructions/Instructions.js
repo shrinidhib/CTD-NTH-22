@@ -45,7 +45,6 @@ const Instructions = (props) => {
   }, [])
   return (
     // <section class="nes-container is-dark">
-    <div className="main-instructions">
     <div className="instructions">
         <audio id="r2d21">
             {/* <source src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2-SOUND.ogg" type="audio/ogg"/> */}
@@ -154,7 +153,7 @@ const Instructions = (props) => {
         </div>}
         {/* </section> */}
       </section>
-    </div>
+    
     </div>
     // </section>
     // <div class="nes-container is-rounded is-dark">
