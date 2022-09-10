@@ -16,7 +16,7 @@
     display: block ;
     overflow: auto;
     /* overflow-x: hidden; */
-    /* width: 100%; */
+    width: auto;
 }
 .r2d2{
     width:60px;
