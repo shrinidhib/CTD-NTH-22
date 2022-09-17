@@ -8,7 +8,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
 
 
 // import key from '../../assets/keys.png'
@@ -70,7 +69,7 @@ const Question = (props) => {
   return (
     <div>
     {(props.loginStatus)===true ?
-    <div className="question-page">
+    <div className="question-page ">
     <Container fluid>
         <Row className="info">
           <Col lg={11} sm={12}>
@@ -83,14 +82,16 @@ const Question = (props) => {
           <img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K' class="nes-avatar is-rounded is-large"  ></img>
           Remaining:{data?.keys}
           </p>
-          <div id='cover'>
+          <div className="ms-5">
+          <div className="cover" >
           <img src={data?.img1}></img>
           <img src={data?.img2}></img>
           <img src="https://imgur.com/eog5eFZ.gif"></img>
           <img src="https://imgur.com/nUJVBmO.jpg"></img>      
           </div>
+          </div>
           </Col>
-          <Col lg={1} sm={12}>
+          <Col >
           <div class="view-modal">
             {/* {console.log(data)} */}
             {console.log(id)}
