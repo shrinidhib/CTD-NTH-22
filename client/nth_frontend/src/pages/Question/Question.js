@@ -8,7 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { connect } from "react-redux";
-
+import ctd from '../../assets/ctd.png';
 
 // import key from '../../assets/keys.png'
 const Question = (props) => {
@@ -70,9 +70,31 @@ const Question = (props) => {
     <div>
     {(props.loginStatus)===true ?
     <div className="question-page ">
+    <div style={{paddingTop:'200px',position:'fixed'}}>
+    <div class="view-sidebar">
+    <img src={ctd} style={{width:'50px',heigh:'50px'}}></img>
+              <a href="https://www.instagram.com/pisbcredenz/" target="_blank">
+                {/* <i className="fab fa-instagram  instagram"></i> */}
+                <i class="nes-icon instagram mt-2 "></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/pisbieee/"
+                target="_blank"
+              >
+                {/* <i className="fab fa-linkedin-in  linkedin"></i> */}
+                <i class="nes-icon linkedin  mt-1"></i>
+              </a>
+              <a href="https://www.facebook.com/pictieee/" target="_blank">
+                {/* <i className="fab fa-facebook-f  facebook"></i> */}
+                <i class="nes-icon facebook mt-1"></i>
+              </a>
+              </div></div>
     <Container fluid>
         <Row className="info">
-          <Col lg={11} sm={12}>
+          <Col>
+          
+          </Col>
+          <Col lg={10} sm={12}>
           
           <h1>Level:{data?.level}</h1>
           {/* <i class="fa-solid fa-key" class="nes-avatar is-rounded is-medium"></i> */}
@@ -119,8 +141,10 @@ const Question = (props) => {
               :<></>
             }
           </div>        
+              
           </Col>
         </Row>
+        
     </Container>
     </div>
     :

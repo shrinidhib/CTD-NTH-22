@@ -9,6 +9,19 @@
     margin: 0.5% auto;
     text-align:center;
 }
+.view-sidebar{
+  /* padding-left: 0px; */
+  /* padding-top: 200px; */
+  /* right: 2px; */
+    /* left: 10px; */
+    position: fixed;
+    display: block;
+    /* color: rgb(43, 43, 43); */
+    background-color: #101013;
+    padding: 3px;
+    width: 60px;
+    border-radius: 4px;
+}
 .view-modal{
   padding-right: 0px;
   padding-top: 10%;
@@ -79,7 +92,17 @@
   .cover{
     /* width: 340px; */
     width: fit-content;
-    height: 1%;  
+    height: 0.5%;  
+  }
+  .cover > img{
+    height: 150px;
+  }
+  .view-sidebar{
+    width: 50px;
+  }
+  .nes-icon {
+    width: 10px;
+    height: 10px;
   }
 }
 
