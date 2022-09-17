@@ -6,6 +6,7 @@ import ctd from "../../assets/ctd.png"
 import { connect } from "react-redux";
 const Home = (props) => {
   return (
+    <div className="nth-adjust">
     <div className="nth-home">
       <div  class="night">
                             <div  class="shooting_star"></div>
@@ -43,7 +44,7 @@ const Home = (props) => {
             <button class="nes-btn is-primary">Button 1</button>
           </div> */}
       </div>
-    
+      </div>
   );
 };
 

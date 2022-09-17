@@ -9,24 +9,29 @@
     margin-right: auto; 
     position: relative; */
 /* } */
+/* .adjust{
+    min-height: 10vh;
+    height: 550px;
+} */
 .instructions {
     margin: 2% 15%;
     /* color: #cbe971; */
-    /* height: fit-content; */
-    display: block ;
-    overflow: auto;
+    height: fit-content;
+    /* display: block ;
+    overflow: auto; */
     /* overflow-x: hidden; */
     width: auto;
-    /* height: fit-content; */
+    /* min-height: 10vh; */
+    /* height: 400px; */
 }
 
 .r2d2{
-    width:60px;
-    height:40px;
+    width:50px;
+    height:30px;
 }
 .c3po{
-    width:60px;
-    height:40px;
+    width:50px;
+    height:30px;
 }
 /* .answer-1 {
     margin-top: 1rem;
@@ -44,14 +49,20 @@
     width: 0px;
 } */
 .nes-balloon.inst{
-    width: auto; height: auto;
-    background-color: transparent;color:white
+    width: auto; 
+    height: auto;
+    background-color: transparent;
+    color:white;
+    
+    
 }
 .inst-text{
     color: rgb(255, 255, 255);
-    display: block ;
-    overflow: auto;
+    /* display: block ;
+    overflow: auto; */
+    
 }
+
 @media screen and (max-width : 400px) {
     .instructions {
         margin: 5% 2% 2%;
@@ -65,45 +76,41 @@
     } */
 }
 
-/* .instructions-content {
-    margin: 2% 7%;
-    font-size: 1.05rem;
-    color: white;
-} */
-
-/* @media screen and (max-width : 200px) {
-    .instructions {
-        margin: 15% 4% 5%;
-        width: 90%;
-    }
-    .nes-container{
-        width: 10px;
-    }
-    .instructions .nes-balloonnes-balloon{
-        margin: 1% 0 1% 8%;
-    }
-    .instructions-content {
-        
-    }
-}*/
-@media screen and (max-width : 500px) {
+@media screen and (max-width : 500px)  {
     /* .nes-balloon{
         width: 95%;
     } */
     /* .message-left.inst{
         width: 100%;
     } */
-    .nes-balloon.inst{
+    /* .nes-balloon.inst{
         width: 94%;
-    }
-    .inst-text{
+    } */
+    /* .inst-text{
     height: 300px;
-    /* font-size: 1px; */
-        /* width: auto; */
-    }
+    font-size: 1px;
+        width: auto;
+    } */
     .inst1-text{
         /* height: 300px; */
-        font-size: 9px;
+        font-size: 6px;
     
         }
+        .msg{
+            font-size: 6px;
+            /* color: red; */
+        }    
 }
+/* @media screen and (min-height:840px) {
+   
+    .msg{
+        font-size: 6px;
+        
+    }
+    
+    .inst1-text{
+        
+        font-size: 6px;
+    
+        }
+} */

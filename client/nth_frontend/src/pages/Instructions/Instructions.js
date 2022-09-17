@@ -45,6 +45,7 @@ const Instructions = (props) => {
   }, [])
   return (
     // <section class="nes-container is-dark">
+    <div className="adjust">
     <div className="instructions">
         <audio id="r2d21">
             {/* <source src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2-SOUND.ogg" type="audio/ogg"/> */}
@@ -66,7 +67,7 @@ const Instructions = (props) => {
         {r2d2_1 && (<section class="message-left">
 
           <div class="nes-balloon from-left ">
-            <p>Beep Bloop Blop Bleep Boop</p>
+            <p className="msg">Beep Bloop Blop Bleep Boop</p>
           </div>
         </section>)}
         {r2d2_1 && <img src={r2d2} className="r2d2"></img>}
@@ -75,7 +76,7 @@ const Instructions = (props) => {
           {/* <i class="nes-bcrikko"></i> */}
           {/* <!-- Balloon --> */}
           <div class="nes-balloon from-right ">
-            <p>OH MY GOODNESS!! NTH IS HERE!</p>
+            <p className="msg" >OH MY GOODNESS!! NTH IS HERE!</p>
           </div>
           <br />
           <img src={c3po} className="c3po"></img>
@@ -86,7 +87,7 @@ const Instructions = (props) => {
         {r2d2_2 && (<section class="message-left">
 
           <div class="nes-balloon from-left ">
-            <p>Bloop Blop Bleep Bleep Bloooop!!!!</p>
+            <p className="msg">Bloop Blop Bleep Bleep Bloooop!!!!</p>
           </div>
         </section>)}
         {r2d2_2 && <img src={r2d2} className="r2d2"></img>}
@@ -95,8 +96,9 @@ const Instructions = (props) => {
           {/* <i class="nes-bcrikko"></i> */}
           {/* <!-- Balloon --> */}
           <div class="nes-balloon from-right ">
-            <p>I know its hard!! But that's the fun Part!</p><br/>
-            <p>Just follow these Instructions.</p>
+            <p className="msg">I know its hard!! But that's the fun Part! <br/>Just follow these Instructions.</p>
+            
+            {/* <p className="msg"></p> */}
           </div>
           <br />
           <img src={c3po} className="c3po"></img>
@@ -142,7 +144,6 @@ const Instructions = (props) => {
             </ol>
           </div>
         </section>
-        {/* <section class="message-right" > */}
         <div style={{ textAlign: "center" }}>
           <Link to={props.loginStatus===true?"/question/put_your_ans_here":"/login"}>
             <button type="button" class="nes-btn is-warning">
@@ -154,7 +155,7 @@ const Instructions = (props) => {
         {/* </section> */}
       </section>
     
-    </div>
+    </div></div>
     // </section>
     // <div class="nes-container is-rounded is-dark">
     // <div className="instructions">
