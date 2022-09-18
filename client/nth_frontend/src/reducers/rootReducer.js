@@ -15,7 +15,7 @@ const rootReducer=(state=initState,action)=>{
         }
     }
     else if(action.type==='CHANGE_LOGOUT'){
-        localStorage.clear();
+        localStorage.removeItem("auth-token");
         return {
             loginStatus: false
         }

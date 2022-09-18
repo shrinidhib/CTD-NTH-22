@@ -64,19 +64,18 @@ const Question = (props) => {
                     if(temp.promts==="Wrong Answer!"){
                       props.toast.toast.error(temp.promts,{autoClose:4000})
                     }
-                    else if(temp.promts==="Correct Answer!"){
+                    else if(temp.promts.split()[0]==="Congratulations!!"){
                       props.toast.toast.success(temp.promts,{autoClose:6000})
                     }
                     else{
                       props.toast.toast.info(temp.promts,{autoClose:6000})
                     }
                 }
-                else{
-                    props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
-                }
+                // else{
+                //     props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
+                // }
                 
                 
-
                 setData(temp);
                 
               })
@@ -129,9 +128,10 @@ const Question = (props) => {
           {/* <img src="https://png.pngtree.com/png-vector/20220307/ourmid/pngtree-icons-for-isometric-game-elements-colorful-isolated-vector-illustration-of-gold-png-image_4420764.png" ></img> */}
           
           <p>
+          {/* <img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K' 
+          class="nes-avatar is-rounded is-large"  > */}
           <img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K' 
           class="nes-avatar is-rounded is-large"  >
-            
           </img>
           Remaining:{data?.keys}
           </p>
@@ -168,7 +168,7 @@ const Question = (props) => {
             { 
               id===1?<ContactModal show={id===1?true:false} onHide={() => closeModal()} />
               :id===2?<ProfileModal show={id===2?true:false} onHide={()=>closeModal()} data={{username:data.username,phone:data.phone,current_level:data.current_level}}  />
-              :id===3?<HintModal show={id===3?true:false} onHide={() => closeModal()} data={{hints:data.hints,paidHintTaken:data.paidHintTaken,keys:data.keys,paidHint:data.paidHint,dataUpdate:fetchData}} toast={props.toast} />
+              :id===3?<HintModal show={id===3?true:false} onHide={() => closeModal()} data={{hints:data.hints,paidHintTaken:data.paidHintTaken,keys:data.keys,paidHint:data.paidHint,dataUpdate:fetchData}} toast={props.toast} id={id}/>
               :<></>
             }
           </div>        

@@ -7,6 +7,7 @@ function HintModal(props) {
   const [idm, setIdm] = useState(-1);
   const closeModalm = () => {
     setIdm(3);
+    props.id=3;
   }
   const [extraHints, setextraHints] = useState(
     localStorage.getItem("extra-hints")
@@ -17,7 +18,7 @@ function HintModal(props) {
     <div>
       {
         idm === 4 ?
-          <BuyHintModal show={idm === 4 ? true : false} onHide={() => closeModalm()} data={props.data} toast={props.toast}/>
+          <BuyHintModal show={idm === 4 ? true : false} onHide={() => closeModalm()} {...props} />
           :
           <Modal
             {...props}
@@ -31,7 +32,7 @@ function HintModal(props) {
             <Modal.Body>
               {console.log(props.data.paidHintTaken && extraHints)}
 
-
+              {console.log(localStorage.getItem("extra-hints"))}
               <p>Hints:{props.data.hints}</p>
               {props.data.paidHintTaken && extraHints ? (
                 <p>Extra Hints:{extraHints}</p>
@@ -58,7 +59,7 @@ function HintModal(props) {
                   // onClick={fetchHint}  
                   onClick={() => setIdm(4)}
                   // class={props.data.paidHintTaken?"btn btn-primary disabled":"btn btn-primary active"}>
-                  class="btn btn-primary " style={{color:'white'}}>
+                  class="btn btn-primary "style={{color:'white'}}>
                   Buy Hints
                 </button>
                 -5x<img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K' class="nes-avatar is-rounded is-medium"  ></img>

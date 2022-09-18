@@ -194,7 +194,7 @@ const Instructions = (props) => {
                       : "/login"
                   }
                 >
-                  <button type="button" class="nes-btn is-warning" >
+                  <button type="button" class="nes-btn is-warning" onClick={()=>props.toast.toast.info('Put answer in url after question/ ',{autoClose:6000})}>
                     Hunt
                   </button>
                 </Link>

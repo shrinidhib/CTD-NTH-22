@@ -31,8 +31,9 @@ function BuyHintModal(props) {
               console.log(res.extraHint);
               localStorage.setItem("extra-hints", res.extraHint);
             //   setextraHints(localStorage.getItem("extra-hints"));
-              props.onHide();
-              props.toast.toast.success('Extra Hints Are Available!');
+            props.toast.toast.success('Extra Hints Are Available!');  
+            props.onHide();
+              
             } else {
               console.log(res.status);
               props.toast.toast.error(res.status);
