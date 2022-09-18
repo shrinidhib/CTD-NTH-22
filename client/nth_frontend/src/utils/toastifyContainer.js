@@ -12,7 +12,7 @@ export const ToastUtils = () => {
                 draggable
                 pauseOnHover
                 theme="dark"
-                
+                toastStyle={{ backgroundColor: "black" }}    
             />
         </>
     )
