@@ -61,7 +61,7 @@ class QuestionDetail(generics.RetrieveAPIView):
                 que = get_object_or_404(queryset, level = user.current_level)
             
             # Keyword Check for prompts
-            elif user_ans in json.loads(que.keywords):
+            elif user_ans in que.keywords.split():
                 responses = ["You are close.", "On the rigth Track.", "Keep going, you are on rigth Path.", "Almost There!"]
                 serializer = QuestionSerializer(que)
                 print(serializer.data)
