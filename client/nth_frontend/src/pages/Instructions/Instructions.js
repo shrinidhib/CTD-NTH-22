@@ -148,6 +148,7 @@ const Instructions = (props) => {
 
           {inst && (
             <div>
+              <h1 style={{textAlign:"center",color:"red"}}>INSTRUCTIONS</h1>
               <section class="message-left">
                 <div class="nes-balloon inst">
                   <ol className="inst-text ms-2">
@@ -194,7 +195,10 @@ const Instructions = (props) => {
                       : "/login"
                   }
                 >
-                  <button type="button" class="nes-btn is-warning" onClick={()=>props.toast.toast.info('Put answer in url after question/ ',{autoClose:6000})}>
+                  <button type="button" class="nes-btn is-warning" onClick={()=>{
+                    props.loginStatus===true?props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
+                    : props.toast.toast.info('Login First ',{autoClose:6000})
+                    }}>
                     Hunt
                   </button>
                 </Link>

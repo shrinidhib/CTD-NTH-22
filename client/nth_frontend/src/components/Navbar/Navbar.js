@@ -143,8 +143,8 @@ const NavbarComp = (props) => {
                   <button  className="me-3 ms-2 mt-2 mb-2 hunt-button">Login</button></Nav.Link> 
                 :
               <Nav.Link exact
-                activeClassName="active" eventKey="link-5" href="/" as={Link} to="/"  className="me-3 ms-3 mt-2 mb-2 na-link"> 
-                  <button  className="me-3 ms-2 mt-2 mb-2 hunt-button" onClick={()=>{props.toast.toast.success("Logged Out!");props.change_longinStatus()}}>Logout</button></Nav.Link>
+                activeClassName="active" eventKey="link-5" href="/" as={Link} to="/" onClick={()=>{props.toast.toast.success("Logged Out!");props.change_longinStatus()}} className="me-3 ms-3 mt-2 mb-2 na-link"> 
+                  <button  className="me-3 ms-2 mt-2 mb-2 hunt-button"  >Logout</button></Nav.Link>
               }
               </Nav.Item>
               

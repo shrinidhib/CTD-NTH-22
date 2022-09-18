@@ -30,10 +30,10 @@
   /* margin: 7.3% auto; */
   /* width: 8em */
 }
-.col{
-  /* font-size: 5px; */
+/* .col{
+  font-size: 5px;
 
-}
+} */
 .register-page h2 {
   text-align: center;
   margin: 2% 0 6%;
@@ -183,8 +183,8 @@
   .col{
     font-size: 10px;
   }
-  .nes-container.is-dark.with-title{
-    /* height: 10px; */
-    /* font-size: 10px; */
-  }
+  /* .nes-container.is-dark.with-title{
+    height: 10px; */
+    /* font-size: 10px;
+  } */
 }

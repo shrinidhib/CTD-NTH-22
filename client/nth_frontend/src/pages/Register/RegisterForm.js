@@ -81,9 +81,10 @@ const RegisterForm = (props) => {
                                     name="phone"
                                     value={phone}
                                     onChange={(e) => setPhone(parseInt(e.target.value))}
-                                    type="number"
+                                    type="tel"
                                     placeholder="type your phone number"
                                     className="login-form-input"
+                                    // minLength={8}
                                     required
                                 />
                             </div>

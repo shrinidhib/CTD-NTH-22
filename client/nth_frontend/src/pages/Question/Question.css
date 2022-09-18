@@ -1,7 +1,10 @@
 /* body {
     background-color: lightblue;
   } */
-
+  .margin-br{
+    /* height: 100vh; */
+    height: 86vh;
+  }
   .nes-avatar {
     animation: rotation 2s ease-in-out infinite alternate;
     
