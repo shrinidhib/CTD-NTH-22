@@ -66,7 +66,7 @@ class QuestionDetail(generics.RetrieveAPIView):
                 serializer = QuestionSerializer(que)
                 print(serializer.data)
                 data = serializer.data
-                data["status"] = random.choice(responses)
+                data["promts"] = random.choice(responses)
                 return Response(data)
 
             serializer = QuestionSerializer(que)
