@@ -50,7 +50,7 @@ class QuestionDetail(generics.RetrieveAPIView):
             user = request.user
             queryset = Question.objects.all()
             que = get_object_or_404(queryset, level = user.current_level)
-
+            isCorrect = False
             # Evaluate The Answer
             if que.answer == user_ans:
                 user.keys += user.current_level
@@ -58,6 +58,7 @@ class QuestionDetail(generics.RetrieveAPIView):
                 user.paidHintTaken = False
                 print(user.current_level,"level")
                 user.save()
+                isCorrect = True
                 que = get_object_or_404(queryset, level = user.current_level)
             
             # Keyword Check for prompts
@@ -70,6 +71,11 @@ class QuestionDetail(generics.RetrieveAPIView):
                 return Response(data)
 
             serializer = QuestionSerializer(que)
+            data = serializer.data
+            if isCorrect:
+                data["promts"] = f"Congratulations!! Advancing to level {user.current_level}."
+            else:
+                data["promts"] = f"Wrong Answer!"
             return Response(serializer.data)
         error_dict = {"status":"Not Authenticated"}
         return Response(json.dumps(error_dict))
