@@ -23,6 +23,7 @@ const Question = (props) => {
     }
     const closeModal=()=>{
       setId(-1);
+      console.log('hit');
     }
     const redirectAns = () => {
       if (ans !== "put_your_ans_here") {
@@ -101,7 +102,10 @@ const Question = (props) => {
           {/* <img src="https://png.pngtree.com/png-vector/20220307/ourmid/pngtree-icons-for-isometric-game-elements-colorful-isolated-vector-illustration-of-gold-png-image_4420764.png" ></img> */}
           
           <p>
-          <img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K' class="nes-avatar is-rounded is-large"  ></img>
+          <img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K' 
+          class="nes-avatar is-rounded is-large"  >
+            
+          </img>
           Remaining:{data?.keys}
           </p>
           <div className="ms-5">
@@ -121,7 +125,7 @@ const Question = (props) => {
               <i class="fas fa-trophy fa-2x side-icons"></i>
               </a> */}
             <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Hints</strong></Tooltip> }>
-            <button onClick={()=>openModal(3)} class={id===3?"btnisactive mt-5 ms-2":"btnisunactive mt-5 ms-2 "} ><i class="fas fa-lightbulb-on fa-2x side-icons"></i></button>
+            <button onClick={()=>openModal(3)} class={id===3?"btnisactive ms-2":"btnisunactive ms-2 "} ><i class="fas fa-lightbulb-on fa-2x side-icons"></i></button>
             </OverlayTrigger>
            
             <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Profile</strong></Tooltip> }>
