@@ -4,8 +4,15 @@
 
   .nes-avatar {
     animation: rotation 2s ease-in-out infinite alternate;
+    
     /* animation: anim-glow 2s ease-in-out infinite alternate; */
     /* animation: glow 1s ease-in-out infinite alternate; */
+}
+.nes-avatar:hover{
+  box-shadow: 0px 0px 5px yellow;
+  /* width: 60px; */
+  /* filter: brightness(22);
+  color: yellow; */
 }
 @keyframes rotation {
     from {
