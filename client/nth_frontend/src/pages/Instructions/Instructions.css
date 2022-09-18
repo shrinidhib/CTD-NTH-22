@@ -114,3 +114,16 @@
     
         }
 } */
+
+.skip{
+    animation: blinker 1.5s linear infinite;
+    color: red;
+    position:absolute;
+    bottom: 1;
+
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
