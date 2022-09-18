@@ -11,11 +11,13 @@ import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Background from './components/Background/Background';
 import Instructions from './pages/Instructions/Instructions';
+import toast, { ToastUtils } from "./utils/toastifyContainer";
 function App() {
   return (
     <>
-      
-      <NavbarComp />
+      <ToastUtils />
+
+      <NavbarComp toast={{ container: <ToastUtils />, toast }}/>
       <div className='margin-br'>
       <Routes>
       <Route path="/" exact element={<Home/>}/>
@@ -23,15 +25,15 @@ function App() {
       <Route path="/about" element={<About/>} />
       {/* <Route path="/team" component={Webteam} />
       <Route path="/contact" component={Contact} /> */}
-      <Route path="/login" element={<Login/>} />
-      <Route path="/instructions" element={<Instructions/>} />
-      <Route path="/question/:ans" element={<Question/>} /> 
-      <Route path="/question" element={<Question/>} /> 
+      <Route path="/login" element={<Login toast={{ container: <ToastUtils />, toast }} />} />
+      <Route path="/instructions" element={<Instructions toast={{ container: <ToastUtils />, toast }} />} />
+      <Route path="/question/:ans" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
+      <Route path="/question" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       {/* <Route path='/leaderboard' component = {LeaderBoard} /> */}
       </Routes>
       </div>
       <Footer />
-      <Background/>
+      {/* <Background/> */}
     
       
       </>

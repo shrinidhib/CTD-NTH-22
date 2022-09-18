@@ -204,7 +204,7 @@ Version: 1.0
   .star-wars-intro .title-content {
     position: absolute;
     top: 100%;
-    animation: scroll 100s linear 6s forwards;
+    /* animation: scroll 100s linear 6s forwards; */
   }
   .star-wars-intro .main-logo{
     top: 1vh;

@@ -5,6 +5,12 @@
     color: rgb(176, 46, 46);
     text-align: left;
     margin: 4.5% auto;
+    min-height: 70vh;
+    
+        align-items: center;
+      display: flex;
+      justify-content: center;
+    
 }
 /* .about-page .info{
     margin: 3% auto;
@@ -21,6 +27,9 @@
     }
     .about-page{
         /* height: 400px; */
+    /* min-height: 66vh; */
+        /* min-height: 85vh; */
+
     }
 }
 

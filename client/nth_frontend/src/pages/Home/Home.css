@@ -4,8 +4,20 @@
     color: rgb(146, 62, 62);
     /* margin: 1.1% auto; */
     font-size: small;
-    background-color:  hsla(0,0%,100%,.05);
+    /* background-color:  hsla(0,0%,100%,.05); */
+}
+.nth-adjust{
+    min-height: 84vh;
+    align-items: center;
+  display: flex;
+  justify-content: center;
+    /* position: absolute;
+    top:16vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
     
+    margin: auto; */
 }
 /* .font-link {
     font-family: 'Press+Start+2P';
@@ -33,6 +45,10 @@
         width: 90%;
     }
     
+    /* .nth-home{
+        height: fit-page;
+        max-height: 100vh;
+    } */
 }
 
 
@@ -71,15 +87,15 @@
   } */
   
   .night {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    width: 30%;
+    height: 50%;
     transform: rotateZ(70deg);
   }
   
   .shooting_star {
     position: absolute;
-    left: 50%;
+    left: 30%;
     top: 50%;
     height: 2px;
     background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
@@ -389,5 +405,10 @@
     }
     100% {
       transform: rotate(405deg);
+    }
+  }
+  @media screen and (max-width: 700px){
+    .night{
+        width: 100%;
     }
   }

@@ -7,7 +7,8 @@ import { Provider } from 'react-redux';
 // import CollapsibleExample from './App';
 import { BrowserRouter } from 'react-router-dom';
 import rootReducer from './reducers/rootReducer';
-// import cre from 'redux'
+import "react-toastify/dist/ReactToastify.css";
+
 const store =createStore(rootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
