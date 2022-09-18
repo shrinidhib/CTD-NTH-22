@@ -2,7 +2,21 @@
     background-color: lightblue;
   } */
 
-
+  .nes-avatar {
+    animation: rotation 2s ease-in-out infinite alternate;
+    /* animation: anim-glow 2s ease-in-out infinite alternate; */
+    /* animation: glow 1s ease-in-out infinite alternate; */
+}
+@keyframes rotation {
+    from {
+        transform: rotateY(0deg);     
+        text-shadow: 0 0 10px yellow, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1F09, 0 0 70px #FF1F09, 0 0 80px #FF1F09, 0 0 100px #FF1F09, 0 0 150px #FF1F09;
+    }
+    to {
+        transform: rotateY(359deg);
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1F09, 0 0 35px #FF1F09;
+    }
+}
 .question-page{
     color: rgb(40, 145, 202);
     /* text-align: left; */
@@ -28,7 +42,9 @@
 }
 .view-modal{
   padding-right: 0px;
-  padding-top: 10%;
+  /* padding-top: 10%; */
+  padding-top: 180px;
+
 }
 .btn{
   color: yellow;
@@ -118,6 +134,10 @@
   }
   .ctd-bar{
     width: 40px;
+  }
+  .view-modal{
+    padding-top: 10%;
+
   }
 }
 
