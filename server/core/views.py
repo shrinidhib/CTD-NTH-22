@@ -76,7 +76,7 @@ class QuestionDetail(generics.RetrieveAPIView):
                 data["promts"] = f"Congratulations!! Advancing to level {user.current_level}."
             else:
                 data["promts"] = f"Wrong Answer!"
-            return Response(serializer.data)
+            return Response(data)
         error_dict = {"status":"Not Authenticated"}
         return Response(json.dumps(error_dict))
 
