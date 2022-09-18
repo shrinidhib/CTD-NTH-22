@@ -61,10 +61,10 @@ const Question = (props) => {
 
                 if(ans !== "put_your_ans_here")
                 {
-                    if(temp.promts==="Wrong Answer"){
+                    if(temp.promts==="Wrong Answer!"){
                       props.toast.toast.error(temp.promts,{autoClose:4000})
                     }
-                    else if(temp.promts==="Correct Answer"){
+                    else if(temp.promts==="Correct Answer!"){
                       props.toast.toast.success(temp.promts,{autoClose:6000})
                     }
                     else{
