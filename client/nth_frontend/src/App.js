@@ -26,7 +26,7 @@ function App() {
       {/* <Route path="/team" component={Webteam} />
       <Route path="/contact" component={Contact} /> */}
       <Route path="/login" element={<Login toast={{ container: <ToastUtils />, toast }} />} />
-      <Route path="/instructions" element={<Instructions/>} />
+      <Route path="/instructions" element={<Instructions toast={{ container: <ToastUtils />, toast }} />} />
       <Route path="/question/:ans" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/question" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       {/* <Route path='/leaderboard' component = {LeaderBoard} /> */}

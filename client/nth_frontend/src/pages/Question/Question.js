@@ -55,7 +55,30 @@ const Question = (props) => {
                 console.log(res);
                 temp={...temp,...res}
                 console.log(temp);
+                
+                // console.log('promts are ',data.promts);
+                // console.log(temp.level,data.level);
+
+                if(ans !== "put_your_ans_here")
+                {
+                    if(temp.promts==="Wrong Answer"){
+                      props.toast.toast.error(temp.promts,{autoClose:4000})
+                    }
+                    else if(temp.promts==="Correct Answer"){
+                      props.toast.toast.success(temp.promts,{autoClose:6000})
+                    }
+                    else{
+                      props.toast.toast.info(temp.promts,{autoClose:6000})
+                    }
+                }
+                else{
+                    props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
+                }
+                
+                
+
                 setData(temp);
+                
               })
               .catch((err)=>console.log(err));
             
@@ -66,12 +89,14 @@ const Question = (props) => {
     useEffect(() => {
         fetchData();
         redirectAns();
-      }, []);
+        
+    }, []);
   return (
     <div>
-    {(props.loginStatus)===true ?
-    <div className="question-page ">
+    {(props.loginStatus)===true 
+    ?
     
+    <div className="question-page ">
     <div style={{paddingTop:'200px',position:'fixed'}}>
     <div class="view-sidebar">
     <img src={ctd} className="ctd-bar"></img>
@@ -97,6 +122,7 @@ const Question = (props) => {
           
           </Col>
           <Col lg={10} sm={12}>
+          {console.log('promts are ',data.promts)}
           
           <h1>Level:{data?.level}</h1>
           {/* <i class="fa-solid fa-key" class="nes-avatar is-rounded is-medium"></i> */}

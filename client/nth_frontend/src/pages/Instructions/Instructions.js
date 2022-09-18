@@ -194,7 +194,7 @@ const Instructions = (props) => {
                       : "/login"
                   }
                 >
-                  <button type="button" class="nes-btn is-warning">
+                  <button type="button" class="nes-btn is-warning" >
                     Hunt
                   </button>
                 </Link>

@@ -8,7 +8,7 @@ const Home = (props) => {
   return (
     <div className="nth-adjust">
     <div className="nth-home">
-      <div  class="night">
+      {/* <div  class="night">
                             <div  class="shooting_star"></div>
                             <div  class="shooting_star"></div>
                             <div  class="shooting_star"></div>
@@ -29,7 +29,7 @@ const Home = (props) => {
                             <div  class="shooting_star"></div>
                             <div  class="shooting_star"></div>
                             <div  class="shooting_star"></div>
-      </div>
+      </div> */}
           <img src={nthlogo} ></img>
           <h3>Network Treasure Hunt</h3>
           <h5>Decrypt the Encrypted</h5>
