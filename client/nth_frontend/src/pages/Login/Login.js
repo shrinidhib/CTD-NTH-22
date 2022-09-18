@@ -2,7 +2,10 @@
 import "./Login.css";
 import LoginForm from "./LoginForm";
 import React from "react";
-const Login = () => {
+const Login = (props) => {
+    
+    
+
     return (
         <div>
             {/* <Container fluid>
@@ -15,7 +18,7 @@ const Login = () => {
                     </Col>
                 </Row>
             </Container> */}
-            <LoginForm></LoginForm>
+            <LoginForm {...props}/>
         </div>
     );
 };

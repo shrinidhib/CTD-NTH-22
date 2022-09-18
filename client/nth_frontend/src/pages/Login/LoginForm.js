@@ -4,6 +4,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { change_login } from "../../actions/loginAction";
 const LoginForm = (props) => {
+    
+    // setTimeout(()=>{
+    //     props.toast.toast.success("Logged In!")
+    // },2000)
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -34,16 +39,20 @@ const LoginForm = (props) => {
                 localStorage.setItem("auth-token", data.auth_token)
                 localStorage.setItem("username", username)
                 props.change_longinStatus();
+                props.toast.toast.success("Logged In!");
                 navigate("/instructions");
                 // navigate("/question/put_your_ans_here");
             })
             .catch(err => {
                 console.log(err);
+                props.toast.toast.error("Invalid Credentials");
                 setError("Invalid Credentials");
             })
     };
     return (
+            
         <div>
+        {props.toast.container}
         {props.loginStatus===false
         
             ?
@@ -99,6 +108,7 @@ const LoginForm = (props) => {
             </form>
         </div>    
             :
+            
             <Navigate to={'/instructions'}></Navigate>
         }
         </div>

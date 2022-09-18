@@ -71,6 +71,7 @@ const Question = (props) => {
     <div>
     {(props.loginStatus)===true ?
     <div className="question-page ">
+    
     <div style={{paddingTop:'200px',position:'fixed'}}>
     <div class="view-sidebar">
     <img src={ctd} className="ctd-bar"></img>
@@ -140,8 +141,8 @@ const Question = (props) => {
             </OverlayTrigger>
             { 
               id===1?<ContactModal show={id===1?true:false} onHide={() => closeModal()} />
-              :id===2?<ProfileModal show={id===2?true:false} onHide={()=>closeModal()} data={{username:data.username,phone:data.phone,current_level:data.current_level}} />
-              :id===3?<HintModal show={id===3?true:false} onHide={() => closeModal()} data={{hints:data.hints,paidHintTaken:data.paidHintTaken,keys:data.keys,paidHint:data.paidHint,dataUpdate:fetchData}} />
+              :id===2?<ProfileModal show={id===2?true:false} onHide={()=>closeModal()} data={{username:data.username,phone:data.phone,current_level:data.current_level}}  />
+              :id===3?<HintModal show={id===3?true:false} onHide={() => closeModal()} data={{hints:data.hints,paidHintTaken:data.paidHintTaken,keys:data.keys,paidHint:data.paidHint,dataUpdate:fetchData}} toast={props.toast} />
               :<></>
             }
           </div>        
@@ -152,9 +153,9 @@ const Question = (props) => {
     </Container>
     </div>
     :
-      
-      <h1 style={{textAlign:'center',color:'red'}}>LOGIN FIRST</h1>
-      
+      <>
+      {navigate("/login")}
+      </>
     }
     </div>
     
