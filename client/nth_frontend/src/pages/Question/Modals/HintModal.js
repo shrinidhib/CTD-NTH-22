@@ -1,5 +1,7 @@
 import {Modal,Button} from 'react-bootstrap';
 import {useState} from 'react';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 function HintModal(props) {
     const [extraHints,setextraHints]=useState(localStorage.getItem("extra-hints"));
     const [err,seterr]=useState("");
@@ -64,12 +66,14 @@ function HintModal(props) {
         <Modal.Footer >
         {/* <div class="ms-auto"> */}
         {/* <div class="d-flex justify-content-between "> */}
-            {err!==""?err:<></>}
+            {err!==""?err:props.data.paidHintTaken?'Hint Taken':<></>}
         {/* </div> */}
             
         {/* </div> */}
         <p>
+        <OverlayTrigger placement={'left'} overlay={ <Tooltip id={'tooltip-left'}> <strong>Extra Hints</strong></Tooltip> }>
         <button type="button" onClick={fetchHint}  class={props.data.paidHintTaken?"btn btn-primary disabled":"btn btn-primary active"}>Show Hints</button>
+        </OverlayTrigger>
         {/* <br/> */}
         -5x<img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K' class="nes-avatar is-rounded is-medium"  ></img>
         </p>    

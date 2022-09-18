@@ -22,6 +22,10 @@
     width: 60px;
     border-radius: 4px;
 }
+.ctd-bar{
+  width:50px;
+  height:30px;
+}
 .view-modal{
   padding-right: 0px;
   padding-top: 10%;
@@ -80,6 +84,13 @@
     /* height: 200px; */
     /* margin: auto auto; */
   }
+  .question-page .nes-icon:hover {
+    filter: brightness(2);
+  }
+  .btnisunactive:hover{
+    filter: brightness(2);
+    /* color: rgb(39, 179, 21); */
+  }
   @media screen and (max-width:430px) {
     .question-page {
     margin: 3.5% auto;
@@ -88,7 +99,7 @@
         /* width: fit-content; */
     }
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:1000px){
   .cover{
     /* width: 340px; */
     width: fit-content;
@@ -101,8 +112,12 @@
     width: 50px;
   }
   .nes-icon {
-    width: 10px;
-    height: 10px;
+    /* width: 10px;
+    height: 10px; */
+    transform: scale(1.5);
+  }
+  .ctd-bar{
+    width: 40px;
   }
 }
 
