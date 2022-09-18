@@ -16,7 +16,7 @@
 .instructions {
     margin: 2% 15%;
     /* color: #cbe971; */
-    height: fit-content;
+    height: 500px;
     /* display: block ;
     overflow: auto; */
     /* overflow-x: hidden; */
@@ -67,7 +67,9 @@
     .instructions {
         margin: 5% 2% 2%;
         /* width: 90%; */
+        height: 460px;
     }
+    
     /* .instructions .nes-balloonnes-balloon{
         margin: 1% 0 1% 8%;
     } */
@@ -118,8 +120,10 @@
 .skip{
     animation: blinker 1.5s linear infinite;
     color: red;
-    position:absolute;
-    bottom: 1;
+    /* padding-bottom: 200px; */
+    /* position:absolute; */
+    /* padding-top: 160px; */
+    /* bottom: 1; */
 
 }
 @keyframes blinker {

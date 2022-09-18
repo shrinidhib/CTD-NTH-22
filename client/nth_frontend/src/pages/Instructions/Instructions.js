@@ -204,10 +204,13 @@ const Instructions = (props) => {
           {/* </section> */}
         </section>
       </div>
+      
       {!inst && <div className="container text-center skip" onClick={() => {setSkipped(true); setInst(true);}} >
-        <h5>Press ESC or click <a >here</a> to skip.</h5>
+        <p>Press ESC or click <a >here</a> to skip.</p>
       </div>}
+      
     </div>
+    
     // </section>
     // <div class="nes-container is-rounded is-dark">
     // <div className="instructions">
