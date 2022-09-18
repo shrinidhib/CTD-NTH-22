@@ -17,7 +17,7 @@ function HintModal(props) {
     <div>
       {
         idm === 4 ?
-          <BuyHintModal show={idm === 4 ? true : false} onHide={() => closeModalm()} data={props.data} />
+          <BuyHintModal show={idm === 4 ? true : false} onHide={() => closeModalm()} data={props.data} toast={props.toast}/>
           :
           <Modal
             {...props}
