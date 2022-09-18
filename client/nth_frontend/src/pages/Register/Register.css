@@ -11,7 +11,7 @@
   position: relative; */
 }
 
-.login-page {
+.register-page {
   width: fit-content;
   /* margin: 3% 2% 1%; */
   /* padding: 20%; */
@@ -25,26 +25,25 @@
   overflow: auto; */
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 110px;
+  margin-top: 20px;
+  /* margin-bottom: 110px; */
   /* margin: 7.3% auto; */
   /* width: 8em */
 }
+.col{
+  /* font-size: 5px; */
 
-.login-page h2 {
+}
+.register-page h2 {
   text-align: center;
   margin: 2% 0 6%;
   color:#cbe971 ;
 
 }
 
-@media screen and (max-width :400px) {
-  .login-page {
-      width: 90%;
-  }
-}
 
-.login-page .field {
+
+.register-page .field {
   width: 100%;
   position: relative;
   font-size: 18px;
@@ -53,7 +52,7 @@
   margin-bottom: 2%;
 }
 
-.login-page .field::after {
+.register-page .field::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -66,7 +65,7 @@
 }
 
 
-.login-page .field i {
+.register-page .field i {
   font-size: 22px;
   height: 30px;
   width: 30px;
@@ -77,31 +76,31 @@
 
 
 
-.login-page input {
+.register-page input {
   border: 1;
   background: transparent;
   padding: 0 5px;
   color: inherit;
   /* font-family: inherit; */
   font-size: inherit;
-  height: 50px;
+  height: 35px;
   width: 100%;
   vertical-align: auto;
 }
 
-.login-page input:focus {
+.register-page input:focus {
   outline: none;
 }
 
 
 
-.login-page .login-button {
+.register-page .login-button {
   text-align: center;
   font-size: 120%;
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
-.login-page button {
+.register-page button {
   background-color: #292929;
   border-style: none;
   color: #cbe971;;
@@ -112,12 +111,12 @@
   transition: 0.5s ease-in;
 }
 
-.login-page button:hover {
+.register-page button:hover {
   background-color: #e3e971;
   color: #141414;
 }
 
-.login-page .register {
+.register-page .register {
   width: 100%;
   margin-top: 5% !important;
   /* margin-bottom: 3% !important; */
@@ -125,66 +124,67 @@
   color: white;
   text-align: center;
 }
-.login-page .register .err{
+.register-page .register .err{
   width: 100%;
-  margin-top: 10% !important;
+  margin-top: 5% !important;
   margin-bottom: 3% !important;
-  font-size: 120%;
+  /* font-size: 120%; */
   color: rgb(234, 15, 15);
   text-align: center;
 }
-.login-page .register a {
+.register-page .register a {
   text-decoration: underline;
   color: #cbe971;
   /* text-decoration: solid; */
 }
 
-.login-page .register a:hover {
+.register-page .register a:hover {
   color: #b18758;
 }
 
 
-.instructions {
-  /* margin: 6% auto 2%; */
-  /* color: #cbe971; */
-  height: 800px;
-  display: block ;
-  overflow: auto;
-  /* overflow-x: hidden; */
-  width: 100%;
-}
 
-.answer-1 {
+
+/* .answer-1 {
   margin-top: 1rem;
   color: #181818;
   cursor: default;
   text-align: center;
-}
+} */
 
-.instructions-content {
+/* .instructions-content {
   margin: 2% 7%;
   font-size: 1.05rem;
   color: white;
-}
+} */
 
 @media screen and (max-width : 200px) {
-  .instructions {
-      margin: 15% 4% 5%;
-      /* width: 90%; */
-  }
+
   .nes-container{
       width: 10px;
   }
-  /* .instructions .nes-balloonnes-balloon{
-      margin: 1% 0 1% 8%;
-  } */
-  /* .instructions-content {
-      
-  } */
+  
 }
-@media screen and (max-width : 400px) {
+@media screen and (max-width : 1000px) {
   
   .nes-container{
       width: auto;
+  }
+}
+
+@media screen and (max-width :1000px) {
+  .register-page {
+      width: 90%;
+      height: fit-content;
+  }
+  .nes-container .nes-field{
+    font-size: 8px;
+  }
+  .col{
+    font-size: 10px;
+  }
+  .nes-container.is-dark.with-title{
+    /* height: 10px; */
+    /* font-size: 10px; */
   }
 }

@@ -53,7 +53,7 @@ const RegisterForm = (props) => {
             })
     };
     return (
-        <div className="login-page">
+        <div className="register-page">
 
             <form onSubmit={handleSubmit}>
                 <div >
@@ -138,7 +138,7 @@ const RegisterForm = (props) => {
                                     type="password"
                                     placeholder="type your password" 
                                     className="login-form-input"
-                                    minLength={8}
+                                    // minLength={8}
                                     required
                                 />
                             </div>
