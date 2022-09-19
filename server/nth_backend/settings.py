@@ -158,7 +158,7 @@ EMAIL_HOST_PASSWORD = 'ngxsltrsicuwayjt'
 
 # DJOSER Settings
 DJOSER = {
-    'SEND_CONFIRMATION_EMAIL': True,
+    # 'SEND_CONFIRMATION_EMAIL': True,
     'PASSWORD_RESET_CONFIRM_URL': 'password-reset/{uid}/{token}',
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
 }

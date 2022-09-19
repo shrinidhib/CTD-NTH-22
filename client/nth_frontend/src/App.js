@@ -21,7 +21,7 @@ function App() {
       <div className='margin-br'>
       <Routes>
       <Route path="/" exact element={<Home/>}/>
-      <Route path="/register" element={<Register/>} />
+      <Route path="/register" element={<Register toast={{ container: <ToastUtils />, toast }}/>} />
       <Route path="/about" element={<About/>} />
       {/* <Route path="/team" component={Webteam} />
       <Route path="/contact" component={Contact} /> */}

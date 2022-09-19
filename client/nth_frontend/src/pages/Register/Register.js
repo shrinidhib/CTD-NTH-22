@@ -2,7 +2,7 @@
 import "./Register.css";
 import React from "react";
 import RegisterForm from "./RegisterForm";
-const Register = () => {
+const Register = (props) => {
     return (
         <div>
             {/* <Container fluid>
@@ -15,7 +15,7 @@ const Register = () => {
                     </Col>
                 </Row>
             </Container> */}
-            <RegisterForm></RegisterForm>
+            <RegisterForm {...props}></RegisterForm>
         </div>
     );
 };
