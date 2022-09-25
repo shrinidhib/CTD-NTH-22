@@ -1,7 +1,7 @@
-.nes-container .nes-field .col{
+.register-page .nes-container .nes-field .col{
   color:#cbe971 ;
 }
-.nes-container {
+.register-page .nes-container {
   /* color:#cbe971 ; */
   width: 500px;
   height: fit-content;
@@ -160,14 +160,14 @@
 
 @media screen and (max-width : 200px) {
 
-  .nes-container{
+  .register-page .nes-container{
       width: 10px;
   }
   
 }
 @media screen and (max-width : 1000px) {
   
-  .nes-container{
+  .register-page .nes-container{
       width: auto;
   }
 }
@@ -177,13 +177,13 @@
       width: 90%;
       height: fit-content;
   }
-  .nes-container .nes-field{
+  .register-page .nes-container .nes-field{
     font-size: 8px;
   }
   .col{
     font-size: 10px;
   }
-  /* .nes-container.is-dark.with-title{
+  /* .register-page .nes-container.is-dark.with-title{
     height: 10px; */
     /* font-size: 10px;
   } */

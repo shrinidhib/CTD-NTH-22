@@ -1,7 +1,7 @@
-.nes-container .nes-field .col{
+.login-page .nes-container .nes-field .col{
     color:#cbe971 ;
 }
-.nes-container {
+.login-page .nes-container {
     /* color:#cbe971 ; */
     width: 500px;
     /* height: 300px; */
@@ -173,7 +173,7 @@
         margin: 15% 4% 5%;
         /* width: 90%; */
     }
-    .nes-container{
+    .login-page .nes-container{
         width: 10px;
     }
     /* .instructions .nes-balloonnes-balloon{
@@ -189,7 +189,7 @@
         font-size: 10px;
         /* height: fit-content; */
     }
-    .nes-container{
+    .login-page .nes-container{
         width: auto;
     }
     .login-page{
