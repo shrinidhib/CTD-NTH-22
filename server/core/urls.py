@@ -23,4 +23,5 @@ urlpatterns = [
     path('userquestion/<slug:user_ans>', QuestionDetail.as_view(), name = 'check_user_ans'), #change URL
     path('leaderboard/', LeaderboardView.as_view(), name = 'leaderboard'),
     path('question/extra-hint/', ExtraHintView.as_view(), name = 'extrahint'),
+    path('timer/', TimerView.as_view(), name = 'timer'),
 ]

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import datetime
 
 # Create your models here.
 
@@ -39,3 +40,7 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title + ": " + str(self.level)
+
+class Timer(models.Model):
+    time = models.DateTimeField(null=True,blank=True)
+    is_started = models.BooleanField(default=False)

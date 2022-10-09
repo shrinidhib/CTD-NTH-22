@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from .serializers import *
 import json
 import random
+from datetime import datetime
+import pytz
 
 # DRF imports
 from rest_framework.views import APIView
@@ -105,3 +107,16 @@ class ExtraHintView(APIView):
             res_dict = {"extraHint":que.paidHint}
             return Response(res_dict)
         return Response(res_dict)
+
+
+class TimerView(APIView):
+    def get(request,*args, **kwargs):
+        utc = pytz.UTC
+        timer = Timer.objects.all().first()
+        start_time = timer.time.replace(tzinfo=utc)
+        print(start_time > utc.localize(datetime.now()))
+        print(start_time)
+        print(start_time.timetz)
+        print(utc.localize(datetime.now()))
+        serializer = TimerSerializer(timer)
+        return Response(serializer.data)

@@ -36,3 +36,8 @@ class QuestionSerializer(ModelSerializer):
     class Meta:
         model = Question
         fields = '__all__'
+
+class TimerSerializer(ModelSerializer):
+    class Meta:
+        model = Timer
+        fields = '__all__'
