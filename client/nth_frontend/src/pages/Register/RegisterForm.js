@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import { connect } from "react-redux";
 import { change_login } from "../../actions/loginAction";
-
+import Request from "../../api/requests";
 const RegisterForm = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +13,31 @@ const RegisterForm = (props) => {
   const [college, setCollege] = useState("");
   const [error, setError] = useState("");
   let navigate = useNavigate();
-  const handleSubmit = (event) => {
+  const login = async ()=>{ 
+    await Request.login({username,password})
+  // .then((response) => {
+  //     console.log(response);
+  //     if (!response.ok) {
+  //         console.log(response)
+  //         // setFetchError("Invalid Credentials!!!")
+  //         throw Error("Unable to login!!");
+  //     }
+  //     return response.json()
+      
+  // })
+  .then((res) => {
+      console.log(res.auth_token,"auth tokenke")
+      if(res.auth_token !== undefined) localStorage.setItem("auth-token", res.auth_token)
+      localStorage.setItem("username", username)
+      props.change_longinStatus();
+  })
+  .catch((err) => {
+      console.log(err);
+      props.toast.toast.error("Unable to login!");
+  });
+  navigate("/");
+}
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(first_name);
     console.log(typeof phone);
@@ -21,22 +45,23 @@ const RegisterForm = (props) => {
     console.log(username);
     console.log(email);
     console.log(password);
-    const data = { first_name, phone, college, username, email, password };
-    console.log(data);
-    fetch("http://localhost:8000/auth/users/", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        console.log(response.password);
-        if (!response.ok) {
-          console.log(response.data);
-          // setFetchError("Invalid Credentials!!!")
-          throw Error("Could not fetch the data.");
-        }
-        return response.json();
-      })
+    // const data = { first_name, phone, college, username, email, password };
+    // console.log(data);
+    // fetch("http://localhost:8000/auth/users/", {
+    //   method: "POST",
+    //   headers: { "content-type": "application/json" },
+    //   body: JSON.stringify(data),
+    // })
+    await Request.register({ first_name, phone, college, username, email, password })
+      // .then((response) => {
+      //   console.log(response.password);
+      //   if (!response.ok) {
+      //     console.log(response.data);
+      //     // setFetchError("Invalid Credentials!!!")
+      //     throw Error("Could not fetch the data.");
+      //   }
+      //   return response.json();
+      // })
       .then((data) => {
         // console.log(data)
         // localStorage.setItem("auth-token", data.auth_token)
@@ -44,33 +69,15 @@ const RegisterForm = (props) => {
         // props.change_longinStatus();
         console.log(props,"props")
         props.toast.toast.success("Account Created Successfully!");
-        let creds = {username,password}
-        console.log(JSON.stringify(creds))
-        fetch("http://localhost:8000/auth/token/login/", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(creds),
-        }).then((response) => {
-            console.log(response);
-            if (!response.ok) {
-                console.log(response)
-                // setFetchError("Invalid Credentials!!!")
-                throw Error("Unable to login!!");
-            }
-            return response.json()
-            
-        })
-        .then((res) => {
-            console.log(res.auth_token,"auth tokenke")
-            if(res.auth_token != undefined) localStorage.setItem("auth-token", res.auth_token)
-            localStorage.setItem("username", username)
-            props.change_longinStatus();
-        })
-        .catch((err) => {
-            console.log(err);
-            props.toast.toast.error("Unable to login!");
-        });
-        navigate("/");
+        // let creds = {username,password}
+        // console.log(JSON.stringify(creds))
+        // fetch("http://localhost:8000/auth/token/login/", {
+        //   method: "POST",
+        //   headers: { "content-type": "application/json" },
+        //   body: JSON.stringify(creds),
+        // })
+        
+        login();
         
         // navigate("/question/put_your_ans_here");
       })
@@ -115,8 +122,9 @@ const RegisterForm = (props) => {
                 id="phone"
                 name="phone"
                 value={phone}
-                onChange={(e) => setPhone(parseInt(e.target.value))}
+                onChange={(e) =>{console.log(e.target.value); setPhone(parseInt(e.target.value))}}
                 type="tel"
+                // type="number"
                 placeholder="type your phone number"
                 className="login-form-input"
                 // minLength={8}

@@ -9,7 +9,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { connect } from "react-redux";
 import ctd from '../../assets/ctd.png';
-
+import Request from "../../api/requests";
 // import key from '../../assets/keys.png'
 const Question = (props) => {
     // const [loading, setLoading] = useState(true);
@@ -30,30 +30,13 @@ const Question = (props) => {
         navigate("/question/put_your_ans_here");
       }
     };
-    const fetchData = async () => {
-        // console.log(localStorage.getItem("auth-token"));
-        await fetch(`http://localhost:8000/userquestion/${ans}`,{ 
-          method: "GET",
-          headers: { "content-type": "application/json", "Authorization":`Token ${localStorage.getItem("auth-token")}` },
-        })
-          .then(response => {
-            return response.json()
-          })
-          .then(res => {
-            console.log(res);
-            // setData(...data,...res);
-            let temp={...res};
-            
-            fetch(`http://localhost:8000/auth/users/me/`,{ 
-              method: "GET",
-              headers: { "content-type": "application/json", "Authorization":`Token ${localStorage.getItem("auth-token")}` },
-              })
-              .then(response => {
-                return response.json()
-              })
-              .then(res => {
+
+    const user= async (temp) => {
+      await Request.user()
+        .then(res => {
                 console.log(res);
-                temp={...temp,...res}
+                console.log(temp);
+                temp={...(temp.data),...(res.data)}
                 console.log(temp);
                 
                 // console.log('promts are ',data.promts);
@@ -78,9 +61,35 @@ const Question = (props) => {
                 
                 setData(temp);
                 
-              })
+        })
             
-            .catch((err)=>{console.log(err);props.toast.toast.error(err.detail,{autoClose:4000});});
+        .catch((err)=>{console.log(err);props.toast.toast.error(err.detail,{autoClose:4000});});
+    }
+
+    const fetchData = async () => {
+        // console.log(localStorage.getItem("auth-token"));
+        // await fetch(`http://localhost:8000/userquestion/${ans}`,{ 
+        //   method: "GET",
+        //   headers: { "content-type": "application/json", "Authorization":`Token ${localStorage.getItem("auth-token")}` },
+        // })
+          // .then(response => {
+          //   return response.json()
+          // })
+        await Request.userquestion(ans)
+          .then(res => {
+            console.log(res);
+            // setData(...data,...res);
+            // let temp={...res};
+            
+            // fetch(`http://localhost:8000/auth/users/me/`,{ 
+            //   method: "GET",
+            //   headers: { "content-type": "application/json", "Authorization":`Token ${localStorage.getItem("auth-token")}` },
+            //   })
+            //   .then(response => {
+            //     return response.json()
+            //   })
+            
+            user({...res});
             
           })
           .catch((err)=>{

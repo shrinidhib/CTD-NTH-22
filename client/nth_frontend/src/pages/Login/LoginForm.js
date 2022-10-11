@@ -3,6 +3,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import React from "react";
 import { connect } from "react-redux";
 import { change_login } from "../../actions/loginAction";
+import axios from "axios";
+import Request from "../../api/requests";
 const LoginForm = (props) => {
     
     // setTimeout(()=>{
@@ -14,29 +16,50 @@ const LoginForm = (props) => {
     const [error, setError] = useState("");
     console.log(props);
     let navigate = useNavigate();
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(username);
         console.log(password);
-        const data = { username, password };
-        fetch("http://localhost:8000/auth/token/login/", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data)
-        })
-            .then(response => {
-                console.log(response);
-                if (!response.ok) {
-                    console.log(response)
-                    // setFetchError("Invalid Credentials!!!")
-                    throw Error("Could not fetch the data.");
-                }
-                return response.json()
+        // const data = { username, password };
+        // fetch("http://localhost:8000/auth/token/login/", {
+        //     method: "POST",
+        //     headers: { "content-type": "application/json" },
+        //     body: JSON.stringify(data)
+        // })
+        // axios.post('http://localhost:8000/auth/token/login/',data,{
+        //     headers: { "content-type": "application/json" }
+            
+        // })
+            // .then(response => {
+            //     console.log(response);
+            //     if (response.statusText!=="OK") {
+            //         console.log(response)
+            //         // setFetchError("Invalid Credentials!!!")
+            //         throw Error("Could not fetch the data.");
+            //     }
+            //     return response.json()
 
-            })
+            // })
+            // .then(data => {
+            //     console.log(data)
+            //     console.log(data.data.auth_token);
+            //     localStorage.setItem("auth-token", data.data.auth_token)
+            //     localStorage.setItem("username", username)
+            //     props.change_longinStatus();
+            //     props.toast.toast.success("Logged In!");
+            //     navigate("/instructions");
+            //     // navigate("/question/put_your_ans_here");
+            // })
+            // .catch(err => {
+            //     console.log(err);
+            //     props.toast.toast.error("Invalid Credentials");
+            //     setError("Invalid Credentials");
+            // })
+            await Request.login({ username, password })
             .then(data => {
                 console.log(data)
-                localStorage.setItem("auth-token", data.auth_token)
+                console.log(data.data.auth_token);
+                localStorage.setItem("auth-token", data.data.auth_token)
                 localStorage.setItem("username", username)
                 props.change_longinStatus();
                 props.toast.toast.success("Logged In!");
@@ -48,6 +71,9 @@ const LoginForm = (props) => {
                 props.toast.toast.error("Invalid Credentials");
                 setError("Invalid Credentials");
             })
+            // console.log(data);
+            // if(data)
+            // console.log(await Request.login({ username, password }));
     };
     return (
             

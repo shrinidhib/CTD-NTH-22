@@ -2,41 +2,48 @@ import {Modal,Button} from 'react-bootstrap';
 import {useState} from 'react';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import Request from '../../../api/requests';
+import axios from 'axios';
 function BuyHintModal(props) {
   const [err, seterr] = useState("");
   console.log('buy hint modal',props)
-    const fetchHint = () => {
+    const fetchHint = async () => {
         console.log("hit");
         // localStorage.setItem("extra-hints", " ")
-        fetch("http://localhost:8000/question/extra-hint/", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            Authorization: `Token ${localStorage.getItem("auth-token")}`,
-          },
-        })
-          .then((response) => {
-            // console.log(localStorage.getItem("extra-hints"));
-            return response.json();
-          })
+        // fetch("http://localhost:8000/question/extra-hint/", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //     Authorization: `Token ${localStorage.getItem("auth-token")}`,
+        //   },
+        // })
+        //   .then((response) => {
+        //     console.log(localStorage.getItem("extra-hints"));
+        //     return response.json();
+        //   })
+          await Request.extrahint()
+          // axios.post('http://localhost:8000/question/extra-hint/',null,{headers: {
+          //       "content-type": "application/json",
+          //       Authorization: `Token ${localStorage.getItem("auth-token")}`,
+          //     }})
           .then((res) => {
-            console.log(typeof res);
+            console.log(typeof res);console.log(res);
             // console.log(res.extraHint);
             // console.log(res.status);
             console.log(localStorage.getItem("extra-hints"));
-            if (res.extraHint !== undefined) {
+            if (res.data.extraHint !== undefined) {
               // props.data.paidHintTaken=true;
               props.data.dataUpdate();
               console.log(props.data);
-              console.log(res.extraHint);
-              localStorage.setItem("extra-hints", res.extraHint);
+              console.log(res.data.extraHint);
+              localStorage.setItem("extra-hints", res.data.extraHint);
             //   setextraHints(localStorage.getItem("extra-hints"));
             props.toast.toast.success('Extra Hints Are Available!');  
             props.onHide();
               
             } else {
-              console.log(res.status);
-              props.toast.toast.error(res.status);
+              console.log(res.data.status);
+              props.toast.toast.error(res.data.status);
               seterr(res.status);
             }
           })
