@@ -98,7 +98,8 @@ class ExtraHintView(APIView):
         que = get_object_or_404(Question, level = user.current_level)
         print(que.paidHint, "bhat")
         if(user.paidHintTaken):
-            res_dict = {"status":"You have already taken a hint!"}
+            # res_dict = {"status":"You have already taken a hint!"}
+            res_dict = {"extraHint":que.paidHint}
             return Response(res_dict)
         if user.keys >= user.current_level + 1:
             user.keys -= (user.current_level + 1)
