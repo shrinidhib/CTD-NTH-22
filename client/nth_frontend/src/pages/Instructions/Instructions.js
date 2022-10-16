@@ -33,19 +33,19 @@ const Instructions = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setR2D2_1(true);
-      document.getElementById("r2d21").play();
+      // document.getElementById("r2d21").play();
     }, 1000);
     setTimeout(() => {
       setC3PO_1(true);
-      document.getElementById("c3p01").play();
+      // document.getElementById("c3p01").play();
     }, 5000);
     setTimeout(() => {
       setR2D2_2(true);
-      document.getElementById("r2d22").play();
+      // document.getElementById("r2d22").play();
     }, 9000);
     setTimeout(() => {
       setC3PO_2(true);
-      document.getElementById("c3p02").play();
+      // document.getElementById("c3p02").play();
     }, 15000);
     setTimeout(() => {
       setInst(true);
@@ -54,44 +54,44 @@ const Instructions = (props) => {
       setR2D2_2(false);
       setC3PO_2(false);
     }, 20000);
-    document.addEventListener("keydown", skipInst, true);
+    // document.addEventListener("keydown", skipInst, true);
+    window.addEventListener('keydown',  skipInst);
+    return () => {
+      window.removeEventListener('keydown',  skipInst);
+    };
   }, []);
   return (
     // <section class="nes-container is-dark">
     <div className="adjust">
       <div className="instructions">
-        { !skipped &&
+        {/* { !skipped &&
           <div>
             <audio id="r2d21">
-              {/* <source src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2-SOUND.ogg" type="audio/ogg"/> */}
               <source
                 src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2+SOUND.mp3"
                 type="audio/mpeg"
               />
             </audio>
             <audio id="r2d22">
-              {/* <source src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2-SOUND-2.ogg" type="audio/ogg"/> */}
               <source
                 src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2+SOUND+2.mp3"
                 type="audio/mpeg"
               />
             </audio>
             <audio id="c3p01">
-              {/* <source src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2-SOUND-2.ogg" type="audio/ogg"/> */}
               <source
                 src="https://nth22.s3.ap-south-1.amazonaws.com/c3p01.mp3"
                 type="audio/mpeg"
               />
             </audio>
             <audio id="c3p02">
-              {/* <source src="https://nth22.s3.ap-south-1.amazonaws.com/R2D2-SOUND-2.ogg" type="audio/ogg"/> */}
               <source
                 src="https://nth22.s3.ap-south-1.amazonaws.com/c3p02.wav"
                 type="audio/mpeg"
               />
             </audio>
           </div>
-        }
+        } */}
         <section class="message-list">
           {!skipped && !inst && <div>
             {r2d2_1 && (

@@ -183,6 +183,9 @@
   .col{
     font-size: 10px;
   }
+  .register-page .register .err{
+    font-size: 80%;
+  }
   /* .register-page .nes-container.is-dark.with-title{
     height: 10px; */
     /* font-size: 10px;

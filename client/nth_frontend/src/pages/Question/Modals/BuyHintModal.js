@@ -30,13 +30,13 @@ function BuyHintModal(props) {
             console.log(typeof res);console.log(res);
             // console.log(res.extraHint);
             // console.log(res.status);
-            console.log(localStorage.getItem("extra-hints"));
+            // console.log(localStorage.getItem("extra-hints"));
             if (res.data.extraHint !== undefined) {
               // props.data.paidHintTaken=true;
               props.data.dataUpdate();
               console.log(props.data);
               console.log(res.data.extraHint);
-              localStorage.setItem("extra-hints", res.data.extraHint);
+              // localStorage.setItem("extra-hints", res.data.extraHint);
             //   setextraHints(localStorage.getItem("extra-hints"));
             props.toast.toast.success('Extra Hints Are Available!');  
             props.onHide();
@@ -44,7 +44,7 @@ function BuyHintModal(props) {
             } else {
               console.log(res.data.status);
               props.toast.toast.error(res.data.status);
-              seterr(res.status);
+              seterr(res.data.status);
             }
           })
           .catch((err) => {

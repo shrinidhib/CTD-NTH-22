@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,Navigate } from "react-router-dom";
 import React from "react";
 import { connect } from "react-redux";
 import { change_login } from "../../actions/loginAction";
@@ -26,21 +26,22 @@ const RegisterForm = (props) => {
       
   // })
   .then((res) => {
-      console.log(res.auth_token,"auth tokenke")
-      if(res.auth_token !== undefined) localStorage.setItem("auth-token", res.auth_token)
+      console.log(res.data.auth_token,"auth tokenke")
+      if(res.data.auth_token !== undefined) localStorage.setItem("auth-token", res.data.auth_token)
       localStorage.setItem("username", username)
       props.change_longinStatus();
+      navigate("/instructions");
   })
   .catch((err) => {
       console.log(err);
       props.toast.toast.error("Unable to login!");
   });
-  navigate("/");
+  
 }
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(first_name);
-    console.log(typeof phone);
+    console.log(phone,typeof phone);
     console.log(college);
     console.log(username);
     console.log(email);
@@ -83,11 +84,17 @@ const RegisterForm = (props) => {
       })
       .catch((err) => {
         console.log(err);
-        setError("Invalid Data");
+        if(err.code==="ERR_NETWORK") {setError("Network Error");props.toast.toast.error("Network Error");}
+        else if(err.code==="ERR_BAD_REQUEST") {setError("Username Already Exists");props.toast.toast.error("Username Already Exists");}
       });
   };
   return (
-    <div className="register-page">
+    <div>
+    {
+      props.loginStatus===false
+      
+      ?
+      <div className="register-page">
       <form onSubmit={handleSubmit}>
         <div>
           {/* <div> */}
@@ -121,9 +128,12 @@ const RegisterForm = (props) => {
               <input
                 id="phone"
                 name="phone"
-                value={phone}
-                onChange={(e) =>{console.log(e.target.value); setPhone(parseInt(e.target.value))}}
+                value={phone===0?'':phone}
+                // onChange={(e) =>{console.log(e.target.value,typeof e.target.value); setPhone(e.target.value)}}
+                onChange={(e) =>{console.log(e.target.value,typeof e.target.value); e.target.value===""?setPhone(0):setPhone(parseInt(e.target.value))}}
                 type="tel"
+                pattern="[0-9]{10}"
+                maxlength="10"
                 // type="number"
                 placeholder="type your phone number"
                 className="login-form-input"
@@ -213,6 +223,10 @@ const RegisterForm = (props) => {
           </p>
         </div>
       </form>
+      </div>
+      :
+      <Navigate to={'/instructions'}></Navigate>
+    }
     </div>
   );
 };

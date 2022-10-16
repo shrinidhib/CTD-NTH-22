@@ -67,7 +67,7 @@ const Question = (props) => {
     }
 
     const fetchData = async () => {
-        // console.log(localStorage.getItem("auth-token"));
+        console.log(localStorage.getItem("auth-token"));
         // await fetch(`http://localhost:8000/userquestion/${ans}`,{ 
         //   method: "GET",
         //   headers: { "content-type": "application/json", "Authorization":`Token ${localStorage.getItem("auth-token")}` },

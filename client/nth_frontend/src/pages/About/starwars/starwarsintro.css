@@ -97,8 +97,9 @@ Version: 1.0
 .star-wars-intro .title-content {
   position: absolute;
   top: 100%;
-  animation: scroll 120s linear 4s forwards;
+  animation: scroll 45s linear 2.5s forwards;
 }
+
 
 .star-wars-intro .title-content > .content-header {
   text-align: center;
@@ -197,7 +198,7 @@ Version: 1.0
   100% { top: -170%; }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1000px) {
   .star-wars-intro .main-content {
     font-size: 35px;
   }
@@ -211,6 +212,9 @@ Version: 1.0
   }
   .star-wars-intro  .content-body{
     font-size: 20px;
+  }
+  .star-wars-intro .title-content {
+      animation: scroll 100s linear 3s forwards;
   }
 }
 

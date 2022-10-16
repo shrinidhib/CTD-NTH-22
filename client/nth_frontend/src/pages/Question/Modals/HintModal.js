@@ -9,9 +9,10 @@ function HintModal(props) {
     setIdm(3);
     props.id=3;
   }
-  const [extraHints, setextraHints] = useState(
-    localStorage.getItem("extra-hints")
-  );
+  // const [extraHints, setextraHints] = useState(
+    // localStorage.getItem("extra-hints")
+  //   props.data.paidhint
+  // );
   console.log(props);
   
   return (
@@ -30,12 +31,13 @@ function HintModal(props) {
               <Modal.Title id="contained-modal-title-vcenter">Hints</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              {console.log(props.data.paidHintTaken && extraHints)}
+              {/* {console.log(props)} */}
+              {/* {console.log(props.data.paidHintTaken && extraHints)} */}
 
-              {console.log(localStorage.getItem("extra-hints"))}
+              {/* {console.log(localStorage.getItem("extra-hints"))} */}
               <p>Hints:{props.data.hints}</p>
-              {props.data.paidHintTaken && extraHints ? (
-                <p>Extra Hints:{extraHints}</p>
+              {props.data.paidHintTaken ? (
+                <p>Extra Hints:{props.data.paidHint}</p>
               ) : (
                 <></>
               )}
