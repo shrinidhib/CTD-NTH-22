@@ -58,7 +58,7 @@ right:0;
     color: #e9b171
   }
   
-  .footer .web-team-link a:before {
+  /* .footer .web-team-link a:before {
     content: "";
     position: absolute;
     width: 0;
@@ -68,11 +68,13 @@ right:0;
     background-color: #fff;
     visibility: hidden;
     transition: all .3s ease-in-out
-  }
+  } */
   
-  .footer .web-team-link a:hover:before {
-    visibility: visible;
-    width: 100%
+  .footer .web-team-link a:hover{
+    /* visibility: visible;
+    width: 100% */
+    filter: brightness(5);
+    color: blue;
   }
   
   /* .footer .fab:hover {

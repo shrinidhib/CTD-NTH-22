@@ -1,18 +1,16 @@
 
-// import FlipDown from '.\FlipDown'
 import {useState,useEffect} from 'react';
 
 const Timer=()=>{
     // Unix timestamp (in seconds) to count down to
-  var twoDaysFromNow = (new Date().getTime() / 1000) + (86400 * 2) + 1;
-    const [day,setDay]=useState(0);
-    const [hour,setHour]=useState(0);
-    const [minutes,setMinutes]=useState(0);
-    const [seconds,setSeconds]=useState(0);
+    const [day,setDay]=useState('00');
+    const [hour,setHour]=useState('00');
+    const [minutes,setMinutes]=useState('00');
+    const [seconds,setSeconds]=useState('00');
     useEffect(()=>{
         // var test = new Date(Date.UTC(2022, 9, 28));
         // let eventDate=1666999800000;
-        let eventDate=1666017000000;
+        let eventDate=1666971000000;
         var test = new Date();
         // console.log(test);
         // console.log(test.getDay(),test.getDate(),test.getTime())
@@ -36,8 +34,8 @@ const Timer=()=>{
     },[day,hour,minutes,seconds,day])
     return(
         // <div id="flipdown" class="flipdown">hey</div>
-        <div style={{color:'white'}}>
-            {day}:{hour}:{minutes}:{seconds}
+        <div style={{color:'yellow'}}>
+            {day<10 ? '0':day}:{hour}:{minutes}:{seconds}
         </div>
     )
 }
