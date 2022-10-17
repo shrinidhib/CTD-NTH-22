@@ -1,161 +1,106 @@
-.leaderboard {
-    margin: 1% 0 5rem
+.Leaderboard{
+  max-width: 450px;
+  height: 500px;
+  /* background-color: white; */
+  margin: 40px 20px;
+  outline: 4px solid #feeb2c;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.high-scores{
+  padding: 20px 10px;
+}
+
+.high-scores p{
+  font-size: 22px;
+  color: #ff074e;
+  font-family: 'Press Start 2P', cursive;
+}
+
+table{
+  width: 450px;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+}
+
+thead{
+  color: rgb(254, 235, 44);
+}
+
+.tdhead{
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+thead{
+  height: 40px;
+  padding-bottom: 20px;
+}
+
+.tdbody{
+  color: #0058f8;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+/*--------------- Trying to make it responsible for smaller screen :) ------------------*/
+@media only screen and (max-height: 790px) {
+  .scoreBoard{
+      height: 400px;
+      width: 400px;
+      padding: 5px;
   }
-  
-  @media screen and (max-width:1140px) {
-    .leaderboard {
-      margin: 1% 0 7rem
-    }
+  table{
+      width: 400px;
   }
-  
-  @media screen and (max-width:990px) {
-    .leaderboard {
-      margin: 1% 0 11rem
-    }
+  .tdbody{
+      font-size: 12px;
   }
-  
-  .leaderboard .top #rank {
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    margin: auto;
-    color: #e9b171;
-    font-size: 3.5rem;
-    font-weight: bolder;
-    background-color: #000;
-    text-align: center
+  .high-scores{
+      padding: 10px 10px;
   }
-  
-  .leaderboard .top #rank .rank-text {
-    padding-top: 35px
+}
+
+@media only screen and (max-height: 600px){
+  .scoreBoard{
+      height: 350px;
+      max-width: 350px;
   }
-  
-  @media screen and (max-width:576px) {
-    .leaderboard .top #rank {
-      width: 100px;
-      height: 100px;
-      border-radius: 100%;
-      margin: auto;
-      color: #e9b171;
-      font-size: 2rem;
-      font-weight: bolder;
-      background-color: #000;
-      text-align: center
-    }
-  
-    .leaderboard .top #rank .rank-text {
-      padding-top: 25px
-    }
+  table{
+      width: 350px;
+      border-spacing: 0 12px;
   }
-  
-  @media screen and (max-width:390px) {
-    .leaderboard .top #rank {
-      width: 75px;
-      height: 75px;
-      border-radius: 100%;
-      margin: auto;
-      color: #e9b171;
-      font-size: 2rem;
-      font-weight: bolder;
-      background-color: #000;
-      text-align: center
-    }
-  
-    .leaderboard .top #rank .rank-text {
-      padding-top: 15.5px
-    }
+  .tdhead{
+      font-size: 14px;
   }
-  
-  @media screen and (max-width:338px) {
-    .leaderboard .top #rank {
-      width: 65px;
-      height: 65px;
-      border-radius: 100%;
-      margin: auto;
-      color: #e9b171;
-      font-size: 2rem;
-      font-weight: bolder;
-      background-color: #000;
-      text-align: center
-    }
-  
-    .leaderboard .top #rank .rank-text {
-      padding-top: 13px
-    }
-  
-    .other-players .col {
-      padding: 0
-    }
+  .tdbody{
+      font-size: 12px;
   }
-  
-  .leaderboard .leaderboard-table {
-    width: 95%;
-    border-collapse: separate;
-    border-spacing: 0 1.2rem;
-    border-radius: 2rem;
-    color: #fff;
-    text-align: center;
-    border: 0;
-    margin-top: 2%
+  .high-scores{
+      padding: 5px;
   }
-  
-  td:first-child {
-    border-left-style: solid;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px
+}
+
+@media only screen and (max-width: 450px){
+  .scoreBoard{
+      height: 400px;
+      width: 300px;
+      /* padding: 5px; */
   }
-  
-  td:last-child,
-  th:last-child {
-    padding-left: 2%
+  table{
+      width: 300px;
   }
-  
-  td:last-child {
-    border-right-style: solid;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px
+  .tdhead{
+      font-size: 14px;
   }
-  
-  .table thead th {
-    vertical-align: bottom;
-    border-bottom: 0 !important;
-    border-top: 0 !important;
-    font-size: 1.35rem
+  .tdbody{
+      font-size: 12px;
   }
-  
-  .leaderboard .leaderboard-table td,
-  .leaderboard.leaderboard-table th {
-    border: 0;
-    font-size: 1.25rem;
-    border-bottom: 0;
-    border-top: 0
+  .high-scores{
+      padding: 5px;
   }
-  
-  .leaderboard .top .level {
-    color: #fff;
-    text-align: center;
-    font-size: 120%
-  }
-  
-  .leaderboard .top .name {
-    text-align: center;
-    color: #fff;
-    font-size: 140%;
-    margin-top: 1%;
-    font-weight: 700
-  }
-  
-  .leaderboard .player {
-    width: 80%;
-    margin: 3% auto 0;
-    color: #fff;
-    background-color: #1f1f1f;
-    border-radius: 2rem;
-    padding: 1rem;
-    font-size: 150%
-  }
-  
-  .leaderboard .table-of-ranks {
-    color: #fff
-  }
+}
   

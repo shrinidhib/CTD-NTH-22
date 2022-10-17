@@ -13,6 +13,7 @@ import Background from './components/Background/Background';
 import Instructions from './pages/Instructions/Instructions';
 import Harry from './pages/Harry/Harry'
 import toast, { ToastUtils } from "./utils/toastifyContainer";
+import Leaderboard from './pages/Leaderboard/Leaderboard';
 function App() {
   return (
     <>
@@ -31,7 +32,7 @@ function App() {
       <Route path="/question/:ans" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/question" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/question/ronald" element={<Harry toast={{ container: <ToastUtils />, toast }}/>} /> 
-      {/* <Route path='/leaderboard' component = {LeaderBoard} /> */}
+      <Route path="/leaderboard" element = {<Leaderboard />} />
       </Routes>
       </div>
       <Footer />
