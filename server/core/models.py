@@ -26,10 +26,11 @@ class User(AbstractUser):
     
 class Question(models.Model):
     title = models.CharField(max_length=64, null=True)
+    # https://nth22.s3.ap-south-1.amazonaws.com/transperent.png
     img1 = models.URLField(max_length = 1023, default="https://nth22.s3.ap-south-1.amazonaws.com/transperent.png")
-    img2 = models.URLField(max_length = 1023, default="https://nth22.s3.ap-south-1.amazonaws.com/transperent.png")
-    img3 = models.URLField(max_length = 1023, default="https://nth22.s3.ap-south-1.amazonaws.com/transperent.png")
-    img4 = models.URLField(max_length = 1023, default="https://nth22.s3.ap-south-1.amazonaws.com/transperent.png")
+    img2 = models.URLField(max_length = 1023, null=True, blank=True)
+    img3 = models.URLField(max_length = 1023, null=True,blank=True)
+    img4 = models.URLField(max_length = 1023, null=True,blank=True)
     level = models.IntegerField(unique=True, null=True)
     tooltip = models.CharField(max_length=1023, null=True, default=None)
     hints = models.TextField(default="<hints>")
