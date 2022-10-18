@@ -4,6 +4,7 @@ import json
 import random
 from datetime import datetime
 import pytz
+from difflib import SequenceMatcher
 
 # DRF imports
 from rest_framework.views import APIView
@@ -53,6 +54,8 @@ class QuestionDetail(generics.RetrieveAPIView):
             queryset = Question.objects.all()
             que = get_object_or_404(queryset, level = user.current_level)
             isCorrect = False
+            match = similar(user_ans,que.answer)
+
             # Evaluate The Answer
             if que.answer == user_ans:
                 user.keys += user.current_level
@@ -64,8 +67,8 @@ class QuestionDetail(generics.RetrieveAPIView):
                 que = get_object_or_404(queryset, level = user.current_level)
             
             # Keyword Check for prompts
-            elif user_ans in que.keywords.split():
-                responses = ["You are close.", "On the rigth Track.", "Keep going, you are on rigth Path.", "Almost There!"]
+            elif match >= 0.7:
+                responses = ["You are close.", "Almost There!"]
                 serializer = QuestionSerializer(que)
                 print(serializer.data)
                 data = serializer.data
@@ -81,6 +84,9 @@ class QuestionDetail(generics.RetrieveAPIView):
             return Response(data)
         error_dict = {"status":"Not Authenticated"}
         return Response(json.dumps(error_dict))
+
+    def similar(a, b):
+        return SequenceMatcher(None, a, b).ratio()
 
 class LeaderboardView(APIView):
     def get(self, request, *args, **kwargs):
