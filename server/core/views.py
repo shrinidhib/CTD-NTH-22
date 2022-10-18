@@ -95,6 +95,8 @@ class QuestionDetail(generics.RetrieveAPIView):
                 print(serializer.data)
                 data = serializer.data
                 data["promts"] = random.choice(responses)
+                if user.paidHintTaken:
+                    data["paidHint"] = que.paidHint
                 return Response(data)
 
             serializer = QuestionSerializer(que)
@@ -103,6 +105,8 @@ class QuestionDetail(generics.RetrieveAPIView):
                 data["promts"] = f"Congratulations!! Advancing to level {user.current_level}."
             else:
                 data["promts"] = f"Wrong Answer!"
+            if user.paidHintTaken:
+                data["paidHint"] = que.paidHint
             return Response(data)
         error_dict = {"status":"Not Authenticated"}
         return Response(json.dumps(error_dict))
