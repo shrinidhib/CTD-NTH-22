@@ -67,12 +67,15 @@ class QuestionDetail(generics.RetrieveAPIView):
 
             # Check for promocode
             if promocode.promo_code_active and not user.promo_used:
-                if user_ans == promocode.promocode:
+                if user_ans == promocode.promocode or que.answer == user_ans:
                     user.current_level += 1
                     user.paidHintTaken = False
                     user.promo_used = True
                     user.save()
                     isCorrect = True
+                if(que.answer == user_ans):
+                    user.keys += user.current_level - 1
+                    user.save()
                 que = get_object_or_404(queryset, level = user.current_level)
 
             # Evaluate The Answer
