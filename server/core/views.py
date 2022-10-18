@@ -135,12 +135,6 @@ class ExtraHintView(APIView):
 
 class TimerView(APIView):
     def get(request,*args, **kwargs):
-        utc = pytz.UTC
         timer = Timer.objects.all().first()
-        start_time = timer.time.replace(tzinfo=utc)
-        print(start_time > utc.localize(datetime.now()))
-        print(start_time)
-        print(start_time.timetz)
-        print(utc.localize(datetime.now()))
         serializer = TimerSerializer(timer)
         return Response(serializer.data)

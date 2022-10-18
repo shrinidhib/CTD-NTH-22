@@ -33,8 +33,10 @@ class Question(models.Model):
     level = models.IntegerField(unique=True, null=True)
     tooltip = models.CharField(max_length=1023, null=True, default=None)
     hints = models.TextField(default="<hints>")
-    gif = models.URLField(max_length=1023, null=True, default=None)
-    vid = models.URLField(max_length=1023, null=True, default=None)
+    # gif = models.URLField(max_length=1023, null=True, default=None)
+    # vid = models.URLField(max_length=1023, null=True, default=None)
+
+    # Confidential
     answer = models.CharField(max_length=1023, default="")
     keywords = models.TextField(default='[]',blank=True)
     paidHint = models.TextField(default="<Extra hint>")

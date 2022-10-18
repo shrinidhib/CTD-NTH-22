@@ -35,9 +35,9 @@ class UserSerializer(ModelSerializer):
 class QuestionSerializer(ModelSerializer):
     class Meta:
         model = Question
-        fields = '__all__'
+        exclude = ['answer','paidHint','keywords']
 
 class TimerSerializer(ModelSerializer):
     class Meta:
         model = Timer
-        fields = '__all__'
+        fields = ['time','is_started']
