@@ -97,7 +97,7 @@ Version: 1.0
 .star-wars-intro .title-content {
   position: absolute;
   top: 100%;
-  animation: scroll 45s linear 2.5s forwards;
+  animation: scroll 50s linear 2.5s forwards;
 }
 
 

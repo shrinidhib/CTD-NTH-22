@@ -14,7 +14,7 @@ const About = () => {
         setStarwar(false);
       else
         setStarwar(true);
-    }, 23000);
+    }, 25000);
     return () => clearInterval(interval);
   }, [starwar]);
 
