@@ -15,6 +15,7 @@ import Harry from './pages/Harry/Harry'
 import toast, { ToastUtils } from "./utils/toastifyContainer";
 import Leaderboard from './pages/Leaderboard/Leaderboard';
 import Team from './pages/Team/Team';
+import Contact from './pages/Contact/Contact';
 function App() {
   return (
     <>
@@ -27,7 +28,7 @@ function App() {
       <Route path="/register" element={<Register toast={{ container: <ToastUtils />, toast }}/>} />
       <Route path="/about" element={<About/>} />
       <Route path="/team" element={<Team/>} />
-      {/* <Route path="/contact" component={Contact} /> */}
+      <Route path="/contact" element={<Contact/>} />
       <Route path="/login" element={<Login toast={{ container: <ToastUtils />, toast }} />} />
       <Route path="/instructions" element={<Instructions toast={{ container: <ToastUtils />, toast }} />} />
       <Route path="/question/:ans" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 

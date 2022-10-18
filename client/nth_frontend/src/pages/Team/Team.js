@@ -67,11 +67,15 @@ const Team = () => {
                     ))
                 }
             </div>
+            
+            
             <h1 className='topic-title'>NTH-TEAM</h1>
+            
             <a href="https://github.com/4k1k0" target="_black" class="contributor">
-            <img data-src="https://github.com/4k1k0.png?size=64" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://github.com/4k1k0.png?size=64"> 
-            </img>
-            <p>Devraj</p></a>
+            <img data-src="https://github.com/4k1k0.png?size=64" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://github.com/4k1k0.png?size=64"></img>
+            <p>Devraj</p>
+            </a>
+
         </div>
     )
 }
