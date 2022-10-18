@@ -38,22 +38,22 @@ const Instructions = (props) => {
     setTimeout(() => {
       setC3PO_1(true);
       // document.getElementById("c3p01").play();
-    }, 5000);
+    }, 4000);
     setTimeout(() => {
       setR2D2_2(true);
       // document.getElementById("r2d22").play();
-    }, 9000);
+    }, 6000);
     setTimeout(() => {
       setC3PO_2(true);
       // document.getElementById("c3p02").play();
-    }, 15000);
+    }, 8000);
     setTimeout(() => {
       setInst(true);
       setR2D2_1(false);
       setC3PO_1(false);
       setR2D2_2(false);
       setC3PO_2(false);
-    }, 20000);
+    }, 12000);
     // document.addEventListener("keydown", skipInst, true);
     window.addEventListener('keydown',  skipInst);
     return () => {
