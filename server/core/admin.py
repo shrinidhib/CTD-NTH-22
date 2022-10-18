@@ -8,7 +8,7 @@ class UserAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": (
-                ('username', 'current_level'), ('first_name', 'last_name'), ('email', 'hidden_on_leaderboard'), ('paidHintTaken', 'keys'), 'is_active'
+                ('username', 'current_level'), ('first_name', 'last_name'), ('email', 'hidden_on_leaderboard'), ('paidHintTaken', 'keys'), ('is_active', 'promo_used')
             ),
         }),
     )

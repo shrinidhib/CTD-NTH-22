@@ -23,28 +23,36 @@ from rest_framework.permissions import IsAuthenticated
 #         serializer = UserSerializer(users, many=True)
 #         return Response(serializer.data)
 
-class UserViewSet(viewsets.ViewSet):
+# class UserViewSet(viewsets.ViewSet):
 
-    # List All Users -- get method
-    def list(self, request):
-        users = User.objects.filter(hidden_on_leaderboard=False).order_by('-current_level','last_level_updated_time')
-        serializer = UserSerializer(users, many=True)
-        return Response(serializer.data)
+#     # List All Users -- get method
+#     def list(self, request):
+#         users = User.objects.filter(hidden_on_leaderboard=False).order_by('-current_level','last_level_updated_time')
+#         serializer = UserSerializer(users, many=True)
+#         return Response(serializer.data)
 
-    # Retrieve Particular User -- get method
-    def retrieve(self, request, pk = None):
-        queryset = User.objects.all()
-        user = get_object_or_404(queryset, pk = pk)
-        serializer = UserSerializer(user)
-        return Response(serializer.data)
+#     # Retrieve Particular User -- get method
+#     def retrieve(self, request, pk = None):
+#         queryset = User.objects.all()
+#         user = get_object_or_404(queryset, pk = pk)
+#         serializer = UserSerializer(user)
+#         return Response(serializer.data)
 
-    # Create a new User -- post method
-    def create(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors)
+#     # Create a new User -- post method
+#     def create(self, request):
+#         serializer = UserSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data)
+#         return Response(serializer.errors)
+    
+    # Scheduler 
+    # def addKey():
+    #     queryset = User.objects.all()
+    #     print("scheduler called")
+    #     for user in queryset:
+    #         user.keys += 1
+    #         user.save()
     
 class QuestionDetail(generics.RetrieveAPIView):
     
@@ -54,10 +62,21 @@ class QuestionDetail(generics.RetrieveAPIView):
             queryset = Question.objects.all()
             que = get_object_or_404(queryset, level = user.current_level)
             isCorrect = False
-            match = similar(user_ans,que.answer)
+            match = SequenceMatcher(None, user_ans, que.answer).ratio()
+            promocode = Timer.objects.all().first()
+
+            # Check for promocode
+            if promocode.promo_code_active and not user.promo_used:
+                if user_ans == promocode.promocode:
+                    user.current_level += 1
+                    user.paidHintTaken = False
+                    user.promo_used = True
+                    user.save()
+                    isCorrect = True
+                que = get_object_or_404(queryset, level = user.current_level)
 
             # Evaluate The Answer
-            if que.answer == user_ans:
+            elif que.answer == user_ans:
                 user.keys += user.current_level
                 user.current_level += 1
                 user.paidHintTaken = False
@@ -85,8 +104,6 @@ class QuestionDetail(generics.RetrieveAPIView):
         error_dict = {"status":"Not Authenticated"}
         return Response(json.dumps(error_dict))
 
-    def similar(a, b):
-        return SequenceMatcher(None, a, b).ratio()
 
 class LeaderboardView(APIView):
     def get(self, request, *args, **kwargs):

@@ -10,6 +10,7 @@ class User(AbstractUser):
     phone = models.IntegerField(null = True)
     last_level_updated_time = models.DateTimeField(auto_now=True)
     college = models.CharField(max_length=500,null = True)
+    promo_used = models.BooleanField(default=False)
 
     # Currency
     paidHintTaken = models.BooleanField(default=False)
@@ -42,5 +43,8 @@ class Question(models.Model):
         return self.title + ": " + str(self.level)
 
 class Timer(models.Model):
-    time = models.DateTimeField(null=True,blank=True)
+    time = models.IntegerField(default=1666971000000)
     is_started = models.BooleanField(default=False)
+    promo_code_active = models.BooleanField(default=False)
+    promocode = models.CharField(max_length=100, default="NTH22")
+    add_keys_interval_min = models.IntegerField(default=120)
