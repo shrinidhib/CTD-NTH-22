@@ -196,7 +196,8 @@ const Instructions = (props) => {
                   }
                 >
                   <button type="button" class="nes-btn is-warning" onClick={()=>{
-                    props.loginStatus===true?props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
+                    props.loginStatus===true?props.toast.toast('ALL THE BEST!!! ',{autoClose:2000})
+                    // props.loginStatus===true?props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
                     : props.toast.toast.info('Login First ',{autoClose:6000})
                     }}>
                     Hunt

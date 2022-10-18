@@ -15,6 +15,7 @@ const Question = (props) => {
     // const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
     const [id,setId] =useState(-1);
+    const[imageCnt,setImageCnt]=useState(1);
     let ans=useParams().ans;
     let navigate = useNavigate();
     const openModal=(e)=>{
@@ -54,9 +55,9 @@ const Question = (props) => {
                       props.toast.toast.info(temp.promts,{autoClose:6000})
                     }
                 }
-                // else{
-                //     props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
-                // }
+                else{
+                    props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
+                }
                 
                 
                 setData(temp);
@@ -152,16 +153,41 @@ const Question = (props) => {
           Remaining:{data?.keys}
           </p>
           <div className="ms-5">
-          <div className="cover" >
-          <img src={data?.img1}></img>
-          <img src={data?.img2}></img>
-          <img src="https://imgur.com/eog5eFZ.gif"></img>
-          <img src="https://imgur.com/nUJVBmO.jpg"></img>      
-          </div>
+              { 
+                imageCnt===4
+              ?
+                <div className="cover4" >
+                <img src={data.img1}></img>
+                <img src={data.img2}></img>
+                <img src="https://imgur.com/eog5eFZ.gif"></img>
+                <img src="https://imgur.com/nUJVBmO.jpg"></img>      
+                </div>
+              :
+                imageCnt===3
+                ?
+                  <div className="cover4" >
+                  <img src="https://imgur.com/eog5eFZ.gif"></img>
+                  <img src="https://imgur.com/eog5eFZ.gif"></img>
+                  <img src="https://imgur.com/nUJVBmO.jpg"></img>      
+                  </div>
+                :
+                imageCnt===2
+                ?
+                  <div className="cover2 img2" >
+                  <img src="https://imgur.com/eog5eFZ.gif"></img>
+                  <img src="https://imgur.com/nUJVBmO.jpg"></img>      
+                  </div>
+                :
+                  <div className="img1">
+                  <img  className="cover1 "src="https://imgur.com/nUJVBmO.jpg"></img>      
+                  </div>  
+              }
+              
+              
           </div>
           </Col>
           <Col >
-          <div class="view-modal">
+          <div class={`view-modal ${imageCnt===4?'cnt4':'cnt1'}`}>
             {/* {console.log(data)} */}
             {console.log(id)}
               {/* <a href="/leaderboard">

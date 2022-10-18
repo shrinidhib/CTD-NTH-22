@@ -44,7 +44,8 @@
     position: fixed;
     display: block;
     /* color: rgb(43, 43, 43); */
-    background-color: #101013;
+    background-color: transparent;
+    /* background-color: #101013; */
     padding: 3px;
     width: 60px;
     border-radius: 4px;
@@ -96,7 +97,31 @@
   width: auto;
   /* max-width: none !important; */
 }
-  .cover {
+
+
+.cover1 {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  }
+  .cover2 {
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    /* padding-left: 15%; */
+    /* display: block; */
+    /* overflow: auto; */
+  }
+  
+  .cover2 > img {
+    float: left;
+    border: 2px solid black;
+    width: 44%;
+    margin: 0.66%;
+    /* height: 200px; */
+    /* margin: auto auto; */
+  }
+  .cover4 {
     width: 550px;
     height: 550px;
     margin: 0 auto;
@@ -105,7 +130,7 @@
     /* overflow: auto; */
   }
   
-  .cover > img {
+  .cover4 > img {
     float: left;
     border: 2px solid black;
     width: 44%;
@@ -129,12 +154,31 @@
     }
 }
 @media screen and (max-width:1000px){
-  .cover{
+  .img1{
+    padding-top: 20%;
+  }
+  .cover1{
+    width: 250px;
+    height: 250px;
+    
+  }
+  .img2{
+    padding-top: 22%;
+  }
+  .cover2{
+    /* width: 280px; */
+    width: fit-content;
+    height: 0.5%;  
+  }
+  .cover2 > img{
+    height: 200px;
+  }
+  .cover4{
     /* width: 340px; */
     width: fit-content;
     height: 0.5%;  
   }
-  .cover > img{
+  .cover4 > img{
     height: 150px;
   }
   .view-sidebar{
@@ -148,7 +192,10 @@
   .ctd-bar{
     width: 40px;
   }
-  .view-modal{
+  .cnt1{
+    padding-top: 15%;
+  }
+  .cnt4{
     padding-top: 10%;
 
   }
