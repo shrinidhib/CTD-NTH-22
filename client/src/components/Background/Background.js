@@ -1,4 +1,4 @@
-import '../Background/Background.css';
+import './Background.css';
 const Background=()=>{
     return(
         <div class="animation-wrapper">
