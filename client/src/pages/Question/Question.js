@@ -216,7 +216,7 @@ const Question = (props) => {
             { 
               id===1?<ContactModal show={id===1?true:false} onHide={() => closeModal()} />
               :id===2?<ProfileModal show={id===2?true:false} onHide={()=>closeModal()} data={{username:data.username,phone:data.phone,current_level:data.current_level}}  />
-              :id===3?<HintModal show={id===3?true:false} onHide={() => closeModal()} data={{hints:data.hints,paidHintTaken:data.paidHintTaken,keys:data.keys,paidHint:data.paidHint,dataUpdate:fetchData}} toast={props.toast} id={id}/>
+              :id===3?<HintModal show={id===3?true:false} onHide={() => closeModal()} data={{hints:data.hints,paidHintTaken:data.paidHintTaken,keys:data.keys,paidHint:data.paidHint,level:data.level,dataUpdate:fetchData}} toast={props.toast} id={id}/>
               :<></>
             }
           </div>        
