@@ -59,8 +59,14 @@ const Question = (props) => {
                     props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
                 }
                 
-                
                 setData(temp);
+
+                let cnt = 0;
+                if(temp.img1 != null) cnt++;
+                if(temp.img2 != null) cnt++;
+                if(temp.img3 != null) cnt++;
+                if(temp.img4 != null) cnt++;
+                setImageCnt(cnt)
                 
         })
             
@@ -150,7 +156,7 @@ const Question = (props) => {
           class="nes-avatar is-large"  >
           </img></a>
           </OverlayTrigger>
-          Remaining:{data?.keys}
+          x{data?.keys}
           </p>
           <div className="ms-5">
               { 
@@ -159,27 +165,27 @@ const Question = (props) => {
                 <div className="cover4" >
                 <img src={data.img1}></img>
                 <img src={data.img2}></img>
-                <img src="https://imgur.com/eog5eFZ.gif"></img>
-                <img src="https://imgur.com/nUJVBmO.jpg"></img>      
+                <img src={data.img3}></img>
+                <img src={data.img4}></img>      
                 </div>
               :
                 imageCnt===3
                 ?
                   <div className="cover4" >
-                  <img src="https://imgur.com/eog5eFZ.gif"></img>
-                  <img src="https://imgur.com/eog5eFZ.gif"></img>
-                  <img src="https://imgur.com/nUJVBmO.jpg"></img>      
+                  <img src={data.img1}></img>
+                  <img src={data.img2}></img>
+                  <img src={data.img3}></img>      
                   </div>
                 :
                 imageCnt===2
                 ?
                   <div className="cover2 img2" >
-                  <img src="https://imgur.com/eog5eFZ.gif"></img>
-                  <img src="https://imgur.com/nUJVBmO.jpg"></img>      
+                  <img src={data.img1}></img>
+                  <img src={data.img2}></img>    
                   </div>
                 :
                   <div className="img1">
-                  <img  className="cover1 "src="https://imgur.com/nUJVBmO.jpg"></img>      
+                  <img  className="cover1 "src={data.img1}></img>      
                   </div>  
               }
               

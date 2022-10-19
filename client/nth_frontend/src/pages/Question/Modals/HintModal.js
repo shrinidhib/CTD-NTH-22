@@ -14,7 +14,8 @@ function HintModal(props) {
   //   props.data.paidhint
   // );
   console.log(props);
-  
+  const hintsArr = props.data.hints.split("<br>")
+  const paidHintArr = props.data.paidHint.split("<br>")
   return (
     <div>
       {
@@ -35,9 +36,17 @@ function HintModal(props) {
               {/* {console.log(props.data.paidHintTaken && extraHints)} */}
 
               {/* {console.log(localStorage.getItem("extra-hints"))} */}
-              <p>Hints:{props.data.hints}</p>
+              <p>Hints:{hintsArr.map((hnt,idx) => {
+                return(
+                  <span><br/>{hnt}</span>
+                );
+              })}</p>
               {props.data.paidHintTaken ? (
-                <p>Extra Hints:{props.data.paidHint}</p>
+                <p>Extra Hints:{paidHintArr.map((hnt,idx) => {
+                  return(
+                    <span><br/>{hnt}</span>
+                  );
+                })}</p>
               ) : (
                 <></>
               )}
