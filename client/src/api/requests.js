@@ -1,7 +1,12 @@
 import axios from "axios";
 
+const host = window.location.host
+const port = host.split(':')[1]
+let url = ""
+if(port == "3000") url = "http://localhost:8000/api"
+else url = "http://localhost/api"
 const backend = axios.create({
-    baseURL: `http://localhost/api`
+    baseURL: url
   });
 
 const login = (data) => backend.post( `/auth/token/login/`, data,{headers: { "content-type": "application/json" }} );
