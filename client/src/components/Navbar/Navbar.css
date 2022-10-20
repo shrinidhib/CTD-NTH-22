@@ -1,87 +1,3 @@
-/* .app{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-  } */
-/* .nav-bar {
-    background-color: rgb(20, 20, 20); */
-/* z-index: 9999; */
-/* } */
-/* .nav-link{
-    padding-top: 20px;
-    padding-left: 400px;
-  } */
-/* .login-btn{ */
-/* padding-left: 200px; */
-/* } */
-/* .hunt-button {
-    background: #E9B171;
-    border-radius: 10px;
-    border: none;
-    padding: 2px 20px;
-      color: white;
-      font-size: larger;
-  }
-  
-  
-  .hunt-button:hover,
-  .hunt-button:focus {
-    box-shadow: 0 0.5em 1em -0.4em #E9B171;
-    transform: translateY(-0.25em);
-  }
-  
-  .nav-bar .na-link{
-    text-decoration: none;
-      position: relative;
-      color:white;
-      font-size: 125%;
-  }
-  
-  
-   .nav-bar .na-link::before {
-    content: "";
-    position: relative;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #E9B171;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-  
-  }
-  
-  .nav-bar .na-link:hover::before {
-    visibility: visible;
-    width: 100%;
-    
-  
-  }
-  
-  .nav-bar .na-link:hover{
-    color: #2d1e8e;
-  } 
-  
-  
-  @media screen and (max-width:1000px) {
-    .nav-bar .pisb-logo{
-      display: none;
-    }
-  } */
-
-/* .app {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh
-} */
-
 .nav-bar {
   background-color: #141414;
   position: -webkit-sticky !important;
@@ -148,11 +64,6 @@
   background-color: #e9b171
 }
 
-@media screen and (max-width:1000px) {
-  .nav-bar .pisb-logo {
-    display: none
-  }
-}
 
 .modal-footer {
   border: none !important
@@ -182,65 +93,9 @@
   -webkit-transform: translateY(-.25em) scale(1.05);
   transform: translateY(-.25em) scale(1.05)
 }
-
-
-.nth-home {
-  margin: 1% 0;
-  text-align: center;
-  color: #fff
-}
-
-.nth-home h3 {
-  font-size: 3.5rem;
-  margin-top: 1.5%;
-  font-weight: 600
-}
-
-.nth-home h5 {
-  margin: 0 0 1.5%;
-  font-size: 1.5rem
-}
-
-.nth-home p {
-  color: #e9b171;
-  font-size: 140%
-}
-
-.nth-home img {
-  display: block;
-  margin: auto auto 1%
-}
-
-@media screen and (max-width:650px) {
-  .nth-home img {
-    width: 70%
+@media screen and (max-width:1000px) {
+  .nav-bar .pisb-logo {
+    display: none
   }
 }
-
-@media screen and (max-width:480px) {
-  .nth-home img {
-    width: 90%
-  }
-}
-
-.nth-home .hunt-button {
-  background: #e9b171;
-  border-radius: 10px;
-  border: none;
-  padding: 8px 20px;
-  color: #141414;
-  font-size: larger;
-  margin: .75rem auto;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1)
-}
-
-.nth-home .hunt-button:hover {
-  font-weight: 700
-}
-
-
-
-
-
 

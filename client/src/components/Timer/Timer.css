@@ -1,0 +1,32 @@
+.inst-btn{
+        background: #e9b171;
+        border-radius: 10px;
+        border: none;
+        padding: 8px 20px;
+        color: #141414;
+        font-size: larger;
+        margin: .75rem auto;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1)
+}
+.timer{
+    color: yellow;
+}
+.timer .format{
+    font-size:12px;
+    padding-left: 4%;
+    padding-top: 2%;
+
+}
+.timer .date{
+    font-size:22px
+}
+@media screen and (max-width: 1000px) {
+    .timer .format{
+    padding-left: 6%;
+    font-size: 9px;
+    }
+    .timer .date{
+        font-size:18px
+    }
+}
