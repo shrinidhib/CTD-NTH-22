@@ -229,7 +229,7 @@ const Instructions = (props) => {
                   <button type="button" class="nes-btn is-warning" onClick={()=>
                     {
                       !is_event&&!props.loginStatus&&props.toast.toast('Login First', { autoClose: 5000 })
-                      !is_event&&props.loginStatus&&props.toast.toast('Contest Not Started', { autoClose: 5000 })
+                      !is_event&&props.loginStatus&&props.toast.toast('Event Is Yet To Start', { autoClose: 5000 })
                     }
                   }>
                     Hunt
