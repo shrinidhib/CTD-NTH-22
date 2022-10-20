@@ -1,10 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import './Leaderboard.css';
 import Request from "../../api/requests";
-
+import { useNavigate } from 'react-router-dom';
 const Leaderboard = (props) => {
     const [rank, setRank] = useState([]);
-
+    const navigate=useNavigate();
+    const eventStatus=async()=>{
+        try{
+          const res= await Request.time();
+          console.log(res);
+          console.log('started'); 
+          if(res.data.is_started){
+            // props.loginStatus===false&&props.toast.toast.info('Login First ',{autoClose:6000})
+            // setIs_event(true);
+            fetchScores();
+          }
+                            
+          else{
+            props.toast.toast('Event Is Yet To Start', { autoClose: 5000 });
+            navigate("/");
+          }
+                            
+        }
+        catch(err){
+          console.log(err);
+          props.toast.toast.error(err.detail, { autoClose: 4000 });
+        }
+      }
     const fetchScores= async()=> {
             await Request.leaderboard()
             .then(res => {
@@ -19,7 +41,8 @@ const Leaderboard = (props) => {
 
     useEffect(() => {
         // console.log("fetching scores");
-        fetchScores();
+        // fetchScores();
+        eventStatus();
     },[])
 
     return (
