@@ -1,17 +1,36 @@
 
 import {useState,useEffect} from 'react';
-
-const Timer=()=>{
+import Requests from '../../api/requests';
+import { Link } from 'react-router-dom';
+import './Timer.css'
+const Timer=(props)=>{
     // Unix timestamp (in seconds) to count down to
-    const [day,setDay]=useState('00');
-    const [hour,setHour]=useState('00');
-    const [minutes,setMinutes]=useState('00');
-    const [seconds,setSeconds]=useState('00');
+    const [day,setDay]=useState(props.format.day) ;
+    const [hour,setHour]=useState(props.format.hour);
+    const [minutes,setMinutes]=useState(props.format.minutes);
+    const [seconds,setSeconds]=useState(props.format.seconds);
+    // console.log(props)
+    const fetchTime= async()=>{
+        await Requests.time()
+        .then((res)=>
+            {
+                console.log(res)
+                props.fetchTimeHome();
+            }
+            
+        )
+        .catch((err)=>console.log(err))
+
+    }
+    // useEffect(()=>{
+    //     fetchTime();
+    // },[eventDate])
     useEffect(()=>{
         // var test = new Date(Date.UTC(2022, 9, 28));
-        // let eventDate=1666999800000;
-        let eventDate=1666971000000;
-        var test = new Date();
+        // let props.time=1666999800000;
+        // const props.time=1666174920000
+        let curr=props.time;
+        // var test = new Date();
         // console.log(test);
         // console.log(test.getDay(),test.getDate(),test.getTime())
         // let start=new Date(eventDate);
@@ -20,22 +39,39 @@ const Timer=()=>{
         // var dateToStr = date.toUTCString().split(' ');
         // var cleanDate = dateToStr[2] + ' ' + dateToStr[1] ;
         // console.log(cleanDate);
-        eventDate-=Date.now();
-        
-        const interval = setInterval(() => {
-            eventDate--;
-            console.log('here');
-            setSeconds(Math.floor((eventDate / 1000) % 60));
-            setMinutes(Math.floor((eventDate / (1000 * 60)) % 60));
-            setHour(Math.floor((eventDate / (1000 * 60 * 60)) % 24));
-            setDay(Math.floor((eventDate)/(1000*60*60*24)));    
+        // console.log('i useeffet',curr);      
+        // if(curr==undefined) return;
+        curr-=Date.now();
+        // console.log(curr);      
+        if(curr<=0){
+            fetchTime();
+            return;
+        }
+        // fetchTime();
+        const interval= setInterval(() => {
+            curr--;
+            let cal=Math.floor((curr / 1000) % 60);
+            // console.log('In interval here',eventDate, seconds,minutes,hour,day, cal);
+            setSeconds( cal<10 ? '0'+cal.toString():cal.toString() ) ;
+            cal=Math.floor((curr / (1000 * 60)) % 60);
+            setMinutes( cal<10 ? '0'+cal.toString():cal.toString() ) ;
+            cal=Math.floor((curr / (1000 * 60 * 60)) % 24);
+            setHour( cal<10 ? '0'+cal.toString():cal.toString() ) ;
+            cal=Math.floor((curr)/(1000*60*60*24));
+            setDay( cal<10 ? '0'+cal.toString():cal.toString() ) ;
           }, 1000);
           return () => clearInterval(interval);
     },[day,hour,minutes,seconds,day])
     return(
-        // <div id="flipdown" class="flipdown">hey</div>
-        <div style={{color:'yellow'}}>
-            {day<10 ? '0':day}:{hour}:{minutes}:{seconds}
+        <div className='timer'>
+            {/* <p class="mr-3 ml-2 mt-3 mb-2" style={{color:'yellow',fontSize:'15px'}}>Hunt Begins In  </p> */}
+            <p class=" mr-3 ml-2 mt-3 mb-2 " className='format' style={{color:'yellow'}}>Days   Hours   Minutes    Seconds</p>
+            <p class="mr-3 ml-2 mt-3 mb-2" className='date' style={{color:'yellow'}}>{day}:{hour}:{minutes}:{seconds}</p>
+            <Link to="/instructions">
+            <button className="mr-3 ml-2 mt-2 mb-2 inst-btn">
+              Instructions
+            </button>
+            </Link>
         </div>
     )
 }

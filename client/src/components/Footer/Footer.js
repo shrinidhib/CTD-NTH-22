@@ -1,12 +1,12 @@
 import "./Footer.css";
 import { Container, Row, Col } from "react-bootstrap";
-import {useLocation } from 'react-router-dom'
+// import {useLocation } from 'react-router-dom'
 import { Link} from "react-router-dom";
 const Footer = () => {
 
-  const location = useLocation();
+  // const location = useLocation();
 
-  if (!location.pathname.match("/question")){
+  // if (!location.pathname.match("/question")){
     return (
       <div className="footer">
         <Container fluid>
@@ -42,7 +42,7 @@ const Footer = () => {
         </Container>
       </div>
     );
-  }
+  // }
 
   return null;
 

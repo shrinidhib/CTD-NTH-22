@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import "./Instructions.css";
 import r2d2 from "../../assets/r2d2.png";
 import c3po from "../../assets/c3po.png";
 import { connect } from "react-redux";
-
+import Requests from "../../api/requests";
 const Instructions = (props) => {
   let [r2d2_1, setR2D2_1] = useState(false);
   let [c3po_1, setC3PO_1] = useState(false);
@@ -12,7 +12,29 @@ const Instructions = (props) => {
   let [c3po_2, setC3PO_2] = useState(false);
   let [inst, setInst] = useState(false);
   let [skipped, setSkipped] = useState(false);
-
+  const [is_event,setIs_event]=useState(false);
+  let navigate = useNavigate();
+  const eventStatus=async()=>{
+    try{
+      const res= await Requests.time();
+      console.log(res);
+      console.log('started'); 
+      if(res.data.is_started){
+        props.loginStatus===false&&props.toast.toast.info('Login First ',{autoClose:6000})
+        setIs_event(true);
+      }
+                        
+      // else{
+      //   props.toast.toast('Contest Not Started', { autoClose: 5000 });
+      //   navigate("/");
+      // }
+                        
+    }
+    catch(err){
+      console.log(err);
+      props.toast.toast.error(err.detail, { autoClose: 4000 });
+    }
+  }
   const activate = (bot, time) => {
     setTimeout(() => {
       setR2D2_1(true);
@@ -31,6 +53,7 @@ const Instructions = (props) => {
   };
 
   useEffect(() => {
+    eventStatus();
     setTimeout(() => {
       setR2D2_1(true);
       // document.getElementById("r2d21").play();
@@ -190,16 +213,25 @@ const Instructions = (props) => {
               <div style={{ textAlign: "center" }}>
                 <Link
                   to={
-                    props.loginStatus === true
+                    is_event
+                    ?
+                      props.loginStatus 
                       ? "/question/put_your_ans_here"
                       : "/login"
+                    :
+                      props.loginStatus 
+                      ?
+                        '/'
+                      :
+                        '/login'
                   }
                 >
-                  <button type="button" class="nes-btn is-warning" onClick={()=>{
-                    props.loginStatus===true?props.toast.toast('ALL THE BEST!!! ',{autoClose:2000})
-                    // props.loginStatus===true?props.toast.toast.info('Put Answer In URL After question/ ',{autoClose:6000})
-                    : props.toast.toast.info('Login First ',{autoClose:6000})
-                    }}>
+                  <button type="button" class="nes-btn is-warning" onClick={()=>
+                    {
+                      !is_event&&!props.loginStatus&&props.toast.toast('Login First', { autoClose: 5000 })
+                      !is_event&&props.loginStatus&&props.toast.toast('Contest Not Started', { autoClose: 5000 })
+                    }
+                  }>
                     Hunt
                   </button>
                 </Link>

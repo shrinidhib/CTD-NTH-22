@@ -24,8 +24,8 @@ function App() {
       <NavbarComp toast={{ container: <ToastUtils />, toast }}/>
       <div className='margin-br'>
       <Routes>
-      <Route path="/" exact element={<Home/>}/>
-      <Route path="/register" element={<Register toast={{ container: <ToastUtils />, toast }}/>} />
+      <Route path="/" exact element={<Home toast={{ container: <ToastUtils />, toast }} />}/>
+      <Route path="/register" element={<Register toast={{ container: <ToastUtils />, toast }} />} />
       <Route path="/about" element={<About/>} />
       <Route path="/team" element={<Team/>} />
       <Route path="/contact" element={<Contact/>} />
@@ -38,7 +38,7 @@ function App() {
       </Routes>
       </div>
       <Footer />
-      <Background/> 
+      {/* <Background/>  */}
     
       
       </>
