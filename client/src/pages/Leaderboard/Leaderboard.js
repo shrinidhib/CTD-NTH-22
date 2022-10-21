@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './Leaderboard.css';
 import Request from "../../api/requests";
 import { useNavigate } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 const Leaderboard = (props) => {
+  const [loaderStatus, setLoaderStatus] = useState(true);
     const [rank, setRank] = useState([]);
     const navigate=useNavigate();
     const eventStatus=async()=>{
@@ -42,10 +44,18 @@ const Leaderboard = (props) => {
     useEffect(() => {
         // console.log("fetching scores");
         // fetchScores();
+        setTimeout(()=>{
+            setLoaderStatus(false);
+            console.log('in timee');
+        },3000)
         eventStatus();
     },[])
 
     return (
+        loaderStatus
+        ?
+        <Loader/>
+        :
         <div className="Leaderboard">
             <div className="high-scores">
                 <p>High Scores</p>

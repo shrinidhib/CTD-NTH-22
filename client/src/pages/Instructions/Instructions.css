@@ -21,10 +21,17 @@
     overflow: auto; */
     /* overflow-x: hidden; */
     width: auto;
+    display: block ;
+    overflow: auto;
     /* min-height: 10vh; */
     /* height: 400px; */
 }
 
+.instructions-content {
+    margin: 2% 7%;
+    font-size: 1.05rem;
+    color: white;
+}
 .r2d2{
     width:50px;
     height:30px;
@@ -116,7 +123,12 @@
     
         }
 } */
-
+@media screen and (max-width : 200px) {
+    .instructions {
+        margin: 15% 4% 5%;
+        /* width: 90%; */
+    }
+}
 .skip{
     animation: blinker 1.5s linear infinite;
     color: red;
