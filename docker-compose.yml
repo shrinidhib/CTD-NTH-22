@@ -34,6 +34,13 @@ services:
     depends_on:
       - backend    
 
+  certbot:
+    container_name: cert_bot
+    build:
+      context: ./certbot
+    expose:
+      - 80
+
   nginx:
     restart: always
     build: ./nginx
