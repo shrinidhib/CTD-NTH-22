@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-5^q7p#e911ps0!k@*auc(bd3d%%be$-o+hcv^yc10&uen4lfm(
 DEBUG = True
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(' ')
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['admin.nth.pictieee.in', 'localhost', '127.0.0.0', '20.94.70.127']
 
 
 # Application definition
