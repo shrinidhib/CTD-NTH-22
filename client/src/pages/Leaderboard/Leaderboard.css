@@ -1,8 +1,8 @@
 .Leaderboard{
   max-width: 450px;
-  height: 500px;
   /* background-color: white; */
   margin: 40px 20px;
+  margin-left: 36%;
   outline: 4px solid #feeb2c;
   border-radius: 10px;
   display: flex;
@@ -24,6 +24,7 @@ table{
   width: 450px;
   border-collapse: separate;
   border-spacing: 0 1em;
+
 }
 
 thead{
@@ -46,12 +47,13 @@ thead{
   text-align: center;
 }
 
-/*--------------- Trying to make it responsible for smaller screen :) ------------------*/
+/*--------------- Trying to make it responsive for smaller screen :) ------------------*/
 @media only screen and (max-height: 790px) {
-  .scoreBoard{
-      height: 400px;
+  .Leaderboard{
+      height: 540px;
       width: 400px;
-      padding: 5px;
+  
+      
   }
   table{
       width: 400px;
@@ -65,11 +67,13 @@ thead{
 }
 
 @media only screen and (max-height: 600px){
-  .scoreBoard{
-      height: 350px;
+  .Leaderboard{
+      height: 450px;
       max-width: 350px;
+      margin-left: 28px;
   }
   table{
+    
       width: 350px;
       border-spacing: 0 12px;
   }
@@ -85,7 +89,7 @@ thead{
 }
 
 @media only screen and (max-width: 450px){
-  .scoreBoard{
+  .Leaderboard{
       height: 400px;
       width: 300px;
       /* padding: 5px; */
