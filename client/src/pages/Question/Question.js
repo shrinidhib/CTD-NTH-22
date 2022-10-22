@@ -36,6 +36,7 @@ const Question = (props) => {
   };
 
   const user = async (temp) => {
+    setLoaderStatus(true);
     try {
       const res = await Request.user();
       console.log(res);
@@ -71,10 +72,12 @@ const Question = (props) => {
       setImageCnt(cnt)
       setLoaderStatus(false);
     }
-    catch (err) { console.log(err); props.toast.toast.error(err.detail, { autoClose: 4000 }); };
+    catch (err) { console.log(err); props.toast.toast.error('Error Fetching User Data', { autoClose: 4000 }); };
+    setLoaderStatus(false);
   }
 
   const fetchData = async () => {
+    setLoaderStatus(true);
     console.log(localStorage.getItem("auth-token"));
     try {
       const res = await Request.userquestion(ans);
@@ -83,11 +86,12 @@ const Question = (props) => {
     }
     catch (err) {
       console.log(err);
-      props.toast.toast.error(err.detail, { autoClose: 4000 })
+      props.toast.toast.error('Error Fetching Question Data', { autoClose: 4000 })
     };
-
+    setLoaderStatus(false);
   }
   const eventStatus = async () => {
+    setLoaderStatus(true);
     try {
       const res = await Requests.time();
       console.log(res);
@@ -103,11 +107,11 @@ const Question = (props) => {
     }
     catch (err) {
       console.log(err);
-      props.toast.toast.error(err.detail, { autoClose: 4000 });
+      props.toast.toast.error("Network Error", { autoClose: 4000 });
     }
+    setLoaderStatus(false);
   }
   useEffect(() => {
-
     eventStatus();
 
   }, []);

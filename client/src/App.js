@@ -35,10 +35,11 @@ function App() {
       <Route path="/question" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/question/ronald" element={<Harry toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/leaderboard" element = {<Leaderboard toast={{ container: <ToastUtils />, toast }}/>} />
+      {/* <Route path="*" element={<ErrorPage />} /> */}
       </Routes>
       </div>
       <Footer />
-      <Background/> 
+      {/* <Background/>  */}
     
       
       </>

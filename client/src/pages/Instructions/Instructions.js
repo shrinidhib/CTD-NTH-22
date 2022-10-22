@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Instructions.css";
 import r2d2 from "../../assets/r2d2.png";
 import c3po from "../../assets/c3po.png";
@@ -13,29 +13,30 @@ const Instructions = (props) => {
   let [c3po_2, setC3PO_2] = useState(false);
   let [inst, setInst] = useState(false);
   let [skipped, setSkipped] = useState(false);
-  const [is_event,setIs_event]=useState(false);
+  const [is_event, setIs_event] = useState(false);
   let navigate = useNavigate();
-  const eventStatus=async()=>{
-    try{
-      const res= await Requests.time();
+  const eventStatus = async () => {
+    setLoaderStatus(true);
+    try {
+      const res = await Requests.time();
       console.log(res);
-      console.log('started'); 
-      if(res.data.is_started){
-        props.loginStatus===false&&props.toast.toast.info('Login First ',{autoClose:6000})
+      console.log('started');
+      if (res.data.is_started) {
+        props.loginStatus === false && props.toast.toast.info('Login First ', { autoClose: 6000 })
         setIs_event(true);
-        setLoaderStatus(false);
       }
-      
+
       // else{
       //   props.toast.toast('Contest Not Started', { autoClose: 5000 });
       //   navigate("/");
       // }
-                        
+
     }
-    catch(err){
+    catch (err) {
       console.log(err);
-      props.toast.toast.error(err.detail, { autoClose: 4000 });
+      props.toast.toast.error("Network Error", { autoClose: 6000 });
     }
+    setLoaderStatus(false);
   }
   const activate = (bot, time) => {
     setTimeout(() => {
@@ -80,16 +81,20 @@ const Instructions = (props) => {
       setC3PO_2(false);
     }, 12000);
     // document.addEventListener("keydown", skipInst, true);
-    window.addEventListener('keydown',  skipInst);
+    window.addEventListener('keydown', skipInst);
     return () => {
-      window.removeEventListener('keydown',  skipInst);
+      window.removeEventListener('keydown', skipInst);
     };
   }, []);
   return (
     // <section class="nes-container is-dark">
-    <div className="adjust">
-      <div className="instructions">
-        {/* { !skipped &&
+    loaderStatus
+      ?
+      <loaderStatus />
+      :
+      <div className="adjust">
+        <div className="instructions">
+          {/* { !skipped &&
           <div>
             <audio id="r2d21">
               <source
@@ -117,151 +122,138 @@ const Instructions = (props) => {
             </audio>
           </div>
         } */}
-        <section class="message-list">
-          {!skipped && !inst && <div>
-            {r2d2_1 && (
-              <section class="message-left">
-                <div class="nes-balloon from-left ">
-                  <p className="msg">Beep Bloop Blop Bleep Boop</p>
-                </div>
-              </section>
-            )}
-            {r2d2_1 && <img src={r2d2} className="r2d2"></img>}
+          <section class="message-list">
+            {!skipped && !inst && <div>
+              {r2d2_1 && (
+                <section class="message-left">
+                  <div class="nes-balloon from-left ">
+                    <p className="msg">Beep Bloop Blop Bleep Boop</p>
+                  </div>
+                </section>
+              )}
+              {r2d2_1 && <img src={r2d2} className="r2d2"></img>}
 
-            {c3po_1 && (
-              <section class="message-right" style={{ textAlign: "right" }}>
-                {/* <i class="nes-bcrikko"></i> */}
-                {/* <!-- Balloon --> */}
-                <div class="nes-balloon from-right ">
-                  <p className="msg">OH MY GOODNESS!! NTH IS HERE!</p>
-                </div>
-                <br />
-                <img src={c3po} className="c3po"></img>
-                {/* <i class="snes-logo is-large"></i> */}
-                {/* <i class="nes-smartphone is-small"></i> */}
-              </section>
-            )}
+              {c3po_1 && (
+                <section class="message-right" style={{ textAlign: "right" }}>
+                  {/* <i class="nes-bcrikko"></i> */}
+                  {/* <!-- Balloon --> */}
+                  <div class="nes-balloon from-right ">
+                    <p className="msg">OH MY GOODNESS!! NTH IS HERE!</p>
+                  </div>
+                  <br />
+                  <img src={c3po} className="c3po"></img>
+                  {/* <i class="snes-logo is-large"></i> */}
+                  {/* <i class="nes-smartphone is-small"></i> */}
+                </section>
+              )}
 
-            {r2d2_2 && (
-              <section class="message-left">
-                <div class="nes-balloon from-left ">
-                  <p className="msg">Bloop Blop Bleep Bleep Bloooop!!!!</p>
-                </div>
-              </section>
-            )}
-            {r2d2_2 && <img src={r2d2} className="r2d2"></img>}
+              {r2d2_2 && (
+                <section class="message-left">
+                  <div class="nes-balloon from-left ">
+                    <p className="msg">Bloop Blop Bleep Bleep Bloooop!!!!</p>
+                  </div>
+                </section>
+              )}
+              {r2d2_2 && <img src={r2d2} className="r2d2"></img>}
 
-            {c3po_2 && (
-              <section class="message-right" style={{ textAlign: "right" }}>
-                {/* <i class="nes-bcrikko"></i> */}
-                {/* <!-- Balloon --> */}
-                <div class="nes-balloon from-right ">
-                  <p className="msg">
-                    I know its hard!! But that's the fun Part! <br />
-                    Just follow these Instructions.
-                  </p>
+              {c3po_2 && (
+                <section class="message-right" style={{ textAlign: "right" }}>
+                  {/* <i class="nes-bcrikko"></i> */}
+                  {/* <!-- Balloon --> */}
+                  <div class="nes-balloon from-right ">
+                    <p className="msg">
+                      I know its hard!! But that's the fun Part! <br />
+                      Just follow these Instructions.
+                    </p>
 
-                  {/* <p className="msg"></p> */}
-                </div>
-                <br />
-                <img src={c3po} className="c3po"></img>
-                {/* <i class="snes-logo is-large"></i> */}
-                {/* <i class="nes-smartphone is-small"></i> */}
-              </section>
-            )}
-          </div>}
+                    {/* <p className="msg"></p> */}
+                  </div>
+                  <br />
+                  <img src={c3po} className="c3po"></img>
+                  {/* <i class="snes-logo is-large"></i> */}
+                  {/* <i class="nes-smartphone is-small"></i> */}
+                </section>
+              )}
+            </div>}
 
-          {inst && (
-            <div>
-              <h1 style={{textAlign:"center",color:"red", padding:'10px'}}>INSTRUCTIONS</h1>
-              <section class="message-left">
-                <div class="nes-balloon inst">
-                  <ol className="inst-text ms-2">
-                    <li className="inst1-text">
-                      After logging in, there will be a question displayed which
-                      includes pictures and hints.
-                    </li>
-                    <li className="inst1-text">
-                      As you have logged in, your URL will be nth.pictieee .in /
-                      question To submit your answer, you have to put a '/' in
-                      the URL followed by the answer.
-                    </li>
-                    <li className="inst1-text">
-                      If your answer is correct, you will go to the next level,
-                      otherwise, you will be greeted with the same question with
-                      same level.
-                    </li>
-                    <li className="inst1-text">
-                      The one who solves as many questions and reaches the top
-                      level is displayed on the leaderboard.
-                    </li>
-                    <li className="inst1-text">
-                      If your answer is correct, you will go to the next level,
-                      otherwise, you will stay on the same level with the same
-                      question.
-                    </li>
-                    <li className="inst1-text">
-                      After the 24-hour hunt, the one on the top of the
-                      leaderboard wins!
-                    </li>
-                    <li className="inst1-text">
-                      The winner will be declared once and there will be no
-                      change in our decision. Furthermore, users should play
-                      with one account only.
-                    </li>
-                  </ol>
-                </div>
-              </section>
-              <div style={{ textAlign: "center" }}>
-                <Link
-                  to={
-                    is_event
-                    ?
-                      props.loginStatus 
-                      ? "/question/put_your_ans_here"
-                      : "/login"
-                    :
-                      props.loginStatus 
-                      ?
-                        '/'
-                      :
-                        '/login'
-                  }
-                >
-                  <button type="button" class="nes-btn is-warning" onClick={()=>
-                    {
-                      !is_event&&!props.loginStatus&&props.toast.toast('Login First', { autoClose: 5000 })
-                      !is_event&&props.loginStatus&&props.toast.toast('Event Is Yet To Start', { autoClose: 5000 })
+            {inst && (
+              <div>
+                <h1 style={{ textAlign: "center", color: "red", padding: '10px' }}>INSTRUCTIONS</h1>
+                <section class="message-left">
+                  <div class="nes-balloon inst">
+                    <ol className="inst-text ms-2">
+                      <li className="inst1-text">
+                        After logging in, there will be a question displayed which
+                        includes pictures and hints.
+                      </li>
+                      <li className="inst1-text">
+                        As you have logged in, your URL will be nth.pictieee .in /
+                        question To submit your answer, you have to put a '/' in
+                        the URL followed by the answer.
+                      </li>
+                      <li className="inst1-text">
+                        If your answer is correct, you will go to the next level,
+                        otherwise, you will be greeted with the same question with
+                        same level.
+                      </li>
+                      <li className="inst1-text">
+                        The one who solves as many questions and reaches the top
+                        level is displayed on the leaderboard.
+                      </li>
+                      <li className="inst1-text">
+                        If your answer is correct, you will go to the next level,
+                        otherwise, you will stay on the same level with the same
+                        question.
+                      </li>
+                      <li className="inst1-text">
+                        After the 24-hour hunt, the one on the top of the
+                        leaderboard wins!
+                      </li>
+                      <li className="inst1-text">
+                        The winner will be declared once and there will be no
+                        change in our decision. Furthermore, users should play
+                        with one account only.
+                      </li>
+                    </ol>
+                  </div>
+                </section>
+                <div style={{ textAlign: "center" }}>
+                  <Link
+                    to={
+                      is_event
+                        ?
+                        props.loginStatus
+                          ? "/question/put_your_ans_here"
+                          : "/login"
+                        :
+                        props.loginStatus
+                          ?
+                          '/'
+                          :
+                          '/login'
                     }
-                  }>
-                    Hunt
-                  </button>
-                </Link>
+                  >
+                    <button type="button" class="nes-btn is-warning" onClick={() => {
+                      !is_event && !props.loginStatus && props.toast.toast('Login First', { autoClose: 5000 })
+                      !is_event && props.loginStatus && props.toast.toast('Event Is Yet To Start', { autoClose: 3000 })
+                    }
+                    }>
+                      Hunt
+                    </button>
+                  </Link>
+                </div>
               </div>
-            </div>
-          )}
-          {/* </section> */}
-        </section>
+            )}
+            {/* </section> */}
+          </section>
+        </div>
+
+        {!inst && <div className="container text-center skip" onClick={() => { setSkipped(true); setInst(true); }} >
+          <p>Press ESC or click <a >here</a> to skip.</p>
+        </div>}
+
       </div>
-      
-      {!inst && <div className="container text-center skip" onClick={() => {setSkipped(true); setInst(true);}} >
-        <p>Press ESC or click <a >here</a> to skip.</p>
-      </div>}
-      
-    </div>
-    
-    // </section>
-    // <div class="nes-container is-rounded is-dark">
-    // <div className="instructions">
-    //     {/* <h4>&lt;instructions&gt;</h4> */}
-    //     <h4 className="text-center" style={{background:"#3c9b5134",padding: "2%", borderRadius:"10px"}}>INSTRUCTIONS</h4>
-    //     <div className="instructions-content text-center" style={{ color: "black" , background:"#3c9b5134",padding: "2%", borderRadius:"10px"}}>
 
-    //     </div>
-    //     {/* <h4>&lt;/instructions&gt;</h4> */}
-
-    // </div>
-    // </div>
   );
 };
 const mapStateToProps = (state) => {

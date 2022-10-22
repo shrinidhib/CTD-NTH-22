@@ -16,6 +16,7 @@ const Home = (props) => {
   const [seconds, setSeconds] = useState('00');
   // let days='00',hours='00',minutes='00',seconds='00';
   const fetchTimeHome = async () => {
+    setLoaderStatus(true);
     await Requests.time()
       .then(
         (res) => {
@@ -32,15 +33,29 @@ const Home = (props) => {
           cal = Math.floor(((res.data.time - Date.now() + 2000)) / (1000 * 60 * 60 * 24));
           setDay(cal < 10 ? '0' + cal.toString() : cal.toString());
           console.log(day)
-          setLoaderStatus(false);
+          
         }
       )
       .catch(
-        (err) => { console.log(err) }
+        (err) => { 
+          console.log(err);
+          props.toast.toast.error(err.message);
+        }
       )
+      setLoaderStatus(false);
+
   }
   useEffect(() => {
     fetchTimeHome();
+    // const timer1= setTimeout(()=>{
+    //   console.log('after 10 sec',loaderStatus);
+    //   if(loaderStatus) {
+    //     console.log('in timeout',loaderStatus);
+    //     setLoaderStatus(false);
+    //     props.toast.toast.error('Network Error');
+    //   }
+    // },10000)
+    // return ()=> clearTimeout(timer1);
   }, [])
   return (
     <div>

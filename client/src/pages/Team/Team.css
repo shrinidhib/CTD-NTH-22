@@ -6,6 +6,8 @@
   justify-content: center !important;
   width: 100%;
     color: red;
+    padding-top: 2%;
+    /* margin: 1%; */
   }
   
 .coreteam-members {
@@ -56,6 +58,7 @@
   @media screen and (max-width : 1000px) {
     .topic-title {
         font-size: 15px;
+        padding-top: 6%;
     }
     .team{
         max-height: 80vh;

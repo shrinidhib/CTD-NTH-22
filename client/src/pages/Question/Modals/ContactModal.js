@@ -16,8 +16,8 @@ function ContactModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Karan Lakhwani : +91-8329049174</p>
-          <p>Karan Lakhwani : +91-8329049174</p>
+          <p>Karan Lakhwani : <a href="tel:+91 98349 21293" style={{color:'blue'}} class="text1">+91 98349 21293</a></p>
+          <p>Karan Lakhwani : <a href="tel:+91 98349 21293" style={{color:'blue'}} class="text1">+91 98349 21293</a></p>
         </Modal.Body>
       </Modal>
     );
