@@ -6,6 +6,7 @@ import c3po from "../../assets/c3po.png";
 import { connect } from "react-redux";
 import Requests from "../../api/requests";
 const Instructions = (props) => {
+  const [loaderStatus, setLoaderStatus] = useState(true);
   let [r2d2_1, setR2D2_1] = useState(false);
   let [c3po_1, setC3PO_1] = useState(false);
   let [r2d2_2, setR2D2_2] = useState(false);
@@ -22,8 +23,9 @@ const Instructions = (props) => {
       if(res.data.is_started){
         props.loginStatus===false&&props.toast.toast.info('Login First ',{autoClose:6000})
         setIs_event(true);
+        setLoaderStatus(false);
       }
-                        
+      
       // else{
       //   props.toast.toast('Contest Not Started', { autoClose: 5000 });
       //   navigate("/");
@@ -171,7 +173,7 @@ const Instructions = (props) => {
 
           {inst && (
             <div>
-              <h1 style={{textAlign:"center",color:"red"}}>INSTRUCTIONS</h1>
+              <h1 style={{textAlign:"center",color:"red", padding:'10px'}}>INSTRUCTIONS</h1>
               <section class="message-left">
                 <div class="nes-balloon inst">
                   <ol className="inst-text ms-2">
