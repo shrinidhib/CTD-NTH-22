@@ -47,7 +47,8 @@ const Home = (props) => {
     fetchTimeHome();
     const timer1= setTimeout(()=>{
       setLoaderStatus(false);
-    },3000)
+      console.log('in home')
+    },3100)
     return ()=> clearTimeout(timer1);
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   return (

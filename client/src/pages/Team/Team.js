@@ -1,6 +1,9 @@
 import './Team.css'
-
+import {useEffect} from 'react'
 const Team = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     const webteam = [
         {
             name: 'Vansh Teppalwar',
