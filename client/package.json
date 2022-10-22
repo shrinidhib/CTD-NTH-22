@@ -1,6 +1,6 @@
 {
   "name": "nth_frontend",
-  "homepage": "localhost",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
