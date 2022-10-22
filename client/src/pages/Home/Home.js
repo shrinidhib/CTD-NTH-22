@@ -16,7 +16,6 @@ const Home = (props) => {
   const [seconds, setSeconds] = useState('00');
   // let days='00',hours='00',minutes='00',seconds='00';
   const fetchTimeHome = async () => {
-    setLoaderStatus(true);
     await Requests.time()
       .then(
         (res) => {
@@ -42,20 +41,14 @@ const Home = (props) => {
           props.toast.toast.error(err.message);
         }
       )
-      setLoaderStatus(false);
-
+      
   }
   useEffect(() => {
     fetchTimeHome();
-    // const timer1= setTimeout(()=>{
-    //   console.log('after 10 sec',loaderStatus);
-    //   if(loaderStatus) {
-    //     console.log('in timeout',loaderStatus);
-    //     setLoaderStatus(false);
-    //     props.toast.toast.error('Network Error');
-    //   }
-    // },10000)
-    // return ()=> clearTimeout(timer1);
+    const timer1= setTimeout(()=>{
+      setLoaderStatus(false);
+    },3000)
+    return ()=> clearTimeout(timer1);
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
