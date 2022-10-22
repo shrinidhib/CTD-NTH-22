@@ -49,7 +49,7 @@ const Leaderboard = (props) => {
             console.log('in timee');
         },3000)
         eventStatus();
-    },[])
+    },[]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         loaderStatus

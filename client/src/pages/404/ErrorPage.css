@@ -1,0 +1,37 @@
+.error-page{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    margin: 7% auto;
+    text-align: center;
+}
+
+.error-page h1{
+    color: red;
+    text-align: center;
+    font-size: 700%;
+}
+.error-page h2{
+    margin-top: 3%;
+    font-size:350%;
+}
+.error-page h3{
+    font-size: 200%;
+    margin: 4.5% 1% 1.5%;
+}
+
+@media screen and (max-width:1000px) {
+    .error-page{
+        margin: 17% auto;
+    }
+    .error-page h1{
+        font-size: 500%;
+    }
+    .error-page h2{
+        margin-top: 15%;
+        font-size:250%;
+    }
+    .error-page h3{
+        margin-top: 13%;
+        font-size: 150%;
+    }
+}

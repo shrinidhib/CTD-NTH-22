@@ -1,7 +1,7 @@
 import "./starwarsintro.css";
-import { Container, Row, Col } from "react-bootstrap";
+// import { Container, Row, Col } from "react-bootstrap";
 import nthlogo from "../../../assets/nth-logo.png";
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 export const StarWars = () => {
   // const [second,setSecond]=useState(0);
@@ -24,7 +24,7 @@ export const StarWars = () => {
 
         {/* <!-- Logo Image or Text goes in here --> */}
         <h2 class="main-logo">
-          <img src={nthlogo} />
+          <img src={nthlogo} alt='nth-logo'/>
         </h2>
 
         {/* <!-- All Scrolling Content Goes in here --> */}
@@ -74,7 +74,7 @@ export const StarWars1 = () => {
 
         {/* <!-- Logo Image or Text goes in here --> */}
         <h2 class="main-logo">
-          <img src={nthlogo} />
+          <img src={nthlogo} alt='nth-logo'/>
         </h2>
 
         {/* <!-- All Scrolling Content Goes in here --> */}

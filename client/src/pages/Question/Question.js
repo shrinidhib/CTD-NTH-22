@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Question.css";
-import { useParams, useNavigate, Navigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ContactModal from "./Modals/ContactModal";
 import ProfileModal from "./Modals/ProfileModal";
 import HintModal from "./Modals/HintModal";
@@ -113,8 +113,7 @@ const Question = (props) => {
   }
   useEffect(() => {
     eventStatus();
-
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
       {
@@ -129,16 +128,16 @@ const Question = (props) => {
             <div className="question-page ">
               <div style={{ paddingTop: '200px', position: 'fixed' }}>
                 <div class="view-sidebar">
-                  <img src={ctd} className="ctd-bar"></img>
-                  <a href="https://www.instagram.com/pisbcredenz/" target="_blank">
+                  <img src={ctd} className="ctd-bar" alt='CTD'></img>
+                  <a href="https://www.instagram.com/pisbcredenz/" target="_blank" rel="noopener noreferrer">
                     {/* <i className="fab fa-instagram  instagram"></i> */}
                     <i class="nes-icon instagram mt-2 "></i>
                   </a>
-                  <a href="https://www.linkedin.com/company/pisbieee/" target="_blank">
+                  <a href="https://www.linkedin.com/company/pisbieee/" target="_blank" rel="noopener noreferrer">
                     {/* <i className="fab fa-linkedin-in  linkedin"></i> */}
                     <i class="nes-icon linkedin  mt-1"></i>
                   </a>
-                  <a href="https://www.facebook.com/pictieee/" target="_blank">
+                  <a href="https://www.facebook.com/pictieee/" target="_blank" rel="noopener noreferrer">
                     {/* <i className="fab fa-facebook-f  facebook"></i> */}
                     <i class="nes-icon facebook mt-1"></i>
                   </a>
@@ -161,9 +160,9 @@ const Question = (props) => {
           class="nes-avatar is-rounded is-large"  > */}
 
                       <OverlayTrigger placement={'left'} overlay={<Tooltip id={'tooltip-left'}> <strong>{data.tooltip}</strong></Tooltip>}>
-                        <a className="key"><img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K'
-                          class="nes-avatar is-large"  >
-                        </img></a>
+                        <button className="key" style={{backgroundColor:'transparent',border:'none',color: 'inherit'}}><img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K'
+                          class="nes-avatar is-large"  alt='key'>
+                        </img></button>
                       </OverlayTrigger>
                       x{data?.keys}
                     </p>
@@ -172,18 +171,18 @@ const Question = (props) => {
                         imageCnt === 4
                           ?
                           <div className="cover4" >
-                            <img src={data.img1}></img>
-                            <img src={data.img2}></img>
-                            <img src={data.img3}></img>
-                            <img src={data.img4}></img>
+                            <img src={data.img1} alt='question'></img>
+                            <img src={data.img2} alt='question'></img>
+                            <img src={data.img3} alt='question'></img>
+                            <img src={data.img4} alt='question'></img>
                           </div>
                           :
                           imageCnt === 3
                             ?
                             <div className="cover4" >
-                              <img src={data.img1}></img>
-                              <img src={data.img2}></img>
-                              <img src={data.img3}></img>
+                              <img src={data.img1} alt='question'></img>
+                              <img src={data.img2} alt='question'></img>
+                              <img src={data.img3} alt='question'></img>
                             </div>
                             :
                             imageCnt === 2
@@ -194,16 +193,16 @@ const Question = (props) => {
 
                                 <div class="row">
                                   <div class="column">
-                                    <img src={data.img1} alt="Snow" className="img2" ></img>
+                                    <img src={data.img1} alt='question' className="img2" ></img>
                                   </div>
                                   <div class="column">
-                                    <img src={data.img2} alt="now" className="img2" ></img>
+                                    <img src={data.img2} alt='question' className="img2" ></img>
                                   </div>
                                 </div>
                               </div>
                               :
                               <div className="img1">
-                                <img className="cover1 " src={data.img1}></img>
+                                <img className="cover1 " src={data.img1} alt='question'></img>
                               </div>
                       }
 
