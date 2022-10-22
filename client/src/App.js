@@ -39,7 +39,7 @@ function App() {
       </Routes>
       </div>
       <Footer />
-      {/* <Background/>  */}
+      <Background/> 
     
       
       </>

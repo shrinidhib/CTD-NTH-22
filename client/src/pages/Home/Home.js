@@ -56,7 +56,7 @@ const Home = (props) => {
     //   }
     // },10000)
     // return ()=> clearTimeout(timer1);
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
       {
@@ -66,7 +66,7 @@ const Home = (props) => {
           :
           <div className="nth-adjust">
             <div className="nth-home">
-              <img src={nthlogo} ></img>
+              <img src={nthlogo} alt='nth-logo'></img>
               <h3>Network Treasure Hunt</h3>
               <h5>Decrypt the Encrypted</h5>
               {console.log(timerStatus.time, Date.now(), timerStatus.time - Date.now())}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./Instructions.css";
 import r2d2 from "../../assets/r2d2.png";
 import c3po from "../../assets/c3po.png";
@@ -14,7 +14,7 @@ const Instructions = (props) => {
   let [inst, setInst] = useState(false);
   let [skipped, setSkipped] = useState(false);
   const [is_event, setIs_event] = useState(false);
-  let navigate = useNavigate();
+  
   const eventStatus = async () => {
     setLoaderStatus(true);
     try {
@@ -38,14 +38,10 @@ const Instructions = (props) => {
     }
     setLoaderStatus(false);
   }
-  const activate = (bot, time) => {
-    setTimeout(() => {
-      setR2D2_1(true);
-    }, time);
-  };
+
   const skipInst = (e) => {
     console.log(e.key);
-    if (e.key == "Escape") {
+    if (e.key === "Escape") {
       setInst(true);
       setR2D2_1(false);
       setC3PO_1(false);
@@ -85,7 +81,7 @@ const Instructions = (props) => {
     return () => {
       window.removeEventListener('keydown', skipInst);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     // <section class="nes-container is-dark">
     loaderStatus
@@ -131,7 +127,7 @@ const Instructions = (props) => {
                   </div>
                 </section>
               )}
-              {r2d2_1 && <img src={r2d2} className="r2d2"></img>}
+              {r2d2_1 && <img src={r2d2} className="r2d2" alt='r2d2'></img>}
 
               {c3po_1 && (
                 <section class="message-right" style={{ textAlign: "right" }}>
@@ -141,7 +137,7 @@ const Instructions = (props) => {
                     <p className="msg">OH MY GOODNESS!! NTH IS HERE!</p>
                   </div>
                   <br />
-                  <img src={c3po} className="c3po"></img>
+                  <img src={c3po} className="c3po" alt='c3po'></img>
                   {/* <i class="snes-logo is-large"></i> */}
                   {/* <i class="nes-smartphone is-small"></i> */}
                 </section>
@@ -154,7 +150,7 @@ const Instructions = (props) => {
                   </div>
                 </section>
               )}
-              {r2d2_2 && <img src={r2d2} className="r2d2"></img>}
+              {r2d2_2 && <img src={r2d2} className="r2d2" alt='r2d2'></img>}
 
               {c3po_2 && (
                 <section class="message-right" style={{ textAlign: "right" }}>
@@ -169,7 +165,7 @@ const Instructions = (props) => {
                     {/* <p className="msg"></p> */}
                   </div>
                   <br />
-                  <img src={c3po} className="c3po"></img>
+                  <img src={c3po} className="c3po" alt='c3po'></img>
                   {/* <i class="snes-logo is-large"></i> */}
                   {/* <i class="nes-smartphone is-small"></i> */}
                 </section>
@@ -249,7 +245,7 @@ const Instructions = (props) => {
         </div>
 
         {!inst && <div className="container text-center skip" onClick={() => { setSkipped(true); setInst(true); }} >
-          <p>Press ESC or click <a >here</a> to skip.</p>
+          <p>Press ESC or click <button style={{backgroundColor:'transparent',border:'none',color: 'inherit'}}>here</button> to skip.</p>
         </div>}
 
       </div>

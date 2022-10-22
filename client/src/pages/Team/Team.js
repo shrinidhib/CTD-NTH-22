@@ -48,17 +48,17 @@ const Team = () => {
                     webteam.map((data) => (
                         <section class="nes-container is-dark member-card">
                             <div class="avatar">
-                                <img data-src={data.img} alt="Core Member B.C.Rikko" class="" src={data.img}></img>
+                                <img data-src={data.img} alt={data.name} class="" src={data.img}></img>
                             </div>
                             {console.log(data)}
                             <div class="profile">
                                 <h4 class="name">{data.name}</h4>
                                 {/* <p>Creator of NES.css</p> */}
                                 <div>
-                                    <a href={data.github} target="_blank" rel="noopener" aria-label="github">
+                                    <a href={data.github} target="_blank" rel="noopener noreferrer" aria-label="github">
                                         <i class="nes-icon github"></i>
                                     </a>
-                                    <a href={data.linkedin} target="_blank" rel="noopener" aria-label="linkedin">
+                                    <a href={data.linkedin} target="_blank" rel="noopener noreferrer" aria-label="linkedin">
                                         <i class="nes-icon linkedin"></i>
                                     </a>
                                 </div>
@@ -71,7 +71,7 @@ const Team = () => {
             
             <h1 className='topic-title'>NTH-TEAM</h1>
             
-            <a href="https://github.com/4k1k0" target="_black" class="contributor">
+            <a href="https://github.com/4k1k0" target="_black" class="contributor" rel="noopener noreferrer">
             <img data-src="https://github.com/4k1k0.png?size=64" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://github.com/4k1k0.png?size=64"></img>
             <p>Devraj</p>
             </a>
