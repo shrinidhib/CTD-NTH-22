@@ -44,6 +44,10 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title + ": " + str(self.level)
+    
+    @property 
+    def setCost(self):
+        return self.level+1
 
 class Timer(models.Model):
     time = models.IntegerField(default=1666971000000)
