@@ -20,7 +20,7 @@ const Home = (props) => {
       .then(
         (res) => {
           setTimerStatus(res.data);
-          if (res.data.is_started) props.toast.toast("Contest Started!!");
+          if (res.data.is_started) props.toast.toast("The Hunt is live!");
           console.log(res);
           let cal = Math.floor(((res.data.time - Date.now() + 2000) / 1000) % 60);
           setSeconds(cal < 10 ? '0' + cal.toString() : cal.toString());
@@ -65,11 +65,15 @@ const Home = (props) => {
               <h5>Decrypt the Encrypted</h5>
               {console.log(timerStatus.time, Date.now(), timerStatus.time - Date.now())}
               {
+                timerStatus.is_ended 
+                ?
+                <p style={{ color: 'yellow' }}>Event Has Ended</p>
+                : 
                 timerStatus.is_started === false
                   ?
                   timerStatus.time - Date.now() < 0
                     ?
-                    <p style={{ color: 'yellow' }}>Contest Not Started</p>
+                    <p style={{ color: 'yellow' }}>Event Is Yet To Start</p>
                     :
 
 

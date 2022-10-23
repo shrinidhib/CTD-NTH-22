@@ -95,13 +95,17 @@ const Question = (props) => {
     try {
       const res = await Requests.time();
       console.log(res);
-      if (res.data.is_started) {
+      if(res.data.is_ended){
+        props.toast.toast('Event Has Ended', { autoClose: 5000 });
+        navigate("/")
+      }
+      else if (res.data.is_started) {
         fetchData();
         redirectAns();
       }
       else {
         console.log('here in event');
-        props.toast.toast('Contest Not Started', { autoClose: 5000 });
+        props.toast.toast('Event Is Yet To Start', { autoClose: 5000 });
         navigate("/")
       }
     }

@@ -40,4 +40,4 @@ class QuestionSerializer(ModelSerializer):
 class TimerSerializer(ModelSerializer):
     class Meta:
         model = Timer
-        fields = ['time','is_started']
+        fields = ['time','is_started','is_ended']
