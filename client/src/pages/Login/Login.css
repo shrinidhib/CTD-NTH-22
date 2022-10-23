@@ -39,11 +39,6 @@
 
 }
 
-@media screen and (max-width :400px) {
-    .login-page {
-        width: 90%;
-    }
-}
 
 .login-page .field {
     width: 100%;
@@ -153,7 +148,19 @@
     cursor: default;
     text-align: center;
 }
-
+@media screen  and (max-height :600px) {
+    .login-page {
+        /* margin-top: 5%; */
+        /* display: block; */
+        overflow: auto;
+        max-height: 60vh;
+    }
+}
+@media screen and (max-width :400px) {
+    .login-page {
+        width: 90%;
+    }
+}
 
 
 @media screen and (max-width : 200px) {

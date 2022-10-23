@@ -13,7 +13,7 @@
 .coreteam-members {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
   }
   .nes-container.member-card .nes-icon {
     transform: scale(1.5);
@@ -21,14 +21,14 @@
   .nes-container.member-card {
     display: flex;
     padding: 1rem 1.5rem;
-    width: 400px;   
+    width: 480px;   
     margin-bottom: 2rem;
   }
   
   .member-card .avatar > img {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
   }
   .member-card > .profile {
@@ -41,7 +41,7 @@
     display: inline-block;
     margin: 1rem;
     text-align: center;
-    width: 160px;
+    /* width: 160px; */
   }
   .contributor > p {
     margin: .5rem;
@@ -55,7 +55,27 @@
     text-decoration: none;
     opacity: 0.7;
   }
+  .nth-team .adjust{
+    width: 20px;
+    /* height: 20px; */
+    /* overflow: auto; */
+  }
+  .container-adjust{
+    padding-left: 20%;
+      padding-right: 15%
+  }
   @media screen and (max-width : 1000px) {
+    .container-adjust{
+      padding-left: 5%;
+        padding-right: 5%
+    }
+    .nth-team .adjust{
+      width: 110px;
+      top: 50%;
+      left: 50%;
+      /* height: 20px; */
+      /* overflow: auto; */
+    }
     .topic-title {
         font-size: 15px;
         padding-top: 6%;
@@ -70,16 +90,20 @@
         max-height: 50vh;
     } */
     .nes-container.member-card{
-        width: 300px;
+        width: 280px;
         /* height: 130px; */
     }
     .member-card .avatar > img {
         
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
         
       }
       .member-card > .profile > .name {
-        font-size: 10px;
+        font-size: 13px;
+      }
+      .nth-team .adjust{
+        width: 1000px;
+        padding-left: 10%;
       }
   }

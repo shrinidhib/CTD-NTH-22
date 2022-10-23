@@ -1,5 +1,14 @@
 import './Team.css'
 import {useEffect} from 'react'
+import { Container, Row, Col } from "react-bootstrap";
+import vansh1 from '../../assets/team/vansh1.png'
+import mrunal from '../../assets/team/mrunal.png'
+import harsh from '../../assets/team/harsh.png'
+import devraj from '../../assets/team/devraj.png'
+import omkar from '../../assets/team/omkar.png' 
+import bhakti from '../../assets/team/bhakti.png' 
+import vidhi from '../../assets/team/vidhi.png'  
+import safiya from '../../assets/team/safiya.png'  
 const Team = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -7,39 +16,60 @@ const Team = () => {
     const webteam = [
         {
             name: 'Vansh Teppalwar',
-            img: 'https://github.com/BcRikko.png?size=80',
+            img: vansh1,
             github: 'https://github.com/VanshTeppalwar',
             linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
         },
         {
+            name: 'Devraj Shetake',
+            img: devraj,
+            github: 'https://github.com/devrajshetake',
+            linkedin: 'https://www.linkedin.com/in/devraj-shetake-439606206/'
+        },
+        {
+            name: 'Harsh Bhat',
+            img: harsh,
+            github: 'https://github.com/Harususan',
+            linkedin: 'https://www.linkedin.com/in/harshbhat/'
+        },
+        {
+            name: 'Mrunal Golivadekar',
+            img: mrunal,
+            github: ' https://github.com/mrunalg25',
+            linkedin: 'https://www.linkedin.com/in/mrunal-golivadekar-27b34121a/'
+        }
+    ]
+    const nthteam=[
+        {
             name: 'Devraj',
-            img: 'https://github.com/BcRikko.png?size=80',
-            github: 'https://github.com/VanshTeppalwar',
-            linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
+            img: devraj,
+            insta:'https://www.instagram.com/devrajshetake/'
         },
         {
             name: 'Harsh',
-            img: 'https://github.com/BcRikko.png?size=80',
-            github: 'https://github.com/VanshTeppalwar',
-            linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
-        },
-        {
-            name: 'Mrunal',
-            img: 'https://github.com/BcRikko.png?size=80',
-            github: 'https://github.com/VanshTeppalwar',
-            linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
+            img: harsh,
+            insta:'https://instagram.com/_harusu_san_?igshid=YmMyMTA2M2Y='
         },
         {
             name: 'Bhakti',
-            img: 'https://github.com/BcRikko.png?size=80',
-            github: 'https://github.com/VanshTeppalwar',
-            linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
-        },{
-            name: 'Omkar',
-            img: 'https://github.com/BcRikko.png?size=80',
-            github: 'https://github.com/VanshTeppalwar',
-            linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
+            img: bhakti,
+            insta:'https://instagram.com/bhakti.mahurkar22?igshid=YmMyMTA2M2Y='
         },
+        {
+            name: 'Vidhi',
+            img: vidhi,
+            insta:'https://www.instagram.com/sovidhii/'
+        },
+        {
+            name: 'Safiya',
+            img: safiya,
+            insta:'https://www.linkedin.com/in/safiya-amin-907386206/'
+        },
+        {
+            name: 'Omkar',
+            img: omkar,
+            insta:'https://instagram.com/omkarkulkarni25?igshid=YmMyMTA2M2Y='
+        }
     ]
     return (
         <div className='team'>
@@ -49,7 +79,7 @@ const Team = () => {
 
                 {
                     webteam.map((data) => (
-                        <section class="nes-container is-dark member-card">
+                        <section class="nes-container is-dark member-card ms-3">
                             <div class="avatar">
                                 <img data-src={data.img} alt={data.name} class="" src={data.img}></img>
                             </div>
@@ -73,12 +103,26 @@ const Team = () => {
             
             
             <h1 className='topic-title'>NTH-TEAM</h1>
-            
-            <a href="https://github.com/4k1k0" target="_black" class="contributor" rel="noopener noreferrer">
-            <img data-src="https://github.com/4k1k0.png?size=64" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://github.com/4k1k0.png?size=64"></img>
-            <p>Devraj</p>
-            </a>
+    
+            <Container fluid className='container-adjust'>
+                <Row className='nth-team'>
+            {
+                
+                    nthteam.map((data)=>(
+                <Col className="adjust" >
+                    
+                    <a href={data.insta} target="_black" class="contributor" rel="noopener noreferrer">
+                    <img data-src={data.img} alt="Contributor" class="nes-avatar is-large is-rounded" src={data.img}></img>
+                    <p>{data.name}</p>
+                    </a>
+                </Col>
+                
+                    ))
+                
+            }
+            </Row>
 
+              </Container>
         </div>
     )
 }

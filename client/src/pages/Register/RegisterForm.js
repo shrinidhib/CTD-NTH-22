@@ -146,6 +146,7 @@ const RegisterForm = (props) => {
                         type="text"
                         placeholder="type your username"
                         className="login-form-input"
+                        maxlength="10"
                         required
                       />
                     </div>
