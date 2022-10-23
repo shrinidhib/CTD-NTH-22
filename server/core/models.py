@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 import datetime
+import math
 
 # Create your models here.
 
@@ -14,7 +15,7 @@ class User(AbstractUser):
 
     # Currency
     paidHintTaken = models.BooleanField(default=False)
-    keys = models.PositiveIntegerField(default = 0)
+    keys = models.PositiveIntegerField(default = 2)
 
 
     REQUIRED_FIELDS = ['phone', 'first_name', 'last_name', 'email', 'college', 'keys', 'current_level', 'paidHintTaken']
@@ -34,6 +35,7 @@ class Question(models.Model):
     level = models.IntegerField(unique=True, null=True)
     tooltip = models.CharField(max_length=1023, null=True, default=None)
     hints = models.TextField(default="<hints>")
+    hintCost = models.IntegerField(null = True, blank=True)
     # gif = models.URLField(max_length=1023, null=True, default=None)
     # vid = models.URLField(max_length=1023, null=True, default=None)
 
@@ -42,12 +44,20 @@ class Question(models.Model):
     keywords = models.TextField(default='[]',blank=True)
     paidHint = models.TextField(default="<Extra hint>")
 
+
     def __str__(self):
         return self.title + ": " + str(self.level)
+
+    def save(self, *args, **kwargs):
+        if not self.hintCost:
+            self.hintCost = math.ceil(self.level * 1.5)
+        super(Question, self).save(*args, **kwargs)
+
 
 class Timer(models.Model):
     time = models.IntegerField(default=1666971000000)
     is_started = models.BooleanField(default=False)
+    is_ended = models.BooleanField(null = True,default=False)
     promo_code_active = models.BooleanField(default=False)
     promocode = models.CharField(max_length=100, default="NTH22")
     add_keys_interval_min = models.IntegerField(default=120)
