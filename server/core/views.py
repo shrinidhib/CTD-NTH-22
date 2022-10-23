@@ -80,7 +80,7 @@ class QuestionDetail(generics.RetrieveAPIView):
 
             # Evaluate The Answer
             elif que.answer == user_ans:
-                user.keys += user.current_level
+                user.keys += que.hintCost
                 user.current_level += 1
                 user.paidHintTaken = False
                 print(user.current_level,"level")
@@ -131,8 +131,8 @@ class ExtraHintView(APIView):
             # res_dict = {"status":"You have already taken a hint!"}
             res_dict = {"extraHint":que.paidHint}
             return Response(res_dict)
-        if user.keys >= user.current_level + 1:
-            user.keys -= (user.current_level + 1)
+        if user.keys >= que.hintCost:
+            user.keys -= que.hintCost
             user.paidHintTaken = True
             user.save()
             res_dict = {"extraHint":que.paidHint}
