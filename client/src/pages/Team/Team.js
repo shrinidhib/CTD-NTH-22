@@ -37,6 +37,12 @@ const Team = () => {
             img: mrunal,
             github: ' https://github.com/mrunalg25',
             linkedin: 'https://www.linkedin.com/in/mrunal-golivadekar-27b34121a/'
+        },
+        {
+            name: 'Omkar Kulkarni',
+            img: omkar,
+            github: '  http://github.com/OmkarK2553',
+            linkedin: ' http://linkedin.com/in/omkar-kulkarni-5b1693214/'
         }
     ]
     const nthteam=[
