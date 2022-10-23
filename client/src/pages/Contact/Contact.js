@@ -1,21 +1,24 @@
 import './Contact.css'
 import { Container, Row, Col } from "react-bootstrap";
-
+import devraj from '../../assets/team/devraj.png';
+import harsh from '../../assets/team/harsh.png';
+import bhakti from '../../assets/team/bhakti.png';
 const Contact = () => {
     const details = [
         {
-            name: "Vansh Teppalwar",
-            img: 'https://github.com/4k1k0.png?size=64',
-            instagram: 'https://github.com/4k1k0.png?size=64',
-            linkedin: 'https://github.com/4k1k0.png?size=64',
-            phone: 7972851721
+            name: "Devraj Shetake",
+            img : devraj,
+            phone: 8208566305
         },
         {
-            name: "Vansh Teppalwar",
-            img: 'https://github.com/4k1k0.png?size=64',
-            instagram: 'https://github.com/4k1k0.png?size=64',
-            linkedin: 'https://github.com/4k1k0.png?size=64',
-            phone: 7972851721
+            name: "Harsh Bhat",
+            img : harsh,
+            phone: 8983594252
+        },
+        {
+            name: "Bhakti Mahurkar",
+            img : bhakti,
+            phone: 9307931414 
         }
     ]
     return (
@@ -29,7 +32,7 @@ const Contact = () => {
                     {
                     details.map((data) => (
                     
-                    <Col lg={6} sm={12}>
+                    <Col lg={4} sm={12}>
                         {/* <section class="nes-container is-dark member-card">
                             <div class="avatar">
                                 <img data-src={data.img} alt="Core Member B.C.Rikko" class="" src={data.img}></img>
@@ -52,7 +55,7 @@ const Contact = () => {
                         <div class="contactus-card"><img src={data.img} width="210px" alt='profile'></img>
                             <div class="card-name">
                                 <h4 class="text">{data.name}</h4>
-                                <h5 ><a href="tel:+91 98349 21293" style={{color:'blue'}} class="text1"><i class="fas fa-phone-alt"></i> +91 98349 21293</a></h5>
+                                <h5 ><a href={`tel:+91 ${data.phone}`} style={{color:'blue'}} class="text1"><i class="fas fa-phone-alt"></i> {`tel:+91 ${data.phone}`}</a></h5>
                             </div>
                         </div>
                         </section>
