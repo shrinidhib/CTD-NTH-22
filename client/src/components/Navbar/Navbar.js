@@ -1,11 +1,11 @@
 import pisblogo from "../../assets/pisb-logo.png";
 // import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import { Link,NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Button, NavbarBrand, NavItem } from "react-bootstrap";
+// import { Button, NavbarBrand, NavItem } from "react-bootstrap";
 import { connect } from "react-redux";
 import {change_logout} from '../../actions/loginAction'
 const NavbarComp = (props) => {

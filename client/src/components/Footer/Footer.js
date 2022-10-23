@@ -21,18 +21,15 @@ const Footer = () => {
             </Col>
             <Col lg={4} md={12} sm={12}>
             <div >
-              <a href="https://www.instagram.com/pisbcredenz/" target="_blank">
+              <a href="https://www.instagram.com/pisbcredenz/" target="_blank" rel="noopener noreferrer">
                 {/* <i className="fab fa-instagram  instagram"></i> */}
                 <i class="nes-icon instagram me-5 ms-5"></i>
               </a>
-              <a
-                href="https://www.linkedin.com/company/pisbieee/"
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/company/pisbieee/" target="_blank" rel="noopener noreferrer" >
                 {/* <i className="fab fa-linkedin-in  linkedin"></i> */}
                 <i class="nes-icon linkedin  me-5"></i>
               </a>
-              <a href="https://www.facebook.com/pictieee/" target="_blank">
+              <a href="https://www.facebook.com/pictieee/" target="_blank" rel="noopener noreferrer">
                 {/* <i className="fab fa-facebook-f  facebook"></i> */}
                 <i class="nes-icon facebook me-5"></i>
               </a>
@@ -43,11 +40,6 @@ const Footer = () => {
       </div>
     );
   // }
-
-  return null;
-
-
-  
 };
 
 export default Footer;

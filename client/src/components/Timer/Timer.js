@@ -22,25 +22,8 @@ const Timer=(props)=>{
         .catch((err)=>console.log(err))
 
     }
-    // useEffect(()=>{
-    //     fetchTime();
-    // },[eventDate])
     useEffect(()=>{
-        // var test = new Date(Date.UTC(2022, 9, 28));
-        // let props.time=1666999800000;
-        // const props.time=1666174920000
         let curr=props.time;
-        // var test = new Date();
-        // console.log(test);
-        // console.log(test.getDay(),test.getDate(),test.getTime())
-        // let start=new Date(eventDate);
-        // console.log(start);
-        // var date = new Date(1324339200000);
-        // var dateToStr = date.toUTCString().split(' ');
-        // var cleanDate = dateToStr[2] + ' ' + dateToStr[1] ;
-        // console.log(cleanDate);
-        // console.log('i useeffet',curr);      
-        // if(curr==undefined) return;
         curr-=Date.now();
         // console.log(curr);      
         if(curr<=0){
@@ -61,7 +44,7 @@ const Timer=(props)=>{
             setDay( cal<10 ? '0'+cal.toString():cal.toString() ) ;
           }, 1000);
           return () => clearInterval(interval);
-    },[day,hour,minutes,seconds,day])
+    },[day,hour,minutes,seconds]) // eslint-disable-line react-hooks/exhaustive-deps
     return(
         <div className='timer'>
             {/* <p class="mr-3 ml-2 mt-3 mb-2" style={{color:'yellow',fontSize:'15px'}}>Hunt Begins In  </p> */}
