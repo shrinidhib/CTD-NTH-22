@@ -1,3 +1,4 @@
 server/venv
+server/db.sqlite3
 client/node_modules
 *.pyc
