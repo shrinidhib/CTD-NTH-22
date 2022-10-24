@@ -40,7 +40,7 @@ const Home = (props) => {
       .catch(
         (err) => {
           console.log(err);
-          props.toast.toast.error(err.message);
+          props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
         }
       )
     setLoaderStatus(false)

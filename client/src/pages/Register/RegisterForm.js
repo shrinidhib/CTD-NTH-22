@@ -15,6 +15,28 @@ const RegisterForm = (props) => {
   const [college, setCollege] = useState("");
   const [error, setError] = useState("");
   let navigate = useNavigate();
+  const eventDate=async ()=>{
+    await Request.time()
+        .then((res)=>{
+          function timeConverter(UNIX_timestamp){
+            var a = new Date(UNIX_timestamp );
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            var year = a.getFullYear();
+            var month = months[a.getMonth()];
+            var date = a.getDate();
+            var hour = a.getHours();
+            // var min = a.getMinutes();
+            // var sec = a.getSeconds();
+            var time = date + ' ' + month + ' ' + year + ' at ' +
+             (hour>12 ? (hour-12)+'pm':hour+'am') 
+            return time;
+          }
+          if(!res.data.is_started) props.toast.toast('Hunt Begins on '+timeConverter(res.data.time), { autoClose: 15000 });
+          // console.log(res.data.time,timeConverter(res.data.time));
+          
+        })
+        .catch((err)=>console.log(err))
+  }
   const login = async () => {
     setLoaderStatus(true);
     await Request.login({ username, password })
@@ -23,6 +45,7 @@ const RegisterForm = (props) => {
         if (res.data.auth_token !== undefined) localStorage.setItem("auth-token", res.data.auth_token)
         localStorage.setItem("username", username)
         props.change_longinStatus();
+        eventDate();
         navigate("/instructions");
       })
       .catch((err) => {
@@ -53,7 +76,7 @@ const RegisterForm = (props) => {
       })
       .catch((err) => {
         console.log(err);
-        if (err.code === "ERR_NETWORK") { setError("Network Error"); props.toast.toast.error("Network Error"); }
+        if (err.code === "ERR_NETWORK") { setError("Network Error");props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });}
         else if (err.code === "ERR_BAD_REQUEST") { setError("Username Already Exists"); props.toast.toast.error("Username Already Exists"); }
       });
     setLoaderStatus(false);

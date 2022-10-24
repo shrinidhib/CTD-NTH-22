@@ -4,7 +4,7 @@ import Requests from '../../api/requests';
 import { Link } from 'react-router-dom';
 import './Timer.css'
 const Timer=(props)=>{
-    // Unix timestamp (in seconds) to count down to
+    // Unix timestamp (in miliseconds) to count down to
     const [day,setDay]=useState(props.format.day) ;
     const [hour,setHour]=useState(props.format.hour);
     const [minutes,setMinutes]=useState(props.format.minutes);

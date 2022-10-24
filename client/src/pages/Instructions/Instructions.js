@@ -14,13 +14,14 @@ const Instructions = (props) => {
   let [inst, setInst] = useState(false);
   let [skipped, setSkipped] = useState(false);
   const [is_event, setIs_event] = useState(false);
-  
+  const [is_ended, setIs_ended] = useState(false);
   const eventStatus = async () => {
     setLoaderStatus(true);
     try {
       const res = await Requests.time();
       // console.log(res);
       // console.log('started');
+      if(res.data.is_ended) setIs_ended(true);
       if (res.data.is_started) {
         props.loginStatus === false && props.toast.toast.info('Login First ', { autoClose: 6000 })
         setIs_event(true);
@@ -34,7 +35,7 @@ const Instructions = (props) => {
     }
     catch (err) {
       console.log(err);
-      props.toast.toast.error("Network Error", { autoClose: 6000 });
+      props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
     }
     setLoaderStatus(false);
   }
@@ -235,8 +236,8 @@ const Instructions = (props) => {
                     }
                   >
                     <button type="button" class="nes-btn is-warning" onClick={() => {
-                      !is_event && !props.loginStatus && props.toast.toast('Login First', { autoClose: 5000 })
-                      !is_event && props.loginStatus && props.toast.toast('Event Is Yet To Start', { autoClose: 3000 })
+                      !is_ended&&!is_event && !props.loginStatus && props.toast.toast('Login First', { autoClose: 5000 })
+                      !is_ended&&!is_event && props.loginStatus && props.toast.toast('Event Is Yet To Start', { autoClose: 3000 })
                     }
                     }>
                       Hunt

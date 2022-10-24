@@ -3,7 +3,17 @@ import { Container, Row, Col } from "react-bootstrap";
 import devraj from '../../assets/team/devraj.png';
 import harsh from '../../assets/team/harsh.png';
 import bhakti from '../../assets/team/bhakti.png';
+import Requests from '../../api/requests';
+import {useState,useEffect} from 'react';
 const Contact = () => {
+  const [loaderStatus, setLoaderStatus] = useState(false);
+    const eventStatus = async () => {
+        await Requests.time()
+        .catch ((err)=> {
+          console.log(err);
+          setLoaderStatus(true);
+        })
+      }
     const details = [
         {
             name: "Devraj Shetake",
@@ -21,6 +31,9 @@ const Contact = () => {
             phone: 9307931414 
         }
     ]
+    useEffect(()=>{
+        eventStatus();
+    },[])
     return (
         <div className='contact-page'>
 
@@ -61,6 +74,18 @@ const Contact = () => {
                         </section>
                     </Col>
                     ))}
+                    {
+                        loaderStatus
+                        ?
+                        <div>
+                        <p style={{color:'white'}}><p style={{color:'red',display:'contents'}}>To resolve the Network Error:</p> On Chrome, click on 3 dots --&gt; settings --&gt; privacy and security --&gt; use secure dns --&gt; choose another provider --&gt; select Google (public DNS)
+                        </p>    
+                        <p style={{color:'white','text-decoration': 'underline'}}>If the network error persists, contact any of the organizers.
+                        </p>
+                        </div>
+                        :
+                        <></>
+                    }
                 </Row>
             </Container>
             

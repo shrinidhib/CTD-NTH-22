@@ -26,7 +26,7 @@ const Leaderboard = (props) => {
         }
         catch(err){
           console.log(err);
-          props.toast.toast.error("Network Error", { autoClose: 4000 });
+          props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
         }
       }
     const fetchScores= async()=> {

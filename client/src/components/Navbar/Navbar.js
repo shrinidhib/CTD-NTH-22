@@ -56,7 +56,7 @@ const NavbarComp = (props) => {
             {/* <Nav variant="pills" > */}
             <Nav className="justify-content-center">
               <Nav.Item class="nav-display" >
-                <Nav.Link href="/" as={Link} to="/" class={'nav-link'} >Home</Nav.Link>
+                <Nav.Link eventKey="link-1" href="/" as={Link} to="/" class={'nav-link'} >Home</Nav.Link>
               </Nav.Item>
               {/* <Nav.Item>
               <Nav.Link eventKey="link-1" href="/Login" as={Link} to="/login" >Login</Nav.Link>
