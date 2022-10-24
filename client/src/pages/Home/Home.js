@@ -23,7 +23,7 @@ const Home = (props) => {
           setTimerStatus(res.data);
           if (res.data.is_ended) props.toast.toast("The Hunt Has Ended!");
           else if (res.data.is_started) props.toast.toast("The Hunt is live!");
-            // console.log(res);
+            console.log(res);
             let cal = Math.floor(((res.data.time - Date.now() + 2000) / 1000) % 60);
             setSeconds(cal < 10 ? '0' + cal.toString() : cal.toString());
 
@@ -43,15 +43,15 @@ const Home = (props) => {
           props.toast.toast.error(err.message);
         }
       )
-
-  }
+    setLoaderStatus(false)
+;  }
   useEffect(() => {
     fetchTimeHome();
-    const timer1 = setTimeout(() => {
-      setLoaderStatus(false);
-      // console.log('in home')
-    }, 3100)
-    return () => clearTimeout(timer1);
+    // const timer1 = setTimeout(() => {
+    //   setLoaderStatus(false);
+    //   // console.log('in home')
+    // }, 3100)
+    // return () => clearTimeout(timer1);
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
@@ -71,7 +71,7 @@ const Home = (props) => {
                   ?
                   <div>
                   <img src={r2d2} style={{width:'40px',float: 'left',margin: '0 0 0 10px'}} alt='r2d2'></img>
-                  <p style={{ color: 'yellow',paddingTop:'2%'}}>...Event Has Ended</p></div>
+                  <p style={{ color: 'yellow',paddingTop:'2%'}}>...Hunt Has Ended</p></div>
                   :
                   timerStatus.is_started === false
                     ?

@@ -22,12 +22,20 @@
     overflow: auto; */
     /* overflow-x: hidden; */
     width: auto;
-    display: block ;
-    overflow: auto;
+    /* display: block ;
+    overflow: auto; */
     /* min-height: 10vh; */
     /* height: 400px; */
 }
-
+.message-left{
+    height: 55vh;
+    display: block;
+    overflow: auto
+}
+.instp-btn{
+    text-align: center;
+    padding-top: 3%
+}
 .instructions-content {
     margin: 2% 7%;
     font-size: 1.05rem;
@@ -81,7 +89,9 @@
         /* width: 90%; */
         /* height: 540px; */
     }
-    
+    .instp-btn{
+        padding-top: 5%;
+    }
     /* .instructions .nes-balloonnes-balloon{
         margin: 1% 0 1% 8%;
     } */

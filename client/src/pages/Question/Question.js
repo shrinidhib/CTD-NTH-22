@@ -15,7 +15,7 @@ import Loader from "../../components/Loader/Loader";
 
 // import key from '../../assets/keys.png'
 const Question = (props) => {
-  const [loaderStatus, setLoaderStatus] = useState(true);
+  const [loaderStatus, setLoaderStatus] = useState(false);
   const [data, setData] = useState({});
   const [id, setId] = useState(-1);
   const [imageCnt, setImageCnt] = useState(1);
@@ -206,16 +206,16 @@ const Question = (props) => {
 
                                 <div class="row">
                                   <div class="column">
-                                    <img src={data.img1} alt='question' className="img2" ></img>
+                                    <img src={data.img1} alt='' className="img2" ></img>
                                   </div>
                                   <div class="column">
-                                    <img src={data.img2} alt='question' className="img2" ></img>
+                                    <img src={data.img2} alt='' className="img2" ></img>
                                   </div>
                                 </div>
                               </div>
                               :
                               <div className="img1">
-                                <img className="cover1 " src={data.img1} alt='question'></img>
+                                <img className="cover1 " src={data.img1} alt=''></img>
                               </div>
                       }
 

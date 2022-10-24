@@ -90,6 +90,7 @@ const Instructions = (props) => {
       :
       <div className="adjust">
         <div className="instructions">
+          {/* For Audio */}
           {/* { !skipped &&
           <div>
             <audio id="r2d21">
@@ -119,7 +120,8 @@ const Instructions = (props) => {
           </div>
         } */}
           <section class="message-list">
-            {!skipped && !inst && <div>
+            {!skipped && !inst && 
+            <div>
               {r2d2_1 && (
                 <section class="message-left">
                   <div class="nes-balloon from-left ">
@@ -174,15 +176,16 @@ const Instructions = (props) => {
 
             {inst && (
               <div>
+              <div>
                 <h1 style={{ textAlign: "center", color: "red", padding: '10px' }}>INSTRUCTIONS</h1>
-                <section class="message-left">
+                <section class="message-left" >
                   <div class="nes-balloon inst">
                     <ol className="inst-text ms-2">
                       <li className="inst1-text">
                       The questions in this contest have clues and hints in form of images, video, GIFs, audio, and text.
                       </li>
                       <li className="inst1-text">
-                      A user can submit their answer after 'question/' in the taskbar itself in the 'put_your_answer_here' section.
+                      A user can submit their answer after 'question/' in the url by replacing <p style={{color:'red','fontSize':'inherit','display': 'contents'}}>put_your_answer_here</p>, the answer shouldn't contain any spaces.
                       </li>
                       <li className="inst1-text">
                       A correct answer will direct the user to the next question while an incorrect answer will redirect the user to the same question as before.
@@ -214,7 +217,8 @@ const Instructions = (props) => {
                     </ol>
                   </div>
                 </section>
-                <div style={{ textAlign: "center" }}>
+              </div>
+                <div className="instp-btn" >
                   <Link
                     to={
                       is_event
@@ -239,7 +243,7 @@ const Instructions = (props) => {
                     </button>
                   </Link>
                 </div>
-              </div>
+                </div>
             )}
             {/* </section> */}
           </section>
