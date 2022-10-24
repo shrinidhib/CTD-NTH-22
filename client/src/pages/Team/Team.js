@@ -71,11 +71,6 @@ const Team = () => {
             img: safiya,
             insta:'https://www.linkedin.com/in/safiya-amin-907386206/'
         },
-        {
-            name: 'Omkar',
-            img: omkar,
-            insta:'https://instagram.com/omkarkulkarni25?igshid=YmMyMTA2M2Y='
-        }
     ]
     return (
         <div className='team'>
@@ -89,7 +84,7 @@ const Team = () => {
                             <div class="avatar">
                                 <img data-src={data.img} alt={data.name} class="" src={data.img}></img>
                             </div>
-                            {console.log(data)}
+                            {/* {console.log(data)} */}
                             <div class="profile">
                                 <h4 class="name">{data.name}</h4>
                                 {/* <p>Creator of NES.css</p> */}

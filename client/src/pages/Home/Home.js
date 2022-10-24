@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { useState, useEffect } from 'react';
 import Requests from '../../api/requests';
 import Loader from "../../components/Loader/Loader";
+import r2d2 from "../../assets/r2d2.png"
 const Home = (props) => {
   const [loaderStatus, setLoaderStatus] = useState(true);
   const [timerStatus, setTimerStatus] = useState(false);
@@ -20,36 +21,37 @@ const Home = (props) => {
       .then(
         (res) => {
           setTimerStatus(res.data);
-          if (res.data.is_started) props.toast.toast("The Hunt is live!");
-          console.log(res);
-          let cal = Math.floor(((res.data.time - Date.now() + 2000) / 1000) % 60);
-          setSeconds(cal < 10 ? '0' + cal.toString() : cal.toString());
+          if (res.data.is_ended) props.toast.toast("The Hunt Has Ended!");
+          else if (res.data.is_started) props.toast.toast("The Hunt is live!");
+            // console.log(res);
+            let cal = Math.floor(((res.data.time - Date.now() + 2000) / 1000) % 60);
+            setSeconds(cal < 10 ? '0' + cal.toString() : cal.toString());
 
-          cal = Math.floor(((res.data.time - Date.now() + 2000) / (1000 * 60)) % 60);
-          setMinutes(cal < 10 ? '0' + cal.toString() : cal.toString());
-          cal = Math.floor(((res.data.time - Date.now() + 2000) / (1000 * 60 * 60)) % 24);
-          setHour(cal < 10 ? '0' + cal.toString() : cal.toString());
-          cal = Math.floor(((res.data.time - Date.now() + 2000)) / (1000 * 60 * 60 * 24));
-          setDay(cal < 10 ? '0' + cal.toString() : cal.toString());
-          console.log(day)
+            cal = Math.floor(((res.data.time - Date.now() + 2000) / (1000 * 60)) % 60);
+            setMinutes(cal < 10 ? '0' + cal.toString() : cal.toString());
+            cal = Math.floor(((res.data.time - Date.now() + 2000) / (1000 * 60 * 60)) % 24);
+            setHour(cal < 10 ? '0' + cal.toString() : cal.toString());
+            cal = Math.floor(((res.data.time - Date.now() + 2000)) / (1000 * 60 * 60 * 24));
+            setDay(cal < 10 ? '0' + cal.toString() : cal.toString());
+            // console.log(day)
           
         }
       )
       .catch(
-        (err) => { 
+        (err) => {
           console.log(err);
           props.toast.toast.error(err.message);
         }
       )
-      
+
   }
   useEffect(() => {
     fetchTimeHome();
-    const timer1= setTimeout(()=>{
+    const timer1 = setTimeout(() => {
       setLoaderStatus(false);
-      console.log('in home')
-    },3100)
-    return ()=> clearTimeout(timer1);
+      // console.log('in home')
+    }, 3100)
+    return () => clearTimeout(timer1);
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
@@ -63,27 +65,32 @@ const Home = (props) => {
               <img src={nthlogo} alt='nth-logo'></img>
               <h3>Network Treasure Hunt</h3>
               <h5>Decrypt the Encrypted</h5>
-              {console.log(timerStatus.time, Date.now(), timerStatus.time - Date.now())}
+              {/* {console.log(timerStatus.time, Date.now(), timerStatus.time - Date.now())} */}
               {
-                timerStatus.is_ended 
-                ?
-                <p style={{ color: 'yellow' }}>Event Has Ended</p>
-                : 
-                timerStatus.is_started === false
+                timerStatus.is_ended
                   ?
-                  timerStatus.time - Date.now() < 0
-                    ?
-                    <p style={{ color: 'yellow' }}>Event Is Yet To Start</p>
-                    :
-
-
-                    <Timer fetchTimeHome={fetchTimeHome} time={timerStatus.time} format={{ day, hour, seconds, minutes }} />
+                  <div>
+                  <img src={r2d2} style={{width:'40px',float: 'left',margin: '0 0 0 10px'}} alt='r2d2'></img>
+                  <p style={{ color: 'yellow',paddingTop:'2%'}}>...Event Has Ended</p></div>
                   :
-                  <Link to={props.loginStatus === true ? "/instructions" : "/login"}>
-                    <button className="mr-3 ml-2 mt-2 mb-2 hunt-button ">
-                      Start Hunting
-                    </button>
-                  </Link>
+                  timerStatus.is_started === false
+                    ?
+                    timerStatus.time - Date.now() < 0
+                      ?
+                      <div>
+                      <img src={r2d2} style={{width:'40px',float: 'left',margin: '0 0 0 10px'}} alt='r2d2'></img>
+                      <p style={{ color: 'yellow',paddingTop:'2%'}}>Event Is Yet To Start</p>
+                      </div>
+                      :
+
+
+                      <Timer fetchTimeHome={fetchTimeHome} time={timerStatus.time} format={{ day, hour, seconds, minutes }} />
+                    :
+                    <Link to={props.loginStatus === true ? "/instructions" : "/login"}>
+                      <button className="mr-3 ml-2 mt-2 mb-2 hunt-button ">
+                        Start Hunting
+                      </button>
+                    </Link>
               }
 
 

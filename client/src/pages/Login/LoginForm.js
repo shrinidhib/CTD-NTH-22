@@ -15,18 +15,18 @@ const LoginForm = (props) => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loaderStatus, setLoaderStatus] = useState(false);
-    console.log(props);
+    // console.log(props);
     let navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoaderStatus(true);
-        console.log(username);
-        console.log(password);
+        // console.log(username);
+        // console.log(password);
 
         await Request.login({ username, password })
             .then(data => {
-                console.log(data)
-                console.log(data.data.auth_token);
+                // console.log(data)
+                // console.log(data.data.auth_token);
                 localStorage.setItem("auth-token", data.data.auth_token)
                 localStorage.setItem("username", username)
                 props.change_longinStatus();

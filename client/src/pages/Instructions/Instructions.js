@@ -19,8 +19,8 @@ const Instructions = (props) => {
     setLoaderStatus(true);
     try {
       const res = await Requests.time();
-      console.log(res);
-      console.log('started');
+      // console.log(res);
+      // console.log('started');
       if (res.data.is_started) {
         props.loginStatus === false && props.toast.toast.info('Login First ', { autoClose: 6000 })
         setIs_event(true);
@@ -40,7 +40,7 @@ const Instructions = (props) => {
   }
 
   const skipInst = (e) => {
-    console.log(e.key);
+    // console.log(e.key);
     if (e.key === "Escape") {
       setInst(true);
       setR2D2_1(false);
@@ -179,27 +179,28 @@ const Instructions = (props) => {
                   <div class="nes-balloon inst">
                     <ol className="inst-text ms-2">
                       <li className="inst1-text">
-                        After logging in, there will be a question displayed which
-                        includes pictures and hints.
+                      The questions in this contest have clues and hints in form of images, video, GIFs, audio, and text.
                       </li>
                       <li className="inst1-text">
-                        As you have logged in, your URL will be nth.pictieee .in /
-                        question To submit your answer, you have to put a '/' in
-                        the URL followed by the answer.
+                      A user can submit their answer after 'question/' in the taskbar itself in the 'put_your_answer_here' section.
                       </li>
                       <li className="inst1-text">
-                        If your answer is correct, you will go to the next level,
-                        otherwise, you will be greeted with the same question with
-                        same level.
+                      A correct answer will direct the user to the next question while an incorrect answer will redirect the user to the same question as before.
                       </li>
                       <li className="inst1-text">
-                        The one who solves as many questions and reaches the top
-                        level is displayed on the leaderboard.
+                      Top scorers will be visible on a dynamic leaderboard.
                       </li>
                       <li className="inst1-text">
-                        If your answer is correct, you will go to the next level,
-                        otherwise, you will stay on the same level with the same
-                        question.
+                      Additionally, a user will be awarded keys after solving a question and free keys will be awarded to active users after a certain duration of time.
+                      </li>
+                      <li className="inst1-text">
+                      Keys can be used to claim extra hints for questions further in the hunt.
+                      </li>
+                      <li className="inst1-text">
+                      The cost of the extra hint will be the ceiling function of 1.5 times the level of the current question.
+                      </li>
+                      <li className="inst1-text">
+                      A user can claim only 1 extra hint per question, so use this facility wisely.
                       </li>
                       <li className="inst1-text">
                         After the 24-hour hunt, the one on the top of the

@@ -236,9 +236,9 @@ export default function Harry() {
       </p>
       <form onSubmit={(e) => {
         e.preventDefault()
-        console.log(e);
+        // console.log(e);
         if((e.target.username.value).toLowerCase() === "lumos"){
-          console.log(e.target.username.value)
+          // console.log(e.target.username.value)
           setStatus(true);
         }
       }}>

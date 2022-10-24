@@ -8,7 +8,7 @@ function HintModal(props) {
     props.id=3;
   }
   
-  console.log(props);
+  // console.log(props);
   
   const hintsArr = props.data.hints.split("<br>")
   const paidHintArr = props.data.paidHint !== undefined ? props.data.paidHint.split("<br>") : []

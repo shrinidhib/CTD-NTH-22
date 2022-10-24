@@ -10,9 +10,9 @@ const Leaderboard = (props) => {
     const eventStatus=async()=>{
         try{
           const res= await Request.time();
-          console.log(res);
-          console.log('started'); 
-          if(res.data.is_started){
+        //   console.log(res);
+        //   console.log('started'); 
+          if(res.data.is_started||res.data.is_ended){
             // props.loginStatus===false&&props.toast.toast.info('Login First ',{autoClose:6000})
             // setIs_event(true);
             fetchScores();
@@ -32,7 +32,7 @@ const Leaderboard = (props) => {
     const fetchScores= async()=> {
             await Request.leaderboard()
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setRank(res.data)
             })
             .catch(err => {
@@ -46,7 +46,7 @@ const Leaderboard = (props) => {
         // fetchScores();
         setTimeout(()=>{
             setLoaderStatus(false);
-            console.log('in timee');
+            // console.log('in timee');
         },3000)
         eventStatus();
     },[]) // eslint-disable-line react-hooks/exhaustive-deps

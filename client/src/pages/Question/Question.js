@@ -22,12 +22,12 @@ const Question = (props) => {
   let ans = useParams().ans;
   let navigate = useNavigate();
   const openModal = (e) => {
-    console.log(e);
+    // console.log(e);
     setId(e);
   }
   const closeModal = () => {
     setId(-1);
-    console.log('hit');
+    // console.log('hit');
   }
   const redirectAns = () => {
     if (ans !== "put_your_ans_here") {
@@ -39,10 +39,10 @@ const Question = (props) => {
     setLoaderStatus(true);
     try {
       const res = await Request.user();
-      console.log(res);
-      console.log(temp);
+      // console.log(res);
+      // console.log(temp);
       temp = { ...(temp.data), ...(res.data) }
-      console.log(temp);
+      // console.log(temp);
 
       // console.log('promts are ',data.promts);
       // console.log(temp.level,data.level);
@@ -72,21 +72,33 @@ const Question = (props) => {
       setImageCnt(cnt)
       setLoaderStatus(false);
     }
-    catch (err) { console.log(err); props.toast.toast.error('Error Fetching User Data', { autoClose: 4000 }); };
+    catch (err) { 
+      console.log(err); 
+      props.toast.toast.error('Error Fetching User Data', { autoClose: 4000 }); 
+    };
     setLoaderStatus(false);
   }
 
   const fetchData = async () => {
     setLoaderStatus(true);
-    console.log(localStorage.getItem("auth-token"));
+    // console.log(localStorage.getItem("auth-token"));
+    function containsWhitespace(str) {
+      return /\s/.test(str);
+    }
     try {
       const res = await Request.userquestion(ans);
-      console.log(res);
+      // console.log(res);
       user({ ...res });
     }
     catch (err) {
       console.log(err);
-      props.toast.toast.error('Error Fetching Question Data', { autoClose: 4000 })
+      console.log('in url:',ans,);
+      if(containsWhitespace(ans)){
+        props.toast.toast.error('No Spaces Required', { autoClose: 4000 })
+        navigate("/question/put_your_ans_here");
+        window.location.reload();
+      }
+      else props.toast.toast.error('Error Fetching Question Data', { autoClose: 4000 })
     };
     setLoaderStatus(false);
   }
@@ -94,9 +106,8 @@ const Question = (props) => {
     setLoaderStatus(true);
     try {
       const res = await Requests.time();
-      console.log(res);
+      // console.log(res);
       if(res.data.is_ended){
-        props.toast.toast('Event Has Ended', { autoClose: 5000 });
         navigate("/")
       }
       else if (res.data.is_started) {
@@ -104,7 +115,7 @@ const Question = (props) => {
         redirectAns();
       }
       else {
-        console.log('here in event');
+        // console.log('here in event');
         props.toast.toast('Event Is Yet To Start', { autoClose: 5000 });
         navigate("/")
       }
@@ -153,15 +164,13 @@ const Question = (props) => {
 
                   </Col>
                   <Col lg={10} sm={12}>
-                    {console.log('promts are ', data.promts)}
+                    {/* {console.log('promts are ', data.promts)} */}
 
                     <h1>Level:{data?.level}</h1>
-                    {/* <i class="fa-solid fa-key" class="nes-avatar is-rounded is-medium"></i> */}
-                    {/* <img src="https://png.pngtree.com/png-vector/20220307/ourmid/pngtree-icons-for-isometric-game-elements-colorful-isolated-vector-illustration-of-gold-png-image_4420764.png" ></img> */}
+                    
 
                     <p>
-                      {/* <img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K' 
-          class="nes-avatar is-rounded is-large"  > */}
+                      
 
                       <OverlayTrigger placement={'left'} overlay={<Tooltip id={'tooltip-left'}> <strong>{data.tooltip}</strong></Tooltip>}>
                         <button className="key" style={{backgroundColor:'transparent',border:'none',color: 'inherit'}}><img src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNDU1Ljk0IDIwMi44NnYxMDYuNTVoLTc5Ljk0MXYxMzMuMjJoMjYuNjE3djI2LjYxN2gyNi42NjR2MjYuNjE3aC0yNi42NjR2MjYuNjY0aDI2LjY2NHYyNi42NjRsLTUzLjI4MS0wLjAwMzkwNnYyNi42MTdoLTI2LjYxN2wwLjAwMzkwNy0yNjYuMzloLTc5Ljk0MXYtMTA2LjU1aDI2LjYxN3Y3OS44OTVoNTMuMzI0di01My4yM2gyNi42MTN2NTMuMjNoNTMuMjc3di03OS44OTV6bS01My4zMjQgMGgyNi42NjRsLTAuMDAzOTA2LTI2LjY2aC01My4yNzd2NTMuMzI0aDI2LjYxN3ptLTc5Ljg5NSAyNi42NjRoMjYuNjY0di01My4zMjRoLTUzLjMyNHYyNi42NjRoMjYuNjY0eiIgZmlsbD0iI2VjZWYwMCIvPgo8L3N2Zz4K'
@@ -175,18 +184,18 @@ const Question = (props) => {
                         imageCnt === 4
                           ?
                           <div className="cover4" >
-                            <img src={data.img1} alt='question'></img>
-                            <img src={data.img2} alt='question'></img>
-                            <img src={data.img3} alt='question'></img>
-                            <img src={data.img4} alt='question'></img>
+                            <img src={data.img1} alt=''></img>
+                            <img src={data.img2} alt=''></img>
+                            <img src={data.img3} alt=''></img>
+                            <img src={data.img4} alt=''></img>
                           </div>
                           :
                           imageCnt === 3
                             ?
                             <div className="cover4" >
-                              <img src={data.img1} alt='question'></img>
-                              <img src={data.img2} alt='question'></img>
-                              <img src={data.img3} alt='question'></img>
+                              <img src={data.img1} alt=''></img>
+                              <img src={data.img2} alt=''></img>
+                              <img src={data.img3} alt=''></img>
                             </div>
                             :
                             imageCnt === 2
@@ -215,11 +224,7 @@ const Question = (props) => {
                   </Col>
                   <Col >
                     <div class={`view-modal ${imageCnt === 4 ? 'cnt4' : 'cnt1'}`}>
-                      {/* {console.log(data)} */}
-                      {console.log(id)}
-                      {/* <a href="/leaderboard">
-              <i class="fas fa-trophy fa-2x side-icons"></i>
-              </a> */}
+                      
                       <OverlayTrigger placement={'left'} overlay={<Tooltip id={'tooltip-left'}> <strong>Hints</strong></Tooltip>}>
                         <button onClick={() => openModal(3)} class={id === 3 ? "btnisactive ms-2" : "btnisunactive ms-2 "} ><i class="fas fa-lightbulb-on fa-2x side-icons"></i></button>
                       </OverlayTrigger>

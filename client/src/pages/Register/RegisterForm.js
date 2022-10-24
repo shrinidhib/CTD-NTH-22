@@ -19,7 +19,7 @@ const RegisterForm = (props) => {
     setLoaderStatus(true);
     await Request.login({ username, password })
       .then((res) => {
-        console.log(res.data.auth_token, "auth tokenke")
+        // console.log(res.data.auth_token, "auth tokenke")
         if (res.data.auth_token !== undefined) localStorage.setItem("auth-token", res.data.auth_token)
         localStorage.setItem("username", username)
         props.change_longinStatus();
@@ -35,17 +35,17 @@ const RegisterForm = (props) => {
     event.preventDefault();
     setLoaderStatus(true);
     
-    console.log(first_name);
-    console.log(phone, typeof phone);
-    console.log(college);
-    console.log(username);
-    console.log(email);
-    console.log(password);
+    // console.log(first_name);
+    // console.log(phone, typeof phone);
+    // console.log(college);
+    // console.log(username);
+    // console.log(email);
+    // console.log(password);
     
     await Request.register({ first_name, phone, college, username, email, password })
 
       .then((data) => {
-        console.log(props, "props")
+        // console.log(props, "props")
         props.toast.toast.success("Account Created Successfully!");
         login();
 
@@ -104,7 +104,7 @@ const RegisterForm = (props) => {
                         name="phone"
                         value={phone === 0 ? '' : phone}
                         // onChange={(e) =>{console.log(e.target.value,typeof e.target.value); setPhone(e.target.value)}}
-                        onChange={(e) => { console.log(e.target.value, typeof e.target.value); e.target.value === "" ? setPhone(0) : setPhone(parseInt(e.target.value)) }}
+                        onChange={(e) => { e.target.value === "" ? setPhone(0) : setPhone(parseInt(e.target.value)) }}
                         type="tel"
                         pattern="[0-9]{10}"
                         maxlength="10"

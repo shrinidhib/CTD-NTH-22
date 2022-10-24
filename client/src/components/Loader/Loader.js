@@ -2,7 +2,7 @@ import './Loader.css'
 const Loader = () => {
     return (
         <div class='layout'>
-        {console.log('in loader')}
+        {/* {console.log('in loader')} */}
             <div class='position'>
 
                 <div class="loader">

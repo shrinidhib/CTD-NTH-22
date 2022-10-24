@@ -16,7 +16,8 @@
 .instructions {
     margin: 2% 15%;
     /* color: #cbe971; */
-    height: 500px;
+    /* height: 500px; */
+    height: 70vh;
     /* display: block ;
     overflow: auto; */
     /* overflow-x: hidden; */
@@ -63,18 +64,22 @@
     
     
 }
-.inst-text{
+.inst1-text{
     color: rgb(255, 255, 255);
     /* display: block ;
     overflow: auto; */
-    
+    font-size: 1.2rem;
 }
-
-@media screen and (max-width : 400px) {
+@media screen and (max-width : 380px) {
+    .nes-balloon.inst{
+        width: 280px;
+    }
+}
+@media screen and (max-width : 1000px) {
     .instructions {
         margin: 5% 2% 2%;
         /* width: 90%; */
-        height: 460px;
+        /* height: 540px; */
     }
     
     /* .instructions .nes-balloonnes-balloon{
@@ -102,13 +107,19 @@
     } */
     .inst1-text{
         /* height: 300px; */
-        font-size: 6px;
-    
-        }
+            font-size: 0.8rem;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            /* hyphens: auto; */
+    }
         .msg{
             font-size: 6px;
             /* color: red; */
         }    
+    .inst-text{
+        padding-left: 2%;
+    }
+    
 }
 /* @media screen and (min-height:840px) {
    

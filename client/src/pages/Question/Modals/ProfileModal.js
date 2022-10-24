@@ -1,7 +1,7 @@
 import {Modal} from 'react-bootstrap';
 
 function ProfileModal(props) {
-    console.log(props.data);
+    // console.log(props.data);
     return (
         
       <Modal

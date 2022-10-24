@@ -46,7 +46,9 @@ const NavbarComp = (props) => {
     <Navbar collapseOnSelect expand="lg" variant="dark" >
       <Container >
         <Navbar.Brand href="https://pictieee.in/" ><img src={pisblogo} width="110px" alt="PISB-logo" ></img></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={console.log('hitt')} />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" 
+        // onClick={console.log('hitt')} 
+        />
         <Navbar.Collapse id="responsive-navbar-nav">
           {/* <p className="text-center mt-4 mb-4"> */}
           <div className="mx-auto" style={{ width: "200" }}>
@@ -101,7 +103,7 @@ const NavbarComp = (props) => {
       </Container>
     </Navbar>
   </div>
-  console.log(localStorage.getItem("auth-token"));
+  // console.log(localStorage.getItem("auth-token"));
   // );
   // }
   return (
@@ -136,7 +138,7 @@ const NavbarComp = (props) => {
               </Nav.Item>
               
               <Nav.Item>
-              {console.log(props)}
+              {/* {console.log(props)} */}
               { 
                 props.loginStatus===false ?
                 <Nav.Link exact activeClassName="active" eventKey="link-5" href="/login" as={Link} to="/login"  className="me-3 ms-3 mt-2 mb-2 na-link"> 

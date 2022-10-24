@@ -8,7 +8,7 @@ const initState= (localStorage.getItem("auth-token")!==null)
         loginStatus: false
     }
 const rootReducer=(state=initState,action)=>{
-    console.log(action);
+    // console.log(action);
     if(action.type==='CHANGE_LOGIN'){
         return {
             loginStatus: true

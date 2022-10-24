@@ -5,24 +5,24 @@ import Request from '../../../api/requests';
 function BuyHintModal(props) {
   const [err, seterr] = useState("");
 
-  console.log('buy hint modal', props)
+  // console.log('buy hint modal', props)
   const fetchHint = async () => {
-    console.log("hit");
+    // console.log("hit");
     await Request.extrahint()
       .then((res) => {
-        console.log(typeof res); console.log(res);
+        // console.log(typeof res); console.log(res);
         if (res.data.extraHint !== undefined) {
           // props.data.paidHintTaken=true;
           props.data.dataUpdate();
-          console.log(props.data);
-          console.log(res.data.extraHint);
+          // console.log(props.data);
+          // console.log(res.data.extraHint);
           // localStorage.setItem("extra-hints", res.data.extraHint);
           //   setextraHints(localStorage.getItem("extra-hints"));
           props.toast.toast.success('Extra Hints Are Available!');
           props.onHide();
 
         } else {
-          console.log(res.data.status);
+          // console.log(res.data.status);
           props.toast.toast.error(res.data.status);
           seterr(res.data.status);
         }
@@ -62,7 +62,7 @@ function BuyHintModal(props) {
 
         <button type="button"
           // onClick={fetchHint}  
-          onClick={() => { console.log('ok'); fetchHint(); }}
+          onClick={() => { fetchHint(); }}
           // class={props.data.paidHintTaken?"btn btn-primary disabled":"btn btn-primary active"}>
           class="btn btn-primary " style={{ color: 'white' }}
         >
