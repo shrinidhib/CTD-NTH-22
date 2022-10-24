@@ -23,7 +23,7 @@ const Home = (props) => {
           setTimerStatus(res.data);
           if (res.data.is_ended) props.toast.toast("The Hunt Has Ended!");
           else if (res.data.is_started) props.toast.toast("The Hunt is live!");
-            console.log(res);
+            // console.log(res);
             let cal = Math.floor(((res.data.time - Date.now() + 2000) / 1000) % 60);
             setSeconds(cal < 10 ? '0' + cal.toString() : cal.toString());
 

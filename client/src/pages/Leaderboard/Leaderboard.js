@@ -47,8 +47,8 @@ const Leaderboard = (props) => {
         setTimeout(()=>{
             setLoaderStatus(false);
             // console.log('in timee');
+            eventStatus();
         },3000)
-        eventStatus();
     },[]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
