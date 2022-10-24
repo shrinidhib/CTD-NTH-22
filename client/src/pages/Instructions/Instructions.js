@@ -60,15 +60,15 @@ const Instructions = (props) => {
     setTimeout(() => {
       setC3PO_1(true);
       // document.getElementById("c3p01").play();
-    }, 4000);
+    }, 2000);
     setTimeout(() => {
       setR2D2_2(true);
       // document.getElementById("r2d22").play();
-    }, 6000);
+    }, 4000);
     setTimeout(() => {
       setC3PO_2(true);
       // document.getElementById("c3p02").play();
-    }, 8000);
+    }, 6000);
     setTimeout(() => {
       setInst(true);
       setR2D2_1(false);
@@ -180,7 +180,7 @@ const Instructions = (props) => {
                 <h1 style={{ textAlign: "center", color: "red", padding: '10px' }}>INSTRUCTIONS</h1>
                 <section class="message-left inst" >
                   <div class="nes-balloon inst">
-                    <ol className="inst-text ms-2">
+                    <ol className="inst-text ms-3">
                       <li className="inst1-text">
                       The questions in this contest have clues and hints in form of images, video, GIFs, audio, and text.
                       </li>
