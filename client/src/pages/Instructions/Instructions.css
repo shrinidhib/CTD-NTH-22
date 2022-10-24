@@ -27,14 +27,14 @@
     /* min-height: 10vh; */
     /* height: 400px; */
 }
-.message-left{
+.message-left .inst{
     height: 55vh;
     display: block;
     overflow: auto
 }
 .instp-btn{
     text-align: center;
-    padding-top: 3%
+    padding-top: 1%
 }
 .instructions-content {
     margin: 2% 7%;
@@ -66,7 +66,8 @@
 } */
 .nes-balloon.inst{
     width: auto; 
-    height: auto;
+    /* height: auto; */
+    height: 55vh;
     background-color: transparent;
     color:white;
     

@@ -21,7 +21,7 @@ const Footer = () => {
             </Col>
             <Col lg={4} md={12} sm={12}>
             <div >
-              <a href="https://www.instagram.com/pisbcredenz/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/nth__live/" target="_blank" rel="noopener noreferrer">
                 {/* <i className="fab fa-instagram  instagram"></i> */}
                 <i class="nes-icon instagram me-5 ms-5"></i>
               </a>

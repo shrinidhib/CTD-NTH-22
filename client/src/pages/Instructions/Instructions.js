@@ -178,7 +178,7 @@ const Instructions = (props) => {
               <div>
               <div>
                 <h1 style={{ textAlign: "center", color: "red", padding: '10px' }}>INSTRUCTIONS</h1>
-                <section class="message-left" >
+                <section class="message-left inst" >
                   <div class="nes-balloon inst">
                     <ol className="inst-text ms-2">
                       <li className="inst1-text">
