@@ -5,12 +5,16 @@ export default function Harry() {
 
   const [status,setStatus] = useState(false);
   const [spell,setSpell] = useState("");
+  const [ron,setRon] = useState(false);
 
   return (
     <div>
+      
+      {!ron && <h3 style={{color : "white", textAlign:"center"}}>They are approaching!!!!!</h3>}
+      {ron && <h3 style={{color : "white", textAlign:"center"}}>One more needed from the Dumbledore's Army, to ward them off...</h3>}
       <p style={{color:"black", width:"fit-content"}}>
         [<p>"Aardvark",</p>
-        <p className={status === true ? "glow" : ""}>"Albatross",</p>
+        <p>"Albatross",</p>
         <p>"Alligator",</p>
         <p>"Alpaca",</p>
         <p>"Ant",</p>
@@ -21,17 +25,17 @@ export default function Harry() {
         <p>"Donkey",</p>
         <p>"Baboon",</p>
         <p>"Badger",</p>
-        <p className={status === true ? "glow" : ""}>"Barracuda",</p>
+        <p>"Barracuda",</p>
         <p>"Bat",</p>
         <p>"Bear",</p>
-        <p className={status === true ? "glow" : ""}>"Beaver",</p>
+        <p>"Beaver",</p>
         <p>"Bee",</p>
         <p>"Bison",</p>
-        <p>"Boar",</p>
+        <p className={status === true ? "glow" : ""}>"Boar",</p>
         <p>"Buffalo",</p>
         <p>"Butterfly",</p>
         <p>"Camel",</p>
-        <p className={status === true ? "glow" : ""}>"Capybara",</p>
+        <p>"Capybara",</p>
         <p>"Caribou",</p>
         <p>"Cassowary",</p>
         <p>"Cat",</p>
@@ -48,11 +52,11 @@ export default function Harry() {
         <p>"Cockroach",</p>
         <p>"Cod",</p>
         <p>"Cormorant",</p>
-        <p className={status === true ? "glow" : ""}>"Coyote",</p>
+        <p>"Coyote",</p>
         <p>"Crab",</p>
         <p>"Crane",</p>
         <p>"Crocodile",</p>
-        <p className={status === true ? "glow" : ""}>"Crow",</p>
+        <p>"Crow",</p>
         <p>"Curlew",</p>
         <p>"Deer",</p>
         <p>"Dinosaur",</p>
@@ -70,7 +74,7 @@ export default function Harry() {
         <p>"Eel",</p>
         <p>"Eland",</p>
         <p>"Elephant",</p>
-        <p className={status === true ? "glow" : ""}>"Elk",</p>
+        <p>"Elk",</p>
         <p>"Emu",</p>
         <p>"Falcon",</p>
         <p>"Ferret",</p>
@@ -78,7 +82,7 @@ export default function Harry() {
         <p>"Fish",</p>
         <p>"Flamingo",</p>
         <p>"Fly",</p>
-        <p>"Fox",</p>
+        <p className={status === true ? "glow" : ""}>"Fox",</p>
         <p>"Frog",</p>
         <p>"Gaur",</p>
         <p>"Gazelle",</p>
@@ -88,7 +92,7 @@ export default function Harry() {
         <p>"Gnu",</p>
         <p>"Goat",</p>
         <p>"Goldfinch",</p>
-        <p className={status === true ? "glow" : ""}>"Goldfish",</p>
+        <p>"Goldfish",</p>
         <p>"Goose",</p>
         <p>"Gorilla",</p>
         <p>"Goshawk",</p>
@@ -97,14 +101,14 @@ export default function Harry() {
         <p>"Guanaco",</p>
         <p>"Gull",</p>
         <p>"Hamster",</p>
-        <p>"Hare",</p>
+        <p className={status === true ? "glow" : ""}>"Hare",</p>
         <p>"Hawk",</p>
         <p>"Hedgehog",</p>
         <p>"Heron",</p>
         <p>"Herring",</p>
         <p>"Hippopotamus",</p>
-        <p className={status === true ? "glow" : ""}>"Hornet",</p>
-        <p>"Horse",</p>
+        <p>"Hornet",</p>
+        <p className={status === true ? "glow" : ""}>"Horse",</p>
         <p>"Human",</p>
         <p>"Hummingbird",</p>
         <p>"Hyena",</p>
@@ -125,13 +129,13 @@ export default function Harry() {
         <p>"Lemur",</p>
         <p>"Leopard",</p>
         <p>"Lion",</p>
-        <p className={status === true ? "glow" : ""}>"Llama",</p>
+        <p>"Llama",</p>
         <p>"Lobster",</p>
         <p>"Locust",</p>
         <p>"Loris",</p>
         <p>"Louse",</p>
         <p>"Lyrebird",</p>
-        <p>"Magpie",</p>
+        <p className={status === true ? "glow" : ""}>"Magpie",</p>
         <p>"Mallard",</p>
         <p>"Manatee",</p>
         <p>"Mandrill",</p>
@@ -142,12 +146,12 @@ export default function Harry() {
         <p>"Mole",</p>
         <p>"Mongoose",</p>
         <p>"Monkey",</p>
-        <p className={status === true ? "glow" : ""}>"Moose",</p>
+        <p>"Moose",</p>
         <p>"Mosquito",</p>
         <p>"Mouse",</p>
         <p>"Mule",</p>
         <p>"Narwhal",</p>
-        <p>"Newt",</p>
+        <p className={status === true ? "glow" : ""}>"Non Corporeal",</p>
         <p>"Nightingale",</p>
         <p>"Octopus",</p>
         <p>"Okapi",</p>
@@ -162,7 +166,7 @@ export default function Harry() {
         <p>"Partridge",</p>
         <p>"Peafowl",</p>
         <p>"Pelican",</p>
-        <p className={status === true ? "glow" : ""}>"Penguin",</p>
+        <p>"Penguin",</p>
         <p>"Pheasant",</p>
         <p>"Pig",</p>
         <p>"Pigeon",</p>
@@ -177,7 +181,7 @@ export default function Harry() {
         <p>"Rail",</p>
         <p>"Ram",</p>
         <p>"Rat",</p>
-        <p className={status === true ? "glow" : ""}>"Raven",</p>
+        <p>"Raven",</p>
         <p>"Red deer",</p>
         <p>"Red panda",</p>
         <p>"Reindeer",</p>
@@ -186,7 +190,7 @@ export default function Harry() {
         <p>"Salamander",</p>
         <p>"Salmon",</p>
         <p>"Sand Dollar",</p>
-        <p className={status === true ? "glow" : ""}>"Sandpiper",</p>
+        <p>"Sandpiper",</p>
         <p>"Sardine",</p>
         <p>"Scorpion",</p>
         <p>"Seahorse",</p>
@@ -203,33 +207,16 @@ export default function Harry() {
         <p>"Squid",</p>
         <p>"Squirrel",</p>
         <p>"Starling",</p>
-        <p className={status === true ? "glow" : ""}>"Stingray",</p>
+        <p>"Stingray",</p>
         <p>"Stinkbug",</p>
         <p>"Stork",</p>
         <p>"Swallow",</p>
-        <p>"Swan",</p>
+        <p className={status === true ? "glow" : ""}>"Swan",</p>
         <p>"Tapir",</p>
         <p>"Tarsier",</p>
         <p>"Termite",</p>
         <p>"Tiger",</p>
-        <p>"Toad",</p>
-        <p>"Trout",</p>
-        <p>"Turkey",</p>
-        <p>"Turtle",</p>
-        <p>"Viper",</p>
-        <p>"Vulture",</p>
-        <p>"Wallaby",</p>
-        <p className={status === true ? "glow" : ""}>"Walrus",</p>
-        <p>"Wasp",</p>
-        <p>"Weasel",</p>
-        <p>"Whale",</p>
-        <p>"Wildcat",</p>
-        <p>"Wolf",</p>
-        <p className={status === true ? "glow" : ""}>"Wolverine",</p>
-        <p>"Wombat",</p>
-        <p className={status === true ? "glow" : ""}>"Woodcock",</p>
-        <p>"Woodpecker",</p>
-        <p>"Worm",</p>
+        <p>"Walrus",</p>
         <p>"Wren",</p>
         <p>"Yak",</p>
         <p>"Zebra"</p>]
@@ -237,9 +224,10 @@ export default function Harry() {
       <form onSubmit={(e) => {
         e.preventDefault()
         // console.log(e);
-        if((e.target.username.value).toLowerCase() === "lumos"){
-          // console.log(e.target.username.value)
+        if((e.target.username.value).toLowerCase() === "expectopatronum" || (e.target.username.value).toLowerCase() === "expecto patronum"){
+          console.log(e.target.username.value)
           setStatus(true);
+          setRon(true);
         }
       }}>
         <div>
@@ -257,7 +245,7 @@ export default function Harry() {
                 type="text"
                 value={spell}
                 onChange={(e) => setSpell(e.target.value)}
-                placeholder="its all dark"
+                // placeholder="its all dark"
                 className="login-form-input"
                 required
               />
