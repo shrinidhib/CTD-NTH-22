@@ -15,6 +15,7 @@ const user = () => backend.get( `/auth/users/me/`, {headers: { "content-type": "
 const extrahint= () => backend.post( `/question/extra-hint/`,null, {headers: { "content-type": "application/json", Authorization:`Token ${localStorage.getItem("auth-token")}` }} );
 const leaderboard = () => backend.get( `/leaderboard/`, {headers: { "content-type": "application/json"}} );
 const time=() => backend.get( `/timer/`, {headers: { "content-type": "application/json"}} );
+const feedback = (data) => backend.post( `/auth/feedback/`, data,{headers: { "content-type": "application/json" }} );
 const Requests = {
     login,
     register,
@@ -22,6 +23,7 @@ const Requests = {
     user,
     extrahint,
     leaderboard,
-    time
+    time,
+    feedback
   };
   export default Requests;

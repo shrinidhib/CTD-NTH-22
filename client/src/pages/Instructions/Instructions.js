@@ -220,6 +220,22 @@ const Instructions = (props) => {
                 </section>
               </div>
                 <div className="instp-btn" >
+                  {/* <Link
+                    to={
+                    }
+                  > */}
+                    <a href="https://www.instagram.com/nth__live/" target="_blank" rel="noopener noreferrer">
+
+                    <button type="button" class="nes-btn is-warning" onClick={() => {
+                      !is_ended&&!is_event && !props.loginStatus && props.toast.toast('Login First', { autoClose: 5000 })
+                      !is_ended&&!is_event && props.loginStatus && props.toast.toast('Event Is Yet To Start', { autoClose: 3000 })
+                    }
+                    }>
+                      <i class="fa fa-youtube-play" style={{width:'40px',fontSize:'20px'}}></i>
+                      
+                    </button>
+                    </a>
+                  {/* </Link> */}
                   <Link
                     to={
                       is_event
@@ -241,6 +257,7 @@ const Instructions = (props) => {
                     }
                     }>
                       Hunt
+                      
                     </button>
                   </Link>
                 </div>
