@@ -35,7 +35,7 @@ function App() {
       <Route path="/instructions" element={<Instructions toast={{ container: <ToastUtils />, toast }} />} />
       <Route path="/question/:ans" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/question" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
-      <Route path="/question/ronald" element={<Harry toast={{ container: <ToastUtils />, toast }}/>} /> 
+      <Route path="/question/thedementors" element={<Harry toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/leaderboard" element = {<Leaderboard toast={{ container: <ToastUtils />, toast }}/>} />
       <Route path="/feedback" element = {<Feedback toast={{ container: <ToastUtils />, toast }}/>} />
       <Route path="*" element={<ErrorPage />} />
