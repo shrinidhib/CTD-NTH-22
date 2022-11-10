@@ -224,7 +224,7 @@ const Instructions = (props) => {
                     to={
                     }
                   > */}
-                    <a href="https://www.instagram.com/nth__live/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/p/CkyO2yOqpAT/" target="_blank" rel="noopener noreferrer">
 
                     <button type="button" class="nes-btn is-warning" onClick={() => {
                       !is_ended&&!is_event && !props.loginStatus && props.toast.toast('Login First', { autoClose: 5000 })
