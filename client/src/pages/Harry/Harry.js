@@ -29,7 +29,7 @@ export default function Harry() {
     {
       getUser()
     }
-  ,[])
+  ,[]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>

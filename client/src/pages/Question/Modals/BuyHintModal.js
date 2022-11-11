@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Request from '../../../api/requests';
 
 function BuyHintModal(props) {
-  const [err, seterr] = useState("");
+  const [err, seterr] = useState("Warning : The Key doesn't always know more than you.");
 
   // console.log('buy hint modal', props)
   const fetchHint = async () => {
@@ -58,7 +58,7 @@ function BuyHintModal(props) {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <p>{err !== "" ? err : <></>}</p>
+        <p style={{color:'red'}}>{err !== "" ? err : <></>}</p>
 
         <button type="button"
           // onClick={fetchHint}  

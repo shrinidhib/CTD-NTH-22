@@ -20,9 +20,14 @@ const Home = (props) => {
     await Requests.time()
       .then(
         (res) => {
+          let end=-1;
           setTimerStatus(res.data);
           if (res.data.is_ended) props.toast.toast("The Hunt Has Ended!");
-          else if (res.data.is_started) props.toast.toast("The Hunt is live!");
+          else if (res.data.is_started) {
+            props.toast.toast("The Hunt is live!");
+            end=1668267000000;
+          }
+          if(end!==-1) res.data.time=end;
             // console.log(res);
             let cal = Math.floor(((res.data.time - Date.now() + 2000) / 1000) % 60);
             setSeconds(cal < 10 ? '0' + cal.toString() : cal.toString());
@@ -89,13 +94,10 @@ const Home = (props) => {
                       :
 
 
-                      <Timer fetchTimeHome={fetchTimeHome} time={timerStatus.time} format={{ day, hour, seconds, minutes }} />
+                      <Timer display={'instruct'} loginStatus={props.loginStatus} fetchTimeHome={fetchTimeHome} time={timerStatus.time} format={{ day, hour, seconds, minutes }} />
                     :
-                    <Link to={props.loginStatus === true ? "/instructions" : "/login"}>
-                      <button className="mr-3 ml-2 mt-2 mb-2 hunt-button ">
-                        Start Hunting
-                      </button>
-                    </Link>
+                    <Timer display={'start'} loginStatus={props.loginStatus} fetchTimeHome={fetchTimeHome} time={timerStatus.time} format={{ day, hour, seconds, minutes }} />
+                    
               }
 
 

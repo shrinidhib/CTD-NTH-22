@@ -108,8 +108,9 @@ const Question = (props) => {
       const res = await Requests.time();
       // console.log(res);
       if(res.data.is_ended){
-        props.toast.toast("The Hunt Has Ended!");
-        navigate("/feedback")
+        // props.toast.toast("The Hunt Has Ended!");
+        // navigate("/feedback")
+        navigate("/")
       }
       else if (res.data.is_started) {
         fetchData();
