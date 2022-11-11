@@ -1,7 +1,7 @@
 import './Team.css'
 import {useEffect} from 'react'
 import { Container, Row, Col } from "react-bootstrap";
-import vansh1 from '../../assets/team/vansh1.png'
+import vansh from '../../assets/team/vansh.png'
 import mrunal from '../../assets/team/mrunal.png'
 import harsh from '../../assets/team/harsh.png'
 import devraj from '../../assets/team/devraj.png'
@@ -16,7 +16,7 @@ const Team = () => {
     const webteam = [
         {
             name: 'Vansh Teppalwar',
-            img: vansh1,
+            img: vansh,
             github: 'https://github.com/VanshTeppalwar',
             linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
         },
