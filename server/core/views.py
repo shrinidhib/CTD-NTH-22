@@ -147,12 +147,14 @@ class TimerView(APIView):
         return Response(serializer.data)
 
 class FeedbackView(APIView):
-    def post(request, *args, **kwargs):
+    def post(self,request, *args, **kwargs):
         user = request.user
-        if user != None:
-            username = user.username
-        else:
-            username = request.data['name']
+        print(request.data)
+        # if user != None:
+        #     print("if")
+        #     username = user.username
+        # else:
+        username = request.data['name']
 
         feedback = request.data['feedback']
 

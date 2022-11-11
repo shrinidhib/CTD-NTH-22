@@ -24,4 +24,5 @@ urlpatterns = [
     path('leaderboard/', LeaderboardView.as_view(), name = 'leaderboard'),
     path('question/extra-hint/', ExtraHintView.as_view(), name = 'extrahint'),
     path('timer/', TimerView.as_view(), name = 'timer'),
+    path('auth/feedback/', FeedbackView.as_view(), name = 'feedback'),
 ]
