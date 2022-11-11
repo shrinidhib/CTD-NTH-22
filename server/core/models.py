@@ -61,3 +61,11 @@ class Timer(models.Model):
     promo_code_active = models.BooleanField(default=False)
     promocode = models.CharField(max_length=100, default="NTH22")
     add_keys_interval_min = models.IntegerField(default=120)
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=100)
+    feedback = models.TextField()
+
+    def __str__(self):
+        return self.name
+    

@@ -145,3 +145,16 @@ class TimerView(APIView):
         timer = Timer.objects.all().first()
         serializer = TimerSerializer(timer)
         return Response(serializer.data)
+
+class FeedbackView(APIView):
+    def post(request, *args, **kwargs):
+        user = request.user
+        if user != None:
+            username = user.username
+        else:
+            username = request.data['name']
+
+        feedback = request.data['feedback']
+
+        Feedback.objects.create(name = username, feedback=feedback)
+        return Response({'status':'opie'})
