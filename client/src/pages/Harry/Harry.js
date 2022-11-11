@@ -1,11 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./harry.css"
+import Requests from "../../api/requests";
+import { useNavigate } from "react-router-dom";
 
 export default function Harry() {
 
   const [status,setStatus] = useState(false);
   const [spell,setSpell] = useState("");
   const [ron,setRon] = useState(false);
+  const navigate = useNavigate();
+  const  getUser= async () => {
+    try {
+      let res = await Requests.user()
+      console.log(res)
+      console.log(res.data.current_level)
+      if(res.data.current_level !== 5){
+        navigate("/question")
+        console.log("jara")
+      }
+    } 
+    catch (error) {
+      navigate("/question")
+    }
+
+  }
+  useEffect(
+    () => 
+    {
+      getUser()
+    }
+  ,[])
 
   return (
     <div>
@@ -236,7 +260,7 @@ export default function Harry() {
             className="nes-container is-dark with-title "
             style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
           >
-            <span class="title">Cast Spell</span>
+            <span class="title">Magic </span>
             <div class="nes-field">
               {/* <input type="text" id="name_field" class="nes-input" placeholder="Type your username"/> */}
               <input
