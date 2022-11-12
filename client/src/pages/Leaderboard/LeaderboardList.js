@@ -3,8 +3,7 @@ import Pagination from './Pagination';
 const LeaderboardList = ({ rank, indexOfFirstPost,rankPerPage, totalrank ,paginate }) => {
   return (
     <div className="Leaderboard">
-    {console.log(rank)}
-            <div className="high-scores">
+    <div className="high-scores">
                 <p>High Scores</p>
             </div>
             <table>

@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './Leaderboard.css';
-import Request from "../../api/requests";
-import { useNavigate } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import LeaderboardList from './LeaderboardList';
+// Uncomment this
+// import { useNavigate } from 'react-router-dom';
+// import Request from "../../api/requests";
 const Leaderboard = (props) => {
   const [loaderStatus, setLoaderStatus] = useState(true);
-    const [rank, setRank] = useState(
+
+//  uncomment this line and comment below rank line for live results
+//   const [rank, setRank] =  useState([])
+  const [rank] = useState(
         
         [
             {
@@ -18,16 +22,6 @@ const Leaderboard = (props) => {
                 "hidden_on_leaderboard": false,
                 "id": 85,
                 "keys": 134
-            },
-            {
-                "username": "falcon22",
-                "email": "chandolkarshreyas001@gmail.com",
-                "first_name": "Shreyas Chandolkar",
-                "last_name": "",
-                "current_level": 15,
-                "hidden_on_leaderboard": false,
-                "id": 104,
-                "keys": 104
             },
             {
                 "username": "padfoot01",
@@ -58,6 +52,16 @@ const Leaderboard = (props) => {
                 "hidden_on_leaderboard": false,
                 "id": 490,
                 "keys": 91
+            },
+            {
+                "username": "falcon22",
+                "email": "chandolkarshreyas001@gmail.com",
+                "first_name": "Shreyas Chandolkar",
+                "last_name": "",
+                "current_level": 14,
+                "hidden_on_leaderboard": false,
+                "id": 104,
+                "keys": 104
             },
             {
                 "username": "yash204",
@@ -513,64 +517,63 @@ const Leaderboard = (props) => {
     );
   const [currentPage, setCurrentPage] = useState(1);
   const [rankPerPage] = useState(10);
-    const navigate=useNavigate();
-    const eventStatus=async()=>{
-        try{
-          const res= await Request.time();
-        //   console.log(res);
-        //   console.log('started'); 
-          if(res.data.is_started||res.data.is_ended){
-            // props.loginStatus===false&&props.toast.toast.info('Login First ',{autoClose:6000})
-            // setIs_event(true);
-            fetchScores();
-          }
+    // const navigate=useNavigate();
+
+    // Uncomment for live results
+    // const eventStatus=async()=>{
+    //     try{
+    //       const res= await Request.time();
+    //     //   console.log(res);
+    //     //   console.log('started'); 
+    //       if(res.data.is_started||res.data.is_ended){
+    //         // props.loginStatus===false&&props.toast.toast.info('Login First ',{autoClose:6000})
+    //         // setIs_event(true);
+    //         fetchScores();
+    //       }
                             
-          else{
-            props.toast.toast('Event Is Yet To Start', { autoClose: 5000 });
-            navigate("/");
-          }
+    //       else{
+    //         props.toast.toast('Event Is Yet To Start', { autoClose: 5000 });
+    //         navigate("/");
+    //       }
                             
-        }
-        catch(err){
-          console.log(err);
-        //   props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
-        }
-      }
-    const fetchScores= async()=> {
-            await Request.leaderboard()
-            .then(res => {
-                // console.log(res)
-                setRank(res.data)
-            })
-            .catch(err => {
-                props.toast.toast.error("Error Fetching Leaderboard");
-                console.log(err);
-            })
-    }
+    //     }
+    //     catch(err){
+    //       console.log(err);
+    //     //   props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
+    //     }
+    //   }
+    // const fetchScores= async()=> {
+    //         await Request.leaderboard()
+    //         .then(res => {
+    //             // console.log(res)
+    //             setRank(res.data)
+    //         })
+    //         .catch(err => {
+    //             props.toast.toast.error("Error Fetching Leaderboard");
+    //             console.log(err);
+    //         })
+    // }
 
     useEffect(() => {
-        // console.log("fetching scores");
-        // fetchScores();
         setTimeout(()=>{
             setLoaderStatus(false);
-            // console.log('in timee');
-            eventStatus();
+            // Uncomment for live results
+            // eventStatus();
         },3000)
     },[]) // eslint-disable-line react-hooks/exhaustive-deps
-      // Get current rank
+
+    // Get current rank
   const indexOfLastPost = currentPage * rankPerPage;
   const indexOfFirstPost = indexOfLastPost - rankPerPage;
   const currentrank = rank.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Change page
+    // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
     return (
         loaderStatus
         ?
         <Loader/>
         :
-        
-        // <>
         <LeaderboardList rankPerPage={rankPerPage} totalrank={rank.length} paginate={paginate} rank={currentrank} indexOfFirstPost={indexOfFirstPost}/>
         
     )
