@@ -79,8 +79,8 @@ const Home = (props) => {
           <div>
                   <img src={r2d2} style={{width:'40px',float: 'left',margin: '0 0 0 10px'}} className="end" alt='r2d2'></img>
                   <p style={{ color: 'yellow',paddingTop:'2%'}}>...Hunt Has Ended</p>
-                  <Link to="feedback">
-                  <span class="nes-text is-primary">Feedback</span>
+                  <Link to="instructions">
+                  <span class="nes-text is-primary">Instructions</span>
                     </Link>
                   </div>
                     </div></div>

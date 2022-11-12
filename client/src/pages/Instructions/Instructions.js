@@ -15,6 +15,7 @@ const Instructions = (props) => {
   let [skipped, setSkipped] = useState(false);
   const [is_event, setIs_event] = useState(false);
   const [is_ended, setIs_ended] = useState(false);
+  const [err,setErr] = useState(false);
   const eventStatus = async () => {
     setLoaderStatus(true);
     try {
@@ -35,7 +36,8 @@ const Instructions = (props) => {
     }
     catch (err) {
       console.log(err);
-      props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
+      setErr(true);
+      // props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
     }
     setLoaderStatus(false);
   }
@@ -253,7 +255,7 @@ const Instructions = (props) => {
                   >
                     <button type="button" class="nes-btn is-warning" onClick={() => {
                       !is_ended&&!is_event && !props.loginStatus && props.toast.toast('Login First', { autoClose: 5000 })
-                      !is_ended&&!is_event && props.loginStatus && props.toast.toast('Event Is Yet To Start', { autoClose: 3000 })
+                      !err&&!is_ended&&!is_event && props.loginStatus && props.toast.toast('Event Is Yet To Start', { autoClose: 3000 })
                     }
                     }>
                       Hunt
