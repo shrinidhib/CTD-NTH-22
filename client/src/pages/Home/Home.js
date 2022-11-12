@@ -96,6 +96,15 @@ const Home = (props) => {
 
                       <Timer display={'instruct'} loginStatus={props.loginStatus} fetchTimeHome={fetchTimeHome} time={timerStatus.time} format={{ day, hour, seconds, minutes }} />
                     :
+                    timerStatus.time-Date.now()<=0
+                    ?
+                    <Link to={props.loginStatus === true ? "/instructions" : "/login"}>
+
+                        <button className="mr-3 ml-2 mt-2 mb-2 hunt-button ">
+                            Start Hunting
+                        </button>
+                    </Link>
+                    :
                     <Timer display={'start'} loginStatus={props.loginStatus} fetchTimeHome={fetchTimeHome} time={timerStatus.time} format={{ day, hour, seconds, minutes }} />
                     
               }
