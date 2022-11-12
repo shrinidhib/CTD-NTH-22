@@ -84,7 +84,7 @@ class QuestionDetail(generics.RetrieveAPIView):
                 user.current_level += 1
                 user.paidHintTaken = False
                 print(user.current_level,"level")
-                user.save()
+                user.save(update_fields=['keys','paidHintTaken','current_level','last_level_updated_time'])
                 isCorrect = True
                 que = get_object_or_404(queryset, level = user.current_level)
             
@@ -134,7 +134,7 @@ class ExtraHintView(APIView):
         if user.keys >= que.hintCost:
             user.keys -= que.hintCost
             user.paidHintTaken = True
-            user.save()
+            user.save(update_fields=['keys','paidHintTaken'])
             res_dict = {"extraHint":que.paidHint}
             return Response(res_dict)
         return Response(res_dict)
