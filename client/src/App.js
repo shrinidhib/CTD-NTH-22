@@ -17,7 +17,7 @@ import Leaderboard from './pages/Leaderboard/Leaderboard';
 import Team from './pages/Team/Team';
 import Contact from './pages/Contact/Contact';
 import ErrorPage from './pages/404/ErrorPage';
-// import Feedback from './pages/Feedback/Feedback';
+import Feedback from './pages/Feedback/Feedback';
 function App() {
   return (
     <>
@@ -37,7 +37,7 @@ function App() {
       <Route path="/question" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/question/dementors" element={<Harry toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/leaderboard" element = {<Leaderboard toast={{ container: <ToastUtils />, toast }}/>} />
-      {/* <Route path="/feedback" element = {<Feedback toast={{ container: <ToastUtils />, toast }}/>} /> */}
+      <Route path="/feedback" element = {<Feedback toast={{ container: <ToastUtils />, toast }}/>} />
       <Route path="*" element={<ErrorPage />} />
       </Routes>
       </div>
