@@ -15,6 +15,7 @@ const Home = (props) => {
   const [hour, setHour] = useState('00');
   const [minutes, setMinutes] = useState('00');
   const [seconds, setSeconds] = useState('00');
+  const [is_ended,setIs_Ended]= useState(false);
   // let days='00',hours='00',minutes='00',seconds='00';
   const fetchTimeHome = async () => {
     await Requests.time()
@@ -44,8 +45,10 @@ const Home = (props) => {
       )
       .catch(
         (err) => {
-          console.log(err);
-          props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
+          // console.log(err);
+          // props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
+          props.toast.toast("The Hunt Has Ended!");
+          setIs_Ended(true);
         }
       )
     setLoaderStatus(false)
@@ -64,6 +67,23 @@ const Home = (props) => {
         loaderStatus
           ?
           <Loader />
+          :
+
+          is_ended
+          ?
+          <div className="nth-adjust">
+            <div className="nth-home">
+              <img src={nthlogo} alt='nth-logo'></img>
+              <h3>Network Treasure Hunt</h3>
+              <h5>Decrypt the Encrypted</h5>
+          <div>
+                  <img src={r2d2} style={{width:'40px',float: 'left',margin: '0 0 0 10px'}} className="end" alt='r2d2'></img>
+                  <p style={{ color: 'yellow',paddingTop:'2%'}}>...Hunt Has Ended</p>
+                  <Link to="feedback">
+                  <span class="nes-text is-primary">Feedback</span>
+                    </Link>
+                  </div>
+                    </div></div>
           :
           <div className="nth-adjust">
             <div className="nth-home">
