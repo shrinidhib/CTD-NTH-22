@@ -3,9 +3,12 @@ import './Leaderboard.css';
 import Request from "../../api/requests";
 import { useNavigate } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
+import LeaderboardList from './LeaderboardList';
 const Leaderboard = (props) => {
   const [loaderStatus, setLoaderStatus] = useState(true);
     const [rank, setRank] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rankPerPage] = useState(2);
     const navigate=useNavigate();
     const eventStatus=async()=>{
         try{
@@ -50,37 +53,22 @@ const Leaderboard = (props) => {
             eventStatus();
         },3000)
     },[]) // eslint-disable-line react-hooks/exhaustive-deps
+      // Get current rank
+  const indexOfLastPost = currentPage * rankPerPage;
+  const indexOfFirstPost = indexOfLastPost - rankPerPage;
+  const currentrank = rank.slice(indexOfFirstPost, indexOfLastPost);
 
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
     return (
         loaderStatus
         ?
         <Loader/>
         :
-        <div className="Leaderboard">
-            <div className="high-scores">
-                <p>High Scores</p>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <td className="tdhead">Rank</td>
-                        <td className="tdhead">Name</td>
-                        <td className="tdhead">Level</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {rank.map((val, idx) => {
-                        return (
-                            <tr key={idx}>
-                                <td className="tdbody">{idx + 1}</td>
-                                <td className="tdbody">{val.username}</td>
-                                <td className="tdbody">{val.current_level}</td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </div>
+        
+        // <>
+        <LeaderboardList rankPerPage={rankPerPage} totalrank={rank.length} paginate={paginate} rank={currentrank} indexOfFirstPost={indexOfFirstPost}/>
+        
     )
 }
 

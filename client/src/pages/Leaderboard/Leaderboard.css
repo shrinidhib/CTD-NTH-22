@@ -1,3 +1,8 @@
+
+.pagination{
+  --bs-pagination-color: #66fd0d;
+    --bs-pagination-bg: #4900cd;
+}
 .Leaderboard {
   max-width: 450px;
   /* background-color: white; */
