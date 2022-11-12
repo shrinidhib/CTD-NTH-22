@@ -8,7 +8,7 @@ const Leaderboard = (props) => {
   const [loaderStatus, setLoaderStatus] = useState(true);
     const [rank, setRank] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [rankPerPage] = useState(2);
+  const [rankPerPage] = useState(10);
     const navigate=useNavigate();
     const eventStatus=async()=>{
         try{
