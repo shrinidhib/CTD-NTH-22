@@ -6,7 +6,7 @@ import c3po from "../../assets/c3po.png";
 import { connect } from "react-redux";
 import Requests from "../../api/requests";
 const Instructions = (props) => {
-  const [loaderStatus, setLoaderStatus] = useState(true);
+  const [loaderStatus, setLoaderStatus] = useState(false);
   let [r2d2_1, setR2D2_1] = useState(false);
   let [c3po_1, setC3PO_1] = useState(false);
   let [r2d2_2, setR2D2_2] = useState(false);
@@ -16,31 +16,31 @@ const Instructions = (props) => {
   const [is_event, setIs_event] = useState(false);
   const [is_ended, setIs_ended] = useState(false);
   const [err,setErr] = useState(false);
-  const eventStatus = async () => {
-    setLoaderStatus(true);
-    try {
-      const res = await Requests.time();
-      // console.log(res);
-      // console.log('started');
-      if(res.data.is_ended) setIs_ended(true);
-      if (res.data.is_started) {
-        props.loginStatus === false && props.toast.toast.info('Login First ', { autoClose: 6000 })
-        setIs_event(true);
-      }
+  // const eventStatus = async () => {
+  //   setLoaderStatus(true);
+  //   try {
+  //     const res = await Requests.time();
+  //     // console.log(res);
+  //     // console.log('started');
+  //     if(res.data.is_ended) setIs_ended(true);
+  //     if (res.data.is_started) {
+  //       props.loginStatus === false && props.toast.toast.info('Login First ', { autoClose: 6000 })
+  //       setIs_event(true);
+  //     }
 
-      // else{
-      //   props.toast.toast('Contest Not Started', { autoClose: 5000 });
-      //   navigate("/");
-      // }
+  //     // else{
+  //     //   props.toast.toast('Contest Not Started', { autoClose: 5000 });
+  //     //   navigate("/");
+  //     // }
 
-    }
-    catch (err) {
-      console.log(err);
-      setErr(true);
-      // props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
-    }
-    setLoaderStatus(false);
-  }
+  //   }
+  //   catch (err) {
+  //     console.log(err);
+  //     setErr(true);
+  //     // props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
+  //   }
+  //   setLoaderStatus(false);
+  // }
 
   const skipInst = (e) => {
     // console.log(e.key);
@@ -55,7 +55,7 @@ const Instructions = (props) => {
   };
 
   useEffect(() => {
-    eventStatus();
+    // eventStatus();
     setTimeout(() => {
       setR2D2_1(true);
       // document.getElementById("r2d21").play();

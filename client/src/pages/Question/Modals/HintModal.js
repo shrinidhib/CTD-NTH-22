@@ -10,7 +10,8 @@ function HintModal(props) {
   
   // console.log(props);
   
-  const hintsArr = props.data.hints.split("<br>")
+  // const hintsArr = props.data.hints.split("<br>")
+  const hintsArr = ['Default hints ']
   const paidHintArr = props.data.paidHint !== undefined ? props.data.paidHint.split("<br>") : []
   
   return (

@@ -128,14 +128,13 @@ const Question = (props) => {
     setLoaderStatus(false);
   }
   useEffect(() => {
-    eventStatus();
+    // eventStatus();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
       {
 
-        (props.loginStatus)
-          ?
+        
           loaderStatus
             ?
             <Loader />
@@ -253,10 +252,7 @@ const Question = (props) => {
 
               </Container>
             </div>
-          :
-          <>
-            {navigate("/login")}
-          </>
+          
       }
     </div>
 

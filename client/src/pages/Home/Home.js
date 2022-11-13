@@ -9,13 +9,13 @@ import Requests from '../../api/requests';
 import Loader from "../../components/Loader/Loader";
 import r2d2 from "../../assets/r2d2.png"
 const Home = (props) => {
-  const [loaderStatus, setLoaderStatus] = useState(true);
+  const [loaderStatus, setLoaderStatus] = useState(false);
   const [timerStatus, setTimerStatus] = useState(false);
   const [day, setDay] = useState('00');
   const [hour, setHour] = useState('00');
   const [minutes, setMinutes] = useState('00');
   const [seconds, setSeconds] = useState('00');
-  const [is_ended,setIs_Ended]= useState(false);
+  const [is_ended,setIs_Ended]= useState(true);
   // let days='00',hours='00',minutes='00',seconds='00';
   const fetchTimeHome = async () => {
     await Requests.time()
@@ -54,7 +54,7 @@ const Home = (props) => {
     setLoaderStatus(false)
 ;  }
   useEffect(() => {
-    fetchTimeHome();
+    // fetchTimeHome();
     // const timer1 = setTimeout(() => {
     //   setLoaderStatus(false);
     //   // console.log('in home')
@@ -77,6 +77,7 @@ const Home = (props) => {
               <h3>Network Treasure Hunt</h3>
               <h5>Decrypt the Encrypted</h5>
           <div>
+          {props.toast.toast("The Hunt Has Ended!")}
                   <img src={r2d2} style={{width:'40px',float: 'left',margin: '0 0 0 10px'}} className="end" alt='r2d2'></img>
                   <p style={{ color: 'yellow',paddingTop:'2%'}}>...Hunt Has Ended</p>
                   <Link to="instructions">
