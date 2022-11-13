@@ -114,7 +114,7 @@ class QuestionDetail(generics.RetrieveAPIView):
 
 class LeaderboardView(APIView):
     def get(self, request, *args, **kwargs):
-        users = User.objects.filter(hidden_on_leaderboard=False).order_by('-current_level','last_level_updated_time')[:10]
+        users = User.objects.filter(hidden_on_leaderboard=False).order_by('-current_level','last_level_updated_time')[:50]
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
