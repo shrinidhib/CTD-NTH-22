@@ -2,8 +2,8 @@ import axios from "axios";
 
 const hostname = window.location.hostname
 let url = ""
-if(hostname === "localhost") url = "http://localhost:8000/api"
-else url = `https://admin.nth.pictieee.in/api`
+if(hostname === "localhost") url = "https://api.credenz.in/nth/api"
+else url = `https://api.credenz.in/nth/api`
 const backend = axios.create({
     baseURL: url
   });
