@@ -50,6 +50,8 @@
   .contributor img.nes-avatar {
     transition: all .4s;
     display: inline-block;
+    height: 100px;
+    width: 100px;
   }
   .contributor:hover {
     text-decoration: none;
@@ -106,4 +108,12 @@
         width: 1000px;
         padding-left: 10%;
       }
+      
+      .contributor img.nes-avatar {
+        height: 64px;
+        width: 64px;
+      }
+      
   }
+
+  

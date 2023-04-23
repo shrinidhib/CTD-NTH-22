@@ -15,11 +15,7 @@ const Contact = () => {
             })
     }
     const details = [
-        {
-            name: "Devraj Shetake",
-            img: devraj,
-            phone: 8208566305
-        },
+        
         {
             name: "Harsh Bhat",
             img: harsh,
@@ -29,7 +25,12 @@ const Contact = () => {
             name: "Bhakti Mahurkar",
             img: bhakti,
             phone: 9307931414
-        }
+        },
+        {
+            name: "Devraj Shetake",
+            img: devraj,
+            phone: 8208566305
+        },
     ]
     useEffect(() => {
         eventStatus();

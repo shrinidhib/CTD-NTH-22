@@ -1,14 +1,15 @@
 import './Team.css'
 import {useEffect} from 'react'
 import { Container, Row, Col } from "react-bootstrap";
-import vansh from '../../assets/team/vansh.png'
-import mrunal from '../../assets/team/mrunal.png'
+import vansh from '../../assets/team/vansh.jpg'
 import harsh from '../../assets/team/harsh.png'
 import devraj from '../../assets/team/devraj.png'
-import omkar from '../../assets/team/omkar.png' 
-import bhakti from '../../assets/team/bhakti.png' 
-import vidhi from '../../assets/team/vidhi.png'  
-import safiya from '../../assets/team/safiya.png'  
+import bhakti from '../../assets/team/bhakti.png'  
+import riddhi from '../../assets/team/riddhi.jpeg'  
+import dhapse from '../../assets/team/dhapse.jpg'  
+import date from '../../assets/team/date.jpeg'  
+import karan from '../../assets/team/karan.jpg'  
+import kaushal from '../../assets/team/kaushal.jpg'  
 const Team = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -32,44 +33,32 @@ const Team = () => {
             github: 'https://github.com/Harususan',
             linkedin: 'https://www.linkedin.com/in/harshbhat/'
         },
-        {
-            name: 'Mrunal Golivadekar',
-            img: mrunal,
-            github: ' https://github.com/mrunalg25',
-            linkedin: 'https://www.linkedin.com/in/mrunal-golivadekar-27b34121a/'
-        },
-        {
-            name: 'Omkar Kulkarni',
-            img: omkar,
-            github: '  http://github.com/OmkarK2553',
-            linkedin: ' http://linkedin.com/in/omkar-kulkarni-5b1693214/'
-        }
     ]
     const nthteam=[
         {
-            name: 'Devraj',
-            img: devraj,
-            insta:'https://www.instagram.com/devrajshetake/'
+            name: 'Riddhi',
+            img: riddhi,
+            insta:'https://www.instagram.com/riddhikul__/'
         },
         {
-            name: 'Harsh',
-            img: harsh,
-            insta:'https://instagram.com/_harusu_san_?igshid=YmMyMTA2M2Y='
+            name: 'Kshitij',
+            img: dhapse,
+            insta:'https://instagram.com/kshitij_dhapse/'
         },
         {
-            name: 'Bhakti',
-            img: bhakti,
-            insta:'https://instagram.com/bhakti.mahurkar22?igshid=YmMyMTA2M2Y='
+            name: 'Kaushal',
+            img: kaushal,
+            insta:'https://instagram.com/kaushal_n.kulkarni/'
         },
         {
-            name: 'Vidhi',
-            img: vidhi,
-            insta:'https://www.instagram.com/sovidhii/'
+            name: 'Atharva',
+            img: date,
+            insta:'https://www.instagram.com/atharva1_618/'
         },
         {
-            name: 'Safiya',
-            img: safiya,
-            insta:'https://www.linkedin.com/in/safiya-amin-907386206/'
+            name: 'Karan',
+            img: karan,
+            insta:'https://www.instagram.com/karanmundhadaofficial/'
         },
     ]
     return (
