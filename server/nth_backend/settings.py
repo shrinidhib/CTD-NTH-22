@@ -30,7 +30,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(' ')
 ALLOWED_HOSTS = ['*', 'admin.nth.pictieee.in', 'localhost', '127.0.0.0', '20.94.70.127']
-CSRF_TRUSTED_ORIGINS=['https://*.pictieee.in']
+CSRF_TRUSTED_ORIGINS=['https://*.pictieee.in', 'https://*.credenz.in']
 
 # Application definition
 
