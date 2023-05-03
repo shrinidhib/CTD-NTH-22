@@ -102,7 +102,10 @@ class QuestionDetail(generics.RetrieveAPIView):
             serializer = QuestionSerializer(que)
             data = serializer.data
             if isCorrect:
-                data["promts"] = f"Congratulations!! Advancing to level {user.current_level}."
+                if user.current_level == 3:
+                    data["promts"] = "You're goddamn right!"
+                else:
+                    data["promts"] = f"Congratulations!! Advancing to level {user.current_level}."
             else:
                 data["promts"] = f"Wrong Answer!"
             if user.paidHintTaken:
