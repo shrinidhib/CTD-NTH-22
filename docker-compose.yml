@@ -13,6 +13,7 @@ services:
     volumes:
       - static_files:/user/src/app/staticfiles/
       - ./server/db.sqlite3:/user/src/app/db.sqlite3
+      - ./server/:/user/src/app/
   
     env_file:
       - ./server/.env/dev.env
