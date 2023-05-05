@@ -75,5 +75,5 @@ class AnswerHistory(models.Model):
     answers = models.JSONField(default=list, null=True, blank=True)
 
     def __str__(self):
-        return self.user.username + " answered " + self.question.title + " as " + self.answer
+        return self.user.username + " answered " + self.question.title
     
