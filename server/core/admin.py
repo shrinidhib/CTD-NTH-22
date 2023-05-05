@@ -15,9 +15,13 @@ class UserAdmin(admin.ModelAdmin):
         }),
     )
     
+class HistoryAdmin(admin.ModelAdmin):
+    list_display = ( 'user', 'question', 'last_updated') # specify the fields to display in the table
+    list_filter = ('last_updated',) # specify filters to display on the right-hand side of the table
+    search_fields = ('user', 'question') # specify fields to search on using the search box
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Question)
 admin.site.register(Feedback)
 admin.site.register(Timer)
-admin.site.register(AnswerHistory)
+admin.site.register(AnswerHistory, HistoryAdmin)
