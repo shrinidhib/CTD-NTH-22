@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .serializers import *
+from .models import *
 import json
 import random
 from datetime import datetime
@@ -64,6 +65,15 @@ class QuestionDetail(generics.RetrieveAPIView):
             isCorrect = False
             match = SequenceMatcher(None, user_ans, que.answer).ratio()
             promocode = Timer.objects.all().first()
+
+            if user_ans:
+                try:
+                    answer_history = AnswerHistory.objects.get_or_create(user=user)
+                    answer_history.answers[user.current_level].append([user_ans, datetime.datetime.now().strftime('%Y-%m-%d %H:%M')])
+                    answer_history.save()
+                except(e):
+                    print(e)
+
 
             # Check for promocode
             if promocode.promo_code_active and not user.promo_used:
