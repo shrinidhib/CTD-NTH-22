@@ -66,7 +66,7 @@ class QuestionDetail(generics.RetrieveAPIView):
             match = SequenceMatcher(None, user_ans, que.answer).ratio()
             promocode = Timer.objects.all().first()
 
-            if user_ans:
+            if user_ans and user_ans != "put_your_ans_here":
                 try:
                     answer_history, created = AnswerHistory.objects.get_or_create(user=user, question=que)
                     if created:
