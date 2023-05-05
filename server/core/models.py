@@ -72,7 +72,7 @@ class Feedback(models.Model):
 class AnswerHistory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     question = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
-    answers = models.JSONField(default=dict, null=True, blank=True)
+    answers = models.JSONField(default=list, null=True, blank=True)
 
     def __str__(self):
         return self.user.username + " answered " + self.question.title
