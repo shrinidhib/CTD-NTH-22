@@ -68,7 +68,7 @@ class QuestionDetail(generics.RetrieveAPIView):
 
             if user_ans:
                 try:
-                    answer_history = AnswerHistory.objects.get_or_create(user=user)
+                    answer_history = AnswerHistory.objects.get_or_create(user=user, question=que)
                     answer_history.answers[user.current_level].append([user_ans, datetime.datetime.now().strftime('%Y-%m-%d %H:%M')])
                     answer_history.save()
                 except Exception as e:
