@@ -71,7 +71,7 @@ class QuestionDetail(generics.RetrieveAPIView):
                     answer_history, created = AnswerHistory.objects.get_or_create(user=user, question=que)
                     if created:
                         answer_history.answers = []
-                    answer_history.answers.append([user_ans, datetime.datetime.now().strftime('%Y-%m-%d %H:%M')])
+                    answer_history.answers.append([user_ans, datetime.now().strftime('%Y-%m-%d %H:%M')])
                     answer_history.save()
                 except Exception as e:
                     print("History Error: ", e)
