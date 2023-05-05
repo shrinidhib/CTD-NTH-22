@@ -178,6 +178,7 @@ SITE_NAME = 'Network Treasure Hunt'
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:8000',
+  'http://localhost:3000',
   'https://admin.nth.credenz.in',
   'https://nth.credenz.in',
   'https://*.credenz.in',
