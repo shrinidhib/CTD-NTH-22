@@ -66,13 +66,13 @@ class QuestionDetail(generics.RetrieveAPIView):
             match = SequenceMatcher(None, user_ans, que.answer).ratio()
             promocode = Timer.objects.all().first()
 
-            # if user_ans:
-            #     try:
-            #         answer_history = AnswerHistory.objects.get_or_create(user=user, question=que)
-            #         answer_history.answers[user.current_level].append([user_ans, datetime.datetime.now().strftime('%Y-%m-%d %H:%M')])
-            #         answer_history.save()
-            #     except Exception as e:
-            #         print("History Error: ", e)
+            if user_ans:
+                try:
+                    answer_history = AnswerHistory.objects.get_or_create(user=user, question=que)
+                    answer_history.answers[user.current_level].append([user_ans, datetime.datetime.now().strftime('%Y-%m-%d %H:%M')])
+                    answer_history.save()
+                except Exception as e:
+                    print("History Error: ", e)
 
 
             # Check for promocode
