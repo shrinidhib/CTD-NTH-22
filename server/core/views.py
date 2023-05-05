@@ -71,8 +71,8 @@ class QuestionDetail(generics.RetrieveAPIView):
                     answer_history = AnswerHistory.objects.get_or_create(user=user)
                     answer_history.answers[user.current_level].append([user_ans, datetime.datetime.now().strftime('%Y-%m-%d %H:%M')])
                     answer_history.save()
-                except(e):
-                    print(e)
+                except:
+                    pass
 
 
             # Check for promocode
