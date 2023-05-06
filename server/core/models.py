@@ -73,6 +73,7 @@ class AnswerHistory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     question = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
     answers = models.JSONField(default=list, null=True, blank=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.user.username + " answered " + self.question.title
