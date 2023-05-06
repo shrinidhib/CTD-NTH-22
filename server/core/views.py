@@ -92,7 +92,7 @@ class QuestionDetail(generics.RetrieveAPIView):
 
             # Evaluate The Answer
             elif que.answer == user_ans:
-                user.keys += que.hintCost
+                user.keys += que.level
                 user.current_level += 1
                 user.paidHintTaken = False
                 print(user.current_level,"level")
