@@ -4,6 +4,7 @@ import Request from "../../api/requests";
 import { useNavigate } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import LeaderboardList from './LeaderboardList';
+import lead_list from './list';
 const Leaderboard = (props) => {
   const [loaderStatus, setLoaderStatus] = useState(true);
     const [rank, setRank] = useState([]);
@@ -35,8 +36,9 @@ const Leaderboard = (props) => {
     const fetchScores= async()=> {
             await Request.leaderboard()
             .then(res => {
-                // console.log(res)
-                setRank(res.data)
+                // console.log(lead_list)
+                // setRank(res.data) // uncomment this line to get leaderboard in production
+                setRank(lead_list) // comment this line to get leaderboard in production
             })
             .catch(err => {
                 props.toast.toast.error("Error Fetching Leaderboard");
