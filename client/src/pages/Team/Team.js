@@ -33,10 +33,10 @@ const Team = () => {
             linkedin: 'https://www.linkedin.com/in/harshbhat/'
         },
         {
-            name: 'Mrunal Golivadekar',
-            img: mrunal,
-            github: ' https://github.com/mrunalg25',
-            linkedin: 'https://www.linkedin.com/in/mrunal-golivadekar-27b34121a/'
+            name: 'Bhatki Mahurkar',
+            img: bhakti,
+            github: 'https://github.com/BhaktiMahurkar',
+            linkedin: 'https://www.linkedin.com/in/bhaktimahurkar/'
         },
         {
             name: 'Omkar Kulkarni',
