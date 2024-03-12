@@ -1,57 +1,65 @@
-.Leaderboard{
+.Leaderboard {
   max-width: 450px;
-  height: 500px;
   /* background-color: white; */
-  margin: 40px 20px;
+  /* margin: 40px 20px; */
+  /* margin-left: 36%; */
+  width: fit-content;
+  height: fit-content;
   outline: 4px solid #feeb2c;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.high-scores{
+.high-scores {
   padding: 20px 10px;
 }
 
-.high-scores p{
+.high-scores p {
   font-size: 22px;
   color: #ff074e;
   font-family: 'Press Start 2P', cursive;
 }
 
-table{
+table {
   width: 450px;
   border-collapse: separate;
   border-spacing: 0 1em;
+
 }
 
-thead{
+thead {
   color: rgb(254, 235, 44);
 }
 
-.tdhead{
+.tdhead {
   font-family: 'Press Start 2P', cursive;
   text-align: center;
 }
 
-thead{
+thead {
   height: 40px;
   padding-bottom: 20px;
 }
 
-.tdbody{
+.tdbody {
   color: #0058f8;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
 }
 
-/*--------------- Trying to make it responsible for smaller screen :) ------------------*/
-@media only screen and (max-height: 790px) {
-  .scoreBoard{
-      height: 400px;
+/*--------------- Trying to make it responsive for smaller screen :) ------------------*/
+/* @media only screen and (max-height: 790px) {
+  .Leaderboard{
+      height: 540px;
       width: 400px;
-      padding: 5px;
+  
+      
   }
   table{
       width: 400px;
@@ -62,14 +70,16 @@ thead{
   .high-scores{
       padding: 10px 10px;
   }
-}
+} */
 
-@media only screen and (max-height: 600px){
-  .scoreBoard{
-      height: 350px;
+/* @media only screen and (max-height: 600px){
+  .Leaderboard{
+      height: 450px;
       max-width: 350px;
+      margin-left: 28px;
   }
   table{
+    
       width: 350px;
       border-spacing: 0 12px;
   }
@@ -82,25 +92,34 @@ thead{
   .high-scores{
       padding: 5px;
   }
-}
+} */
 
-@media only screen and (max-width: 450px){
-  .scoreBoard{
-      height: 400px;
-      width: 300px;
-      /* padding: 5px; */
+@media only screen and (max-width: 1000px) {
+  .Leaderboard {
+    /* height: 400px;
+      width: 300px; */
+    /* margin-left: 0%; */
+    /* padding: 5px; */
+    /* height: fit-content; */
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   */
   }
-  table{
-      width: 300px;
+
+  table {
+    width: 300px;
   }
-  .tdhead{
-      font-size: 14px;
+
+  .tdhead {
+    font-size: 14px;
   }
-  .tdbody{
-      font-size: 12px;
+
+  .tdbody {
+    font-size: 12px;
   }
-  .high-scores{
-      padding: 5px;
+
+  .high-scores {
+    padding: 5px;
   }
 }
-  

@@ -145,15 +145,7 @@
 }
 
 
-.instructions {
-    /* margin: 6% auto 2%; */
-    /* color: #cbe971; */
-    height: 800px;
-    display: block ;
-    overflow: auto;
-    /* overflow-x: hidden; */
-    width: 100%;
-}
+
 
 .answer-1 {
     margin-top: 1rem;
@@ -162,17 +154,9 @@
     text-align: center;
 }
 
-.instructions-content {
-    margin: 2% 7%;
-    font-size: 1.05rem;
-    color: white;
-}
+
 
 @media screen and (max-width : 200px) {
-    .instructions {
-        margin: 15% 4% 5%;
-        /* width: 90%; */
-    }
     .login-page .nes-container{
         width: 10px;
     }
