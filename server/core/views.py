@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .serializers import *
+from .models import *
 import json
 import random
 from datetime import datetime
@@ -65,6 +66,17 @@ class QuestionDetail(generics.RetrieveAPIView):
             match = SequenceMatcher(None, user_ans, que.answer).ratio()
             promocode = Timer.objects.all().first()
 
+            if user_ans and user_ans != "put_your_ans_here":
+                try:
+                    answer_history, created = AnswerHistory.objects.get_or_create(user=user, question=que)
+                    if created:
+                        answer_history.answers = []
+                    answer_history.answers.append([user_ans, datetime.now().strftime('%Y-%m-%d %H:%M')])
+                    answer_history.save()
+                except Exception as e:
+                    print("History Error: ", e)
+
+
             # Check for promocode
             if promocode.promo_code_active and not user.promo_used:
                 if user_ans == promocode.promocode or que.answer == user_ans:
@@ -80,11 +92,11 @@ class QuestionDetail(generics.RetrieveAPIView):
 
             # Evaluate The Answer
             elif que.answer == user_ans:
-                user.keys += user.current_level
+                user.keys += que.level
                 user.current_level += 1
                 user.paidHintTaken = False
                 print(user.current_level,"level")
-                user.save()
+                user.save(update_fields=['keys','paidHintTaken','current_level','last_level_updated_time'])
                 isCorrect = True
                 que = get_object_or_404(queryset, level = user.current_level)
             
@@ -103,6 +115,8 @@ class QuestionDetail(generics.RetrieveAPIView):
             data = serializer.data
             if isCorrect:
                 data["promts"] = f"Congratulations!! Advancing to level {user.current_level}."
+                if que.level == 3:
+                    data["promts"] = f"You're Goddamn Right!" # change this in next NTH
             else:
                 data["promts"] = f"Wrong Answer!"
             if user.paidHintTaken:
@@ -114,7 +128,7 @@ class QuestionDetail(generics.RetrieveAPIView):
 
 class LeaderboardView(APIView):
     def get(self, request, *args, **kwargs):
-        users = User.objects.filter(hidden_on_leaderboard=False).order_by('-current_level','last_level_updated_time')[:10]
+        users = User.objects.filter(hidden_on_leaderboard=False, is_active=True).order_by('-current_level','last_level_updated_time')[:100]
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
@@ -131,10 +145,10 @@ class ExtraHintView(APIView):
             # res_dict = {"status":"You have already taken a hint!"}
             res_dict = {"extraHint":que.paidHint}
             return Response(res_dict)
-        if user.keys >= user.current_level + 1:
-            user.keys -= (user.current_level + 1)
+        if user.keys >= que.hintCost:
+            user.keys -= que.hintCost
             user.paidHintTaken = True
-            user.save()
+            user.save(update_fields=['keys','paidHintTaken'])
             res_dict = {"extraHint":que.paidHint}
             return Response(res_dict)
         return Response(res_dict)
@@ -145,3 +159,18 @@ class TimerView(APIView):
         timer = Timer.objects.all().first()
         serializer = TimerSerializer(timer)
         return Response(serializer.data)
+
+class FeedbackView(APIView):
+    def post(self,request, *args, **kwargs):
+        user = request.user
+        print(request.data)
+        # if user != None:
+        #     print("if")
+        #     username = user.username
+        # else:
+        username = request.data['name']
+
+        feedback = request.data['feedback']
+
+        Feedback.objects.create(name = username, feedback=feedback)
+        return Response({'status':'opie'})

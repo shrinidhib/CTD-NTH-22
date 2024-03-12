@@ -28,8 +28,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = int(os.environ.get("DEBUG",0))
 # DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(' ')
-# ALLOWED_HOSTS = []
+
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(' ')
+ALLOWED_HOSTS = ['*', 'admin.nth.pictieee.in', 'localhost', '127.0.0.0', '20.94.70.127']
+CSRF_TRUSTED_ORIGINS=['https://*.pictieee.in', 'https://*.credenz.in', 'http://localhost', 'http://127.0.0.0',]
 
 
 # Application definition
@@ -175,4 +177,11 @@ SITE_NAME = 'Network Treasure Hunt'
 
 
 # CORS Setting
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:8000',
+  'http://localhost:3000',
+  'https://admin.nth.credenz.in',
+  'https://nth.credenz.in',
+  'https://*.credenz.in',
+)

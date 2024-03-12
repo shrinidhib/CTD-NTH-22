@@ -3,47 +3,41 @@ version: '3.2'
 services:
   backend:
     # restart: always
-    container_name: back
+    ports:
+      - "8001:8000"
+    container_name: nth_backend
     command: gunicorn nth_backend.wsgi:application --bind 0.0.0.0:8000 --timeout 1800
     build:
       context: ./server/
       dockerfile: Dockerfile
     volumes:
-      - ./server/:/usr/src/app/
-      - static_files:/usr/src/app/staticfiles
-    # ports:
-    #   - 8000:8000
-    expose:
-      - 8000
+      - static_files:/user/src/app/staticfiles/
+      - ./server/db.sqlite3:/user/src/app/db.sqlite3
+      - ./server/:/user/src/app/
+  
     env_file:
       - ./server/.env/dev.env
-
-  frontend:
-    restart: always
-    command : npm start
-    container_name: front
-    build:
-      context: ./client/
-      dockerfile: Dockerfile
-    ports:
-      - 3000:3000
-    volumes:
-      - react_build:/react/build
-    depends_on:
-      - backend    
-
-  nginx:
-    build: ./nginx
-    ports:
-      - 80:8080
-    depends_on:
-      - backend
-      - frontend
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d/
-      - static_files:/home/app/staticfiles
-      - react_build:/usr/share/nginx/html
+ 
+#   nginx:
+#     image: nginx:1.15-alpine
+#     ports:
+#       - "80:80"
+#       - "443:443"
+#     depends_on:
+#       - backend
+#     volumes:
+#       - ./nginx/conf.d:/etc/nginx/conf.d/
+#       - static_files:/home/app/staticfiles
+#       - ./nginx/certbot/conf:/etc/letsencrypt
+#       - ./nginx/certbot/www:/var/www/certbot
+#     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+  
+#   certbot:
+#     image: certbot/certbot
+#     volumes:
+#       - ./nginx/certbot/conf:/etc/letsencrypt
+#       - ./nginx/certbot/www:/var/www/certbot
+#     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
   static_files:
-  react_build:
