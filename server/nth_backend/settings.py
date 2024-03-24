@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-import os
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
+
 # SECRET_KEY = "django-insecure-5^q7p#e911ps0!k@*auc(bd3d%%be$-o+hcv^yc10&uen4lfm("
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -30,7 +33,7 @@ DEBUG = int(os.environ.get("DEBUG",0))
 
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(' ')
-ALLOWED_HOSTS = ['*', 'admin.nth.pictieee.in', 'localhost', '127.0.0.0', '20.94.70.127']
+ALLOWED_HOSTS = ['*', 'admin.nth.credenz.in', 'localhost', '127.0.0.0', '20.193.130.20']
 CSRF_TRUSTED_ORIGINS=['https://*.pictieee.in', 'https://*.credenz.in', 'http://localhost', 'http://127.0.0.0',]
 
 
