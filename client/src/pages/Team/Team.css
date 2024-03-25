@@ -66,6 +66,16 @@
         overflow: auto;
         max-height: 50vh;
     } */
+    .nth-team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  /* Adjust this selector as per your requirement */
+    .nth-team-container a {
+        margin: 10px;
+    }
     .nes-container.member-card{
         width: 300px;
         /* height: 130px; */

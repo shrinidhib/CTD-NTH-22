@@ -4,18 +4,18 @@ import { Container, Row, Col } from "react-bootstrap";
 const Contact = () => {
     const details = [
         {
-            name: "Vansh Teppalwar",
-            img: 'https://github.com/4k1k0.png?size=64',
-            instagram: 'https://github.com/4k1k0.png?size=64',
-            linkedin: 'https://github.com/4k1k0.png?size=64',
-            phone: 7972851721
+            name: "Kshitij Dhapse",
+            img: 'https://i.postimg.cc/T1GPFsTt/kshitij1.jpg',
+            instagram: 'https://www.instagram.com/kshitij_dhapse/',
+            linkedin: 'https://www.linkedin.com/in/kshitijdhapse/',
+            phone: 9325815244
         },
         {
-            name: "Vansh Teppalwar",
-            img: 'https://github.com/4k1k0.png?size=64',
-            instagram: 'https://github.com/4k1k0.png?size=64',
-            linkedin: 'https://github.com/4k1k0.png?size=64',
-            phone: 7972851721
+            name: "Karan Mundhada",
+            img: 'https://i.postimg.cc/9DLjkLbn/Karan.jpg',
+            instagram: 'https://www.instagram.com/karanmundhadaofficial/',
+            linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/',
+            phone: 8080792381
         }
     ]
     return (
