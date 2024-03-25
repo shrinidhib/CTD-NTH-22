@@ -11,25 +11,25 @@ const Team = () => {
         {
             name: 'Karan',
             img: 'https://i.postimg.cc/9DLjkLbn/Karan.jpg',
-            github: 'https://github.com/VanshTeppalwar',
+            github: 'https://github.com/Karan-mundhada',
             linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/'
         },
         {
             name: 'Hitesh',
-            img: 'https://github.com/BcRikko.png?size=80',
-            github: 'https://github.com/VanshTeppalwar',
-            linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
+            img: 'https://i.postimg.cc/PrMvqYnh/Profile-Picture.jpg',
+            github: 'https://github.com/Hvshitesh',
+            linkedin: 'https://www.linkedin.com/in/hitesh-sonawane-0a3129257/'
         },
         {
             name: 'Atharva',
             img: 'https://i.postimg.cc/JsrLKfNX/Atharva-Date.jpg',
-            github: 'https://github.com/VanshTeppalwar',
+            github: 'https://github.com/Atharva9621',
             linkedin: 'https://www.linkedin.com/in/atharva-date-04345b256/'
         },
         {
             name: 'Riddhi',
             img: 'https://i.postimg.cc/c630JM1v/Riddhi-Kulkarni.jpg',
-            github: 'https://github.com/VanshTeppalwar',
+            github: 'https://github.com/riddhikul',
             linkedin: 'https://www.linkedin.com/in/riddhi-kulkarni-9a6b84232/'
         },
     ]
@@ -62,8 +62,6 @@ const Team = () => {
                     ))
                 }
             </div>
-            
-            
             <h1 className='topic-title'>NTH-TEAM</h1>
             {/* <div style="display: flex; justify-content: center;"> */}
             <a href="https://github.com/4k1k0" target="_black" class="contributor">
