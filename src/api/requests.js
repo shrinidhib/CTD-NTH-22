@@ -4,7 +4,7 @@ const host = window.location.host
 const hostname = window.location.hostname
 const port = host.split(':')[1]
 let url = ""
-if(port == "3000") url = "http://localhost:8000/api"
+if(port == "3000") url = "https://admin.nth.credenz.in/nth/api"
 else url = `http://${hostname}/api`
 const backend = axios.create({
     baseURL: url
