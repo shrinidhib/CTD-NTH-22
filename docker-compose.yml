@@ -27,8 +27,6 @@ services:
       restart: "on-failure"
   backend:
     # restart: always
-    ports:
-      - "8001:8000"
     container_name: nth_backend
     command: gunicorn nth_backend.wsgi:application --bind 0.0.0.0:8000 --timeout 1800
     build:
