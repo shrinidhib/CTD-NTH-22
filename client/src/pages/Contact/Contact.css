@@ -1,0 +1,99 @@
+
+  .contact-page{
+    /* color: white;
+    margin: 3% auto 10%; */
+    margin-left:auto;
+    margin-right:auto;
+    width: fit-content;
+    padding-top: 8vh;
+    
+}
+
+.contact-page .nes-container{
+  width: fit-content;
+  height: fit-content;
+}
+.contact-page .contactus-card{
+    text-align: center;
+    /* margin: 5% auto; */
+    width: 270px;
+    padding: 3.5% 2% 2%;
+     background-color: black;
+     border-radius: 5px;
+
+}
+/* .contact-page .contactus-card:hover{
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+} */
+
+
+.contact-page .fa-linkedin{
+    margin: 5% 0 0;
+}
+
+/* .contact-page .contactus-card:hover{
+    transform: scale(1.005);
+} */
+
+
+
+
+.contact-page .contactus-card .card-name{
+    /* background-color: #E9B171; */
+    padding: 5% 0;
+    /* border-radius: 10px; */
+}
+
+
+.contact-page .fas{
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+}
+
+.contact-page .fab{
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+}
+
+
+.contact-page .contactus-card a{
+    text-decoration: none;
+    color: white;
+}
+
+.contact-page .contactus-card img{
+    border-radius: 100%;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    padding: 5px;
+    border: 2px solid #643806;
+}
+.contact-page .contactus-card h4{
+    margin: 3% 0;
+}
+
+@media screen and (max-width:450px) {
+  .contact-page .contactus-card{
+      width: 90%;
+  }
+  .contact-page{
+    max-height: 80vh;
+        overflow: auto;
+        padding-top: 0vh;
+        /* width: 300px; */
+        margin-left: 2%;
+  }
+  .contact-page .nes-container{
+    width: 200px;
+  }
+  .contact-page .contactus-card img{
+    width: 100px;
+  }
+  .contact-page .contactus-card .card-name .text{
+    font-size: 0.85rem;
+  }
+  .contact-page .contactus-card .card-name .text1{
+    font-size: 0.55rem;
+  }
+}

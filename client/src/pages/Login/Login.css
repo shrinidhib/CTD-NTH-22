@@ -1,0 +1,182 @@
+.login-page .nes-container .nes-field .col{
+    color:#cbe971 ;
+}
+.login-page .nes-container {
+    /* color:#cbe971 ; */
+    width: 500px;
+    /* height: 300px; */
+    height: fit-content;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    position: relative; */
+}
+.login-page {
+    width: fit-content;
+    /* margin: 3% 2% 1%; */
+    /* padding: 20%; */
+    /* background: #3c9b5134; */
+    /* background: #d1191934; */
+    /* border-radius: 10px; */
+    /* margin: 3% 10%; */
+    /* color: #cbe971; */
+    /* height: 800px; */
+    /* display: block ;
+    overflow: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 110px;
+    /* margin: 7.3% auto; */
+    /* width: 8em */
+    min-height: 46vh;
+}
+
+.login-page h2 {
+    text-align: center;
+    margin: 2% 0 6%;
+    color:#cbe971 ;
+
+}
+
+@media screen and (max-width :400px) {
+    .login-page {
+        width: 90%;
+    }
+}
+
+.login-page .field {
+    width: 100%;
+    position: relative;
+    font-size: 18px;
+    padding: 7px 30px;
+    white-space: no-wrap;
+    margin-bottom: 2%;
+}
+
+.login-page .field::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    height: 1px;
+    width: 85%;
+    padding-top: 5px;
+    border-top: 1px solid rgba(228, 228, 228, 0.87);
+}
+
+
+.login-page .field i {
+    font-size: 22px;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    text-align: left;
+    display: inline-block;
+}
+
+
+
+.login-page input {
+    border: 1;
+    background: transparent;
+    padding: 0 5px;
+    color: inherit;
+    /* font-family: inherit; */
+    font-size: inherit;
+    height: 50px;
+    width: 100%;
+    vertical-align: auto;
+}
+
+.login-page input:focus {
+    outline: none;
+}
+
+
+
+.login-page .login-button {
+    text-align: center;
+    font-size: 120%;
+    padding-top: 20px;
+}
+
+.login-page button {
+    background-color: #292929;
+    border-style: none;
+    color: #cbe971;;
+    margin-top: 5%;
+    width: 180px;
+    padding: 4px 0;
+    border-radius: 20px;
+    transition: 0.5s ease-in;
+}
+
+.login-page button:hover {
+    background-color: #e3e971;
+    color: #141414;
+}
+
+.login-page .register {
+    width: 100%;
+    margin-top: 5% !important;
+    /* margin-bottom: 3% !important; */
+    font-size: 100%;
+    color: white;
+    text-align: center;
+}
+.login-page .register .err{
+    width: 100%;
+    margin-top: 10% !important;
+    margin-bottom: 3% !important;
+    font-size: 120%;
+    color: rgb(234, 15, 15);
+    text-align: center;
+}
+.login-page .register a {
+    text-decoration: underline;
+    color: #cbe971;
+    /* text-decoration: solid; */
+}
+
+.login-page .register a:hover {
+    color: #b18758;
+}
+
+
+
+
+.answer-1 {
+    margin-top: 1rem;
+    color: #181818;
+    cursor: default;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width : 200px) {
+    .login-page .nes-container{
+        width: 10px;
+    }
+    /* .instructions .nes-balloonnes-balloon{
+        margin: 1% 0 1% 8%;
+    } */
+    /* .instructions-content {
+        
+    } */
+}
+@media screen and (max-width : 500px) {
+    .login-page input{
+        width: 100%;
+        font-size: 10px;
+        /* height: fit-content; */
+    }
+    .login-page .nes-container{
+        width: auto;
+    }
+    .login-page{
+        min-height: 50vh;
+    }
+}

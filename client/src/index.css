@@ -1,0 +1,23 @@
+body{
+  background-color: #090a0f;
+}
+::-webkit-scrollbar-track{
+  visibility: hidden;
+  background: transparent;
+}
+::-webkit-scrollbar {
+  
+  background-color: transparent;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#00c6ff, transparent);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#8a0fc8, transparent);
+}

@@ -1,0 +1,145 @@
+/* .nes-container .nes-field .col{
+    color:#cbe971 ;
+} */
+/* .nes-container { */
+    /* color:#cbe971 ; */
+    /* width: auto; */
+    /* display: block; */
+    /* margin-left: auto;
+    margin-right: auto; 
+    position: relative; */
+/* } */
+/* .adjust{
+    min-height: 10vh;
+    height: 550px;
+} */
+.instructions {
+    margin: 2% 15%;
+    /* color: #cbe971; */
+    height: 500px;
+    /* display: block ;
+    overflow: auto; */
+    /* overflow-x: hidden; */
+    width: auto;
+    display: block ;
+    overflow: auto;
+    /* min-height: 10vh; */
+    /* height: 400px; */
+}
+
+.instructions-content {
+    margin: 2% 7%;
+    font-size: 1.05rem;
+    color: white;
+}
+.r2d2{
+    width:50px;
+    height:30px;
+}
+.c3po{
+    width:50px;
+    height:30px;
+}
+/* .answer-1 {
+    margin-top: 1rem;
+    color: #181818;
+    cursor: default;
+    text-align: center;
+} */
+
+/* .instructions-content {
+    margin: 2% 7%;
+    font-size: 1.05rem;
+    color: white;
+} */
+/* .instructions .message-left {
+    width: 0px;
+} */
+.nes-balloon.inst{
+    width: auto; 
+    height: auto;
+    background-color: transparent;
+    color:white;
+    
+    
+}
+.inst-text{
+    color: rgb(255, 255, 255);
+    /* display: block ;
+    overflow: auto; */
+    
+}
+
+@media screen and (max-width : 400px) {
+    .instructions {
+        margin: 5% 2% 2%;
+        /* width: 90%; */
+        height: 460px;
+    }
+    
+    /* .instructions .nes-balloonnes-balloon{
+        margin: 1% 0 1% 8%;
+    } */
+    /* .instructions-content {
+        
+    } */
+}
+
+@media screen and (max-width : 1000px)  {
+    /* .nes-balloon{
+        width: 95%;
+    } */
+    /* .message-left.inst{
+        width: 100%;
+    } */
+    /* .nes-balloon.inst{
+        width: 94%;
+    } */
+    /* .inst-text{
+    height: 300px;
+    font-size: 1px;
+        width: auto;
+    } */
+    .inst1-text{
+        /* height: 300px; */
+        font-size: 6px;
+    
+        }
+        .msg{
+            font-size: 6px;
+            /* color: red; */
+        }    
+}
+/* @media screen and (min-height:840px) {
+   
+    .msg{
+        font-size: 6px;
+        
+    }
+    
+    .inst1-text{
+        
+        font-size: 6px;
+    
+        }
+} */
+@media screen and (max-width : 200px) {
+    .instructions {
+        margin: 15% 4% 5%;
+        /* width: 90%; */
+    }
+}
+.skip{
+    animation: blinker 1.5s linear infinite;
+    color: red;
+    /* padding-bottom: 200px; */
+    /* position:absolute; */
+    /* padding-top: 160px; */
+    /* bottom: 1; */
+
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

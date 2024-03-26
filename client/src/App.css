@@ -1,0 +1,28 @@
+/* body{background-color: #090a0f;} */
+/* .rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: auto;
+  height: auto;
+} */
+* {font-size: 13px;}
+.margin-br{
+  height: 84vh;
+    margin: 20px;
+    border-radius: 25px;
+  border: 2px solid #ffffff;
+  /* opacity: 0.5 %; */
+  /* z-index: ; */
+  /* display: block;
+  overflow: auto; */
+    /* background-color: rgba(0, 0, 0, 0.551); */
+    /* background-color: #090a0f; */
+    
+}
+@media screen and (max-width: 1000px) and (min-height:840px) {
+  .margin-br{
+  height: 90vh;
+      
+  }
+}

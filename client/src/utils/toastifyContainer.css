@@ -1,0 +1,30 @@
+.Toastify__toast-container {
+    /* background-color: red; */
+    /* height: 200px; */
+    width: fit-content;
+    /* color: white; */
+    /* background-color: black; */
+    /* font-size: 1px !important; */
+
+}
+.Toastify__toast{
+    font-family: 'Press Start 2P', cursive !important;
+    /* font-size: 1px !important; */
+    /* border: 100px;
+    border-color: white; */
+    /* background-color: black; */
+
+}
+.nes-container{
+    background-color: black !important;
+    /* border-radius: 2px; */
+    /* width: auto !important; */
+    /* font-size: 10px; */
+    /* padding: 0%; */
+}
+.nes-container .is-rounded{
+    padding: 0%;
+}
+/* .Toastify__toast-body {
+    font-size: 1px !important;
+} */
