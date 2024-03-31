@@ -1,6 +1,6 @@
 import './Team.css'
-import {useEffect} from 'react'
 import { Container, Row, Col } from "react-bootstrap";
+
 const Team = () => {
     const webteam = [
         {
@@ -12,15 +12,15 @@ const Team = () => {
         {
             name: 'Karan',
             img: 'https://i.postimg.cc/9DLjkLbn/Karan.jpg',
-            github: 'https://github.com/Karan-mundhada',
+            github: 'https://github.com/VanshTeppalwar',
             linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/'
         },
-        {
-            name: 'Hitesh',
-            img: 'https://i.postimg.cc/PrMvqYnh/Profile-Picture.jpg',
-            github: 'https://github.com/Hvshitesh',
-            linkedin: 'https://www.linkedin.com/in/hitesh-sonawane-0a3129257/'
-        },
+        // {
+        //     name: 'Hitesh',
+        //     img: 'https://github.com/BcRikko.png?size=80',
+        //     github: 'https://github.com/VanshTeppalwar',
+        //     linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
+        // },
         {
             name: 'Atharva',
             img: 'https://i.postimg.cc/JsrLKfNX/Atharva-Date.jpg',
@@ -30,7 +30,7 @@ const Team = () => {
         {
             name: 'Riddhi',
             img: 'https://i.postimg.cc/c630JM1v/Riddhi-Kulkarni.jpg',
-            github: 'https://github.com/riddhikul',
+            github: 'https://github.com/VanshTeppalwar',
             linkedin: 'https://www.linkedin.com/in/riddhi-kulkarni-9a6b84232/'
         },
     ]
@@ -64,19 +64,19 @@ const Team = () => {
 
                 {
                     webteam.map((data) => (
-                        <section class="nes-container is-dark member-card ms-3">
+                        <section class="nes-container is-dark member-card">
                             <div class="avatar">
-                                <img data-src={data.img} alt={data.name} class="" src={data.img}></img>
+                                <img data-src={data.img} alt="Core Member B.C.Rikko" class="" src={data.img}></img>
                             </div>
-                            {/* {console.log(data)} */}
+                            {console.log(data)}
                             <div class="profile">
                                 <h4 class="name">{data.name}</h4>
                                 {/* <p>Creator of NES.css</p> */}
                                 <div>
-                                    <a href={data.github} target="_blank" rel="noopener noreferrer" aria-label="github">
+                                    <a href={data.github} target="_blank" rel="noopener" aria-label="github">
                                         <i class="nes-icon github"></i>
                                     </a>
-                                    <a href={data.linkedin} target="_blank" rel="noopener noreferrer" aria-label="linkedin">
+                                    <a href={data.linkedin} target="_blank" rel="noopener" aria-label="linkedin">
                                         <i class="nes-icon linkedin"></i>
                                     </a>
                                 </div>
@@ -85,11 +85,33 @@ const Team = () => {
                     ))
                 }
             </div>
+            <h1 className='topic-title'>NTH Team</h1>
+            <div class="coreteam-members">
+
+                {
+                    nthteam.map((data) => (
+                        <section class="nes-container is-dark member-card" style={{width: '300px'}}>
+                            <div class="avatar">
+                                <img data-src={data.img} alt="Core Member B.C.Rikko" class="" src={data.img}></img>
+                            </div>
+                            {console.log(data)}
+                            <div class="profile">
+                                <h4 class="name" style={{fontSize: '15px'}}>{data.name}</h4 >
+                                {/* <p>Creator of NES.css</p> */}
+                                <div>
+                                    <a href={data.insta} target="_blank" rel="noopener" aria-label="linkedin">
+                                        <i class="nes-icon instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    ))
+                }
+            </div>
             
-            
-            <h1 className='topic-title'>NTH-TEAM</h1>
-    
-            <Container fluid className='container-adjust'>
+            {/* <h1 className='topic-title'>NTH-TEAM</h1> */}
+            {/* <div style="display: flex; justify-content: center;"> */}
+            {/* <Container fluid className='container-adjust'>
                 <Row className='nth-team'>
             {
                 
@@ -107,7 +129,25 @@ const Team = () => {
             }
             </Row>
 
-              </Container>
+              </Container> */}
+            {/* <div className="nth-team-container"> */}
+            {/* <a href="https://github.com/jobin491" target="_black" class="contributor">
+            <img data-src="https://i.postimg.cc/Pv1jFhVW/Jobin.jpg" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://i.postimg.cc/Pv1jFhVW/Jobin.jpg"></img>
+            <p>Jobin</p>
+            </a>
+            <a href="https://github.com/Samir-Wankhede" target="_black" class="contributor">
+            <img data-src="https://i.postimg.cc/PpwsPTjg/Samir.jpg" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://i.postimg.cc/PpwsPTjg/Samir.jpg"></img>
+            <p>Samir</p>
+            </a>
+            <a href="https://github.com/sammm337" target="_black" class="contributor">
+            <img data-src="https://i.postimg.cc/N57t6sHY/Samruddhi.jpg" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://i.postimg.cc/N57t6sHY/Samruddhi.jpg"></img>
+            <p>Samruddhi</p>
+            </a>
+            <a href="https://github.com/shrinidhib" target="_black" class="contributor">
+            <img data-src="https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg"></img>
+            <p>Shrinidhi</p>
+            </a> */}
+            {/* </div> */}
         </div>
     )
 }
