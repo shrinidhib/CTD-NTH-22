@@ -12,7 +12,7 @@ const Team = () => {
         {
             name: 'Karan',
             img: 'https://i.postimg.cc/9DLjkLbn/Karan.jpg',
-            github: 'https://github.com/VanshTeppalwar',
+            github: 'https://github.com/Jeeya201/Jeeya201',
             linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/'
         },
         // {
@@ -30,7 +30,7 @@ const Team = () => {
         {
             name: 'Riddhi',
             img: 'https://i.postimg.cc/c630JM1v/Riddhi-Kulkarni.jpg',
-            github: 'https://github.com/VanshTeppalwar',
+            github: 'https://github.com/riddhikul',
             linkedin: 'https://www.linkedin.com/in/riddhi-kulkarni-9a6b84232/'
         },
     ]

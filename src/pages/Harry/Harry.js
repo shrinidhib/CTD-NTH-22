@@ -8,6 +8,7 @@ export default function Harry() {
 
   return (
     <div>
+      {/* WOW */}
       <p style={{color:"black", width:"fit-content"}}>
         [<p>"Aardvark",</p>
         <p className={status === true ? "glow" : ""}>"Albatross",</p>
@@ -85,7 +86,7 @@ export default function Harry() {
         <p>"Gerbil",</p>
         <p>"Giraffe",</p>
         <p>"Gnat",</p>
-        <p>"Gnu",</p>
+        <p>"Gnu",</p> 
         <p>"Goat",</p>
         <p>"Goldfinch",</p>
         <p className={status === true ? "glow" : ""}>"Goldfish",</p>
