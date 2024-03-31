@@ -1,5 +1,6 @@
 import './Team.css'
-
+import {useEffect} from 'react'
+import { Container, Row, Col } from "react-bootstrap";
 const Team = () => {
     const webteam = [
         {
@@ -33,6 +34,28 @@ const Team = () => {
             linkedin: 'https://www.linkedin.com/in/riddhi-kulkarni-9a6b84232/'
         },
     ]
+    const nthteam=[
+        {
+            name: 'Jobin',
+            img: 'https://i.postimg.cc/Pv1jFhVW/Jobin.jpg',
+            insta:'https://www.instagram.com/jobin.j0/'
+        },
+        {
+            name: 'Shrinidhi',
+            img: 'https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg',
+            insta:'https://instagram.com/_nidhi1214'
+        },
+        {
+            name: 'Samruddhi',
+            img: 'https://i.postimg.cc/N57t6sHY/Samruddhi.jpg',
+            insta:'https://www.instagram.com/samruddhi.__.shinde/'
+        },
+        {
+            name: 'Samir',
+            img: 'https://i.postimg.cc/PpwsPTjg/Samir.jpg',
+            insta:'https://www.instagram.com/_samirwankhede_/'
+        },
+    ]
     return (
         <div className='team'>
 
@@ -41,19 +64,19 @@ const Team = () => {
 
                 {
                     webteam.map((data) => (
-                        <section class="nes-container is-dark member-card">
+                        <section class="nes-container is-dark member-card ms-3">
                             <div class="avatar">
-                                <img data-src={data.img} alt="Core Member B.C.Rikko" class="" src={data.img}></img>
+                                <img data-src={data.img} alt={data.name} class="" src={data.img}></img>
                             </div>
-                            {console.log(data)}
+                            {/* {console.log(data)} */}
                             <div class="profile">
                                 <h4 class="name">{data.name}</h4>
                                 {/* <p>Creator of NES.css</p> */}
                                 <div>
-                                    <a href={data.github} target="_blank" rel="noopener" aria-label="github">
+                                    <a href={data.github} target="_blank" rel="noopener noreferrer" aria-label="github">
                                         <i class="nes-icon github"></i>
                                     </a>
-                                    <a href={data.linkedin} target="_blank" rel="noopener" aria-label="linkedin">
+                                    <a href={data.linkedin} target="_blank" rel="noopener noreferrer" aria-label="linkedin">
                                         <i class="nes-icon linkedin"></i>
                                     </a>
                                 </div>
@@ -62,25 +85,29 @@ const Team = () => {
                     ))
                 }
             </div>
+            
+            
             <h1 className='topic-title'>NTH-TEAM</h1>
-            {/* <div style="display: flex; justify-content: center;"> */}
-            <a href="https://github.com/4k1k0" target="_black" class="contributor">
-            <img data-src="https://i.postimg.cc/Pv1jFhVW/Jobin.jpg" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://i.postimg.cc/Pv1jFhVW/Jobin.jpg"></img>
-            <p>Jobin</p>
-            </a>
-            <a href="https://github.com/4k1k0" target="_black" class="contributor">
-            <img data-src="https://i.postimg.cc/PpwsPTjg/Samir.jpg" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://i.postimg.cc/PpwsPTjg/Samir.jpg"></img>
-            <p>Samir</p>
-            </a>
-            <a href="https://github.com/4k1k0" target="_black" class="contributor">
-            <img data-src="https://i.postimg.cc/N57t6sHY/Samruddhi.jpg" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://i.postimg.cc/N57t6sHY/Samruddhi.jpg"></img>
-            <p>Samruddhi</p>
-            </a>
-            <a href="https://github.com/4k1k0" target="_black" class="contributor">
-            <img data-src="https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg" alt="Contributor 4k1k0" class="nes-avatar is-large is-rounded" src="https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg"></img>
-            <p>Srinidhi</p>
-            </a>
-            {/* </div> */}
+    
+            <Container fluid className='container-adjust'>
+                <Row className='nth-team'>
+            {
+                
+                    nthteam.map((data)=>(
+                <Col className="adjust" >
+                    
+                    <a href={data.insta} target="_black" class="contributor" rel="noopener noreferrer">
+                    <img data-src={data.img} alt="Contributor" class="nes-avatar is-large is-rounded" src={data.img}></img>
+                    <p>{data.name}</p>
+                    </a>
+                </Col>
+                
+                    ))
+                
+            }
+            </Row>
+
+              </Container>
         </div>
     )
 }
