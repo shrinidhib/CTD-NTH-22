@@ -16,7 +16,7 @@ const Footer = () => {
             </Col>
             <Col lg={4} md={12} sm={12}>
               <p className="web-team-link mt-1">
-              &nbsp;Developed with ♥ by PISB<Link to="/team"> Web Team</Link>
+              &nbsp;Developed with ♥ by PISB<Link to="/team"> <br/>Web Team</Link>
               </p>
             </Col>
             <Col lg={4} md={12} sm={12}>
