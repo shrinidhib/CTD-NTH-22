@@ -49,7 +49,7 @@ const Home = (props) => {
           ?
           <Loader />
           :
-          <div className="nth-adjust">
+          <div className="nth-adjust ">
             <div className="nth-home">
               <img src={nthlogo} ></img>
               <h3>Network Treasure Hunt</h3>

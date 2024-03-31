@@ -15,7 +15,7 @@
 }
 
 .nth-home h5 {
-  margin: 0 0 2%;
+  margin: 0 0 1%;
   font-size: small;
 
 }
@@ -23,15 +23,17 @@
 .nth-home h3 {
   /* margin: 0  0 2%; */
   font-size: large;
-  margin-top: 1.5%;
+  margin-top: 1%;
   font-weight: 600
 }
 
 .nth-home img {
   display: block;
   margin: auto;
-  width: 400px;
+  width: 70%; /* Adjust the percentage as needed */
+  max-width: 350px; /* Set a maximum width if necessary */
 }
+
 
 .nth-home p {
   color: #e9b171;
@@ -57,9 +59,9 @@
   font-weight: 700
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 300px) {
   .nth-home img {
-    width: 90%;
+    width: 70%;
   }
 }
 
