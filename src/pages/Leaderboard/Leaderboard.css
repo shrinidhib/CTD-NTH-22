@@ -1,3 +1,8 @@
+
+.pagination{
+  --bs-pagination-color: #66fd0d;
+    --bs-pagination-bg: #4900cd;
+}
 .Leaderboard {
   max-width: 450px;
   /* background-color: white; */
@@ -14,6 +19,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
 }
 
 .high-scores {
@@ -95,7 +101,7 @@ thead {
 } */
 
 @media only screen and (max-width: 1000px) {
-  .Leaderboard {
+  /* .Leaderboard { */
     /* height: 400px;
       width: 300px; */
     /* margin-left: 0%; */
@@ -105,7 +111,7 @@ thead {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);   */
-  }
+  /* } */
 
   table {
     width: 300px;
