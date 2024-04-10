@@ -53,7 +53,7 @@ const Contact = () => {
                         <div class="contactus-card"><img src={data.img} width="210px"></img>
                             <div class="card-name">
                                 <h4 class="text">{data.name}</h4>
-                                <h5 ><a href="tel: {data.phone}" style={{color:'blue'}} class="text1"><i class="fas fa-phone-alt"></i> {data.phone}</a></h5>
+                                <h5 ><a href="tel: data.phone" style={{color:'blue'}} class="text1"><i class="fas fa-phone-alt"></i> {data.phone}</a></h5>
                             </div>
                         </div>
                         </section>
