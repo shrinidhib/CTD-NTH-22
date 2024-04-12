@@ -171,6 +171,11 @@
     width: 550px;
     height: 550px;
     margin: 0 auto;
+    overflow-y: scroll;
+    max-height: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     /* padding-left: 15%; */
     /* display: block; */
     /* overflow: auto; */
@@ -179,7 +184,7 @@
   .cover4 > img {
     float: left;
     border: 2px solid black;
-    width: 44%;
+    width: 75%;
     margin: 0.66%;
     /* height: 200px; */
     /* margin: auto auto; */
