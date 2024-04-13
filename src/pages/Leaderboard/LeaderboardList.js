@@ -9,7 +9,7 @@ const LeaderboardList = ({ rank, indexOfFirstPost,rankPerPage, totalrank ,pagina
             <table>
                 <thead>
                     <tr>
-                        <td className="tdhead">Rank</td>
+                        <td className="tdhead ml" >Rank</td>
                         <td className="tdhead">Name</td>
                         <td className="tdhead">Level</td>
                     </tr>
@@ -19,7 +19,7 @@ const LeaderboardList = ({ rank, indexOfFirstPost,rankPerPage, totalrank ,pagina
                         return (
                             <tr key={idx}>
                                 <td className="tdbody">{indexOfFirstPost +idx + 1}</td>
-                                <td className="tdbody">{val.username}</td>
+                                <td className="tdbody truncate">{val.username}</td>
                                 <td className="tdbody">{val.current_level}</td>
                             </tr>
                         );

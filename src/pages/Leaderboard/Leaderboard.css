@@ -4,7 +4,7 @@
     --bs-pagination-bg: #4900cd;
 }
 .Leaderboard {
-  max-width: 450px;
+  max-width: 650px;
   /* background-color: white; */
   /* margin: 40px 20px; */
   /* margin-left: 36%; */
@@ -16,8 +16,10 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: 4rem!important;
+  margin-top: 2rem!important;
+  margin-bottom: 2rem!important;
   margin: auto;
+  
     /* top: 50%; */
     /* left: 50%; */
     /* transform: translate(-50%, -50%); */
@@ -35,7 +37,7 @@
 }
 
 table {
-  width: 450px;
+  width: 650px;
   border-collapse: separate;
   border-spacing: 0 1em;
 
@@ -59,8 +61,13 @@ thead {
   color: #0058f8;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
+  max-width: 100px;
 }
-
+.truncate{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
 /*--------------- Trying to make it responsive for smaller screen :) ------------------*/
 /* @media only screen and (max-height: 790px) {
   .Leaderboard{
@@ -80,7 +87,7 @@ thead {
   }
 } */
 
-/* @media only screen and (max-height: 600px){
+@media only screen and (max-height: 600px){
   .Leaderboard{
       height: 450px;
       max-width: 350px;
@@ -88,7 +95,7 @@ thead {
   }
   table{
     
-      width: 350px;
+      width: 300px;
       border-spacing: 0 12px;
   }
   .tdhead{
@@ -100,8 +107,45 @@ thead {
   .high-scores{
       padding: 5px;
   }
-} */
+}
+@media only screen and (max-width: 425px) {
+  .ml{
+    padding-left: 5px;
+  }
+  .Leaderboard{
+    max-width: 100%;
+    outline: none;
 
+  }
+  table{
+    width: 200px;
+    border-spacing: 0 12px;
+  }
+  .pagination li:nth-last-child(1){
+    display: none;
+  }
+  .pagination li:nth-last-child(2){
+      display: none;
+  }
+  .pagination li:nth-last-child(3){
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* border-right: 0.5px solid white; */
+
+    overflow: hidden;
+  }
+  .pagination li:nth-last-child(3){
+    
+    button{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    /* background-color: white; */
+    /* border-right: 0.5px solid white; */
+
+    /* overflow: hidden; */
+  }
+}
 @media only screen and (max-width: 1000px) {
   /* .Leaderboard { */
     /* height: 400px;
