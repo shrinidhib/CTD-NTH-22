@@ -16,10 +16,10 @@ const Team = () => {
             linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/'
         },
         {
-            name: 'Hitesh',
-            img: 'https://github.com/BcRikko.png?size=80',
-            github: 'https://github.com/VanshTeppalwar',
-            linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
+           name: 'Hitesh',
+            img: 'https://i.postimg.cc/PrMvqYnh/Profile-Picture.jpg',
+            github: 'https://github.com/Hvshitesh',
+            linkedin: 'https://www.linkedin.com/in/hitesh-sonawane-0a3129257/'
         },
         {
             name: 'Atharva',
