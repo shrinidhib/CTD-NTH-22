@@ -115,10 +115,10 @@ thead {
   .Leaderboard{
     max-width: 100%;
     outline: none;
-
+    
   }
   table{
-    width: 200px;
+    width: 270px!important;
     border-spacing: 0 12px;
   }
   .pagination li:nth-last-child(1){
