@@ -184,7 +184,7 @@ const Instructions = (props) => {
                     <li className="inst1-text">
                       As you have logged in, your URL will be nth.credenz.in /
                       question To submit your answer, you have to put a '/' in
-                      the URL followed by the answer.
+                      the URL followed by the answer in small letters.
                     </li>
                     <li className="inst1-text">
                       If your answer is correct, you will go to the next level,
