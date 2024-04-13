@@ -6,8 +6,8 @@ const port = host.split(':')[1]
 let url = ""
 // if(port === "3000") url = "https://admin.nth.credenz.in/nth/api"
 // else url = `http://${hostname}/api`
-// url = "https://admin.nth.credenz.in/nth/api"
-url = "http://127.0.0.1:8000/nth/api"
+url = "https://admin.nth.credenz.in/nth/api"
+// url = "http://127.0.0.1:8000/nth/api"
 
 const backend = axios.create({
     baseURL: url
