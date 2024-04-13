@@ -182,7 +182,7 @@ const Instructions = (props) => {
                       includes pictures and hints.
                     </li>
                     <li className="inst1-text">
-                      As you have logged in, your URL will be nth.pictieee .in /
+                      As you have logged in, your URL will be nth.credenz.in /
                       question To submit your answer, you have to put a '/' in
                       the URL followed by the answer.
                     </li>

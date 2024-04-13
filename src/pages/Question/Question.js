@@ -8,7 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { connect } from "react-redux";
-import ctd from '../../assets/ctd.png';
+// import ctd from '../../assets/ctd.png';
 import Request from "../../api/requests";
 import Requests from "../../api/requests";
 import Loader from "../../components/Loader/Loader";
@@ -125,7 +125,7 @@ const Question = (props) => {
             <div className="question-page ">
               <div style={{ paddingTop: '200px', position: 'fixed' }}>
                 <div class="view-sidebar">
-                  <img src={ctd} className="ctd-bar"></img>
+                  {/* <img src={ctd} className="ctd-bar"></img> */}
                   <a href="https://www.instagram.com/pisbcredenz/" target="_blank">
                     {/* <i className="fab fa-instagram  instagram"></i> */}
                     <i class="nes-icon instagram mt-2 "></i>
