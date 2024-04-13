@@ -15,12 +15,12 @@ const Team = () => {
             github: 'https://github.com/Jeeya201/Jeeya201',
             linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/'
         },
-        // {
-        //     name: 'Hitesh',
-        //     img: 'https://github.com/BcRikko.png?size=80',
-        //     github: 'https://github.com/VanshTeppalwar',
-        //     linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
-        // },
+        {
+            name: 'Hitesh',
+            img: 'https://github.com/BcRikko.png?size=80',
+            github: 'https://github.com/VanshTeppalwar',
+            linkedin: 'https://www.linkedin.com/in/vansh-teppalwar-0b60b0217/'
+        },
         {
             name: 'Atharva',
             img: 'https://i.postimg.cc/JsrLKfNX/Atharva-Date.jpg',

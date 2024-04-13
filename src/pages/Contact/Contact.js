@@ -25,7 +25,7 @@ const Contact = () => {
                 <Row>
                     {details.map((data) => (
                         <Col lg={6} sm={12}>
-                            <section class="nes-container is-dark member-card m-5">
+                            <section class="nes-container is-dark member-card m-5 mx-auto">
                                 <div class="contactus-card">
                                     <img src={data.img} width="210px"></img>
                                     <div class="card-name">

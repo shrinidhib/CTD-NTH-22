@@ -8,7 +8,7 @@
 } */
 * {font-size: 13px;}
 .margin-br{
-/*   height: 84vh; */
+    min-height: 84vh;
     margin: 20px;
     border-radius: 25px;
   border: 2px solid #ffffff;
@@ -23,7 +23,7 @@
 }
 @media screen and (max-width: 1000px) and (min-height:840px) {
   .margin-br{
-/*   height: 90vh; */
+    min-height: 90vh;
       
   }
 }

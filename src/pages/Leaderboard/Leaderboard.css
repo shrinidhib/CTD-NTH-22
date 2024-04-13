@@ -16,9 +16,11 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  margin-top: 4rem!important;
+  margin: auto;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     
 }
 
