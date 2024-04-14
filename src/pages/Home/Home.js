@@ -60,7 +60,7 @@ const Home = (props) => {
                   ?
                   timerStatus.time - Date.now() < 0
                     ?
-                    <p style={{ color: 'yellow' }}>Contest Not Started</p>
+                    <p style={{ color: 'yellow' }}>Contest Has Ended</p>
                     :
 
 
