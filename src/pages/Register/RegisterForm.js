@@ -26,7 +26,7 @@ const RegisterForm = (props) => {
       
   // })
   .then((res) => {
-      console.log(res.data.auth_token,"auth tokenke")
+      // console.log(res.data.auth_token,"auth tokenke")
       if(res.data.auth_token !== undefined) localStorage.setItem("auth-token", res.data.auth_token)
       localStorage.setItem("username", username)
       props.change_longinStatus();
@@ -40,47 +40,24 @@ const RegisterForm = (props) => {
 }
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(first_name);
-    console.log(phone,typeof phone);
-    console.log(college);
-    console.log(username);
-    console.log(email);
-    console.log(password);
-    // const data = { first_name, phone, college, username, email, password };
-    // console.log(data);
-    // fetch("http://localhost:8000/auth/users/", {
-    //   method: "POST",
-    //   headers: { "content-type": "application/json" },
-    //   body: JSON.stringify(data),
-    // })
+    // console.log(first_name);
+    // console.log(phone,typeof phone);
+    // console.log(college);
+    // console.log(username);
+    // console.log(email);
+    // console.log(password);
+  
     await Request.register({ first_name, phone, college, username, email, password })
-      // .then((response) => {
-      //   console.log(response.password);
-      //   if (!response.ok) {
-      //     console.log(response.data);
-      //     // setFetchError("Invalid Credentials!!!")
-      //     throw Error("Could not fetch the data.");
-      //   }
-      //   return response.json();
-      // })
+      
       .then((data) => {
-        // console.log(data)
-        // localStorage.setItem("auth-token", data.auth_token)
-        // localStorage.setItem("username", username)
-        // props.change_longinStatus();
-        console.log(props,"props")
+        
+        // console.log(props,"props")
         props.toast.toast.success("Account Created Successfully!");
-        // let creds = {username,password}
-        // console.log(JSON.stringify(creds))
-        // fetch("http://localhost:8000/auth/token/login/", {
-        //   method: "POST",
-        //   headers: { "content-type": "application/json" },
-        //   body: JSON.stringify(creds),
-        // })
+       
         
         login();
         
-        // navigate("/question/put_your_ans_here");
+       
       })
       .catch((err) => {
         console.log(err);

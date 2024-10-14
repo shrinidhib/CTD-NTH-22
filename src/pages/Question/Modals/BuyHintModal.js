@@ -6,9 +6,9 @@ import Request from '../../../api/requests';
 import axios from 'axios';
 function BuyHintModal(props) {
   const [err, seterr] = useState("");
-  console.log('buy hint modal',props)
+  // console.log('buy hint modal',props)
     const fetchHint = async () => {
-        console.log("hit");
+        // console.log("hit");
         // localStorage.setItem("extra-hints", " ")
         // fetch("http://localhost:8000/question/extra-hint/", {
         //   method: "POST",
@@ -27,22 +27,22 @@ function BuyHintModal(props) {
           //       Authorization: `Token ${localStorage.getItem("auth-token")}`,
           //     }})
           .then((res) => {
-            console.log(typeof res);console.log(res);
+            // console.log(typeof res);console.log(res);
             // console.log(res.extraHint);
             // console.log(res.status);
             // console.log(localStorage.getItem("extra-hints"));
             if (res.data.extraHint !== undefined) {
               // props.data.paidHintTaken=true;
               props.data.dataUpdate();
-              console.log(props.data);
-              console.log(res.data.extraHint);
+              // console.log(props.data);
+              // console.log(res.data.extraHint);
               // localStorage.setItem("extra-hints", res.data.extraHint);
             //   setextraHints(localStorage.getItem("extra-hints"));
             props.toast.toast.success('Extra Hints Are Available!');  
             props.onHide();
               
             } else {
-              console.log(res.data.status);
+              // console.log(res.data.status);
               props.toast.toast.error(res.data.status);
               seterr(res.data.status);
             }

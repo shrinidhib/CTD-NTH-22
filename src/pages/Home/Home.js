@@ -21,7 +21,7 @@ const Home = (props) => {
         (res) => {
           setTimerStatus(res.data);
           if (res.data.is_started) props.toast.toast("Contest Started!!");
-          console.log(res);
+          // console.log(res);
           let cal = Math.floor(((res.data.time - Date.now() + 2000) / 1000) % 60);
           setSeconds(cal < 10 ? '0' + cal.toString() : cal.toString());
 
@@ -31,7 +31,7 @@ const Home = (props) => {
           setHour(cal < 10 ? '0' + cal.toString() : cal.toString());
           cal = Math.floor(((res.data.time - Date.now() + 2000)) / (1000 * 60 * 60 * 24));
           setDay(cal < 10 ? '0' + cal.toString() : cal.toString());
-          console.log(day)
+          // console.log(day)
           setLoaderStatus(false);
         }
       )
@@ -54,7 +54,7 @@ const Home = (props) => {
               <img src={nthlogo} ></img>
               <h3>Network Treasure Hunt</h3>
               <h5>Decrypt the Encrypted</h5>
-              {console.log(timerStatus.time, Date.now(), timerStatus.time - Date.now())}
+              {/* {console.log(timerStatus.time, Date.now(), timerStatus.time - Date.now())} */}
               {
                 timerStatus.is_started === false
                   ?

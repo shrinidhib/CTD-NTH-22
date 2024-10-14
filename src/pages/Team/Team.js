@@ -113,7 +113,7 @@ const Team = () => {
                             <div class="avatar">
                                 <img data-src={data.img} alt="Core Member B.C.Rikko" class="" src={data.img}></img>
                             </div>
-                            {console.log(data)}
+                            {/* {console.log(data)} */}
                             <div class="profile">
                                 <h4 class="name" style={{fontSize: '15px'}}>{data.name}</h4 >
                                 {/* <p>Creator of NES.css</p> */}

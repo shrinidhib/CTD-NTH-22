@@ -9,7 +9,7 @@ const About = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('in interval')
+      // console.log('in interval')
       if(starwar)
         setStarwar(false);
       else

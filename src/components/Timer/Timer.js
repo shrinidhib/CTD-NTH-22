@@ -14,7 +14,7 @@ const Timer=(props)=>{
         await Requests.time()
         .then((res)=>
             {
-                console.log(res)
+                // console.log(res)
                 props.fetchTimeHome();
             }
             

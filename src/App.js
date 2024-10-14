@@ -11,7 +11,6 @@ import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Background from './components/Background/Background';
 import Instructions from './pages/Instructions/Instructions';
-import Harry from './pages/Harry/Harry'
 import toast, { ToastUtils } from "./utils/toastifyContainer";
 import Leaderboard from './pages/Leaderboard/Leaderboard';
 import Team from './pages/Team/Team';
@@ -33,7 +32,6 @@ function App() {
       <Route path="/instructions" element={<Instructions toast={{ container: <ToastUtils />, toast }} />} />
       <Route path="/question/:ans" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/question" element={<Question toast={{ container: <ToastUtils />, toast }}/>} /> 
-      <Route path="/question/ronald" element={<Harry toast={{ container: <ToastUtils />, toast }}/>} /> 
       <Route path="/leaderboard" element = {<Leaderboard toast={{ container: <ToastUtils />, toast }}/>} />
       </Routes>
       </div>

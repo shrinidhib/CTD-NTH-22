@@ -18,8 +18,8 @@ const Instructions = (props) => {
   const eventStatus=async()=>{
     try{
       const res= await Requests.time();
-      console.log(res);
-      console.log('started'); 
+      // console.log(res);
+      // console.log('started'); 
       if(res.data.is_started){
         props.loginStatus===false&&props.toast.toast.info('Login First ',{autoClose:6000})
         setIs_event(true);
@@ -43,7 +43,7 @@ const Instructions = (props) => {
     }, time);
   };
   const skipInst = (e) => {
-    console.log(e.key);
+    // console.log(e.key);
     if (e.key == "Escape") {
       setInst(true);
       setR2D2_1(false);

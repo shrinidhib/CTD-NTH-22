@@ -14,12 +14,12 @@ const LoginForm = (props) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    console.log(props);
+    // console.log(props);
     let navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(username);
-        console.log(password);
+        // console.log(username);
+        // console.log(password);
         // const data = { username, password };
         // fetch("http://localhost:8000/auth/token/login/", {
         //     method: "POST",
@@ -57,8 +57,8 @@ const LoginForm = (props) => {
             // })
             await Request.login({ username, password })
             .then(data => {
-                console.log(data)
-                console.log(data.data.auth_token);
+                // console.log(data)
+                // console.log(data.data.auth_token);
                 localStorage.setItem("auth-token", data.data.auth_token)
                 localStorage.setItem("username", username)
                 props.change_longinStatus();

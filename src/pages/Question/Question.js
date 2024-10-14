@@ -22,12 +22,12 @@ const Question = (props) => {
   let ans = useParams().ans;
   let navigate = useNavigate();
   const openModal = (e) => {
-    console.log(e);
+    // console.log(e);
     setId(e);
   }
   const closeModal = () => {
     setId(-1);
-    console.log('hit');
+    // console.log('hit');
   }
   const redirectAns = () => {
     if (ans !== "put_your_ans_here") {
@@ -38,10 +38,10 @@ const Question = (props) => {
   const user = async (temp) => {
     try {
       const res = await Request.user();
-      console.log(res);
-      console.log(temp);
+      // console.log(res);
+      // console.log(temp);
       temp = { ...(temp.data), ...(res.data) }
-      console.log(temp);
+      // console.log(temp);
 
       // console.log('promts are ',data.promts);
       // console.log(temp.level,data.level);
@@ -75,14 +75,14 @@ const Question = (props) => {
   }
 
   const fetchData = async () => {
-    console.log(localStorage.getItem("auth-token"));
+    // console.log(localStorage.getItem("auth-token"));
     try {
       const res = await Request.userquestion(ans);
-      console.log(res);
+      // console.log(res);
       user({ ...res });
     }
     catch (err) {
-      console.log(err);
+      // console.log(err);
       props.toast.toast.error(err.detail, { autoClose: 4000 })
     };
 
@@ -90,19 +90,19 @@ const Question = (props) => {
   const eventStatus = async () => {
     try {
       const res = await Requests.time();
-      console.log(res);
+      // console.log(res);
       if (res.data.is_started) {
         fetchData();
         redirectAns();
       }
       else {
-        console.log('here in event');
+        // console.log('here in event');
         props.toast.toast('Contest Not Started', { autoClose: 5000 });
         navigate("/")
       }
     }
     catch (err) {
-      console.log(err);
+      // console.log(err);
       props.toast.toast.error(err.detail, { autoClose: 4000 });
     }
   }
@@ -146,7 +146,7 @@ const Question = (props) => {
 
                   </Col>
                   <Col lg={10} sm={12}>
-                    {console.log('promts are ', data.promts)}
+                    {/* {console.log('promts are ', data.promts)} */}
 
                     <h1>Level:{data?.level}</h1>
                     {/* <i class="fa-solid fa-key" class="nes-avatar is-rounded is-medium"></i> */}
@@ -209,7 +209,7 @@ const Question = (props) => {
                   <Col >
                     <div class={`view-modal ${imageCnt === 4 ? 'cnt4' : 'cnt1'}`}>
                       {/* {console.log(data)} */}
-                      {console.log(id)}
+                      {/* {console.log(id)} */}
                       {/* <a href="/leaderboard">
               <i class="fas fa-trophy fa-2x side-icons"></i>
               </a> */}

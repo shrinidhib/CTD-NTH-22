@@ -101,7 +101,7 @@ const NavbarComp = (props) => {
       </Container>
     </Navbar>
   </div>
-  console.log(localStorage.getItem("auth-token"));
+  // console.log(localStorage.getItem("auth-token"));
   // );
   // }
   return (
@@ -136,7 +136,7 @@ const NavbarComp = (props) => {
               </Nav.Item>
               
               <Nav.Item>
-              {console.log(props)}
+              {/* {console.log(props)} */}
               { 
                 props.loginStatus===false ?
                 <Nav.Link exact activeClassName="active" eventKey="link-5" href="/login" as={Link} to="/login"  className="me-3 ms-3 mt-2 mb-2 na-link"> 
