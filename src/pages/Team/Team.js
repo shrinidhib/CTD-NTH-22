@@ -76,7 +76,7 @@ const Team = () => {
             img: 'https://i.postimg.cc/Pf8SV77Y/IMG-20241014-WA0015.jpg',
             insta:'https://www.instagram.com/just_your_aru/profilecard/?igsh=amxkdmNmZ2NtZm01',
             linkedin: 'https://www.linkedin.com/in/aarya-sonawane-32786a264',
-            github: 'https://github.com/'
+            github: 'https://github.com/Aarya-so'
         },
     ]
     return (
