@@ -6,12 +6,12 @@ const port = host.split(':')[1]
 let url = ""
 // if(port === "3000") url = "https://admin.nth.credenz.in/nth/api"
 // else url = `http://${hostname}/api`
-url = "https://nthbackend.api.ctd.credenz.co.in/nth/api"
 // url = "http://127.0.0.1:8000/nth/api"
 
 const backend = axios.create({
-    baseURL: url
+    baseURL: process.env.REACT_APP_BACKEND_URL
   });
+
 
 const login = (data) => backend.post( `/auth/token/login/`, data,{headers: { "content-type": "application/json" }} );
 const register = (data) => backend.post( `/auth/users/`, data,{headers: { "content-type": "application/json" }} );

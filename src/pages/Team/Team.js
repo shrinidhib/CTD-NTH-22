@@ -2,87 +2,106 @@ import './Team.css'
 import { Container, Row, Col } from "react-bootstrap";
 
 const Team = () => {
-    const webteam = [
-        {
-            name: 'Kshitij',
-            img: 'https://i.postimg.cc/T1GPFsTt/kshitij1.jpg',
-            github: 'https://github.com/KshitijDhapse',
-            linkedin: 'https://www.linkedin.com/in/kshitijdhapse/'
-        },
-        {
-            name: 'Karan',
-            img: 'https://i.postimg.cc/9DLjkLbn/Karan.jpg',
-            github: 'https://github.com/Jeeya201/Jeeya201',
-            linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/'
-        },
-        {
-           name: 'Hitesh',
-            img: 'https://i.postimg.cc/PrMvqYnh/Profile-Picture.jpg',
-            github: 'https://github.com/Hvshitesh',
-            linkedin: 'https://www.linkedin.com/in/hitesh-sonawane-0a3129257/'
-        },
-        {
-            name: 'Atharva',
-            img: 'https://i.postimg.cc/JsrLKfNX/Atharva-Date.jpg',
-            github: 'https://github.com/Atharva9621',
-            linkedin: 'https://www.linkedin.com/in/atharva-date-04345b256/'
-        },
-        {
-            name: 'Riddhi',
-            img: 'https://i.postimg.cc/c630JM1v/Riddhi-Kulkarni.jpg',
-            github: 'https://github.com/riddhikul',
-            linkedin: 'https://www.linkedin.com/in/riddhi-kulkarni-9a6b84232/'
-        },
-    ]
+    // const webteam = [
+    //     {
+    //         name: 'Kshitij',
+    //         img: 'https://i.postimg.cc/T1GPFsTt/kshitij1.jpg',
+    //         github: 'https://github.com/KshitijDhapse',
+    //         linkedin: 'https://www.linkedin.com/in/kshitijdhapse/'
+    //     },
+    //     {
+    //         name: 'Karan',
+    //         img: 'https://i.postimg.cc/9DLjkLbn/Karan.jpg',
+    //         github: 'https://github.com/Jeeya201/Jeeya201',
+    //         linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/'
+    //     },
+    //     {
+    //        name: 'Hitesh',
+    //         img: 'https://i.postimg.cc/PrMvqYnh/Profile-Picture.jpg',
+    //         github: 'https://github.com/Hvshitesh',
+    //         linkedin: 'https://www.linkedin.com/in/hitesh-sonawane-0a3129257/'
+    //     },
+    //     {
+    //         name: 'Atharva',
+    //         img: 'https://i.postimg.cc/JsrLKfNX/Atharva-Date.jpg',
+    //         github: 'https://github.com/Atharva9621',
+    //         linkedin: 'https://www.linkedin.com/in/atharva-date-04345b256/'
+    //     },
+    //     {
+    //         name: 'Riddhi',
+    //         img: 'https://i.postimg.cc/c630JM1v/Riddhi-Kulkarni.jpg',
+    //         github: 'https://github.com/riddhikul',
+    //         linkedin: 'https://www.linkedin.com/in/riddhi-kulkarni-9a6b84232/'
+    //     },
+    // ]
     const nthteam=[
         {
-            name: 'Jobin',
-            img: 'https://i.postimg.cc/Pv1jFhVW/Jobin.jpg',
-            insta:'https://www.instagram.com/jobin.j0/'
+            name: 'Samir',
+            img: 'https://i.postimg.cc/PpwsPTjg/Samir.jpg',
+            insta:'https://www.instagram.com/_samirwankhede_/',
+            github: 'https://github.com/Samir-Wankhede' ,
+            linkedin: 'https://www.linkedin.com/in/samir-wankhede/',
         },
         {
             name: 'Shrinidhi',
             img: 'https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg',
-            insta:'https://instagram.com/_nidhi1214'
+            insta:'https://instagram.com/_nidhi1214',
+            github: 'https://github.com/shrinidhib',
+            linkedin: 'https://www.linkedin.com/in/b-shrinidhi/'
+        },
+        {
+            name: 'Jobin',
+            img: 'https://i.postimg.cc/Pv1jFhVW/Jobin.jpg',
+            insta:'https://www.instagram.com/jobin.j0/',
+            github: 'https://github.com/jobin491',
+            linkedin: 'https://www.linkedin.com/in/jobinottaveedu'
         },
         {
             name: 'Samruddhi',
             img: 'https://i.postimg.cc/N57t6sHY/Samruddhi.jpg',
-            insta:'https://www.instagram.com/samruddhi.__.shinde/'
+            insta:'https://www.instagram.com/samruddhi.__.shinde/',
+            github: 'https://github.com/sammm337',
+            linkedin: 'https://www.linkedin.com/in/samruddhi-shinde-236157261/'
         },
+        
         {
-            name: 'Samir',
+            name: 'Gitesh',
             img: 'https://i.postimg.cc/PpwsPTjg/Samir.jpg',
             insta:'https://www.instagram.com/_samirwankhede_/'
+        },
+        {
+            name: 'Aarya',
+            img: 'https://i.postimg.cc/Pv1jFhVW/Jobin.jpg',
+            insta:'https://www.instagram.com/jobin.j0/'
         },
     ]
     return (
         <div className='team'>
 
-            <h1 className='topic-title'>Web Team</h1>
+            {/* <h1 className='topic-title'>Web Team</h1> */}
             <div class="coreteam-members">
 
                 {
-                    webteam.map((data) => (
-                        <section class="nes-container is-dark member-card">
-                            <div class="avatar">
-                                <img data-src={data.img} alt="Core Member B.C.Rikko" class="" src={data.img}></img>
-                            </div>
-                            {console.log(data)}
-                            <div class="profile">
-                                <h4 class="name">{data.name}</h4>
-                                {/* <p>Creator of NES.css</p> */}
-                                <div>
-                                    <a href={data.github} target="_blank" rel="noopener" aria-label="github">
-                                        <i class="nes-icon github"></i>
-                                    </a>
-                                    <a href={data.linkedin} target="_blank" rel="noopener" aria-label="linkedin">
-                                        <i class="nes-icon linkedin"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </section>
-                    ))
+                    // webteam.map((data) => (
+                    //     <section class="nes-container is-dark member-card">
+                    //         <div class="avatar">
+                    //             <img data-src={data.img} alt="Core Member B.C.Rikko" class="" src={data.img}></img>
+                    //         </div>
+                    //         {console.log(data)}
+                    //         <div class="profile">
+                    //             <h4 class="name">{data.name}</h4>
+                    //             {/* <p>Creator of NES.css</p> */}
+                    //             <div>
+                    //                 <a href={data.github} target="_blank" rel="noopener" aria-label="github">
+                    //                     <i class="nes-icon github"></i>
+                    //                 </a>
+                    //                 <a href={data.linkedin} target="_blank" rel="noopener" aria-label="linkedin">
+                    //                     <i class="nes-icon linkedin"></i>
+                    //                 </a>
+                    //             </div>
+                    //         </div>
+                    //     </section>
+                    // ))
                 }
             </div>
             <h1 className='topic-title'>NTH Team</h1>
@@ -101,6 +120,12 @@ const Team = () => {
                                 <div>
                                     <a href={data.insta} target="_blank" rel="noopener" aria-label="linkedin">
                                         <i class="nes-icon instagram"></i>
+                                    </a>
+                                    <a href={data.github} target="_blank" rel="noopener" aria-label="github">
+                                        <i class="nes-icon github"></i>
+                                    </a>
+                                    <a href={data.linkedin} target="_blank" rel="noopener" aria-label="linkedin">
+                                        <i class="nes-icon linkedin"></i>
                                     </a>
                                 </div>
                             </div>

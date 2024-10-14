@@ -4,18 +4,18 @@ import { Container, Row, Col } from "react-bootstrap";
 const Contact = () => {
     const details = [
         {
-            name: 'Karan Mundhada',
-            img: 'https://i.postimg.cc/9DLjkLbn/Karan.jpg',
-            github: 'https://github.com/Karan-mundhada',
-            linkedin: 'https://www.linkedin.com/in/karan-mundhada-075b071b7/',
-            phone: '8080792381' // Make sure phone number is a string
+            name: 'Samir Wankhede',
+            img: 'https://i.postimg.cc/PpwsPTjg/Samir.jpg',
+            github: 'https://github.com/Samir-Wankhede' ,
+            linkedin: 'https://www.linkedin.com/in/samir-wankhede/',
+            phone: '7770011526' // Make sure phone number is a string
         },
         {
-            name: 'Kshitij Dhapse',
-            img: 'https://i.postimg.cc/T1GPFsTt/kshitij1.jpg',
-            instagram: 'https://www.instagram.com/kshitij_dhapse/',
-            linkedin: 'https://www.linkedin.com/in/kshitijdhapse/',
-            phone: '9325815244' // Make sure phone number is a string
+            name: 'Shrinidhi Balaji',
+            img: 'https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg',
+            github: 'https://github.com/shrinidhib',
+            linkedin: 'https://www.linkedin.com/in/b-shrinidhi/',
+            phone: '7506211747' // Make sure phone number is a string
         }
     ];
 
