@@ -66,7 +66,7 @@ const Team = () => {
         
         {
             name: 'Gitesh',
-            img: 'https://i.postimg.cc/yY4vMPq5/IMG-20241014-WA0021.jpg',
+            img: 'https://i.postimg.cc/vmcKYZ0S/IMG-20241014-WA0021.jpg',
             insta:'https://www.instagram.com/giteshpatil_/',
             linkedin: 'https://www.linkedin.com/in/giteshapatil',
             github: 'https://github.com/Art3mis20726'
