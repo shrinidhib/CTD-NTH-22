@@ -3,7 +3,7 @@ server {
         root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
 
-        server_name admin.nth.credenz.in;
+        server_name admin.nth.credenz.co.in;
 
         location / {
                 # try_files $uri $uri/ =404;
@@ -27,7 +27,7 @@ server {
 
 }
 server {
-    if ($host = admin.nth.credenz.in) {
+    if ($host = admin.nth.credenz.co.in) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
@@ -35,7 +35,7 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name admin.nth.credenz.in;
+        server_name admin.nth.credenz.co.in;
     return 404; # managed by Certbot
 
 

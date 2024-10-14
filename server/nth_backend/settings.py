@@ -33,8 +33,8 @@ DEBUG = int(os.environ.get("DEBUG",0))
 
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(' ')
-ALLOWED_HOSTS = ['*', 'admin.nth.credenz.in', 'localhost', '127.0.0.0', '20.193.130.20']
-CSRF_TRUSTED_ORIGINS=['https://*.pictieee.in', 'https://*.credenz.in', 'http://localhost', 'http://127.0.0.0',]
+ALLOWED_HOSTS = ['*', 'admin.nth.credenz.co.in', 'localhost', '127.0.0.0', '20.193.154.217']
+CSRF_TRUSTED_ORIGINS=['https://*.pictieee.in', 'https://*.credenz.co.in', 'http://localhost', 'http://127.0.0.0',]
 
 
 # Application definition
@@ -184,7 +184,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:8000',
   'http://localhost:3000',
-  'https://admin.nth.credenz.in',
-  'https://nth.credenz.in',
-  'https://*.credenz.in',
+  'https://admin.nth.credenz.co.in',
+  'https://nth.credenz.co.in',
+  'https://*.credenz.co.in',
 )

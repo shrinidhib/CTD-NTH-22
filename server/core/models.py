@@ -55,11 +55,11 @@ class Question(models.Model):
 
 
 class Timer(models.Model):
-    time = models.IntegerField(default=1666971000000)
+    time = models.IntegerField(default=1729956600000)
     is_started = models.BooleanField(default=False)
     is_ended = models.BooleanField(null = True,default=False)
     promo_code_active = models.BooleanField(default=False)
-    promocode = models.CharField(max_length=100, default="NTH22")
+    promocode = models.CharField(max_length=100, default="NTH24")
     add_keys_interval_min = models.IntegerField(default=120)
 
 class Feedback(models.Model):
