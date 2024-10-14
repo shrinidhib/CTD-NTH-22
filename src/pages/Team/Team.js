@@ -66,13 +66,17 @@ const Team = () => {
         
         {
             name: 'Gitesh',
-            img: 'https://i.postimg.cc/PpwsPTjg/Samir.jpg',
-            insta:'https://www.instagram.com/_samirwankhede_/'
+            img: 'https://i.postimg.cc/yY4vMPq5/IMG-20241014-WA0021.jpg',
+            insta:'https://www.instagram.com/giteshpatil_/',
+            linkedin: 'https://www.linkedin.com/in/giteshapatil',
+            github: 'https://github.com/Art3mis20726'
         },
         {
             name: 'Aarya',
-            img: 'https://i.postimg.cc/Pv1jFhVW/Jobin.jpg',
-            insta:'https://www.instagram.com/jobin.j0/'
+            img: 'https://i.postimg.cc/Pf8SV77Y/IMG-20241014-WA0015.jpg',
+            insta:'https://www.instagram.com/just_your_aru/profilecard/?igsh=amxkdmNmZ2NtZm01',
+            linkedin: 'https://www.linkedin.com/in/aarya-sonawane-32786a264',
+            github: 'https://github.com/'
         },
     ]
     return (
