@@ -55,7 +55,7 @@ Version: 1.0
   /* font-size: 80px; */
   font-size: 2rem;
   font-weight: bold;
-  text-align: justify;
+  text-align: center;
   overflow: hidden;
   transform-origin: 50% 100%;
   transform: perspective(350px) rotateX(25deg);
