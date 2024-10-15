@@ -182,7 +182,7 @@ const Instructions = (props) => {
                       includes pictures and hints.
                     </li>
                     <li className="inst1-text">
-                      As you have logged in, your URL will be nth.credenz.in /
+                      As you have logged in, your URL will be nth.credenz.co.in /
                       question To submit your answer, you have to put a '/' in
                       the URL followed by the answer in small letters.
                     </li>
@@ -192,21 +192,15 @@ const Instructions = (props) => {
                       same level.
                     </li>
                     <li className="inst1-text">
-                      The one who solves as many questions and reaches the top
+                      The one who solves the most number of questions and reaches the top
                       level is displayed on the leaderboard.
-                    </li>
-                    <li className="inst1-text">
-                      If your answer is correct, you will go to the next level,
-                      otherwise, you will stay on the same level with the same
-                      question.
                     </li>
                     <li className="inst1-text">
                       After the 24-hour hunt, the one on the top of the
                       leaderboard wins!
                     </li>
                     <li className="inst1-text">
-                      The winner will be declared once and there will be no
-                      change in our decision. Furthermore, users should play
+                      The winner declared is final. Furthermore, users should play
                       with one account only.
                     </li>
                   </ol>
