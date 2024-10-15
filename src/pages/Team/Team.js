@@ -44,7 +44,7 @@ const Team = () => {
         },
         {
             name: 'Shrinidhi',
-            img: 'https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg',
+            img: 'https://i.postimg.cc/Df449XG7/IMG-20240621-WA0013-2.jpg',
             insta:'https://instagram.com/_nidhi1214',
             github: 'https://github.com/shrinidhib',
             linkedin: 'https://www.linkedin.com/in/b-shrinidhi/'
