@@ -78,6 +78,13 @@ const Team = () => {
             linkedin: 'https://www.linkedin.com/in/aarya-sonawane-32786a264',
             github: 'https://github.com/Aarya-so'
         },
+        {
+            name: 'Chirag',
+            img: 'https://i.postimg.cc/KcC7pKPL/20240224-182801.jpg',
+            insta:'https://www.instagram.com/chirag_589/?hl=en',
+            linkedin: 'https://www.linkedin.com/in/chirag-meghani-9b985324a/',
+            github: 'https://github.com/Chirag-070'
+        },
     ]
     return (
         <div className='team'>
