@@ -12,7 +12,7 @@ const Contact = () => {
         },
         {
             name: 'Shrinidhi Balaji',
-            img: 'https://i.postimg.cc/dLKvZkD4/Srinidhi1.jpg',
+            img: 'https://i.postimg.cc/Df449XG7/IMG-20240621-WA0013-2.jpg',
             github: 'https://github.com/shrinidhib',
             linkedin: 'https://www.linkedin.com/in/b-shrinidhi/',
             phone: '7506211747' // Make sure phone number is a string
