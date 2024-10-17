@@ -33,7 +33,7 @@ const Instructions = (props) => {
                         
     }
     catch(err){
-      console.log(err);
+      // console.log(err);
       props.toast.toast.error(err.detail, { autoClose: 4000 });
     }
   }

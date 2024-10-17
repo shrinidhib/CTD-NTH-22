@@ -538,7 +538,7 @@ const Leaderboard = (props) => {
                             
         }
         catch(err){
-          console.log(err);
+          console.log("error");
         //   props.toast.toast.error(err.message+', visit contact page to resolve',{ autoClose: 5000 });
         }
       }
@@ -550,7 +550,7 @@ const Leaderboard = (props) => {
             })
             .catch(err => {
                 props.toast.toast.error("Error Fetching Leaderboard");
-                console.log(err);
+                // console.log(err);
             })
     }
 

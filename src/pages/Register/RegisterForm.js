@@ -60,7 +60,7 @@ const RegisterForm = (props) => {
        
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         if(err.code==="ERR_NETWORK") {setError("Network Error");props.toast.toast.error("Network Error");}
         else if(err.code==="ERR_BAD_REQUEST") {setError("Username Already Exists");props.toast.toast.error("Username Already Exists");}
       });

@@ -48,7 +48,7 @@ function BuyHintModal(props) {
             }
           })
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
             props.toast.toast.error('Error Fetching Hints');
             seterr("Error Fetching Hints");
           });

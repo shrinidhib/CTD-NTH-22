@@ -71,7 +71,9 @@ const Question = (props) => {
       setImageCnt(cnt)
       setLoaderStatus(false);
     }
-    catch (err) { console.log(err); props.toast.toast.error(err.detail, { autoClose: 4000 }); };
+    catch (err) {
+      //  console.log(err); 
+       props.toast.toast.error(err.detail, { autoClose: 4000 }); };
   }
 
   const fetchData = async () => {

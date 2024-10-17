@@ -36,7 +36,7 @@ const Home = (props) => {
         }
       )
       .catch(
-        (err) => { console.log(err) }
+        (err) => { console.log("error") }
       )
   }
   useEffect(() => {

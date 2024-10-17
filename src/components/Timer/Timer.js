@@ -19,7 +19,10 @@ const Timer=(props)=>{
             }
             
         )
-        .catch((err)=>console.log(err))
+        .catch((err)=>{
+            
+            console.log("error")}
+        )
 
     }
     // useEffect(()=>{
