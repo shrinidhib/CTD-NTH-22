@@ -33,7 +33,7 @@ const RegisterForm = (props) => {
       navigate("/instructions");
   })
   .catch((err) => {
-      console.log(err);
+      // console.log(err);
       props.toast.toast.error("Unable to login!");
   });
   
@@ -107,7 +107,7 @@ const RegisterForm = (props) => {
                 name="phone"
                 value={phone===0?'':phone}
                 // onChange={(e) =>{console.log(e.target.value,typeof e.target.value); setPhone(e.target.value)}}
-                onChange={(e) =>{console.log(e.target.value,typeof e.target.value); e.target.value===""?setPhone(0):setPhone(parseInt(e.target.value))}}
+                onChange={(e) =>{e.target.value===""?setPhone(0):setPhone(parseInt(e.target.value))}}
                 type="tel"
                 pattern="[0-9]{10}"
                 maxlength="10"
