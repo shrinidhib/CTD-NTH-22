@@ -128,7 +128,7 @@ const Question = (props) => {
               <div style={{ paddingTop: '200px', position: 'fixed' }}>
                 <div class="view-sidebar">
                   {/* <img src={ctd} className="ctd-bar"></img> */}
-                  <a href="https://www.instagram.com/pisbcredenz/" target="_blank">
+                  <a href="https://www.instagram.com/nth__live/" target="_blank">
                     {/* <i className="fab fa-instagram  instagram"></i> */}
                     <i class="nes-icon instagram mt-2 "></i>
                   </a>

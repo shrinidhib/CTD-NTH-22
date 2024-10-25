@@ -16,8 +16,8 @@ function ContactModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Karan Mundhada : +91-8080792381</p>
-          <p>Kshitij Dhapse : +91-9325815244</p>
+          <p>Samir Wankhede : +91-7770011526</p>
+          <p>Shrinidhi Balaji : +91-7506211747</p>
         </Modal.Body>
       </Modal>
     );
