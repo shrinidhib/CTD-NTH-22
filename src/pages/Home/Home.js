@@ -9,7 +9,7 @@ const Home = () => {
               <h3>Network Treasure Hunt</h3>
               <h5>Decrypt the Encrypted</h5>
 
-              <h1 style={{'margin': 40}}>Under Maintenance</h1>
+              <h1 style={{'margin': 42}}>Under Maintenance</h1>
             </div>
           </div>
     </div>
